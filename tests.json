@@ -3,11 +3,11 @@
     "id": 1778727796094,
     "name": "xxzxx",
     "grade": "Grade 2/Year 3",
-    "subject": "ÃÂ§ÃÂÃÂ¹ÃÂ±ÃÂ¨ÃÂÃÂ© ÃÂÃÂºÃÂÃÂ± ÃÂ§ÃÂÃÂÃÂ§ÃÂ·ÃÂÃÂÃÂ / Arabic Non-Native",
+    "subject": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¹ÃÂÃÂ±ÃÂÃÂ¨ÃÂÃÂÃÂÃÂ© ÃÂÃÂÃÂÃÂºÃÂÃÂÃÂÃÂ± ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂ·ÃÂÃÂÃÂÃÂÃÂÃÂ / Arabic Non-Native",
     "term": "3",
     "year": "2025-2026",
     "author": "heba",
-    "reviewer1": "ÃÂ§ÃÂÃÂÃÂ´ÃÂ±ÃÂ ÃÂ§ÃÂÃÂ±ÃÂ¦ÃÂÃÂ³ÃÂ (Supervisor001)",
+    "reviewer1": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ´ÃÂÃÂ±ÃÂÃÂ ÃÂÃÂ§ÃÂÃÂÃÂÃÂ±ÃÂÃÂ¦ÃÂÃÂÃÂÃÂ³ÃÂÃÂ (Supervisor001)",
     "status": "underReview",
     "r1done": false,
     "generalStatus": "pending",
@@ -209,17 +209,17 @@
     "instructionsAr": "<b><font size=\"5\">hhhhhhhh&nbsp;</font></b>",
     "instructionsEn": "hhhhhhhhhhh",
     "students": [],
-    "createdAt": "14Ã¢ÂÂ/5Ã¢ÂÂ/2026"
+    "createdAt": "14ÃÂ¢ÃÂÃÂ/5ÃÂ¢ÃÂÃÂ/2026"
   },
   {
     "id": 1778794211090,
     "name": "xxzxx",
     "grade": "",
-    "subject": "-- Ø§Ø®ØªØ± --",
+    "subject": "-- ÃÂ§ÃÂ®ÃÂªÃÂ± --",
     "term": "",
     "year": "2025-2026",
     "author": "khaled",
-    "reviewer1": "-- Ø§Ø®ØªØ± --",
+    "reviewer1": "-- ÃÂ§ÃÂ®ÃÂªÃÂ± --",
     "status": "underReview",
     "r1done": false,
     "generalStatus": "pending",
@@ -229,7 +229,7 @@
     "domains": [
       {
         "index": 0,
-        "nameAr": "Ø§ÙÙØ­Ù Ø§ÙÙÙ",
+        "nameAr": "ÃÂ§ÃÂÃÂÃÂ­ÃÂ ÃÂ§ÃÂÃÂÃÂ",
         "nameEn": "Domain 1",
         "weight": 40,
         "time": 3,
@@ -252,7 +252,7 @@
         "hasBranches": true,
         "branches": [
           {
-            "nameAr": "Ø§ÙÙØ±Ø§Ù",
+            "nameAr": "ÃÂ§ÃÂÃÂÃÂ±ÃÂ§ÃÂ",
             "nameEn": "Branch 1",
             "iconSrc": "",
             "weight": 25,
@@ -314,7 +314,7 @@
             ]
           },
           {
-            "nameAr": "Ø§ÙØ­Ø¯ÙØ«",
+            "nameAr": "ÃÂ§ÃÂÃÂ­ÃÂ¯ÃÂÃÂ«",
             "nameEn": "Branch 2",
             "iconSrc": "",
             "weight": 15,
@@ -359,7 +359,7 @@
       },
       {
         "index": 1,
-        "nameAr": "Ø§ÙØ¹ÙÙØ¯Ø©",
+        "nameAr": "ÃÂ§ÃÂÃÂ¹ÃÂÃÂÃÂ¯ÃÂ©",
         "nameEn": "Domain 2",
         "weight": 60,
         "time": 5,
@@ -415,17 +415,17 @@
     "instructionsAr": "kk",
     "instructionsEn": "nnn",
     "students": [],
-    "createdAt": "15â/5â/2026"
+    "createdAt": "15Ã¢ÂÂ/5Ã¢ÂÂ/2026"
   },
   {
     "id": 1778908475589,
     "name": "xxzxx",
     "grade": "",
-    "subject": "العربية لغير الناطقين / Arabic Non-Native",
+    "subject": "Ø§ÙØ¹Ø±Ø¨ÙØ© ÙØºÙØ± Ø§ÙÙØ§Ø·ÙÙÙ / Arabic Non-Native",
     "term": "3",
     "year": "2026-2027",
-    "author": "المشرف الرئيسي",
-    "reviewer1": "المشرف الرئيسي (Supervisor001)",
+    "author": "Ø§ÙÙØ´Ø±Ù Ø§ÙØ±Ø¦ÙØ³Ù",
+    "reviewer1": "Ø§ÙÙØ´Ø±Ù Ø§ÙØ±Ø¦ÙØ³Ù (Supervisor001)",
     "status": "underReview",
     "r1done": false,
     "generalStatus": "pending",
@@ -435,7 +435,7 @@
     "domains": [
       {
         "index": 0,
-        "nameAr": "القراءَة",
+        "nameAr": "Ø§ÙÙØ±Ø§Ø¡ÙØ©",
         "nameEn": "Domain 1",
         "weight": 50,
         "time": 20,
@@ -446,7 +446,7 @@
         "hasBranches": true,
         "branches": [
           {
-            "nameAr": "الجهرية",
+            "nameAr": "Ø§ÙØ¬ÙØ±ÙØ©",
             "nameEn": "Branch 1",
             "weight": 30,
             "time": 10,
@@ -486,7 +486,7 @@
             ]
           },
           {
-            "nameAr": "النصوص",
+            "nameAr": "Ø§ÙÙØµÙØµ",
             "nameEn": "Branch 2",
             "weight": 20,
             "time": 10,
@@ -518,7 +518,7 @@
       },
       {
         "index": 1,
-        "nameAr": "تحدث",
+        "nameAr": "ØªØ­Ø¯Ø«",
         "nameEn": "Domain 2",
         "weight": 50,
         "time": 20,
@@ -553,6 +553,132 @@
     ],
     "instructionsAr": "hh",
     "instructionsEn": "hhhhh",
+    "students": [],
+    "createdAt": "16â/5â/2026"
+  },
+  {
+    "id": 1778943086790,
+    "name": "xxzxx",
+    "grade": "",
+    "subject": "-- اختر --",
+    "term": "3",
+    "year": "2025-2026",
+    "author": "heba",
+    "reviewer1": "heba (Super880)",
+    "status": "underReview",
+    "r1done": false,
+    "generalStatus": "pending",
+    "returnNotes": [],
+    "school": "",
+    "logoSrc": "",
+    "domains": [
+      {
+        "index": 0,
+        "nameAr": "Reading",
+        "nameEn": "Domain 1",
+        "weight": 50,
+        "time": 20,
+        "qCount": 0,
+        "questions": [],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": true,
+        "branches": [
+          {
+            "nameAr": "قراءَة القرآن ",
+            "nameEn": "Branch 1",
+            "weight": 25,
+            "time": 10,
+            "qCount": 1,
+            "questions": [
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 25
+              }
+            ]
+          },
+          {
+            "nameAr": "قراءَة الحديث ",
+            "nameEn": "Branch 2",
+            "weight": 25,
+            "time": 10,
+            "qCount": 1,
+            "questions": [
+              {
+                "type": "ordering",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "understand",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "words": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "bodyHtml": "",
+                "correctAnswer": "",
+                "score": 25
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "nameAr": "تحدث",
+        "nameEn": "Domain 2",
+        "weight": 50,
+        "time": 10,
+        "qCount": 1,
+        "questions": [
+          {
+            "type": "speaking",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "speakingInst": "",
+            "score": 50
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": false,
+        "branches": []
+      }
+    ],
+    "instructionsAr": "سسس",
+    "instructionsEn": "سسسس",
     "students": [],
     "createdAt": "16‏/5‏/2026"
   }
