@@ -1,12 +1,12 @@
 [
   {
     "id": 1778727796094,
-    "name": "٩٩٩٩",
+    "name": "Ù©Ù©Ù©Ù©",
     "grade": "Grade 2/Year 3",
-    "subject": "-- اختر --",
+    "subject": "-- Ø§Ø®ØªØ± --",
     "term": "3",
     "year": "2025-2026",
-    "author": "المشرف الرئيسي",
+    "author": "Ø§ÙÙØ´Ø±Ù Ø§ÙØ±Ø¦ÙØ³Ù",
     "reviewer1": "heba (Super880)",
     "status": "underReview",
     "r1done": false,
@@ -28,7 +28,7 @@
         "hasBranches": true,
         "branches": [
           {
-            "nameAr": "قراءَة القرآن ",
+            "nameAr": "ÙØ±Ø§Ø¡ÙØ© Ø§ÙÙØ±Ø¢Ù ",
             "nameEn": "Branch 1",
             "weight": 50,
             "time": 10,
@@ -36,7 +36,7 @@
             "questions": []
           },
           {
-            "nameAr": "قراءَة الحديث ",
+            "nameAr": "ÙØ±Ø§Ø¡ÙØ© Ø§ÙØ­Ø¯ÙØ« ",
             "nameEn": "Branch 2",
             "weight": 50,
             "time": 10,
@@ -49,17 +49,17 @@
     "instructionsAr": "<b><font size=\"5\">hhhhhhhh&nbsp;</font></b>",
     "instructionsEn": "hhhhhhhhhhh",
     "students": [],
-    "createdAt": "14ÃÂ¢ÃÂÃÂ/5ÃÂ¢ÃÂÃÂ/2026"
+    "createdAt": "14ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ/5ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ/2026"
   },
   {
     "id": 1778794211090,
     "name": "xxzxx",
     "grade": "",
-    "subject": "-- ÃÂ§ÃÂ®ÃÂªÃÂ± --",
+    "subject": "-- ÃÂÃÂ§ÃÂÃÂ®ÃÂÃÂªÃÂÃÂ± --",
     "term": "",
     "year": "2025-2026",
     "author": "khaled",
-    "reviewer1": "-- ÃÂ§ÃÂ®ÃÂªÃÂ± --",
+    "reviewer1": "-- ÃÂÃÂ§ÃÂÃÂ®ÃÂÃÂªÃÂÃÂ± --",
     "status": "underReview",
     "r1done": false,
     "generalStatus": "pending",
@@ -69,7 +69,7 @@
     "domains": [
       {
         "index": 0,
-        "nameAr": "ÃÂ§ÃÂÃÂÃÂ­ÃÂ ÃÂ§ÃÂÃÂÃÂ",
+        "nameAr": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ­ÃÂÃÂ ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ",
         "nameEn": "Domain 1",
         "weight": 40,
         "time": 3,
@@ -92,7 +92,7 @@
         "hasBranches": true,
         "branches": [
           {
-            "nameAr": "ÃÂ§ÃÂÃÂÃÂ±ÃÂ§ÃÂ",
+            "nameAr": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ±ÃÂÃÂ§ÃÂÃÂ",
             "nameEn": "Branch 1",
             "iconSrc": "",
             "weight": 25,
@@ -154,7 +154,7 @@
             ]
           },
           {
-            "nameAr": "ÃÂ§ÃÂÃÂ­ÃÂ¯ÃÂÃÂ«",
+            "nameAr": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ­ÃÂÃÂ¯ÃÂÃÂÃÂÃÂ«",
             "nameEn": "Branch 2",
             "iconSrc": "",
             "weight": 15,
@@ -199,7 +199,7 @@
       },
       {
         "index": 1,
-        "nameAr": "ÃÂ§ÃÂÃÂ¹ÃÂÃÂÃÂ¯ÃÂ©",
+        "nameAr": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¹ÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂ©",
         "nameEn": "Domain 2",
         "weight": 60,
         "time": 5,
@@ -255,17 +255,17 @@
     "instructionsAr": "kk",
     "instructionsEn": "nnn",
     "students": [],
-    "createdAt": "15Ã¢ÂÂ/5Ã¢ÂÂ/2026"
+    "createdAt": "15ÃÂ¢ÃÂÃÂ/5ÃÂ¢ÃÂÃÂ/2026"
   },
   {
     "id": 1778908475589,
     "name": "xxzxx",
     "grade": "",
-    "subject": "Ø§ÙØ¹Ø±Ø¨ÙØ© ÙØºÙØ± Ø§ÙÙØ§Ø·ÙÙÙ / Arabic Non-Native",
+    "subject": "ÃÂ§ÃÂÃÂ¹ÃÂ±ÃÂ¨ÃÂÃÂ© ÃÂÃÂºÃÂÃÂ± ÃÂ§ÃÂÃÂÃÂ§ÃÂ·ÃÂÃÂÃÂ / Arabic Non-Native",
     "term": "3",
     "year": "2026-2027",
-    "author": "Ø§ÙÙØ´Ø±Ù Ø§ÙØ±Ø¦ÙØ³Ù",
-    "reviewer1": "Ø§ÙÙØ´Ø±Ù Ø§ÙØ±Ø¦ÙØ³Ù (Supervisor001)",
+    "author": "ÃÂ§ÃÂÃÂÃÂ´ÃÂ±ÃÂ ÃÂ§ÃÂÃÂ±ÃÂ¦ÃÂÃÂ³ÃÂ",
+    "reviewer1": "ÃÂ§ÃÂÃÂÃÂ´ÃÂ±ÃÂ ÃÂ§ÃÂÃÂ±ÃÂ¦ÃÂÃÂ³ÃÂ (Supervisor001)",
     "status": "underReview",
     "r1done": false,
     "generalStatus": "pending",
@@ -275,9 +275,9 @@
     "domains": [
       {
         "index": 0,
-        "nameAr": "Ø§ÙÙØ±Ø§Ø¡ÙØ©",
-        "nameEn": "Domain 1",
-        "weight": 50,
+        "nameAr": "القراءَة",
+        "nameEn": "Reading",
+        "weight": 25,
         "time": 20,
         "qCount": 0,
         "questions": [],
@@ -286,9 +286,569 @@
         "hasBranches": true,
         "branches": [
           {
-            "nameAr": "Ø§ÙØ¬ÙØ±ÙØ©",
+            "nameAr": "قراءَة النصوص الأدبية ",
+            "nameEn": "Reading Litretural text",
+            "weight": 13,
+            "time": 10,
+            "qCount": 3,
+            "questions": [
+              {
+                "type": "reading",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "<div style=\"margin-top:8px;border-radius:12px;overflow:hidden;background:#0a0a1a;text-align:center;padding:8px\"><img src=\"data:image/jpeg;base64,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\" style=\"max-height:180px;max-width:100%;transform:translate(0px, 0px) scale(1.7) rotate(0deg);transform-origin:center;border-radius:8px\"><div style=\"margin-top:6px\"><button onclick=\"removeMedia()\" style=\"background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.3);color:#f87171;border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer\">🗑 حذف</button></div></div>",
+                "passageHtml": "<div dir=\"auto\" style=\"text-align: right; font-family: system-ui, -apple-system, &quot;system-ui&quot;, &quot;.SFNSText-Regular&quot;, sans-serif; white-space: pre-wrap; background-color: rgb(37, 39, 40);\"><font size=\"5\" style=\"\" color=\"#7fd7b9\">‎الغزال العربي</font></div><div dir=\"auto\" style=\"font-family: system-ui, -apple-system, &quot;system-ui&quot;, &quot;.SFNSText-Regular&quot;, sans-serif; white-space: pre-wrap; background-color: rgb(37, 39, 40);\"><font size=\"5\" style=\"\"><font color=\"#7fd7b9\">يعد أكثر الغزلان رشاقة وله عيون واسعة ذات حلقات. يعيش في أواسط شبه الجزيرة العربية في الأودية الجبلية القاحلة والمناطق الصحراوية و الوديان الحصوية. يقاوم الجفاف ويتحمل العطش لفترات كبيرة ولكنه يحتاج إلى الماء كل 7 – 10 أيام وبخاصة خلال الصيف</font><font color=\"#e2e5e9\">.</font></font></div>",
+                "answerStemHtml": "<font size=\"5\" color=\"#ced56c\"><b>اُذكر&nbsp; خمس ميزات للغزال العربي ؟&nbsp;</b></font>",
+                "ansType": "text",
+                "score": 4.33
+              },
+              {
+                "type": "matching",
+                "stemHtml": "<font size=\"5\" color=\"#cbe15b\"><span class=\"Yjhzub\" jsaction=\"\" jscontroller=\"zYmgkd\" data-sfc-root=\"c\" jsuid=\"JMshVc_g\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; border-bottom: 0px rgb(10, 10, 10);\"><span data-subtree=\"aimfl,mfl\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"border-bottom: 0px rgb(10, 10, 10);\">الغزال العربي</span><!--TgQPHd|[]--></span> (ويُعرف محلياً في الإمارات باسم \"الدماني\") هو <mark jsuid=\"JMshVc_h\" class=\"HxTRcb\" jsaction=\"click:&amp;JMshVc_h|h5M12e;mouseenter:&amp;JMshVc_h|sbHm2b;mouseleave:&amp;JMshVc_h|Tx5Rb;rcuQ6b:&amp;JMshVc_h|npT2md\" jscontroller=\"DfH0l\" data-sfc-root=\"c\" data-wiz-uids=\"JMshVc_i\" data-sfc-cb=\"\" data-ved=\"2ahUKEwiLvZnmvb-UAxXD2QIHHRdnB1AQuJAPegoIAggACAAIBRAB\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 500; margin: 0px; text-decoration: none; border-bottom: 0px rgb(0, 29, 53);\" style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; border-bottom: 0px rgb(0, 29, 53);\"><!--qkimaf JMshVc_h/HugV6--><!--cqw1tb JMshVc_h/HugV6-->ظبي صحراوي رشيق يتميز بلونه الرملي، وقرونه المنحنية، وقدرته الفائقة على التكيف مع قسوة الجفاف<!--TgQPHd|[]--></mark>. يتواجد في الأودية الجبلية والسهول، وتلعب <span class=\"T286Pc\" data-sfc-cp=\"\" jsaction=\"\" jscontroller=\"fly6D\" data-sfc-root=\"c\" jsuid=\"JMshVc_j\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; border-bottom: 0px rgb(10, 10, 10);\">هيئة البيئة - أبوظبي<!--TgQPHd|[]--></span> دوراً رئيسياً في حمايته ضمن المحميات الطب</font>",
+                "stemText": "الغزال العربي (ويُعرف محلياً في الإمارات باسم \"الدماني\") هو ظبي صحراوي رشيق يتميز بلونه الرملي، وقرونه المنحنية، وقدرته الفائقة على التكيف مع قسوة الجفاف. يتواجد في الأودية الجبلية والسهول، وتلعب هيئة البيئة - أبوظبي دوراً رئيسياً في حمايته ضمن المحميات الطب",
+                "bloom": "apply",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">تلعب&nbsp;</span><span class=\"T286Pc\" data-sfc-cp=\"\" jsaction=\"\" jscontroller=\"fly6D\" data-sfc-root=\"c\" jsuid=\"JMshVc_j\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; border-style: solid solid none; border-color: rgb(229, 231, 235) rgb(229, 231, 235) rgb(10, 10, 10); color: rgb(203, 225, 91); font-size: x-large; font-family: &quot;Google Sans&quot;, Arial, sans-serif;\">هيئة البيئة - أبوظبي</span><span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;دوراً رئيسياً&nbsp;</span>",
+                    "bHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;باسم \"الدماني</span>"
+                  },
+                  {
+                    "aHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">يتواجد في</span>",
+                    "bHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">في حمايته ضمن المحميات الطب</span>"
+                  },
+                  {
+                    "aHtml": "<span class=\"Yjhzub\" jsaction=\"\" jscontroller=\"zYmgkd\" data-sfc-root=\"c\" jsuid=\"JMshVc_g\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; border-style: solid solid none; border-color: rgb(229, 231, 235) rgb(229, 231, 235) rgb(10, 10, 10); color: rgb(203, 225, 91); font-size: x-large; font-family: &quot;Google Sans&quot;, Arial, sans-serif;\">الغزال العربي</span><span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;</span><span style=\"color: rgb(203, 225, 91); font-size: x-large;\">يُعرف محلياً في الإمارات</span>",
+                    "bHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;الأودية الجبلية والسهول</span>"
+                  }
+                ],
+                "connections": [
+                  {
+                    "a": 2,
+                    "b": 0
+                  },
+                  {
+                    "a": 1,
+                    "b": 2
+                  },
+                  {
+                    "a": 0,
+                    "b": 1
+                  }
+                ],
+                "score": 4.33
+              },
+              {
+                "type": "ordering",
+                "stemHtml": "<font color=\"#cbe15b\" size=\"5\">رتب المفردات الأتية&nbsp;</font>",
+                "stemText": "رتب المفردات الأتية ",
+                "bloom": "",
+                "marking": "manual",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "words": [
+                  "الغزلان",
+                  "أكثر ",
+                  "يعد",
+                  " رشاقة ",
+                  "العربي",
+                  "الغزال"
+                ],
+                "bodyHtml": "<br>",
+                "correctAnswer": "‎   الغزلان رشاقة وله عيون واسعة ذات حلقات",
+                "score": 4.33
+              },
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 0.01
+              }
+            ]
+          },
+          {
+            "nameAr": "قراءَة النصوص المعلوماتية",
+            "nameEn": "Reading Informational Text ",
+            "weight": 12,
+            "time": 10,
+            "qCount": 3,
+            "questions": [
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "nameAr": "الـــكـــتـــابـــة",
+        "nameEn": "Writing ",
+        "weight": 25,
+        "time": 10,
+        "qCount": 0,
+        "questions": [
+          {
+            "type": "ordering",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "words": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "bodyHtml": "",
+            "correctAnswer": "",
+            "score": 50
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": true,
+        "branches": [
+          {
+            "nameAr": "كتابة جمل ",
+            "nameEn": "Forming Sentences ",
+            "weight": 13,
+            "time": 5,
+            "qCount": 5,
+            "questions": [
+              {
+                "type": "reading",
+                "stemHtml": "xx",
+                "stemText": "xx",
+                "bloom": "apply",
+                "marking": "manual",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "passageHtml": "ss",
+                "answerStemHtml": "ss",
+                "ansType": "text",
+                "score": 2.6
+              },
+              {
+                "type": "ordering",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "words": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "bodyHtml": "",
+                "correctAnswer": "",
+                "score": 2.6
+              },
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 2.6
+              },
+              {
+                "type": "ordering",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "words": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "bodyHtml": "",
+                "correctAnswer": "",
+                "score": 2.6
+              },
+              {
+                "type": "listening",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "ansType": "",
+                "score": 2.6
+              }
+            ]
+          },
+          {
+            "nameAr": "كتابة  النصوص  ",
+            "nameEn": "Writing Paragraphs ",
+            "weight": 12,
+            "time": 5,
+            "qCount": 2,
+            "questions": [
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nameAr": "الاستـــمـــاع",
+        "nameEn": "Listenning ",
+        "weight": 25,
+        "time": 10,
+        "qCount": 1,
+        "questions": [
+          {
+            "type": "speaking",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "speakingInst": "",
+            "score": 25
+          }
+        ],
+        "hasBranches": false,
+        "branches": [],
+        "complete": false
+      },
+      {
+        "nameAr": "الــتحـــدث",
+        "nameEn": "Speaking ",
+        "weight": 25,
+        "time": 10,
+        "qCount": 1,
+        "questions": [
+          {
+            "type": "speaking",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "speakingInst": "",
+            "score": 25
+          }
+        ],
+        "hasBranches": false,
+        "branches": [],
+        "complete": false
+      }
+    ],
+    "instructionsAr": "hh",
+    "instructionsEn": "hhhhh",
+    "students": [],
+    "createdAt": "16Ã¢ÂÂ/5Ã¢ÂÂ/2026"
+  },
+  {
+    "id": 1778943086790,
+    "name": "xxzxx",
+    "grade": "",
+    "subject": "-- Ø§Ø®ØªØ± --",
+    "term": "3",
+    "year": "2025-2026",
+    "author": "heba",
+    "reviewer1": "heba (Super880)",
+    "status": "underReview",
+    "r1done": false,
+    "generalStatus": "pending",
+    "returnNotes": [],
+    "school": "",
+    "logoSrc": "",
+    "domains": [
+      {
+        "index": 0,
+        "nameAr": "Reading",
+        "nameEn": "Domain 1",
+        "weight": 100,
+        "time": 20,
+        "qCount": 0,
+        "questions": [],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": true,
+        "branches": [
+          {
+            "nameAr": "ÙØ±Ø§Ø¡ÙØ© Ø§ÙÙØ±Ø¢Ù ",
             "nameEn": "Branch 1",
-            "weight": 30,
+            "weight": 50,
+            "time": 10,
+            "qCount": 1,
+            "questions": []
+          },
+          {
+            "nameAr": "ÙØ±Ø§Ø¡ÙØ© Ø§ÙØ­Ø¯ÙØ« ",
+            "nameEn": "Branch 2",
+            "weight": 50,
+            "time": 10,
+            "qCount": 1,
+            "questions": []
+          }
+        ]
+      }
+    ],
+    "instructionsAr": "Ø³Ø³Ø³",
+    "instructionsEn": "Ø³Ø³Ø³Ø³",
+    "students": [],
+    "createdAt": "16â/5â/2026"
+  },
+  {
+    "id": 1778993506213,
+    "name": "الاختبار الدولي الأول في اللغة العربية ",
+    "grade": "",
+    "subject": "العربية لغير الناطقين / Arabic Non-Native",
+    "term": "3",
+    "year": "2025-2026",
+    "author": "adly",
+    "reviewer1": "المشرف الرئيسي (Supervisor001)",
+    "status": "underReview",
+    "r1done": false,
+    "generalStatus": "pending",
+    "returnNotes": [],
+    "school": "",
+    "logoSrc": "",
+    "domains": [
+      {
+        "index": 0,
+        "nameAr": "القراءَة",
+        "nameEn": "Reading",
+        "weight": 25,
+        "time": 20,
+        "qCount": 0,
+        "questions": [],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": true,
+        "branches": [
+          {
+            "nameAr": "قراءَة النصوص الأدبية ",
+            "nameEn": "Reading Litretural text",
+            "weight": 13,
+            "time": 10,
+            "qCount": 3,
+            "questions": [
+              {
+                "type": "reading",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "<div style=\"margin-top:8px;border-radius:12px;overflow:hidden;background:#0a0a1a;text-align:center;padding:8px\"><img src=\"data:image/jpeg;base64,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\" style=\"max-height:180px;max-width:100%;transform:translate(0px, 0px) scale(1.7) rotate(0deg);transform-origin:center;border-radius:8px\"><div style=\"margin-top:6px\"><button onclick=\"removeMedia()\" style=\"background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.3);color:#f87171;border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer\">🗑 حذف</button></div></div>",
+                "passageHtml": "<div dir=\"auto\" style=\"text-align: right; font-family: system-ui, -apple-system, &quot;system-ui&quot;, &quot;.SFNSText-Regular&quot;, sans-serif; white-space: pre-wrap; background-color: rgb(37, 39, 40);\"><font size=\"5\" style=\"\" color=\"#7fd7b9\">‎الغزال العربي</font></div><div dir=\"auto\" style=\"font-family: system-ui, -apple-system, &quot;system-ui&quot;, &quot;.SFNSText-Regular&quot;, sans-serif; white-space: pre-wrap; background-color: rgb(37, 39, 40);\"><font size=\"5\" style=\"\"><font color=\"#7fd7b9\">يعد أكثر الغزلان رشاقة وله عيون واسعة ذات حلقات. يعيش في أواسط شبه الجزيرة العربية في الأودية الجبلية القاحلة والمناطق الصحراوية و الوديان الحصوية. يقاوم الجفاف ويتحمل العطش لفترات كبيرة ولكنه يحتاج إلى الماء كل 7 – 10 أيام وبخاصة خلال الصيف</font><font color=\"#e2e5e9\">.</font></font></div>",
+                "answerStemHtml": "<font size=\"5\" color=\"#ced56c\"><b>اُذكر&nbsp; خمس ميزات للغزال العربي ؟&nbsp;</b></font>",
+                "ansType": "text",
+                "score": 4.33
+              },
+              {
+                "type": "matching",
+                "stemHtml": "<font size=\"5\" color=\"#cbe15b\"><span class=\"Yjhzub\" jsaction=\"\" jscontroller=\"zYmgkd\" data-sfc-root=\"c\" jsuid=\"JMshVc_g\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; border-bottom: 0px rgb(10, 10, 10);\"><span data-subtree=\"aimfl,mfl\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"border-bottom: 0px rgb(10, 10, 10);\">الغزال العربي</span><!--TgQPHd|[]--></span> (ويُعرف محلياً في الإمارات باسم \"الدماني\") هو <mark jsuid=\"JMshVc_h\" class=\"HxTRcb\" jsaction=\"click:&amp;JMshVc_h|h5M12e;mouseenter:&amp;JMshVc_h|sbHm2b;mouseleave:&amp;JMshVc_h|Tx5Rb;rcuQ6b:&amp;JMshVc_h|npT2md\" jscontroller=\"DfH0l\" data-sfc-root=\"c\" data-wiz-uids=\"JMshVc_i\" data-sfc-cb=\"\" data-ved=\"2ahUKEwiLvZnmvb-UAxXD2QIHHRdnB1AQuJAPegoIAggACAAIBRAB\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 500; margin: 0px; text-decoration: none; border-bottom: 0px rgb(0, 29, 53);\" style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; border-bottom: 0px rgb(0, 29, 53);\"><!--qkimaf JMshVc_h/HugV6--><!--cqw1tb JMshVc_h/HugV6-->ظبي صحراوي رشيق يتميز بلونه الرملي، وقرونه المنحنية، وقدرته الفائقة على التكيف مع قسوة الجفاف<!--TgQPHd|[]--></mark>. يتواجد في الأودية الجبلية والسهول، وتلعب <span class=\"T286Pc\" data-sfc-cp=\"\" jsaction=\"\" jscontroller=\"fly6D\" data-sfc-root=\"c\" jsuid=\"JMshVc_j\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; border-bottom: 0px rgb(10, 10, 10);\">هيئة البيئة - أبوظبي<!--TgQPHd|[]--></span> دوراً رئيسياً في حمايته ضمن المحميات الطب</font>",
+                "stemText": "الغزال العربي (ويُعرف محلياً في الإمارات باسم \"الدماني\") هو ظبي صحراوي رشيق يتميز بلونه الرملي، وقرونه المنحنية، وقدرته الفائقة على التكيف مع قسوة الجفاف. يتواجد في الأودية الجبلية والسهول، وتلعب هيئة البيئة - أبوظبي دوراً رئيسياً في حمايته ضمن المحميات الطب",
+                "bloom": "apply",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">تلعب&nbsp;</span><span class=\"T286Pc\" data-sfc-cp=\"\" jsaction=\"\" jscontroller=\"fly6D\" data-sfc-root=\"c\" jsuid=\"JMshVc_j\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 400; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; border-style: solid solid none; border-color: rgb(229, 231, 235) rgb(229, 231, 235) rgb(10, 10, 10); color: rgb(203, 225, 91); font-size: x-large; font-family: &quot;Google Sans&quot;, Arial, sans-serif;\">هيئة البيئة - أبوظبي</span><span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;دوراً رئيسياً&nbsp;</span>",
+                    "bHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;باسم \"الدماني</span>"
+                  },
+                  {
+                    "aHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">يتواجد في</span>",
+                    "bHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">في حمايته ضمن المحميات الطب</span>"
+                  },
+                  {
+                    "aHtml": "<span class=\"Yjhzub\" jsaction=\"\" jscontroller=\"zYmgkd\" data-sfc-root=\"c\" jsuid=\"JMshVc_g\" data-sfc-cb=\"\" data-processed=\"true\" data-copy-service-computed-style=\"font-family: &quot;Google Sans&quot;, Arial, sans-serif; font-size: 16px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0px rgb(10, 10, 10);\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; border-style: solid solid none; border-color: rgb(229, 231, 235) rgb(229, 231, 235) rgb(10, 10, 10); color: rgb(203, 225, 91); font-size: x-large; font-family: &quot;Google Sans&quot;, Arial, sans-serif;\">الغزال العربي</span><span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;</span><span style=\"color: rgb(203, 225, 91); font-size: x-large;\">يُعرف محلياً في الإمارات</span>",
+                    "bHtml": "<span style=\"color: rgb(203, 225, 91); font-size: x-large;\">&nbsp;الأودية الجبلية والسهول</span>"
+                  }
+                ],
+                "connections": [
+                  {
+                    "a": 2,
+                    "b": 0
+                  },
+                  {
+                    "a": 1,
+                    "b": 2
+                  },
+                  {
+                    "a": 0,
+                    "b": 1
+                  }
+                ],
+                "score": 4.33
+              },
+              {
+                "type": "ordering",
+                "stemHtml": "<font color=\"#cbe15b\" size=\"5\">رتب المفردات الأتية&nbsp;</font>",
+                "stemText": "رتب المفردات الأتية ",
+                "bloom": "",
+                "marking": "manual",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "words": [
+                  "الغزلان",
+                  "أكثر ",
+                  "يعد",
+                  " رشاقة ",
+                  "العربي",
+                  "الغزال"
+                ],
+                "bodyHtml": "<br>",
+                "correctAnswer": "‎   الغزلان رشاقة وله عيون واسعة ذات حلقات",
+                "score": 4.33
+              },
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 0.01
+              }
+            ]
+          },
+          {
+            "nameAr": "قراءَة النصوص المعلوماتية",
+            "nameEn": "Reading Informational Text ",
+            "weight": 12,
             "time": 10,
             "qCount": 1,
             "questions": [
@@ -315,42 +875,8 @@
                     "bHtml": ""
                   }
                 ],
-                "connections": [
-                  {
-                    "a": 1,
-                    "b": 2
-                  }
-                ],
-                "score": 30
-              }
-            ]
-          },
-          {
-            "nameAr": "Ø§ÙÙØµÙØµ",
-            "nameEn": "Branch 2",
-            "weight": 20,
-            "time": 10,
-            "qCount": 1,
-            "questions": [
-              {
-                "type": "ordering",
-                "stemHtml": "",
-                "stemText": "",
-                "bloom": "",
-                "marking": "auto",
-                "lo": "",
-                "standard": "",
-                "mediaHtml": "",
-                "words": [
-                  "",
-                  "",
-                  "",
-                  "",
-                  ""
-                ],
-                "bodyHtml": "",
-                "correctAnswer": "",
-                "score": 20
+                "connections": [],
+                "score": 12
               }
             ]
           }
@@ -358,11 +884,11 @@
       },
       {
         "index": 1,
-        "nameAr": "ØªØ­Ø¯Ø«",
-        "nameEn": "Domain 2",
-        "weight": 50,
-        "time": 20,
-        "qCount": 1,
+        "nameAr": "الـــكـــتـــابـــة",
+        "nameEn": "Writing",
+        "weight": 25,
+        "time": 10,
+        "qCount": 0,
         "questions": [
           {
             "type": "ordering",
@@ -387,65 +913,202 @@
         ],
         "complete": true,
         "iconSrc": "",
+        "hasBranches": true,
+        "branches": [
+          {
+            "nameAr": "كتابة جمل ",
+            "nameEn": "Forming Sentences ",
+            "weight": 13,
+            "time": 5,
+            "qCount": 5,
+            "questions": [
+              {
+                "type": "reading",
+                "stemHtml": "xx",
+                "stemText": "xx",
+                "bloom": "apply",
+                "marking": "manual",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "passageHtml": "ss",
+                "answerStemHtml": "ss",
+                "ansType": "text",
+                "score": 2.6
+              },
+              {
+                "type": "ordering",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "words": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "bodyHtml": "",
+                "correctAnswer": "",
+                "score": 2.6
+              },
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 2.6
+              },
+              {
+                "type": "ordering",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "words": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "bodyHtml": "",
+                "correctAnswer": "",
+                "score": 2.6
+              },
+              {
+                "type": "listening",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "ansType": "",
+                "score": 2.6
+              }
+            ]
+          },
+          {
+            "nameAr": "كتابة  النصوص  ",
+            "nameEn": "Writing Paragraphs ",
+            "weight": 12,
+            "time": 5,
+            "qCount": 1,
+            "questions": [
+              {
+                "type": "matching",
+                "stemHtml": "",
+                "stemText": "",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "pairs": [
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  },
+                  {
+                    "aHtml": "",
+                    "bHtml": ""
+                  }
+                ],
+                "connections": [],
+                "score": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "nameAr": "الاستـــمـــاع",
+        "nameEn": "Listenning",
+        "weight": 25,
+        "time": 10,
+        "qCount": 1,
+        "questions": [
+          {
+            "type": "speaking",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "speakingInst": "",
+            "score": 25
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": false,
+        "branches": []
+      },
+      {
+        "index": 3,
+        "nameAr": "الــتحـــدث",
+        "nameEn": "Speaking",
+        "weight": 25,
+        "time": 10,
+        "qCount": 1,
+        "questions": [
+          {
+            "type": "speaking",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "speakingInst": "",
+            "score": 25
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
         "hasBranches": false,
         "branches": []
       }
     ],
-    "instructionsAr": "hh",
-    "instructionsEn": "hhhhh",
+    "instructionsAr": "<p data-start=\"0\" data-end=\"20\" style=\"text-align: right;\"><strong data-start=\"0\" data-end=\"20\"><font face=\"Tajawal\" size=\"5\">تعليمات الاختبار</font></strong></p><ul><li style=\"text-align: right;\"><font size=\"5\">\nاقرأ جميع الأسئلة بعناية قبل البدء.</font></li><li style=\"text-align: right;\"><font size=\"5\">اكتب اسمك ورقمك التعريفي بوضوح.</font></li><li style=\"text-align: right;\"><font size=\"5\">يمنع استخدام الهاتف المحمول أثناء الاختبار.</font></li><li style=\"text-align: right;\"><font size=\"5\">تأكد من الإجابة على جميع الأسئلة المطلوبة.</font></li><li style=\"text-align: right;\"><font size=\"5\">الوقت المحدد للاختبار هو ____ دقيقة.</font></li><li style=\"text-align: right;\"><font size=\"5\">حافظ على الهدوء والنظام داخل القاعة.</font></li><li style=\"text-align: right;\"><font size=\"5\">عند الانتهاء، سلّم ورقة الإجابة للمراقب.</font></li></ul>",
+    "instructionsEn": "<div style=\"text-align: left;\"><u><font face=\"Montserrat\" size=\"4\"><b>Exam Instructions</b></font></u></div><ul data-start=\"349\" data-end=\"691\" data-is-last-node=\"\" data-is-only-node=\"\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><li data-section-id=\"ll0ypa\" data-start=\"349\" data-end=\"398\" style=\"text-align: left; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><font size=\"4\"><b>Read all questions carefully before starting.</b></font></li><li data-section-id=\"2oca5g\" data-start=\"399\" data-end=\"441\" style=\"text-align: left; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><font size=\"4\"><b>Write your name and ID number clearly.</b></font></li><li data-section-id=\"o1l5mh\" data-start=\"442\" data-end=\"492\" style=\"text-align: left; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><font size=\"4\"><b>Mobile phones are not allowed during the exam.</b></font></li><li data-section-id=\"am1epz\" data-start=\"493\" data-end=\"540\" style=\"text-align: left; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><font size=\"4\"><b>Make sure to answer all required questions.</b></font></li><li data-section-id=\"xo4m7r\" data-start=\"541\" data-end=\"579\" style=\"text-align: left; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><font size=\"4\"><b>The exam duration is ____ minutes.</b></font></li><li data-section-id=\"us3wzx\" data-start=\"580\" data-end=\"627\" style=\"text-align: left; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><font size=\"4\"><b>Maintain silence and order inside the hall.</b></font></li><li data-section-id=\"z2myyj\" data-start=\"628\" data-end=\"691\" data-is-last-node=\"\" style=\"text-align: left; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\"><font size=\"4\"><b>After finishing, submit your answer sheet to the invigilator</b></font></li></ul>",
     "students": [],
-    "createdAt": "16â/5â/2026"
-  },
-  {
-    "id": 1778943086790,
-    "name": "xxzxx",
-    "grade": "",
-    "subject": "-- اختر --",
-    "term": "3",
-    "year": "2025-2026",
-    "author": "heba",
-    "reviewer1": "heba (Super880)",
-    "status": "underReview",
-    "r1done": false,
-    "generalStatus": "pending",
-    "returnNotes": [],
-    "school": "",
-    "logoSrc": "",
-    "domains": [
-      {
-        "index": 0,
-        "nameAr": "Reading",
-        "nameEn": "Domain 1",
-        "weight": 100,
-        "time": 20,
-        "qCount": 0,
-        "questions": [],
-        "complete": true,
-        "iconSrc": "",
-        "hasBranches": true,
-        "branches": [
-          {
-            "nameAr": "قراءَة القرآن ",
-            "nameEn": "Branch 1",
-            "weight": 50,
-            "time": 10,
-            "qCount": 1,
-            "questions": []
-          },
-          {
-            "nameAr": "قراءَة الحديث ",
-            "nameEn": "Branch 2",
-            "weight": 50,
-            "time": 10,
-            "qCount": 1,
-            "questions": []
-          }
-        ]
-      }
-    ],
-    "instructionsAr": "سسس",
-    "instructionsEn": "سسسس",
-    "students": [],
-    "createdAt": "16‏/5‏/2026"
+    "createdAt": "17‏/5‏/2026"
   }
 ]
