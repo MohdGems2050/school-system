@@ -140,7 +140,7 @@
             "score": 8.33
           },
           {
-            "type": "listening",
+            "type": "speaking",
             "stemHtml": "",
             "stemText": "",
             "bloom": "",
@@ -148,7 +148,11 @@
             "lo": "",
             "standard": "",
             "mediaHtml": "",
-            "ansType": "",
+            "speakingInst": "",
+            "speakingDir": "rtl",
+            "speakingColor": "#1a1a2e",
+            "speakingBg": "#f8fafc",
+            "speakingFont": "Tajawal",
             "score": 8.33
           },
           {
