@@ -9584,38 +9584,6 @@
         "active": true
       },
       {
-        "schoolID": "87217",
-        "firstName": "Hanseul Kim",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Non-Arabs",
-        "schoolName": "4",
-        "grade": "4B",
-        "subject": "Girl",
-        "term": "South Korean",
-        "national": "-",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA7481",
-        "password": "IST@7481",
-        "active": true
-      },
-      {
-        "schoolID": "84104",
-        "firstName": "Vanya Goyal",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Non-Arabs",
-        "schoolName": "3",
-        "grade": "3F",
-        "subject": "Girl",
-        "term": "Indian",
-        "national": "-",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA4245",
-        "password": "IST@4245",
-        "active": true
-      },
-      {
         "schoolID": "84280",
         "firstName": "Kanak Kapil Thakur",
         "lastName": "GEMS World Academy-Dubai",
@@ -14785,6 +14753,9 @@
       }
     ],
     "createdAt": "30‏/5‏/2026",
-    "approvedAt": "30‏/5‏/2026"
+    "approvedAt": "30‏/5‏/2026",
+    "windowFrom": "2026-07-17T13:18",
+    "windowTo": "2026-08-19T13:18",
+    "active": true
   }
 ]
