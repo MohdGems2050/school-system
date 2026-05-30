@@ -8,9 +8,9 @@
     "year": "2025-2026",
     "author": "adly",
     "reviewer1": "adly (Super630)",
-    "status": "underReview",
+    "status": "reviewDone",
     "r1done": false,
-    "generalStatus": "pending",
+    "generalStatus": "approved",
     "returnNotes": [],
     "school": "",
     "logoSrc": "",
@@ -223,6 +223,7 @@
     "instructionsEn": "DSDDDDD",
     "displayMode": 1,
     "students": [],
-    "createdAt": "30‏/5‏/2026"
+    "createdAt": "30‏/5‏/2026",
+    "approvedAt": "30‏/5‏/2026"
   }
 ]
