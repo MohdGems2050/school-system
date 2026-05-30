@@ -224,22 +224,6 @@
     "displayMode": 1,
     "students": [
       {
-        "schoolID": "88644",
-        "firstName": "Omar Abdul Eltahrawi",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "8",
-        "grade": "8D",
-        "subject": "Boy",
-        "term": "American",
-        "national": "-",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA6128",
-        "password": "IST@6128",
-        "active": true
-      },
-      {
         "schoolID": "90118",
         "firstName": "Sofia Talal Rashed Alriyami",
         "lastName": "GEMS World Academy-Dubai",
