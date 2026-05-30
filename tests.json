@@ -12752,22 +12752,6 @@
         "active": true
       },
       {
-        "schoolID": "83992",
-        "firstName": "Sophia Kamel",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "6",
-        "grade": "6C",
-        "subject": "Girl",
-        "term": "Egyptian",
-        "national": "SEN",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA7899",
-        "password": "IST@7899",
-        "active": true
-      },
-      {
         "schoolID": "88831",
         "firstName": "Saif Whitehead",
         "lastName": "GEMS World Academy-Dubai",
@@ -13453,22 +13437,6 @@
         "sod": "No",
         "username": "GEMSWorldA3801",
         "password": "IST@3801",
-        "active": true
-      },
-      {
-        "schoolID": "85191",
-        "firstName": "Kinda Hawash",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "3",
-        "grade": "3A",
-        "subject": "Girl",
-        "term": "Egyptian",
-        "national": "-",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA2728",
-        "password": "IST@2728",
         "active": true
       }
     ],
