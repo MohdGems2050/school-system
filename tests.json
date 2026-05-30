@@ -224,22 +224,6 @@
     "displayMode": 1,
     "students": [
       {
-        "schoolID": "88586",
-        "firstName": "Takyallah Haitham Saied Ali",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "10",
-        "grade": "10H",
-        "subject": "Boy",
-        "term": "Egyptian",
-        "national": "-",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA1862",
-        "password": "IST@1862",
-        "active": true
-      },
-      {
         "schoolID": "88644",
         "firstName": "Omar Abdul Eltahrawi",
         "lastName": "GEMS World Academy-Dubai",
