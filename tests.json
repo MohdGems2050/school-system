@@ -224,22 +224,6 @@
     "displayMode": 1,
     "students": [
       {
-        "schoolID": "90118",
-        "firstName": "Sofia Talal Rashed Alriyami",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "8",
-        "grade": "8A",
-        "subject": "Girl",
-        "term": "Emirati",
-        "national": "-",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA6289",
-        "password": "IST@6289",
-        "active": true
-      },
-      {
         "schoolID": "90242",
         "firstName": "Majd Fahed",
         "lastName": "GEMS World Academy-Dubai",
