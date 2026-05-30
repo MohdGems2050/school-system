@@ -11120,22 +11120,6 @@
         "active": true
       },
       {
-        "schoolID": "85994",
-        "firstName": "Mohammad Oneisse",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "10",
-        "grade": "10I",
-        "subject": "Boy",
-        "term": "St. Kitts & Nevis",
-        "national": "-",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA1088",
-        "password": "IST@1088",
-        "active": true
-      },
-      {
         "schoolID": "89660",
         "firstName": "Anoar Amayri",
         "lastName": "GEMS World Academy-Dubai",
@@ -12845,38 +12829,6 @@
         "sod": "No",
         "username": "GEMSWorldA7226",
         "password": "IST@7226",
-        "active": true
-      },
-      {
-        "schoolID": "79800",
-        "firstName": "Omair Taimour",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "6",
-        "grade": "6A",
-        "subject": "Boy",
-        "term": "Emirati",
-        "national": "SEN",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA2350",
-        "password": "IST@2350",
-        "active": true
-      },
-      {
-        "schoolID": "79185",
-        "firstName": "Mansoor Albairaq",
-        "lastName": "GEMS World Academy-Dubai",
-        "gender": "Arabs",
-        "schoolName": "6",
-        "grade": "6B",
-        "subject": "Boy",
-        "term": "Emirati",
-        "national": "SEN",
-        "gifted": "-",
-        "sod": "No",
-        "username": "GEMSWorldA7596",
-        "password": "IST@7596",
         "active": true
       },
       {
