@@ -3228,6 +3228,9 @@
     "displayMode": 3,
     "students": [],
     "createdAt": "2‏/6‏/2026",
-    "approvedAt": "2‏/6‏/2026"
+    "approvedAt": "2‏/6‏/2026",
+    "windowFrom": "2026-06-01T21:50",
+    "windowTo": "2026-06-20T21:50",
+    "active": true
   }
 ]
