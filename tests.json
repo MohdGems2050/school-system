@@ -2636,9 +2636,9 @@
     "year": "2025-2026",
     "author": "adly",
     "reviewer1": "ÃÂ§ÃÂÃÂÃÂ´ÃÂ±ÃÂ ÃÂ§ÃÂÃÂ±ÃÂ¦ÃÂÃÂ³ÃÂ (Supervisor001)",
-    "status": "underReview",
+    "status": "reviewDone",
     "r1done": false,
-    "generalStatus": "pending",
+    "generalStatus": "approved",
     "returnNotes": [],
     "school": "",
     "logoSrc": "",
@@ -2994,7 +2994,8 @@
     "instructionsEn": "aaahhhh",
     "displayMode": 3,
     "students": [],
-    "createdAt": "2Ã¢ÂÂ/6Ã¢ÂÂ/2026"
+    "createdAt": "2Ã¢ÂÂ/6Ã¢ÂÂ/2026",
+    "approvedAt": "2‏/6‏/2026"
   },
   {
     "id": 1780421555271,
