@@ -3055,9 +3055,9 @@
     "year": "2025-2026",
     "author": "المشرف الرئيسي",
     "reviewer1": "adly (Super630)",
-    "status": "underReview",
+    "status": "reviewDone",
     "r1done": false,
-    "generalStatus": "pending",
+    "generalStatus": "approved",
     "returnNotes": [],
     "school": "",
     "logoSrc": "",
@@ -3225,6 +3225,7 @@
     "instructionsEn": "من معي&nbsp;",
     "displayMode": 3,
     "students": [],
-    "createdAt": "2‏/6‏/2026"
+    "createdAt": "2‏/6‏/2026",
+    "approvedAt": "2‏/6‏/2026"
   }
 ]
