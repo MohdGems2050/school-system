@@ -3242,10 +3242,17 @@
     "year": "2025-2026",
     "author": "adly",
     "reviewer1": "المشرف الرئيسي (Supervisor001)",
-    "status": "reviewDone",
+    "status": "underReview",
     "r1done": false,
-    "generalStatus": "approved",
-    "returnNotes": [],
+    "generalStatus": "returned",
+    "returnNotes": [
+      {
+        "from": "general",
+        "name": "المراجع العام",
+        "note": "fdddddsdaasdfasadssdfasddasds",
+        "at": "5‏/6‏/2026، 7:53:33 م"
+      }
+    ],
     "school": "",
     "logoSrc": "",
     "domains": [
