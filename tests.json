@@ -3367,9 +3367,9 @@
     "year": "2025-2026",
     "author": "adly",
     "reviewer1": "Ø§ÙÙØ´Ø±Ù Ø§ÙØ±Ø¦ÙØ³Ù (Supervisor001)",
-    "status": "underReview",
+    "status": "reviewDone",
     "r1done": false,
-    "generalStatus": "pending",
+    "generalStatus": "approved",
     "returnNotes": [],
     "school": "",
     "logoSrc": "",
@@ -3503,7 +3503,8 @@
     "instructionsEn": "Ø³Ø³Ø³Ø³",
     "displayMode": 4,
     "students": [],
-    "createdAt": "6â/6â/2026"
+    "createdAt": "6â/6â/2026",
+    "approvedAt": "6‏/6‏/2026"
   },
   {
     "id": 1780746566584,
