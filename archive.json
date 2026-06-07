@@ -1,1 +1,279 @@
-[]
+[
+  {
+    "id": "arch-1780828148602",
+    "name": "الاختبار الدولي يونيو  2026",
+    "grade": "Grade 4/Year 5",
+    "subject": "العربية لغير الناطقين / Arabic Non-Native",
+    "term": "2",
+    "year": "2025-2026",
+    "author": "adly",
+    "reviewer1": "المشرف الرئيسي (Supervisor001)",
+    "status": "underReview",
+    "r1done": false,
+    "generalStatus": "pending",
+    "returnNotes": [],
+    "school": "",
+    "schoolCode": "",
+    "country": "",
+    "curriculum": "",
+    "logoSrc": "",
+    "domains": [
+      {
+        "index": 0,
+        "nameAr": "القراءَة",
+        "nameEn": "Domain 1",
+        "weight": 50,
+        "time": 20,
+        "qCount": 0,
+        "questions": [],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": true,
+        "branches": [
+          {
+            "nameAr": "قراءَة جهرية ",
+            "nameEn": "Branch 1",
+            "weight": 25,
+            "time": 10,
+            "qCount": 2,
+            "questions": [
+              {
+                "type": "oral",
+                "stemHtml": "جهرية",
+                "stemText": "جهرية",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "mediaVisible": {},
+                "speakingInst": "",
+                "speakingDir": "rtl",
+                "speakingColor": "#1a1a2e",
+                "speakingBg": "#fffbeb",
+                "speakingFont": "Tajawal",
+                "speakingSize": 20,
+                "oralText": "س",
+                "score": 12.5
+              },
+              {
+                "type": "matching",
+                "stemHtml": "صل",
+                "stemText": "صل",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "mediaVisible": {},
+                "pairs": [
+                  {
+                    "aHtml": "لل",
+                    "bHtml": "لل",
+                    "aImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html",
+                    "bImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html"
+                  },
+                  {
+                    "aHtml": "لل",
+                    "bHtml": "لل",
+                    "aImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html",
+                    "bImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html"
+                  },
+                  {
+                    "aHtml": "لل",
+                    "bHtml": "لل",
+                    "aImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html",
+                    "bImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html"
+                  }
+                ],
+                "connections": [],
+                "matchAnswerKey": "",
+                "score": 12.5
+              }
+            ]
+          },
+          {
+            "nameAr": "فهم استيعاب ",
+            "nameEn": "Branch 2",
+            "weight": 25,
+            "time": 10,
+            "qCount": 3,
+            "questions": [
+              {
+                "type": "ordering",
+                "stemHtml": "رتب",
+                "stemText": "رتب",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "mediaVisible": {},
+                "words": [
+                  "ياناس",
+                  "مصر ",
+                  "نت",
+                  "هنا احمت",
+                  "بب"
+                ],
+                "bodyHtml": "رتب",
+                "correctAnswer": "",
+                "orTileBg": "#1e3a8a",
+                "orTileColor": "#ffffff",
+                "orFontSize": 15,
+                "orAnsBg": "#f0f7ff",
+                "orAnsColor": "#1e3a8a",
+                "orFont": "Tajawal",
+                "orDir": "rtl",
+                "score": 8.33
+              },
+              {
+                "type": "classify",
+                "stemHtml": "صنف",
+                "stemText": "صنف",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "mediaVisible": {},
+                "score": 8.33
+              },
+              {
+                "type": "truefalse",
+                "stemHtml": "صواب",
+                "stemText": "صواب",
+                "bloom": "",
+                "marking": "auto",
+                "lo": "",
+                "standard": "",
+                "mediaHtml": "",
+                "mediaVisible": {},
+                "score": 8.34
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "nameAr": "الكتابة",
+        "nameEn": "Domain 2",
+        "weight": 50,
+        "time": 20,
+        "qCount": 7,
+        "questions": [
+          {
+            "type": "writingskill",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "passageHtml": "صس",
+            "answerStemHtml": "سس",
+            "ansType": "",
+            "score": 7.14
+          },
+          {
+            "type": "",
+            "stemHtml": "",
+            "score": 7.14,
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {}
+          },
+          {
+            "type": "",
+            "stemHtml": "",
+            "score": 7.14,
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {}
+          },
+          {
+            "type": "",
+            "stemHtml": "",
+            "score": 7.14,
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {}
+          },
+          {
+            "type": "",
+            "stemHtml": "",
+            "score": 7.14,
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {}
+          },
+          {
+            "type": "",
+            "stemHtml": "",
+            "score": 7.14,
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {}
+          },
+          {
+            "type": "ordering",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "words": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "bodyHtml": "",
+            "correctAnswer": "",
+            "orTileBg": "#1e3a8a",
+            "orTileColor": "#ffffff",
+            "orFontSize": 15,
+            "orAnsBg": "#f0f7ff",
+            "orAnsColor": "#1e3a8a",
+            "orFont": "Tajawal",
+            "orDir": "rtl",
+            "score": 7.16
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": false,
+        "branches": []
+      }
+    ],
+    "instructionsAr": "zzzzzzzzz",
+    "instructionsEn": "zzzzzzzz",
+    "displayMode": 1,
+    "students": [],
+    "createdAt": "7‏/6‏/2026",
+    "testName": "الاختبار الدولي يونيو  2026",
+    "archivedAt": 1780828148639
+  }
+]
