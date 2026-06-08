@@ -1,13 +1,13 @@
 [
   {
-    "id": "arch-1780828148602",
-    "name": "الاختبار الدولي يونيو  2026",
-    "grade": "Grade 4/Year 5",
-    "subject": "العربية لغير الناطقين / Arabic Non-Native",
-    "term": "2",
+    "id": "arch-1780946069281",
+    "name": "الاختبار الدولي في اللغة العربية0001",
+    "grade": "Grade 1/Year 2",
+    "subject": "التربية الإسلامية للناطقين / Islamic (Arabic)",
+    "term": "3",
     "year": "2025-2026",
     "author": "adly",
-    "reviewer1": "المشرف الرئيسي (Supervisor001)",
+    "reviewer1": "adly (Super260)",
     "status": "underReview",
     "r1done": false,
     "generalStatus": "pending",
@@ -20,7 +20,242 @@
     "domains": [
       {
         "index": 0,
-        "nameAr": "القراءَة",
+        "nameAr": "قراءَة",
+        "nameEn": "Reading",
+        "weight": 50,
+        "time": 20,
+        "qCount": 4,
+        "questions": [
+          {
+            "type": "classify",
+            "stemHtml": "صنف",
+            "stemText": "صنف",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "columns": [
+              "عمود 1",
+              "عمود 2"
+            ],
+            "items": [
+              {
+                "text": "hhshsh",
+                "correctCol": 0
+              },
+              {
+                "text": "fddddddd",
+                "correctCol": 0
+              },
+              {
+                "text": "ddd",
+                "correctCol": 1
+              }
+            ],
+            "orTileBg": "#6366f1",
+            "score": 12.5
+          },
+          {
+            "type": "truefalse",
+            "stemHtml": "صواب",
+            "stemText": "صواب",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "statements": [
+              {
+                "text": "ييي",
+                "answer": "true"
+              },
+              {
+                "text": "يييييييي",
+                "answer": "true"
+              },
+              {
+                "text": "يييييي",
+                "answer": "true"
+              }
+            ],
+            "score": 12.5
+          },
+          {
+            "type": "speaking",
+            "stemHtml": "تحدث",
+            "stemText": "تحدث",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "speakingInst": "ييي",
+            "speakingDir": "rtl",
+            "speakingColor": "#1a1a2e",
+            "speakingBg": "#f8fafc",
+            "speakingFont": "Tajawal",
+            "speakingSize": 15,
+            "score": 12.5
+          },
+          {
+            "type": "mcq",
+            "stemHtml": "اختر&nbsp;",
+            "stemText": "اختر ",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "questionText": "سسسس",
+            "bodyHtml": "",
+            "qTextFont": "Tajawal",
+            "qTextSize": 16,
+            "qTextColor": "#1e3a8a",
+            "qTextBg": "#eff6ff",
+            "qTextDir": "rtl",
+            "options": [
+              "سس",
+              "سس",
+              "سس",
+              "سسس"
+            ],
+            "correct": null,
+            "mcqDir": "vertical",
+            "score": 12.5
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": false,
+        "branches": []
+      },
+      {
+        "index": 1,
+        "nameAr": "مجال 2",
+        "nameEn": "Domain 2",
+        "weight": 50,
+        "time": 20,
+        "qCount": 4,
+        "questions": [
+          {
+            "type": "ordering",
+            "stemHtml": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "words": [
+              "هه",
+              "هه",
+              "هه",
+              "هه",
+              "ه"
+            ],
+            "bodyHtml": "",
+            "correctAnswer": "",
+            "orTileBg": "#1e3a8a",
+            "orTileColor": "#f52424",
+            "orFontSize": 15,
+            "orAnsBg": "#f0f7ff",
+            "orAnsColor": "#1e3a8a",
+            "orFont": "Tajawal",
+            "orDir": "rtl",
+            "score": 12.5
+          },
+          {
+            "type": "classify",
+            "stemHtml": "هه",
+            "stemText": "هه",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "columns": [
+              "ه",
+              "هه"
+            ],
+            "items": [
+              {
+                "text": "",
+                "correctCol": 0
+              },
+              {
+                "text": "",
+                "correctCol": 0
+              }
+            ],
+            "orTileBg": "#6366f1",
+            "score": 12.5
+          },
+          {
+            "type": "",
+            "stemHtml": "",
+            "score": 12.5,
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {}
+          },
+          {
+            "type": "",
+            "stemHtml": "",
+            "score": 12.5,
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {}
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": false,
+        "branches": []
+      }
+    ],
+    "instructionsAr": "gg",
+    "instructionsEn": "ggggg",
+    "displayMode": 4,
+    "students": [],
+    "createdAt": "8‏/6‏/2026",
+    "testName": "الاختبار الدولي في اللغة العربية0001",
+    "archivedAt": 1780946069331
+  },
+  {
+    "id": "arch-1780828148602",
+    "name": "Ø§ÙØ§Ø®ØªØ¨Ø§Ø± Ø§ÙØ¯ÙÙÙ ÙÙÙÙÙ  2026",
+    "grade": "Grade 4/Year 5",
+    "subject": "Ø§ÙØ¹Ø±Ø¨ÙØ© ÙØºÙØ± Ø§ÙÙØ§Ø·ÙÙÙ / Arabic Non-Native",
+    "term": "2",
+    "year": "2025-2026",
+    "author": "adly",
+    "reviewer1": "Ø§ÙÙØ´Ø±Ù Ø§ÙØ±Ø¦ÙØ³Ù (Supervisor001)",
+    "status": "underReview",
+    "r1done": false,
+    "generalStatus": "pending",
+    "returnNotes": [],
+    "school": "",
+    "schoolCode": "",
+    "country": "",
+    "curriculum": "",
+    "logoSrc": "",
+    "domains": [
+      {
+        "index": 0,
+        "nameAr": "Ø§ÙÙØ±Ø§Ø¡ÙØ©",
         "nameEn": "Domain 1",
         "weight": 50,
         "time": 20,
@@ -31,7 +266,7 @@
         "hasBranches": true,
         "branches": [
           {
-            "nameAr": "قراءَة جهرية ",
+            "nameAr": "ÙØ±Ø§Ø¡ÙØ© Ø¬ÙØ±ÙØ© ",
             "nameEn": "Branch 1",
             "weight": 25,
             "time": 10,
@@ -39,8 +274,8 @@
             "questions": [
               {
                 "type": "oral",
-                "stemHtml": "جهرية",
-                "stemText": "جهرية",
+                "stemHtml": "Ø¬ÙØ±ÙØ©",
+                "stemText": "Ø¬ÙØ±ÙØ©",
                 "bloom": "",
                 "marking": "auto",
                 "lo": "",
@@ -53,13 +288,13 @@
                 "speakingBg": "#fffbeb",
                 "speakingFont": "Tajawal",
                 "speakingSize": 20,
-                "oralText": "س",
+                "oralText": "Ø³",
                 "score": 12.5
               },
               {
                 "type": "matching",
-                "stemHtml": "صل",
-                "stemText": "صل",
+                "stemHtml": "ØµÙ",
+                "stemText": "ØµÙ",
                 "bloom": "",
                 "marking": "auto",
                 "lo": "",
@@ -68,20 +303,20 @@
                 "mediaVisible": {},
                 "pairs": [
                   {
-                    "aHtml": "لل",
-                    "bHtml": "لل",
+                    "aHtml": "ÙÙ",
+                    "bHtml": "ÙÙ",
                     "aImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html",
                     "bImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html"
                   },
                   {
-                    "aHtml": "لل",
-                    "bHtml": "لل",
+                    "aHtml": "ÙÙ",
+                    "bHtml": "ÙÙ",
                     "aImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html",
                     "bImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html"
                   },
                   {
-                    "aHtml": "لل",
-                    "bHtml": "لل",
+                    "aHtml": "ÙÙ",
+                    "bHtml": "ÙÙ",
                     "aImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html",
                     "bImg": "http://127.0.0.1:5500/Projects%20Codes%20/%D9%85%D8%AA%D8%AC%D8%B1%20/Amro.html"
                   }
@@ -93,7 +328,7 @@
             ]
           },
           {
-            "nameAr": "فهم استيعاب ",
+            "nameAr": "ÙÙÙ Ø§Ø³ØªÙØ¹Ø§Ø¨ ",
             "nameEn": "Branch 2",
             "weight": 25,
             "time": 10,
@@ -101,8 +336,8 @@
             "questions": [
               {
                 "type": "ordering",
-                "stemHtml": "رتب",
-                "stemText": "رتب",
+                "stemHtml": "Ø±ØªØ¨",
+                "stemText": "Ø±ØªØ¨",
                 "bloom": "",
                 "marking": "auto",
                 "lo": "",
@@ -110,13 +345,13 @@
                 "mediaHtml": "",
                 "mediaVisible": {},
                 "words": [
-                  "ياناس",
-                  "مصر ",
-                  "نت",
-                  "هنا احمت",
-                  "بب"
+                  "ÙØ§ÙØ§Ø³",
+                  "ÙØµØ±Â ",
+                  "ÙØª",
+                  "ÙÙØ§ Ø§Ø­ÙØª",
+                  "Ø¨Ø¨"
                 ],
-                "bodyHtml": "رتب",
+                "bodyHtml": "Ø±ØªØ¨",
                 "correctAnswer": "",
                 "orTileBg": "#1e3a8a",
                 "orTileColor": "#ffffff",
@@ -129,8 +364,8 @@
               },
               {
                 "type": "classify",
-                "stemHtml": "صنف",
-                "stemText": "صنف",
+                "stemHtml": "ØµÙÙ",
+                "stemText": "ØµÙÙ",
                 "bloom": "",
                 "marking": "auto",
                 "lo": "",
@@ -141,8 +376,8 @@
               },
               {
                 "type": "truefalse",
-                "stemHtml": "صواب",
-                "stemText": "صواب",
+                "stemHtml": "ØµÙØ§Ø¨",
+                "stemText": "ØµÙØ§Ø¨",
                 "bloom": "",
                 "marking": "auto",
                 "lo": "",
@@ -157,7 +392,7 @@
       },
       {
         "index": 1,
-        "nameAr": "الكتابة",
+        "nameAr": "Ø§ÙÙØªØ§Ø¨Ø©",
         "nameEn": "Domain 2",
         "weight": 50,
         "time": 20,
@@ -173,8 +408,8 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "passageHtml": "صس",
-            "answerStemHtml": "سس",
+            "passageHtml": "ØµØ³",
+            "answerStemHtml": "Ø³Ø³",
             "ansType": "",
             "score": 7.14
           },
@@ -272,8 +507,8 @@
     "instructionsEn": "zzzzzzzz",
     "displayMode": 1,
     "students": [],
-    "createdAt": "7‏/6‏/2026",
-    "testName": "الاختبار الدولي يونيو  2026",
+    "createdAt": "7â/6â/2026",
+    "testName": "Ø§ÙØ§Ø®ØªØ¨Ø§Ø± Ø§ÙØ¯ÙÙÙ ÙÙÙÙÙ  2026",
     "archivedAt": 1780828148639
   }
 ]
