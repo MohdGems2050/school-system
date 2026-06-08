@@ -2738,7 +2738,22 @@
     "instructionsAr": "gg",
     "instructionsEn": "ggggg",
     "displayMode": 4,
-    "students": [],
+    "students": [
+      {
+        "schoolID": "250",
+        "firstName": "Scholastic",
+        "lastName": "Progress",
+        "gender": "Male",
+        "schoolName": "22",
+        "nationality": "2",
+        "national": "No",
+        "gifted": "No",
+        "sod": "No",
+        "username": "Scholastic@8126",
+        "password": "8126@ist",
+        "active": true
+      }
+    ],
     "createdAt": "8‏/6‏/2026",
     "testName": "الاختبار الدولي في اللغة العربية0001",
     "approvedAt": "8‏/6‏/2026"
