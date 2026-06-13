@@ -279,7 +279,22 @@
     "instructionsAr": "fffdd",
     "instructionsEn": "fffffff",
     "displayMode": 1,
-    "students": [],
+    "students": [
+      {
+        "schoolID": "STU001",
+        "firstName": "Mohd",
+        "lastName": "roshdi",
+        "gender": "Male",
+        "schoolName": "Gems world academy",
+        "nationality": "egyption",
+        "national": "No",
+        "gifted": "Yes",
+        "sod": "No",
+        "username": "Mohd@7961",
+        "password": "7961@ist",
+        "active": true
+      }
+    ],
     "createdAt": "14‏/6‏/2026",
     "testName": "ttt",
     "approvedAt": "14‏/6‏/2026"
