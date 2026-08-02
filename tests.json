@@ -8,9 +8,9 @@
     "year": "2025-2026",
     "author": "adly",
     "reviewer1": "-- اختر --",
-    "status": "underReview",
+    "status": "reviewDone",
     "r1done": false,
-    "generalStatus": "pending",
+    "generalStatus": "approved",
     "returnNotes": [],
     "school": "",
     "schoolCode": "",
@@ -175,6 +175,7 @@
     "displayMode": 4,
     "students": [],
     "createdAt": "2‏/8‏/2026",
-    "testName": "الاختبار الدولي في التربية الاسلامية 600121aa"
+    "testName": "الاختبار الدولي في التربية الاسلامية 600121aa",
+    "approvedAt": "2‏/8‏/2026"
   }
 ]
