@@ -1,13 +1,13 @@
 [
   {
-    "id": "arch-1785667045405",
-    "name": "الاختبار الدولي في التربية الاسلامية 600121aa",
-    "grade": "Grade 1/Year 2",
-    "subject": "التربية الإسلامية للناطقين / Islamic (Arabic)",
+    "id": "arch-1786284589444",
+    "name": "الاختبار الدولي في اللغة العربية0001",
+    "grade": "Grade 5/Year 6",
+    "subject": "العربية لغير الناطقين / Arabic Non-Native",
     "term": "1",
     "year": "2025-2026",
     "author": "adly",
-    "reviewer1": "-- اختر --",
+    "reviewer1": "adly (Super630)",
     "status": "underReview",
     "r1done": false,
     "generalStatus": "pending",
@@ -20,7 +20,187 @@
     "domains": [
       {
         "index": 0,
-        "nameAr": "القراءَة",
+        "nameAr": "قراءَة",
+        "nameEn": "Reading",
+        "weight": 100,
+        "time": 0,
+        "qCount": 5,
+        "questions": [
+          {
+            "type": "matching",
+            "headerCustom": false,
+            "headerAr": "",
+            "headerEn": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- صِلْ كلَّ كلمةٍ / عبارةٍ في العمودِ (أ) بما يناسبُها من العمودِ (ب).</div><div class=\"qh-en\" dir=\"ltr\">- Match each word / phrase in column (A) with its correct counterpart in column (B).</div></div>",
+            "pairs": [
+              {
+                "aHtml": "",
+                "bHtml": "",
+                "aImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(19)%20-%20fixed%20(15).html",
+                "bImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(19)%20-%20fixed%20(15).html",
+                "aImgScale": 1,
+                "bImgScale": 1
+              },
+              {
+                "aHtml": "",
+                "bHtml": "",
+                "aImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(19)%20-%20fixed%20(15).html",
+                "bImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(19)%20-%20fixed%20(15).html",
+                "aImgScale": 1,
+                "bImgScale": 1
+              },
+              {
+                "aHtml": "",
+                "bHtml": "",
+                "aImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(19)%20-%20fixed%20(15).html",
+                "bImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(19)%20-%20fixed%20(15).html",
+                "aImgScale": 1,
+                "bImgScale": 1
+              }
+            ],
+            "connections": [],
+            "matchAnswerKey": "",
+            "score": 20
+          },
+          {
+            "type": "oral",
+            "headerCustom": false,
+            "headerAr": "",
+            "headerEn": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- اقرأ النصَّ قراءةً جهريةً سَليمَةً .</div><div class=\"qh-en\" dir=\"ltr\">- Read the following text aloud clearly.</div></div>",
+            "oralText": "",
+            "speakingInst": "",
+            "speakingDir": "rtl",
+            "speakingColor": "#1a1a2e",
+            "speakingBg": "#fffbeb",
+            "speakingFont": "Tajawal",
+            "speakingSize": 20,
+            "score": 20
+          },
+          {
+            "type": "reading",
+            "headerCustom": false,
+            "headerAr": "",
+            "headerEn": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- اقرأِ النصَّ الآتيَ قراءةً صامتةً متأنِّيةً، ثم أجِبْ عن الأسئلةِ التي تليه.</div><div class=\"qh-en\" dir=\"ltr\">- Read the following text carefully and silently, then answer the questions that follow.</div></div>",
+            "passageHtml": "",
+            "answerStemHtml": "",
+            "ansType": "",
+            "score": 20
+          },
+          {
+            "type": "writingskill",
+            "headerCustom": false,
+            "headerAr": "",
+            "headerEn": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- اكتُبْ فقرةً / موضوعًا عن (___) في ما لا يقلُّ عن (___) كلمة، مستخدمًا مفرداتٍ مناسبة.</div><div class=\"qh-en\" dir=\"ltr\">- Write a paragraph / essay about (___) in no fewer than (___) words, using appropriate vocabulary.</div></div>",
+            "passageHtml": "ee",
+            "answerStemHtml": "ee",
+            "ansType": "mcq",
+            "options": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "correct": null,
+            "score": 20
+          },
+          {
+            "type": "mcq",
+            "headerCustom": false,
+            "headerAr": "",
+            "headerEn": "",
+            "stemText": "",
+            "bloom": "",
+            "marking": "auto",
+            "lo": "",
+            "standard": "",
+            "mediaHtml": "",
+            "mediaVisible": {},
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- اختَرِ الإجابةَ الصحيحةَ مما يأتي:</div><div class=\"qh-en\" dir=\"ltr\">- Choose the correct answer from the following:</div></div>",
+            "questionText": "",
+            "bodyHtml": "",
+            "qTextFont": "Tajawal",
+            "qTextSize": 16,
+            "qTextColor": "#1e3a8a",
+            "qTextBg": "#eff6ff",
+            "qTextDir": "rtl",
+            "options": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "correct": null,
+            "mcqDir": "vertical",
+            "score": 20
+          }
+        ],
+        "complete": true,
+        "iconSrc": "",
+        "hasBranches": false,
+        "branches": []
+      }
+    ],
+    "instructionsAr": "ss",
+    "instructionsEn": "sss",
+    "displayMode": 4,
+    "students": [],
+    "createdAt": "9‏/8‏/2026",
+    "testName": "الاختبار الدولي في اللغة العربية0001",
+    "archivedAt": 1786284589456
+  },
+  {
+    "id": "arch-1785667045405",
+    "name": "Ø§ÙØ§Ø®ØªØ¨Ø§Ø± Ø§ÙØ¯ÙÙÙ ÙÙ Ø§ÙØªØ±Ø¨ÙØ© Ø§ÙØ§Ø³ÙØ§ÙÙØ© 600121aa",
+    "grade": "Grade 1/Year 2",
+    "subject": "Ø§ÙØªØ±Ø¨ÙØ© Ø§ÙØ¥Ø³ÙØ§ÙÙØ© ÙÙÙØ§Ø·ÙÙÙ / Islamic (Arabic)",
+    "term": "1",
+    "year": "2025-2026",
+    "author": "adly",
+    "reviewer1": "-- Ø§Ø®ØªØ± --",
+    "status": "underReview",
+    "r1done": false,
+    "generalStatus": "pending",
+    "returnNotes": [],
+    "school": "",
+    "schoolCode": "",
+    "country": "",
+    "curriculum": "American",
+    "logoSrc": "",
+    "domains": [
+      {
+        "index": 0,
+        "nameAr": "Ø§ÙÙØ±Ø§Ø¡ÙØ©",
         "nameEn": "Reading",
         "weight": 100,
         "time": 15,
@@ -38,7 +218,7 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- صِلْ كلَّ كلمةٍ / عبارةٍ في العمودِ (أ) بما يناسبُها من العمودِ (ب).</div><div class=\"qh-en\" dir=\"ltr\">- Match each word / phrase in column (A) with its correct counterpart in column (B).</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ØµÙÙÙ ÙÙÙÙ ÙÙÙØ©Ù / Ø¹Ø¨Ø§Ø±Ø©Ù ÙÙ Ø§ÙØ¹ÙÙØ¯Ù (Ø£) Ø¨ÙØ§ ÙÙØ§Ø³Ø¨ÙÙØ§ ÙÙ Ø§ÙØ¹ÙÙØ¯Ù (Ø¨).</div><div class=\"qh-en\" dir=\"ltr\">- Match each word / phrase in column (A) with its correct counterpart in column (B).</div></div>",
             "pairs": [
               {
                 "aHtml": "",
@@ -81,7 +261,7 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- تحدَّثْ عن الموضوعِ الآتي بلغةٍ عربيةٍ فصيحةٍ لمدةِ (___) دقائق.</div><div class=\"qh-en\" dir=\"ltr\">- Speak about the following topic in standard Arabic for (___) minutes.</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ØªØ­Ø¯ÙÙØ«Ù Ø¹Ù Ø§ÙÙÙØ¶ÙØ¹Ù Ø§ÙØ¢ØªÙ Ø¨ÙØºØ©Ù Ø¹Ø±Ø¨ÙØ©Ù ÙØµÙØ­Ø©Ù ÙÙØ¯Ø©Ù (___) Ø¯ÙØ§Ø¦Ù.</div><div class=\"qh-en\" dir=\"ltr\">- Speak about the following topic in standard Arabic for (___) minutes.</div></div>",
             "speakingInst": "",
             "speakingDir": "rtl",
             "speakingColor": "#1a1a2e",
@@ -102,7 +282,7 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- اكتُبْ فقرةً / موضوعًا عن (___) في ما لا يقلُّ عن (___) كلمة، مستخدمًا مفرداتٍ مناسبة.</div><div class=\"qh-en\" dir=\"ltr\">- Write a paragraph / essay about (___) in no fewer than (___) words, using appropriate vocabulary.</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- Ø§ÙØªÙØ¨Ù ÙÙØ±Ø©Ù / ÙÙØ¶ÙØ¹ÙØ§ Ø¹Ù (___) ÙÙ ÙØ§ ÙØ§ ÙÙÙÙÙ Ø¹Ù (___) ÙÙÙØ©Ø ÙØ³ØªØ®Ø¯ÙÙØ§ ÙÙØ±Ø¯Ø§ØªÙ ÙÙØ§Ø³Ø¨Ø©.</div><div class=\"qh-en\" dir=\"ltr\">- Write a paragraph / essay about (___) in no fewer than (___) words, using appropriate vocabulary.</div></div>",
             "passageHtml": "DD",
             "answerStemHtml": "",
             "ansType": "",
@@ -120,7 +300,7 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- اقرأ النصَّ قراءةً جهريةً سَليمَةً .</div><div class=\"qh-en\" dir=\"ltr\">- Read the following text aloud clearly.</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- Ø§ÙØ±Ø£ Ø§ÙÙØµÙÙ ÙØ±Ø§Ø¡Ø©Ù Ø¬ÙØ±ÙØ©Ù Ø³ÙÙÙÙÙØ©Ù .</div><div class=\"qh-en\" dir=\"ltr\">- Read the following text aloud clearly.</div></div>",
             "oralText": "",
             "speakingInst": "",
             "speakingDir": "rtl",
@@ -142,10 +322,10 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- صنِّفِ الكلماتِ / العباراتِ الآتيةَ في الجدولِ المناسبِ وَفْقَ معيارِ التصنيفِ المُحدَّد.</div><div class=\"qh-en\" dir=\"ltr\">- Classify the following words / phrases into the appropriate columns according to the given criterion.</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ØµÙÙÙÙÙ Ø§ÙÙÙÙØ§ØªÙ / Ø§ÙØ¹Ø¨Ø§Ø±Ø§ØªÙ Ø§ÙØ¢ØªÙØ©Ù ÙÙ Ø§ÙØ¬Ø¯ÙÙÙ Ø§ÙÙÙØ§Ø³Ø¨Ù ÙÙÙÙÙÙ ÙØ¹ÙØ§Ø±Ù Ø§ÙØªØµÙÙÙÙ Ø§ÙÙÙØ­Ø¯ÙÙØ¯.</div><div class=\"qh-en\" dir=\"ltr\">- Classify the following words / phrases into the appropriate columns according to the given criterion.</div></div>",
             "columns": [
-              "عمود 1",
-              "عمود 2"
+              "Ø¹ÙÙØ¯ 1",
+              "Ø¹ÙÙØ¯ 2"
             ],
             "items": [
               {
@@ -174,15 +354,15 @@
     "instructionsEn": "DD",
     "displayMode": 4,
     "students": [],
-    "createdAt": "2‏/8‏/2026",
-    "testName": "الاختبار الدولي في التربية الاسلامية 600121aa",
+    "createdAt": "2â/8â/2026",
+    "testName": "Ø§ÙØ§Ø®ØªØ¨Ø§Ø± Ø§ÙØ¯ÙÙÙ ÙÙ Ø§ÙØªØ±Ø¨ÙØ© Ø§ÙØ§Ø³ÙØ§ÙÙØ© 600121aa",
     "archivedAt": 1785667045415
   },
   {
     "id": "arch-1782068469671",
     "name": "xxzxx",
     "grade": "Grade 2/Year 3",
-    "subject": "Ø§ÙØªØ±Ø¨ÙØ© Ø§ÙØ¥Ø³ÙØ§ÙÙØ© ÙÙÙØ§Ø·ÙÙÙ / Islamic (Arabic)",
+    "subject": "ÃÂ§ÃÂÃÂªÃÂ±ÃÂ¨ÃÂÃÂ© ÃÂ§ÃÂÃÂ¥ÃÂ³ÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂÃÂÃÂÃÂ§ÃÂ·ÃÂÃÂÃÂ / Islamic (Arabic)",
     "term": "2",
     "year": "2025-2026",
     "author": "adly",
@@ -199,7 +379,7 @@
     "domains": [
       {
         "index": 0,
-        "nameAr": "Ø§ÙÙØ±Ø§Ø¡ÙØ©",
+        "nameAr": "ÃÂ§ÃÂÃÂÃÂ±ÃÂ§ÃÂ¡ÃÂÃÂ©",
         "nameEn": "Reading",
         "weight": 50,
         "time": 20,
@@ -217,7 +397,7 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ØªØ­Ø¯ÙÙØ«Ù Ø¹Ù Ø§ÙÙÙØ¶ÙØ¹Ù Ø§ÙØ¢ØªÙ Ø¨ÙØºØ©Ù Ø¹Ø±Ø¨ÙØ©Ù ÙØµÙØ­Ø©Ù ÙÙØ¯Ø©Ù (___) Ø¯ÙØ§Ø¦Ù.</div><div class=\"qh-en\" dir=\"ltr\">- Speak about the following topic in standard Arabic for (___) minutes.</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ÃÂªÃÂ­ÃÂ¯ÃÂÃÂÃÂ«ÃÂ ÃÂ¹ÃÂ ÃÂ§ÃÂÃÂÃÂÃÂ¶ÃÂÃÂ¹ÃÂ ÃÂ§ÃÂÃÂ¢ÃÂªÃÂ ÃÂ¨ÃÂÃÂºÃÂ©ÃÂ ÃÂ¹ÃÂ±ÃÂ¨ÃÂÃÂ©ÃÂ ÃÂÃÂµÃÂÃÂ­ÃÂ©ÃÂ ÃÂÃÂÃÂ¯ÃÂ©ÃÂ (___) ÃÂ¯ÃÂÃÂ§ÃÂ¦ÃÂ.</div><div class=\"qh-en\" dir=\"ltr\">- Speak about the following topic in standard Arabic for (___) minutes.</div></div>",
             "speakingInst": "",
             "speakingDir": "rtl",
             "speakingColor": "#1a1a2e",
@@ -238,7 +418,7 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- Ø§ÙØ±Ø£ Ø§ÙÙØµÙÙ ÙØ±Ø§Ø¡Ø©Ù Ø¬ÙØ±ÙØ©Ù Ø³ÙÙÙÙÙØ©Ù .</div><div class=\"qh-en\" dir=\"ltr\">- Read the following text aloud clearly.</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ÃÂ§ÃÂÃÂ±ÃÂ£ ÃÂ§ÃÂÃÂÃÂµÃÂÃÂ ÃÂÃÂ±ÃÂ§ÃÂ¡ÃÂ©ÃÂ ÃÂ¬ÃÂÃÂ±ÃÂÃÂ©ÃÂ ÃÂ³ÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂ .</div><div class=\"qh-en\" dir=\"ltr\">- Read the following text aloud clearly.</div></div>",
             "oralText": "",
             "speakingInst": "",
             "speakingDir": "rtl",
@@ -260,11 +440,11 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ØµÙÙÙ ÙÙÙÙ ÙÙÙØ©Ù / Ø¹Ø¨Ø§Ø±Ø©Ù ÙÙ Ø§ÙØ¹ÙÙØ¯Ù (Ø£) Ø¨ÙØ§ ÙÙØ§Ø³Ø¨ÙÙØ§ ÙÙ Ø§ÙØ¹ÙÙØ¯Ù (Ø¨).</div><div class=\"qh-en\" dir=\"ltr\">- Match each word / phrase in column (A) with its correct counterpart in column (B).</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ÃÂµÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂ©ÃÂ / ÃÂ¹ÃÂ¨ÃÂ§ÃÂ±ÃÂ©ÃÂ ÃÂÃÂ ÃÂ§ÃÂÃÂ¹ÃÂÃÂÃÂ¯ÃÂ (ÃÂ£) ÃÂ¨ÃÂÃÂ§ ÃÂÃÂÃÂ§ÃÂ³ÃÂ¨ÃÂÃÂÃÂ§ ÃÂÃÂ ÃÂ§ÃÂÃÂ¹ÃÂÃÂÃÂ¯ÃÂ (ÃÂ¨).</div><div class=\"qh-en\" dir=\"ltr\">- Match each word / phrase in column (A) with its correct counterpart in column (B).</div></div>",
             "pairs": [
               {
                 "aHtml": "",
-                "bHtml": "Î©zz",
+                "bHtml": "ÃÂ©zz",
                 "aImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(11).html",
                 "bImg": "file:///Users/m.roshdi_gwa/Downloads/index%20(11).html",
                 "aImgScale": 1,
@@ -314,7 +494,7 @@
             "standard": "",
             "mediaHtml": "",
             "mediaVisible": {},
-            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ØµÙÙÙÙÙ Ø§ÙÙÙÙØ§ØªÙ / Ø§ÙØ¹Ø¨Ø§Ø±Ø§ØªÙ Ø§ÙØ¢ØªÙØ©Ù ÙÙ Ø§ÙØ¬Ø¯ÙÙÙ Ø§ÙÙÙØ§Ø³Ø¨Ù ÙÙÙÙÙÙ ÙØ¹ÙØ§Ø±Ù Ø§ÙØªØµÙÙÙÙ Ø§ÙÙÙØ­Ø¯ÙÙØ¯.</div><div class=\"qh-en\" dir=\"ltr\">- Classify the following words / phrases into the appropriate columns according to the given criterion.</div></div>",
+            "stemHtml": "<div class=\"qh-box\"><div class=\"qh-ar\" dir=\"rtl\">- ÃÂµÃÂÃÂÃÂÃÂÃÂ ÃÂ§ÃÂÃÂÃÂÃÂÃÂ§ÃÂªÃÂ / ÃÂ§ÃÂÃÂ¹ÃÂ¨ÃÂ§ÃÂ±ÃÂ§ÃÂªÃÂ ÃÂ§ÃÂÃÂ¢ÃÂªÃÂÃÂ©ÃÂ ÃÂÃÂ ÃÂ§ÃÂÃÂ¬ÃÂ¯ÃÂÃÂÃÂ ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂ³ÃÂ¨ÃÂ ÃÂÃÂÃÂÃÂÃÂÃÂ ÃÂÃÂ¹ÃÂÃÂ§ÃÂ±ÃÂ ÃÂ§ÃÂÃÂªÃÂµÃÂÃÂÃÂÃÂ ÃÂ§ÃÂÃÂÃÂÃÂ­ÃÂ¯ÃÂÃÂÃÂ¯.</div><div class=\"qh-en\" dir=\"ltr\">- Classify the following words / phrases into the appropriate columns according to the given criterion.</div></div>",
             "columns": [
               "s",
               "ss"
@@ -343,7 +523,7 @@
       },
       {
         "index": 1,
-        "nameAr": "ØªØ­Ø¯Ø«",
+        "nameAr": "ÃÂªÃÂ­ÃÂ¯ÃÂ«",
         "nameEn": "speaking",
         "weight": 50,
         "time": 20,
@@ -354,7 +534,7 @@
         "hasBranches": true,
         "branches": [
           {
-            "nameAr": "ÙØ±Ø¢Ø¯ÙØ© ÙØµÙØµ ÙØ¹ÙÙÙØ§ØªÙØ© ",
+            "nameAr": "ÃÂÃÂ±ÃÂ¢ÃÂ¯ÃÂÃÂ© ÃÂÃÂµÃÂÃÂµ ÃÂÃÂ¹ÃÂÃÂÃÂÃÂ§ÃÂªÃÂÃÂ© ",
             "nameEn": "sdsds",
             "weight": 25,
             "time": 10,
@@ -374,7 +554,7 @@
             ]
           },
           {
-            "nameAr": "ÙØµÙØµ Ø­Ø±Ø© ",
+            "nameAr": "ÃÂÃÂµÃÂÃÂµ ÃÂ­ÃÂ±ÃÂ© ",
             "nameEn": "ddd",
             "weight": 25,
             "time": 10,
@@ -400,7 +580,7 @@
     "instructionsEn": "ddd",
     "displayMode": 1,
     "students": [],
-    "createdAt": "21â/6â/2026",
+    "createdAt": "21Ã¢ÂÂ/6Ã¢ÂÂ/2026",
     "testName": "xxzxx",
     "archivedAt": 1782068469708
   }
