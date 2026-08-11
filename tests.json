@@ -2187,7 +2187,12 @@
         "sod": "No",
         "username": "Mohsen@6542",
         "password": "6542@ist",
-        "active": true
+        "active": true,
+        "started": true,
+        "domainsCompleted": {
+          "0": true
+        },
+        "completed": true
       },
       {
         "schoolID": "4",
