@@ -607,19 +607,52 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
     <!-- Step 2 -->
     <div id="wizardStep2" class="wizard-step hidden">
       <h3 style="font-size:20px;font-weight:800;color:#FACC15;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px;margin-bottom:20px">٢. تعليمات الاختبار <span style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,.4)">Instructions</span></h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label class="wizard-label" style="font-size:13px;margin-bottom:8px">📝 التعليمات بالعربية</label>
-          <div class="rtoolbar"><button onclick="execRich('insAr','bold')"><b>B</b></button><button onclick="execRich('insAr','italic')"><i>I</i></button><button onclick="execRich('insAr','underline')"><u>U</u></button><div class="sep"></div><select onchange="execRich('insAr','fontSize',this.value);this.value=''"><option value="">حجم</option><option value="1">10</option><option value="2">12</option><option value="3">14</option><option value="4">16</option><option value="5">18</option><option value="6">22</option><option value="7">26</option></select><select onchange="execRich('insAr','fontName',this.value);this.value=''"><option value="">خط</option><option value="Tajawal">Tajawal</option><option value="Amiri">Amiri</option></select><div class="sep"></div><input type="color" onchange="execRich('insAr','foreColor',this.value)"><div class="sep"></div><button onclick="execRich('insAr','justifyRight')">⇥</button><button onclick="execRich('insAr','justifyCenter')">⊟</button><button onclick="execRich('insAr','justifyLeft')">⇤</button><button onclick="execRich('insAr','insertUnorderedList')">•</button></div>
-          <div id="insAr" contenteditable="true" dir="rtl" class="rich-editor" style="min-height:160px" placeholder="اكتب التعليمات بالعربية..."></div>
+
+      <!-- Instructions preview card (shown by default) -->
+      <div id="insPreviewCard" style="background:linear-gradient(135deg,#F8F4ED,#FBF8F0);border:2px solid #B8860B;border-radius:20px;overflow:hidden;margin-bottom:18px;box-shadow:0 6px 24px rgba(184,134,11,.18)">
+        <!-- Header bar -->
+        <div style="background:linear-gradient(135deg,#141F44,#1e3a8a);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+          <div>
+            <div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:white" dir="rtl">📋 تعليمات الاختبار</div>
+            <div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:600;color:#D9B872;letter-spacing:.5px;margin-top:2px">Test Instructions</div>
+          </div>
+          <button onclick="toggleInsEdit()" id="insEditToggleBtn" style="background:rgba(250,204,21,.18);border:1.5px solid #FACC15;color:#FACC15;border-radius:10px;padding:7px 18px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px">✏️ تعديل / Edit</button>
         </div>
-        <div>
-          <label class="wizard-label" style="font-size:13px;margin-bottom:8px">📝 Instructions in English</label>
-          <div class="rtoolbar"><button onclick="execRich('insEn','bold')"><b>B</b></button><button onclick="execRich('insEn','italic')"><i>I</i></button><button onclick="execRich('insEn','underline')"><u>U</u></button><div class="sep"></div><select onchange="execRich('insEn','fontSize',this.value);this.value=''"><option value="">Size</option><option value="1">10</option><option value="2">12</option><option value="3">14</option><option value="4">16</option><option value="5">18</option><option value="6">22</option><option value="7">26</option></select><select onchange="execRich('insEn','fontName',this.value);this.value=''"><option value="">Font</option><option value="Montserrat">Montserrat</option><option value="Arial">Arial</option></select><div class="sep"></div><input type="color" onchange="execRich('insEn','foreColor',this.value)"><div class="sep"></div><button onclick="execRich('insEn','justifyLeft')">⇤</button><button onclick="execRich('insEn','justifyCenter')">⊟</button><button onclick="execRich('insEn','justifyRight')">⇥</button><button onclick="execRich('insEn','insertUnorderedList')">•</button></div>
-          <div id="insEn" contenteditable="true" dir="ltr" class="rich-editor font-en" style="min-height:160px" placeholder="Write instructions..."></div>
+        <!-- Bilingual body -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;direction:ltr">
+          <!-- Arabic side -->
+          <div style="padding:22px 24px;border-right:1px solid rgba(184,134,11,.25);background:rgba(255,255,255,.55)">
+            <div style="font-family:Tajawal,sans-serif;font-size:12px;font-weight:900;color:#8A6D1F;letter-spacing:.5px;margin-bottom:14px;border-bottom:2px solid #D9B872;padding-bottom:8px" dir="rtl">العربية</div>
+            <div id="insPreviewAr" style="font-family:Tajawal,sans-serif;font-size:14.5px;font-weight:600;color:#1a1a2e;line-height:2.1;direction:rtl;text-align:right"></div>
+          </div>
+          <!-- English side -->
+          <div style="padding:22px 24px;background:rgba(255,255,255,.4)">
+            <div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:800;color:#1e3a8a;letter-spacing:.5px;margin-bottom:14px;border-bottom:2px solid #93c5fd;padding-bottom:8px">ENGLISH</div>
+            <div id="insPreviewEn" style="font-family:Montserrat,sans-serif;font-size:13.5px;font-weight:500;color:#1a1a2e;line-height:2;direction:ltr;text-align:left"></div>
+          </div>
         </div>
       </div>
-      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:24px">
+
+      <!-- Edit panel (hidden by default, shown when Edit is clicked) -->
+      <div id="insEditPanel" style="display:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;margin-bottom:18px">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="wizard-label" style="font-size:13px;margin-bottom:8px">📝 التعليمات بالعربية</label>
+            <div class="rtoolbar"><button onclick="execRich('insAr','bold')"><b>B</b></button><button onclick="execRich('insAr','italic')"><i>I</i></button><button onclick="execRich('insAr','underline')"><u>U</u></button><div class="sep"></div><select onchange="execRich('insAr','fontSize',this.value);this.value=''"><option value="">حجم</option><option value="1">10</option><option value="2">12</option><option value="3">14</option><option value="4">16</option><option value="5">18</option><option value="6">22</option><option value="7">26</option></select><select onchange="execRich('insAr','fontName',this.value);this.value=''"><option value="">خط</option><option value="Tajawal">Tajawal</option><option value="Amiri">Amiri</option></select><div class="sep"></div><input type="color" onchange="execRich('insAr','foreColor',this.value)"><div class="sep"></div><button onclick="execRich('insAr','justifyRight')">⇥</button><button onclick="execRich('insAr','justifyCenter')">⊟</button><button onclick="execRich('insAr','justifyLeft')">⇤</button><button onclick="execRich('insAr','insertUnorderedList')">•</button></div>
+            <div id="insAr" contenteditable="true" dir="rtl" class="rich-editor" style="min-height:220px" placeholder="اكتب التعليمات بالعربية..."></div>
+          </div>
+          <div>
+            <label class="wizard-label" style="font-size:13px;margin-bottom:8px">📝 Instructions in English</label>
+            <div class="rtoolbar"><button onclick="execRich('insEn','bold')"><b>B</b></button><button onclick="execRich('insEn','italic')"><i>I</i></button><button onclick="execRich('insEn','underline')"><u>U</u></button><div class="sep"></div><select onchange="execRich('insEn','fontSize',this.value);this.value=''"><option value="">Size</option><option value="1">10</option><option value="2">12</option><option value="3">14</option><option value="4">16</option><option value="5">18</option><option value="6">22</option><option value="7">26</option></select><select onchange="execRich('insEn','fontName',this.value);this.value=''"><option value="">Font</option><option value="Montserrat">Montserrat</option><option value="Arial">Arial</option></select><div class="sep"></div><input type="color" onchange="execRich('insEn','foreColor',this.value)"><div class="sep"></div><button onclick="execRich('insEn','justifyLeft')">⇤</button><button onclick="execRich('insEn','justifyCenter')">⊟</button><button onclick="execRich('insEn','justifyRight')">⇥</button><button onclick="execRich('insEn','insertUnorderedList')">•</button></div>
+            <div id="insEn" contenteditable="true" dir="ltr" class="rich-editor font-en" style="min-height:220px" placeholder="Write instructions..."></div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:14px">
+          <button onclick="applyInsEdit()" style="background:linear-gradient(135deg,#22c55e,#15803d);color:white;border:none;border-radius:12px;padding:10px 28px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif;font-size:14px;box-shadow:0 4px 12px rgba(34,197,94,.3)">✅ حفظ وإغلاق / Save &amp; Close</button>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:8px">
         <div style="display:flex;gap:10px">
           <button onclick="cancelWizard()" style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);border-radius:14px;padding:10px 20px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:14px;font-weight:700">🏠 الرئيسية</button>
           <button onclick="goToStep(1)" style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);border-radius:14px;padding:10px 20px;cursor:pointer;font-family:'Tajawal',sans-serif;font-size:14px">← رجوع</button>
@@ -739,12 +772,14 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
         <button onclick="saveGrading()" style="background:rgba(74,222,128,.2);border:2px solid rgba(74,222,128,.4);color:#4ade80;border-radius:10px;padding:9px 18px;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;cursor:pointer">💾 حفظ</button>
         <button onclick="shareGrading()" style="background:rgba(167,139,250,.2);border:2px solid rgba(167,139,250,.4);color:#c4b5fd;border-radius:10px;padding:9px 18px;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;cursor:pointer">👥 مشاركة التصحيح</button>
         <button onclick="approveGrading()" style="background:linear-gradient(135deg,#f97316,#ea580c);color:white;border:2px solid #fb923c;border-radius:10px;padding:9px 18px;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;cursor:pointer">✅ اعتماد التصحيح</button>
+        <button onclick="updateAfterApproval()" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);color:white;border:2px solid #38bdf8;border-radius:10px;padding:9px 18px;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;cursor:pointer" title="تحديث النتيجة حتى بعد الاعتماد">🔄 تحديث بعد الاعتماد</button>
         <button onclick="closeSupPanel('gradingPanel')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;border-radius:10px;padding:9px 14px;cursor:pointer;font-size:13px">✕</button>
       </div>
     </div>
     <!-- Status bar -->
     <div id="gradingStatusBar" style="background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.2);border-radius:12px;padding:10px 16px;margin-bottom:14px;display:flex;gap:16px;flex-wrap:wrap;font-size:12px">
       <span>الحالة: <span id="gradingStatus" style="font-weight:800;color:#fb923c">مسودة</span></span>
+      <button onclick="applyAllAutoGrades()" style="background:rgba(34,197,94,.2);border:1px solid rgba(34,197,94,.4);color:#4ade80;border-radius:8px;padding:5px 14px;font-size:12px;cursor:pointer;font-family:Tajawal,sans-serif;font-weight:800">⚡ اعتماد كل التصحيح التلقائي</button>
       <span>المصحح: <span id="gradingMarker" style="font-weight:700;color:#FACC15"></span></span>
       <span>آخر حفظ: <span id="gradingLastSave" style="font-family:'Montserrat',sans-serif;color:rgba(255,255,255,.5)">—</span></span>
     </div>
@@ -1128,26 +1163,63 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
 
     <!-- PLACEHOLDER REPORTS -->
     <div id="coordRep1" class="hidden">
-      <h2 style="font-size:24px;font-weight:900;margin-bottom:16px">📊 تقارير التحصيل <span style="font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,.4);font-weight:400">Attainment Reports</span></h2>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px;align-items:flex-end">
-        <div style="flex:1;min-width:150px">
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px">السنة الأكاديمية / Academic Year</div>
-          <select id="attYearFilter" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:white;border-radius:10px;padding:9px 12px;font-family:'Tajawal',sans-serif;font-size:13px"><option value="">الكل / All</option></select>
+      <h2 style="font-size:22px;font-weight:900;margin-bottom:20px">📊 تقارير التحصيل <span style="font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,.4);font-weight:400">Attainment Reports</span></h2>
+
+      <!-- ── شريط المرشحات ── -->
+      <div style="background:linear-gradient(135deg,rgba(30,58,138,.25),rgba(30,58,138,.1));border:1.5px solid rgba(96,165,250,.25);border-radius:18px;padding:20px;margin-bottom:22px">
+        <div style="font-size:12px;font-weight:800;color:#93c5fd;margin-bottom:14px;font-family:Montserrat,sans-serif;letter-spacing:.8px">🔍 مرشحات البحث / Search Filters</div>
+
+        <!-- صف ١: حقول ثابتة -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:14px">
+          <div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">الدولة / Country</div>
+            <input id="attCountryFixed" readonly style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);border-radius:10px;padding:9px 12px;font-family:Tajawal,sans-serif;font-size:13px;cursor:not-allowed;box-sizing:border-box">
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">المدرسة / School</div>
+            <input id="attSchoolFixed" readonly style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);border-radius:10px;padding:9px 12px;font-family:Tajawal,sans-serif;font-size:13px;cursor:not-allowed;box-sizing:border-box">
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">كود المدرسة / School Code</div>
+            <input id="attSchoolCodeFilter" readonly style="width:100%;background:rgba(250,204,21,.08);border:1.5px solid rgba(250,204,21,.35);color:#FACC15;font-weight:800;border-radius:10px;padding:9px 12px;font-family:Montserrat,sans-serif;font-size:13px;cursor:not-allowed;box-sizing:border-box;letter-spacing:.5px">
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">المنهاج / Curriculum</div>
+            <input id="attCurriculumFixed" readonly style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);border-radius:10px;padding:9px 12px;font-family:Tajawal,sans-serif;font-size:13px;cursor:not-allowed;box-sizing:border-box">
+          </div>
         </div>
-        <div style="flex:1;min-width:150px">
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px">المادة / Subject</div>
-          <select id="attSubjectFilter" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:white;border-radius:10px;padding:9px 12px;font-family:'Tajawal',sans-serif;font-size:13px"><option value="">الكل / All</option></select>
+
+        <!-- صف ٢: مرشحات متغيرة + زر بحث -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;align-items:flex-end">
+          <div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">الصف / Grade</div>
+            <select id="attGradeFilter" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:white;border-radius:10px;padding:9px 12px;font-family:Tajawal,sans-serif;font-size:13px">
+              <option value="">الكل / All</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">المادة / Subject</div>
+            <select id="attSubjectFilter" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:white;border-radius:10px;padding:9px 12px;font-family:Tajawal,sans-serif;font-size:13px">
+              <option value="">الكل / All</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">الفصل الدراسي / Term</div>
+            <select id="attTermFilter" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:white;border-radius:10px;padding:9px 12px;font-family:Tajawal,sans-serif;font-size:13px">
+              <option value="">الكل / All</option>
+              <option value="1">الفصل الأول / Term 1</option>
+              <option value="2">الفصل الثاني / Term 2</option>
+              <option value="3">الفصل الثالث / Term 3</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:flex-end">
+            <button onclick="runAttainmentReport()" style="width:100%;background:linear-gradient(135deg,#22c55e,#15803d);color:white;border:none;border-radius:12px;padding:11px 16px;font-weight:800;font-size:14px;cursor:pointer;font-family:Tajawal,sans-serif;box-shadow:0 4px 14px rgba(34,197,94,.35)">🔍 بحث / Search</button>
+          </div>
         </div>
-        <div style="flex:1;min-width:150px">
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px">الفصل الدراسي / Term</div>
-          <select id="attTermFilter" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:white;border-radius:10px;padding:9px 12px;font-family:'Tajawal',sans-serif;font-size:13px"><option value="">الكل / All</option><option value="1">الفصل الأول / Term 1</option><option value="2">الفصل الثاني / Term 2</option><option value="3">الفصل الثالث / Term 3</option></select>
-        </div>
-        <div style="flex:1;min-width:150px">
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px">كود المدرسة / School Code</div>
-          <input type="text" id="attSchoolCodeFilter" readonly style="width:100%;background:rgba(250,204,21,.1);border:1.5px solid rgba(250,204,21,.4);color:#FACC15;font-weight:800;border-radius:10px;padding:9px 12px;font-family:'Montserrat',sans-serif;font-size:13px;cursor:not-allowed;box-sizing:border-box">
-        </div>
-        <button onclick="runAttainmentReport()" style="background:linear-gradient(135deg,#22c55e,#15803d);color:white;border:none;border-radius:12px;padding:11px 28px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Tajawal',sans-serif;white-space:nowrap;box-shadow:0 4px 14px rgba(34,197,94,.35)">▶ تشغيل / Run</button>
       </div>
+
+      <!-- منطقة نتائج الاختبار ثم التقرير -->
+      <div id="attMatchedTestsArea"></div>
       <div id="attainmentReportOutput"></div>
     </div>
     <div id="coordRep2" class="hidden"><div style="text-align:center;padding:80px 20px"><div style="font-size:64px;margin-bottom:16px">📈</div><h3 style="font-size:20px;font-weight:800;color:#FACC15;margin-bottom:8px">تقارير التطور</h3><p style="color:rgba(255,255,255,.4)">قيد التطوير / Under Development</p></div></div>
@@ -2420,19 +2492,28 @@ function populateCoordFilters(){
 
 // ══ تقارير التحصيل — Attainment Reports ══
 function populateAttainmentFilters(){
-  var tests=getSchoolTests();
-  var years={}, subjects={};
-  tests.forEach(function(t){
-    if(t.year) years[t.year]=1;
-    if(t.subject) subjects[t.subject]=1;
-  });
-  var yearSel=document.getElementById('attYearFilter');
+  var sch=currentCoordSchool||{};
+  var set=function(id,val){var el=document.getElementById(id);if(el)el.value=val||'—';};
+  set('attCountryFixed',sch.country||'—');
+  set('attSchoolFixed',sch.name||'—');
+  set('attSchoolCodeFilter',sch.code||'—');
+  set('attCurriculumFixed',sch.curriculum||'—');
+
+  // قوائم صف ومادة من القوائم المعتمدة في المنصة
+  var gradeSel=document.getElementById('attGradeFilter');
+  if(gradeSel){
+    gradeSel.innerHTML='<option value="">الكل / All</option>'
+      +SB_GRADES.map(function(g){return '<option value="'+g.label+'">'+g.icon+' '+g.label+'</option>';}).join('');
+  }
   var subSel=document.getElementById('attSubjectFilter');
-  var codeEl=document.getElementById('attSchoolCodeFilter');
-  if(yearSel) yearSel.innerHTML='<option value="">الكل / All</option>'+Object.keys(years).sort().reverse().map(function(y){return '<option>'+y+'</option>';}).join('');
-  if(subSel) subSel.innerHTML='<option value="">الكل / All</option>'+Object.keys(subjects).sort().map(function(s){return '<option>'+s+'</option>';}).join('');
-  if(codeEl) codeEl.value=(currentCoordSchool&&currentCoordSchool.code)?currentCoordSchool.code:'—';
+  if(subSel){
+    subSel.innerHTML='<option value="">الكل / All</option>'
+      +SB_SUBJECTS.map(function(s){return '<option value="'+s.labelEn+'">'+s.icon+' '+s.label+' / '+s.labelEn+'</option>';}).join('');
+  }
+
+  var matchedArea=document.getElementById('attMatchedTestsArea');
   var outEl=document.getElementById('attainmentReportOutput');
+  if(matchedArea) matchedArea.innerHTML='';
   if(outEl) outEl.innerHTML='';
 }
 
@@ -2440,11 +2521,23 @@ function computeStudentAttainmentPct(st){
   if(!st||!st.grades) return null;
   var total=0, hasAny=false;
   Object.keys(st.grades).forEach(function(di){
-    Object.keys(st.grades[di]).forEach(function(qk){
-      total+=parseFloat(st.grades[di][qk])||0; hasAny=true;
-    });
+    if(st.grades[di] && typeof st.grades[di]==='object'){
+      Object.keys(st.grades[di]).forEach(function(qk){
+        total+=parseFloat(st.grades[di][qk])||0; hasAny=true;
+      });
+    }
   });
+  // طالب أجاب على مجال واحد على الأقل = أكمل الاختبار للأغراض التقريرية
+  if(!hasAny && st.domainsCompleted && Object.keys(st.domainsCompleted).length>0) return 0;
   return hasAny?total:null;
+}
+// يحدد ما إذا كان الطالب "أكمل" الاختبار بمعنى التقارير = حضر ولو مجالاً واحداً
+function _studentIsCompleted(st){
+  if(!st) return false;
+  if(st.completed) return true;
+  if(st.domainsCompleted && Object.keys(st.domainsCompleted).length>0) return true;
+  if(st.grades && Object.keys(st.grades).length>0) return true;
+  return false;
 }
 
 // ══ نظام تصنيف مستويات التحصيل الثلاثة (Above / Met Expectation / Below) ══
@@ -2454,9 +2547,9 @@ var ATT_LEVELS=[
   {key:'below',en:'Below',statementAr:'الطلاب الذين يحققون مستوى أقل من معايير المنهاج',statementEn:'Students Attaining Below Curriculum Standards',color:'#ef4444'}
 ];
 function _attBandOf(pct){
-  if(pct>=80) return 'above';
-  if(pct>=50) return 'met';
-  return 'below';
+  if(pct<50) return 'below';
+  if(pct<70) return 'met';
+  return 'above';
 }
 
 // ══ مقياس المقادير الكمية المعتمد ══
@@ -2488,150 +2581,239 @@ function computeAttainmentJudgement(pctAbove,pctAtLeastInLine){
   return ATT_JUDGEMENTS[5];
 }
 
-function runAttainmentReport(){
-  var yearF=document.getElementById('attYearFilter').value;
-  var subF=document.getElementById('attSubjectFilter').value;
-  var termF=document.getElementById('attTermFilter').value;
-  var tests=getSchoolTests().filter(function(t){
-    if(yearF&&t.year!==yearF) return false;
-    if(subF&&t.subject!==subF) return false;
-    if(termF&&t.term!==termF) return false;
-    return true;
-  });
-  var out=document.getElementById('attainmentReportOutput');
-  if(!out) return;
-  out.innerHTML='<div id="attReportPrintArea">'+buildAttainmentPreambleHtml()+buildAttainmentVariableHtml(tests,{year:yearF,subject:subF,term:termF})+'</div>'
-    +'<div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap">'
+function viewTestAttainmentReport(testId){
+  var t=myTests.find(function(x){return String(x.id)===String(testId);});
+  if(!t){scWarn('لم يُوجد الاختبار','Test not found');return;}
+  var outEl=document.getElementById('attainmentReportOutput');
+  if(!outEl) return;
+  var filters={grade:t.grade||'',subject:t.subject||'',term:String(t.term||'')};
+  outEl.innerHTML='<div id="attReportPrintArea">'+buildAttainmentPreambleHtml()+buildAttainmentVariableHtml([t],filters)+'</div>'
+    +'<div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">'
     +'<button onclick="printAttainmentReport()" style="background:#FACC15;color:#1e3a8a;border:none;border-radius:10px;padding:10px 22px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px">🖨️ طباعة / حفظ PDF</button>'
     +'<button onclick="exportAttainmentExcel()" style="background:#16a34a;color:white;border:none;border-radius:10px;padding:10px 22px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px">📊 تصدير Excel</button>'
+    +'<button onclick="document.getElementById(\'attainmentReportOutput\').innerHTML=\'\'" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 18px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px;font-weight:700">✕ إغلاق</button>'
     +'</div>';
-  window._lastAttainmentTests=tests;
-  window._lastAttainmentFilters={year:yearF,subject:subF,term:termF};
+  window._lastAttainmentTests=[t];
+  window._lastAttainmentFilters=filters;
+  // Scroll to report
+  setTimeout(function(){outEl.scrollIntoView({behavior:'smooth',block:'start'});},100);
+}
+function downloadTestAttainmentReport(testId){
+  var t=myTests.find(function(x){return String(x.id)===String(testId);});
+  if(!t){scWarn('لم يُوجد الاختبار','Test not found');return;}
+  var filters={grade:t.grade||'',subject:t.subject||'',term:String(t.term||'')};
+  var html='<html><head><meta charset="UTF-8"><title>'+t.name+'</title>'
+    +'<style>@page{size:A4 portrait;margin:18mm}body{font-family:Tajawal,Arial,sans-serif;margin:0;background:white;direction:rtl}'
+    +'table{border-collapse:collapse;width:100%}th,td{border:1px solid #e2e8f0;padding:8px 12px}'
+    +'@media print{body{margin:0}}</style></head><body>'
+    +buildAttainmentPreambleHtml()
+    +buildAttainmentVariableHtml([t],filters)
+    +'</body></html>';
+  var win=window.open('','_blank');
+  if(!win){scWarn('يرجى السماح بالنوافذ المنبثقة','Please allow popups');return;}
+  win.document.write(html);
+  win.document.close();
+  setTimeout(function(){win.print();},500);
+}
+
+function runAttainmentReport(){
+  var gradeF=document.getElementById('attGradeFilter').value;
+  var subF=document.getElementById('attSubjectFilter').value;
+  var termF=document.getElementById('attTermFilter').value;
+
+  var tests=getSchoolTests().filter(function(t){
+    if(gradeF&&(t.grade||'')!==gradeF&&!(t.grade||'').includes(gradeF)) return false;
+    if(subF&&(t.subject||'')!==subF) return false;
+    if(termF&&String(t.term||'')!==String(termF)) return false;
+    return true;
+  });
+
+  var matchedArea=document.getElementById('attMatchedTestsArea');
+  var outEl=document.getElementById('attainmentReportOutput');
+
+  if(!tests.length){
+    matchedArea.innerHTML='<div style="text-align:center;padding:40px 20px;color:rgba(255,255,255,.35);background:rgba(255,255,255,.04);border-radius:16px;margin-bottom:20px">لا توجد اختبارات مطابقة للمرشحات المحددة / No matching tests found</div>';
+    outEl.innerHTML='';return;
+  }
+
+  // أظهر الاختبارات المعتمد تصحيحها
+  var approvedTests=tests.filter(function(t){return t.gradingApproved;});
+  var cardsHtml=tests.map(function(t){
+    var approved=t.gradingApproved;
+    return '<div style="background:rgba(255,255,255,.06);border:1.5px solid '+(approved?'rgba(34,197,94,.4)':'rgba(255,255,255,.1)')+';border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">'
+      +'<div>'
+        +'<div style="font-weight:800;font-size:14px;color:'+(approved?'#4ade80':'rgba(255,255,255,.7)')+'">'+t.name+'</div>'
+        +'<div style="font-size:11px;color:rgba(255,255,255,.45);font-family:Montserrat,sans-serif;margin-top:3px">'+(t.subject||'—')+' | '+(t.grade||'—')+' | '+(t.year||'—')+' | Term '+(t.term||'—')+'</div>'
+      +'</div>'
+      +'<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">'
+        +'<span style="background:'+(approved?'rgba(34,197,94,.2)':'rgba(255,255,255,.08)')+';color:'+(approved?'#4ade80':'rgba(255,255,255,.4)')+';border:1px solid '+(approved?'rgba(34,197,94,.4)':'rgba(255,255,255,.15)')+';border-radius:8px;padding:4px 14px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif">'+(approved?'✅ معتمد / Approved':'⏳ قيد المراجعة / Pending')+'</span>'
+        +(approved?'<button onclick="viewTestAttainmentReport('+t.id+')" style="background:linear-gradient(135deg,#1e3a8a,#1e40af);color:white;border:none;border-radius:8px;padding:6px 16px;font-size:12px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif">👁 مشاهدة التقرير</button>':'')
+        +(approved?'<button onclick="downloadTestAttainmentReport('+t.id+')" style="background:linear-gradient(135deg,#AD8628,#8A6D1F);color:white;border:none;border-radius:8px;padding:6px 16px;font-size:12px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif">⬇️ تحميل PDF</button>':'')
+      +'</div>'
+      +'</div>';
+  }).join('');
+  matchedArea.innerHTML='<div style="margin-bottom:20px">'
+    +'<div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:10px;font-family:Montserrat,sans-serif">الاختبارات المطابقة للمرشحات / Matching Tests ('+tests.length+')</div>'
+    +'<div style="display:flex;flex-direction:column;gap:8px">'+cardsHtml+'</div>'
+    +'</div>';
+
+  if(!approvedTests.length){
+    outEl.innerHTML='<div style="text-align:center;padding:40px;background:rgba(255,255,255,.03);border-radius:16px;color:rgba(255,255,255,.35)">لا توجد اختبارات معتمدة التصحيح بعد — سيظهر التقرير بمجرد اعتماد التصحيح من بورتال الإدارة<br><span style="font-family:Montserrat,sans-serif;font-size:12px">No approved grading yet — report will appear once grading is approved via the Admin portal</span></div>';
+    return;
+  }
+  outEl.innerHTML='';
+  window._lastAttainmentTests=approvedTests;
+  window._lastAttainmentFilters={grade:gradeF,subject:subF,term:termF};
 }
 
 function buildAttainmentPreambleHtml(){
-  var rows=[
-    ['نوع التقرير | Report Type','تقارير التحصيل | Attainment Reports'],
-    ['طبيعة الصفحة | Page Type','ديباجة ثابتة | Fixed Preamble'],
-    ['الاستخدام | Use','لوحة التحكم + PDF + Excel | Dashboard + PDF + Excel'],
-    ['المتغيرات | Variables','اسم المدرسة، السنة، المادة، الصف، الاختبار | School, year, subject, grade, assessment']
+  var GUIDE=[
+    {
+      ar:'الغرض من التقرير',en:'Purpose of the Report',
+      arT:'يوضح تقرير التحصيل مستوى أداء الطلاب في الاختبار المختار، ويعرض توزيعهم حسب نطاقات الأداء المتوقعة. يساعد التقرير المدرسة على فهم الوضع الحالي قبل اتخاذ قرارات الدعم والتحسين.',
+      enT:'The attainment report presents student performance in the selected assessment and shows distribution across expected performance bands. It helps the school understand current attainment before planning support and improvement actions.',
+      icon:'📋',color:'#1e3a8a'
+    },
+    {
+      ar:'قراءة الجداول',en:'Reading the Tables',
+      arT:'تعرض الجداول عدد الطلاب ونسبتهم المئوية في كل نطاق أداء. وقد تظهر النتائج على مستوى المدرسة، الصف، الشعبة، المادة، المهارة، أو الفئة الطلابية.',
+      enT:'Tables show the number and percentage of students in each performance band. Results may be displayed by school, grade, class, subject, skill, or student category.',
+      icon:'📊',color:'#0891b2'
+    },
+    {
+      ar:'قراءة الرسوم البيانية',en:'Reading the Charts',
+      arT:'تساعد الرسوم البيانية على مقارنة نسب الطلاب بين نطاقات الأداء، أو بين اختبارين، أو بين فئات مختلفة مثل النوع، الجنسية، المواطنين، أو ذوي الهمم.',
+      enT:'Charts help compare student percentages across performance bands, between assessments, or across groups such as gender, nationality, national students, or students of determination.',
+      icon:'📈',color:'#7c3aed'
+    },
+    {
+      ar:'الحكم العام',en:'Overall Judgement',
+      arT:'يصدر الحكم العام بناء على توزيع الطلاب داخل نطاقات الأداء. يُستخدم كمؤشر موجز لجودة التحصيل، ولا يُغني عن قراءة تفاصيل المهارات والفئات.',
+      enT:'The overall judgement is generated from the distribution of students across performance bands. It provides a concise attainment quality indicator alongside skill and group-level details.',
+      icon:'🏅',color:'#AD8628'
+    },
+    {
+      ar:'ملاحظات القراءة',en:'Reading Notes',
+      arT:'تعتمد النتائج على البيانات المتاحة وقت إصدار التقرير. قد تختلف الأحكام إذا تغير المعيار المختار أو نطاق الدرجات أو عينة الطلاب.',
+      enT:'Results are based on available data at the time of report generation. Judgements may change if the selected benchmark, score ranges, or student sample changes.',
+      icon:'📝',color:'#475569'
+    }
   ];
-  var metaHtml=rows.map(function(r){return '<tr><td style="background:#f0f4ff;font-weight:800;color:#1e3a8a;padding:8px 12px;border:1px solid #dbeafe;font-size:12px;width:35%">'+r[0]+'</td><td style="padding:8px 12px;border:1px solid #dbeafe;font-size:12px;color:#1a1a2e">'+r[1]+'</td></tr>';}).join('');
 
-  var guide=[
-    {ar:'الغرض من التقرير',en:'Purpose of the Report',
-     arT:'يوضح تقرير التحصيل مستوى أداء الطلاب في الاختبار المختار، ويعرض توزيعهم حسب نطاقات الأداء المتوقعة. يساعد التقرير المدرسة على فهم الوضع الحالي قبل اتخاذ قرارات الدعم والتحسين.',
-     enT:"The attainment report presents students' performance in the selected assessment and shows their distribution across expected performance bands. It helps the school understand current attainment before planning support and improvement actions."},
-    {ar:'نطاقات الأداء',en:'Performance Bands',
-     arT:'أقل من التوقعات: أداء أقل من المستوى المستهدف. متوافق مع التوقعات: أداء داخل المستوى المتوقع. أعلى من التوقعات: أداء يتجاوز المستوى المستهدف للمنهاج أو المعيار المستخدم.',
-     enT:'Below Expectations: performance below the target level. In Line with Expectations: performance within the expected level. Above Expectations: performance exceeding the target curriculum or benchmark level.'},
-    {ar:'قراءة الجداول',en:'Reading the Tables',
-     arT:'تعرض الجداول عدد الطلاب ونسبتهم المئوية في كل نطاق أداء. وقد تظهر النتائج على مستوى المدرسة، الصف، الشعبة، المادة، المهارة، أو الفئة الطلابية.',
-     enT:'Tables show the number and percentage of students in each performance band. Results may be displayed by school, grade, class, subject, skill, or student category.'},
-    {ar:'قراءة الرسوم البيانية',en:'Reading the Charts',
-     arT:'تساعد الرسوم البيانية على مقارنة نسب الطلاب بين نطاقات الأداء، أو بين اختبارين، أو بين فئات مختلفة مثل النوع، الجنسية، الإماراتيين، أو ذوي الاحتياجات.',
-     enT:'Charts help compare student percentages across performance bands, between assessments, or across groups such as gender, nationality, Emirati students, or students of determination.'},
-    {ar:'الحكم العام',en:'Overall Judgement',
-     arT:'يصدر الحكم العام بناء على توزيع الطلاب داخل نطاقات الأداء. يستخدم هذا الحكم كمؤشر موجز لجودة التحصيل، ولا يغني عن قراءة تفاصيل المهارات والفئات.',
-     enT:'The overall judgement is generated from the distribution of students across performance bands. It provides a concise indicator of attainment quality, but should be read alongside skill and group-level details.'}
+  // ── نطاقات الأداء الثلاثة كبطاقات هندسية مستوحاة من نمط الدوائر المتشابكة ──
+  var BANDS=[
+    {
+      ar:'أعلى من التوقعات',en:'Above Expectations',
+      arDesc:'أداء يتجاوز المستوى المستهدف للمنهاج أو المعيار المستخدم.',
+      enDesc:'Performance exceeding the target curriculum or benchmark level.',
+      icon:'⭐',color:'#15803d',bg:'#f0fdf4',border:'#22c55e',range:'70 – 100%'
+    },
+    {
+      ar:'متوافق مع التوقعات',en:'In Line with Expectations',
+      arDesc:'أداء داخل المستوى المتوقع، متوافق مع معايير المنهاج.',
+      enDesc:'Performance within the expected level, meeting curriculum standards.',
+      icon:'✅',color:'#b45309',bg:'#fffbeb',border:'#f59e0b',range:'50 – 69%'
+    },
+    {
+      ar:'أقل من التوقعات',en:'Below Expectations',
+      arDesc:'أداء أقل من المستوى المستهدف للمنهاج أو المعيار المستخدم.',
+      enDesc:'Performance below the target curriculum or benchmark level.',
+      icon:'📌',color:'#b91c1c',bg:'#fef2f2',border:'#ef4444',range:'0 – 49%'
+    }
   ];
-  var guideHtml=guide.map(function(g){
-    return '<div style="margin-bottom:14px;padding:12px 16px;background:#f8fafc;border-radius:10px;border-right:3px solid #1e3a8a">'
-      +'<div style="font-weight:800;color:#1e3a8a;font-size:13px;margin-bottom:4px" dir="rtl">'+g.ar+' <span style="font-weight:700;color:#64748b;font-size:11px;font-family:Montserrat,sans-serif">| '+g.en+'</span></div>'
-      +'<div style="font-size:12.5px;color:#334155;line-height:1.8;margin-bottom:4px" dir="rtl">'+g.arT+'</div>'
-      +'<div style="font-size:11.5px;color:#64748b;line-height:1.7;direction:ltr;text-align:left;font-family:Montserrat,sans-serif">'+g.enT+'</div>'
+
+  var bandsHtml=BANDS.map(function(b,idx){
+    var num=idx+1;
+    return '<div style="flex:1;min-width:200px;background:'+b.bg+';border:2.5px solid '+b.border+';border-radius:18px;padding:22px 20px;position:relative;overflow:hidden">'
+      // geometric accent circle
+      +'<div style="position:absolute;top:-18px;right:-18px;width:70px;height:70px;border-radius:50%;background:'+b.border+';opacity:.12"></div>'
+      +'<div style="position:absolute;bottom:-22px;left:-10px;width:50px;height:50px;border-radius:50%;background:'+b.border+';opacity:.08"></div>'
+      // number badge
+      +'<div style="width:38px;height:38px;border-radius:10px;background:'+b.color+';display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:white;font-family:Montserrat,sans-serif;margin-bottom:12px;box-shadow:0 4px 10px '+b.border+'44">'+num+'</div>'
+      +'<div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:'+b.color+';margin-bottom:4px" dir="rtl">'+b.ar+'</div>'
+      +'<div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:'+b.color+';margin-bottom:10px;opacity:.8">'+b.en+'</div>'
+      +'<div style="display:inline-block;background:'+b.color+';color:white;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif;margin-bottom:12px">'+b.range+'</div>'
+      +'<div style="font-size:13px;color:#374151;line-height:1.75;margin-bottom:6px;font-family:Tajawal,sans-serif" dir="rtl">'+b.arDesc+'</div>'
+      +'<div style="font-size:11.5px;color:#6b7280;line-height:1.65;font-family:Montserrat,sans-serif;direction:ltr">'+b.enDesc+'</div>'
       +'</div>';
   }).join('');
 
-  var terms=[
-    {ar:'التحصيل',en:'Attainment',arT:'درجة أو مستوى أداء الطلاب في اختبار محدد مقارنة بنطاقات الأداء المتوقعة.',enT:'The score or performance level achieved by students in a selected assessment compared with expected performance bands.'},
-    {ar:'المعيار',en:'Benchmark',arT:'الإطار أو الحدود المستخدمة لتفسير النتائج، مثل المعيار المحلي أو العالمي أو مرجع لغوي معتمد.',enT:'The framework or cut scores used to interpret results, such as a local benchmark, international benchmark, or approved language reference.'},
-    {ar:'تحليل المهارات',en:'Skill Analysis',arT:'تحليل أداء الطلاب في عناصر المادة أو المهارات، مثل القراءة، الاستماع، الكتابة، التحدث، المفردات، أو القواعد.',enT:'Analysis of student performance by subject components or skills, such as reading, listening, writing, speaking, vocabulary, or grammar.'},
-    {ar:'الفئات الطلابية',en:'Student Groups',arT:'تقسيم النتائج حسب خصائص محددة مثل النوع، الجنسية، الطلبة الإماراتيين، ذوي الاحتياجات، الصف، أو الشعبة.',enT:'Grouping results by selected attributes such as gender, nationality, Emirati status, students of determination, grade, or class.'},
-    {ar:'ملاحظات القراءة',en:'Reading Notes',arT:'تعتمد النتائج على البيانات المتاحة وقت إصدار التقرير. وقد تختلف الأحكام إذا تغير المعيار المختار أو نطاق الدرجات أو عينة الطلاب.',enT:'Results are based on the available data at the time of report generation. Judgements may change if the selected benchmark, score ranges, or student sample changes.'}
-  ];
-  var termsHtml=terms.map(function(t){
-    return '<div style="margin-bottom:12px;padding:10px 14px;background:#fffbeb;border-radius:10px;border-right:3px solid #AD8628">'
-      +'<div style="font-weight:800;color:#8A6D1F;font-size:12.5px;margin-bottom:3px" dir="rtl">'+t.ar+' <span style="font-weight:700;color:#a68a4a;font-size:10.5px;font-family:Montserrat,sans-serif">| '+t.en+'</span></div>'
-      +'<div style="font-size:12px;color:#334155;line-height:1.75" dir="rtl">'+t.arT+'</div>'
-      +'<div style="font-size:11px;color:#78716c;line-height:1.6;direction:ltr;text-align:left;font-family:Montserrat,sans-serif">'+t.enT+'</div>'
-      +'</div>';
+  var guideHtml=GUIDE.map(function(g){
+    return '<div style="background:white;border-radius:14px;padding:16px 18px;border:1.5px solid #e2e8f0;display:flex;gap:14px;align-items:flex-start">'
+      +'<div style="width:40px;height:40px;border-radius:10px;background:'+g.color+'18;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">'+g.icon+'</div>'
+      +'<div style="flex:1">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:'+g.color+';margin-bottom:2px" dir="rtl">'+g.ar+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:'+g.color+';opacity:.7;margin-bottom:8px">'+g.en+'</div>'
+        +'<div style="font-size:13px;color:#374151;line-height:1.8;font-family:Tajawal,sans-serif;margin-bottom:5px" dir="rtl">'+g.arT+'</div>'
+        +'<div style="font-size:11.5px;color:#6b7280;line-height:1.65;font-family:Montserrat,sans-serif;direction:ltr">'+g.enT+'</div>'
+      +'</div></div>';
   }).join('');
 
-  return '<div style="background:white;border-radius:18px;padding:28px 30px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin-bottom:24px;border:1.5px solid #e2e8f0" dir="rtl">'
-    +'<div style="text-align:center;margin-bottom:18px;padding-bottom:16px;border-bottom:3px double #141F44">'
-    +'<div style="font-family:Tajawal,sans-serif;font-size:19px;font-weight:900;color:#141F44">إرشادات قراءة تقرير التحصيل</div>'
-    +'<div style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#AD8628;margin-top:2px">How to Read the Attainment Report</div>'
+  return ''
+    // ── Page: Portrait layout, print break between preamble and data ──
+    +'<div style="max-width:760px;margin:0 auto;font-family:Tajawal,Arial,sans-serif">'
+    // Title
+    +'<div style="text-align:center;padding:32px 0 24px;border-bottom:3px double #141F44;margin-bottom:28px">'
+      +'<div style="font-family:Tajawal,sans-serif;font-size:26px;font-weight:900;color:#141F44;margin-bottom:4px">دليل قراءة تقرير التحصيل</div>'
+      +'<div style="font-family:Montserrat,sans-serif;font-size:16px;font-weight:700;color:#AD8628;letter-spacing:.5px">Attainment Report — Reading Guide</div>'
+      +'<div style="width:60px;height:4px;background:linear-gradient(90deg,#141F44,#AD8628);border-radius:4px;margin:12px auto 0"></div>'
     +'</div>'
-    +'<table style="width:100%;border-collapse:collapse;margin-bottom:18px">'+metaHtml+'</table>'
-    +'<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:12px;color:#1e40af;line-height:1.8">'
-    +'<div dir="rtl">هذه الصفحات ثابتة وتظهر في بداية تقرير التحصيل لتوحيد طريقة قراءة النتائج قبل عرض الجداول والرسوم المتغيرة.</div>'
-    +'<div style="direction:ltr;text-align:left;font-family:Montserrat,sans-serif;margin-top:4px">These pages are fixed front matter that standardise how attainment results are read before the dynamic tables and charts are displayed.</div>'
+    // Bands
+    +'<div style="margin-bottom:28px">'
+      +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
+        +'<div style="width:5px;height:28px;background:linear-gradient(180deg,#141F44,#AD8628);border-radius:4px"></div>'
+        +'<div><div style="font-family:Tajawal,sans-serif;font-size:18px;font-weight:900;color:#141F44" dir="rtl">نطاقات الأداء</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#AD8628">Performance Bands</div></div>'
+      +'</div>'
+      +'<div style="display:flex;gap:14px;flex-wrap:wrap">'+bandsHtml+'</div>'
     +'</div>'
-    +guideHtml
-    +'<div style="text-align:center;margin:20px 0 14px;padding-bottom:10px;border-bottom:2px solid #e2e8f0">'
-    +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:#141F44">المصطلحات والمعايير</div>'
-    +'<div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:#AD8628">Terms and Benchmarks</div>'
+    // Guide sections
+    +'<div style="margin-bottom:8px">'
+      +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
+        +'<div style="width:5px;height:28px;background:linear-gradient(180deg,#1e3a8a,#7c3aed);border-radius:4px"></div>'
+        +'<div><div style="font-family:Tajawal,sans-serif;font-size:18px;font-weight:900;color:#141F44" dir="rtl">إرشادات القراءة</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#1e3a8a">Reading Guide</div></div>'
+      +'</div>'
+      +'<div style="display:flex;flex-direction:column;gap:10px">'+guideHtml+'</div>'
     +'</div>'
-    +termsHtml
-    +'<div style="text-align:center;margin-top:18px;padding-top:12px;border-top:1px solid #e2e8f0;font-size:10px;color:#94a3b8;font-family:Montserrat,sans-serif">Scholastic Platform | Fixed preamble template for attainment reports</div>'
-    +'</div>';
-}
-
-function buildAttainmentDataCountsHtml(allStudents,graded){
-  var registered=allStudents.length;
-  var boys=graded.filter(function(x){return x.st.gender==='Male';}).length;
-  var girls=graded.filter(function(x){return x.st.gender==='Female';}).length;
-  var gifted=graded.filter(function(x){return x.st.gifted==='Yes';}).length;
-  var sod=graded.filter(function(x){return x.st.sod==='Yes';}).length;
-  var national=graded.filter(function(x){return x.st.national==='Yes';}).length;
-  var items=[
-    {label:'الطلاب المسجلون',labelEn:'Registered Students',val:registered,color:'#64748b'},
-    {label:'أكملوا الاختبار',labelEn:'Completed the Test',val:graded.length,color:'#1e3a8a',highlight:true},
-    {label:'البنين',labelEn:'Boys Completed',val:boys,color:'#2563eb'},
-    {label:'البنات',labelEn:'Girls Completed',val:girls,color:'#db2777'},
-    {label:'الموهوبون',labelEn:'Gifted',val:gifted,color:'#a855f7'},
-    {label:'ذوو الهمم',labelEn:'Students of Determination',val:sod,color:'#ec4899'},
-    {label:'المواطنون',labelEn:'National Students',val:national,color:'#16a34a'}
-  ];
-  var cards=items.map(function(it){
-    return '<div style="flex:1;min-width:120px;background:white;border-radius:12px;padding:14px;text-align:center;border-top:3px solid '+it.color+(it.highlight?';box-shadow:0 4px 14px rgba(30,58,138,.18)':';box-shadow:0 2px 8px rgba(0,0,0,.05)')+'">'
-      +'<div style="font-size:26px;font-weight:900;color:'+it.color+';font-family:Montserrat,sans-serif">'+it.val+'</div>'
-      +'<div style="font-size:11.5px;font-weight:800;color:#1e293b" dir="rtl">'+it.label+'</div>'
-      +'<div style="font-size:9.5px;color:#94a3b8;font-family:Montserrat,sans-serif">'+it.labelEn+'</div>'
-      +'</div>';
-  }).join('');
-  return '<div style="margin-bottom:22px">'
-    +'<div style="text-align:center;margin-bottom:12px"><div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:#141F44">البيانات</div><div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:#AD8628">Data</div></div>'
-    +'<div style="display:flex;gap:10px;flex-wrap:wrap">'+cards+'</div></div>';
+    +'<div style="text-align:center;padding-top:16px;font-size:10px;color:#94a3b8;font-family:Montserrat,sans-serif;border-top:1px solid #e2e8f0;margin-top:24px">Scholastic International Standardized Tests Platform — Attainment Report</div>'
+    +'</div>'
+    +'<div style="page-break-after:always"></div>';
 }
 
 function buildAttainmentScalesReferenceHtml(){
   var descRows=[
-    {level:'Outstanding',color:'#7c3aed',text:'Most students attain levels that are above curriculum standards.',textAr:'يحقق معظم الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Very Good',color:'#2563eb',text:'The large majority of students attain levels that are above curriculum standards.',textAr:'تحقق الأغلبية الكبيرة من الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Good',color:'#0891b2',text:'The majority of students attain levels that are above curriculum standards.',textAr:'تحقق أغلبية الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Acceptable',color:'#f59e0b',text:'Most students attain levels that are in line with curriculum standards and a few are above.',textAr:'يحقق معظم الطلاب مستويات متوافقة مع معايير المنهاج، ويحقق قلة منهم مستوى أعلى.'},
-    {level:'Weak',color:'#f97316',text:'Less than three-quarters of students attain levels that are at least in line with curriculum standards.',textAr:'يحقق أقل من ثلاثة أرباع الطلاب مستوى متوافقاً على الأقل مع معايير المنهاج.'},
-    {level:'Very Weak',color:'#ef4444',text:'Few students attain levels that are in line with curriculum standards.',textAr:'يحقق قلة من الطلاب مستوى متوافقاً مع معايير المنهاج.'}
+    {level:'Outstanding',ar:'متميز',color:'#7c3aed',bg:'#f5f3ff',text:'Most students attain levels that are above curriculum standards.',textAr:'يحقق معظم الطلاب مستويات أعلى من معايير المنهاج.'},
+    {level:'Very Good',ar:'جيد جداً',color:'#2563eb',bg:'#eff6ff',text:'The large majority of students attain levels that are above curriculum standards.',textAr:'تحقق الأغلبية الكبيرة من الطلاب مستويات أعلى من معايير المنهاج.'},
+    {level:'Good',ar:'جيد',color:'#0891b2',bg:'#ecfeff',text:'The majority of students attain levels that are above curriculum standards.',textAr:'تحقق أغلبية الطلاب مستويات أعلى من معايير المنهاج.'},
+    {level:'Acceptable',ar:'مقبول',color:'#d97706',bg:'#fffbeb',text:'Most students attain levels that are in line with curriculum standards and a few are above.',textAr:'يحقق معظم الطلاب مستويات متوافقة مع معايير المنهاج، ويحقق قلة منهم مستوى أعلى.'},
+    {level:'Weak',ar:'ضعيف',color:'#ea580c',bg:'#fff7ed',text:'Less than three-quarters of students attain levels that are at least in line with curriculum standards.',textAr:'يحقق أقل من ثلاثة أرباع الطلاب مستوى متوافقاً على الأقل مع معايير المنهاج.'},
+    {level:'Very Weak',ar:'ضعيف جداً',color:'#dc2626',bg:'#fef2f2',text:'Few students attain levels that are in line with curriculum standards.',textAr:'يحقق قلة من الطلاب مستوى متوافقاً مع معايير المنهاج.'}
   ];
-  var descHtml=descRows.map(function(r){
-    return '<div style="display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border-bottom:1px solid #f1f5f9">'
-      +'<span style="background:'+r.color+';color:white;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif;white-space:nowrap;min-width:88px;text-align:center">'+r.level+'</span>'
-      +'<div style="flex:1"><div style="font-size:11.5px;color:#334155;line-height:1.6;direction:ltr;text-align:left;font-family:Montserrat,sans-serif">'+r.text+'</div>'
-      +'<div style="font-size:11.5px;color:#64748b;line-height:1.7;margin-top:2px" dir="rtl">'+r.textAr+'</div></div>'
-      +'</div>';
-  }).join('');
   var termsHtml=ATT_QUANT_TERMS.map(function(t){
-    return '<tr><td style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a10;font-weight:800;color:#7c2d4a;font-size:12px">'+t.en+'</td><td style="padding:7px 12px;border:1px solid #e2e8f0;text-align:center;font-size:12px;color:#334155;font-family:Montserrat,sans-serif">'+t.label+'</td></tr>';
+    return '<tr><td style="padding:9px 14px;border:1px solid #e2e8f0;font-weight:800;color:#7c2d4a;font-size:13px;background:#fdf2f8;font-family:Montserrat,sans-serif">'+t.en+'</td><td style="padding:9px 14px;border:1px solid #e2e8f0;text-align:center;font-size:13px;color:#374151;font-family:Montserrat,sans-serif;font-weight:700">'+t.label+'</td></tr>';
   }).join('');
-  return '<div style="background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #e2e8f0;page-break-inside:avoid">'
-    +'<div style="text-align:center;margin-bottom:14px">'
-    +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:#141F44">معايير الحكم المعتمدة</div>'
-    +'<div style="font-family:Montserrat,sans-serif;font-size:11.5px;font-weight:700;color:#AD8628">Approved Attainment Scales — 1.1.1</div>'
+  var judgeRows=descRows.map(function(r){
+    return '<div style="background:'+r.bg+';border-radius:12px;padding:14px 16px;border:1.5px solid '+r.color+'33;display:flex;gap:14px;align-items:flex-start">'
+      +'<div style="background:'+r.color+';color:white;border-radius:8px;padding:4px 14px;font-size:12px;font-weight:800;font-family:Montserrat,sans-serif;white-space:nowrap;height:fit-content;margin-top:2px">'+r.level+' | '+r.ar+'</div>'
+      +'<div>'
+        +'<div style="font-size:13px;color:#374151;line-height:1.7;font-family:Montserrat,sans-serif;direction:ltr">'+r.text+'</div>'
+        +'<div style="font-size:13px;color:#374151;line-height:1.7;font-family:Tajawal,sans-serif;margin-top:3px" dir="rtl">'+r.textAr+'</div>'
+      +'</div></div>';
+  }).join('');
+  return '<div style="max-width:760px;margin:0 auto">'
+    +'<div style="text-align:center;padding:24px 0 18px;border-bottom:3px double #141F44;margin-bottom:22px">'
+      +'<div style="font-family:Tajawal,sans-serif;font-size:22px;font-weight:900;color:#141F44">معايير الحكم المعتمدة — ١.١.١</div>'
+      +'<div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:#AD8628;letter-spacing:.5px">Approved Attainment Scales — 1.1.1</div>'
     +'</div>'
-    +'<div style="border:1px solid #f1f5f9;border-radius:10px;overflow:hidden;margin-bottom:16px">'+descHtml+'</div>'
-    +'<table style="width:100%;border-collapse:collapse"><thead><tr><th style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:11px">Term</th><th style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:11px">Percentage Range</th></tr></thead><tbody>'+termsHtml+'</tbody></table>'
+    +'<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px">'+judgeRows+'</div>'
+    +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">'
+      +'<div style="width:5px;height:24px;background:#7c2d4a;border-radius:4px"></div>'
+      +'<div><div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:#141F44">المقادير الكمية المعتمدة</div><div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:#7c2d4a">Approved Quantitative Terms</div></div>'
+    +'</div>'
+    +'<table style="width:100%;border-collapse:collapse"><thead><tr>'
+      +'<th style="padding:10px 14px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:12px;font-family:Montserrat,sans-serif;text-align:left">Quantitative Term</th>'
+      +'<th style="padding:10px 14px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:12px;font-family:Montserrat,sans-serif;text-align:center">Percentage Range</th>'
+    +'</tr></thead><tbody>'+termsHtml+'</tbody></table>'
+    +'<div style="page-break-after:always"></div>'
     +'</div>';
 }
 
@@ -2639,53 +2821,173 @@ function buildGroupAttainmentReportHtml(groupStudents,groupLabelAr,groupLabelEn)
   var n=groupStudents.length;
   if(!n) return '';
   var counts={above:0,met:0,below:0};
-  groupStudents.forEach(function(x){ counts[_attBandOf(x.pct)]++; });
+  groupStudents.forEach(function(x){ counts[_attBandOf(x.pct!==null?x.pct:0)]++; });
   var pctAbove=Math.round(counts.above/n*100);
   var pctMet=Math.round(counts.met/n*100);
+  var pctBelow=Math.round(counts.below/n*100);
   var pctAtLeastInLine=pctAbove+pctMet;
   var judgement=computeAttainmentJudgement(pctAbove,pctAtLeastInLine);
 
-  var tableRows=ATT_LEVELS.map(function(lv){
-    var cnt=counts[lv.key];
-    var pct=Math.round(cnt/n*100);
+  // ── SVG Donut Chart ──
+  var r=52,cx=70,cy=70,sw=28;
+  var circ=2*Math.PI*r;
+  var segs=[{v:pctAbove,c:'#22c55e'},{v:pctMet,c:'#f59e0b'},{v:pctBelow,c:'#ef4444'}];
+  var off=0;
+  var donutPaths=segs.map(function(s){
+    var d=(s.v/100*circ).toFixed(2)+' '+circ.toFixed(2);
+    var p='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+s.c+'" stroke-width="'+sw+'" stroke-dasharray="'+d+'" stroke-dashoffset="'+(-(off/100*circ)).toFixed(2)+'" transform="rotate(-90 '+cx+' '+cy+')" stroke-linecap="butt"/>';
+    off+=s.v; return p;
+  }).join('');
+  var donutSvg='<svg width="140" height="140" viewBox="0 0 140 140">'
+    +'<circle cx="70" cy="70" r="52" fill="none" stroke="#e2e8f0" stroke-width="28"/>'
+    +donutPaths
+    +'<text x="70" y="66" text-anchor="middle" font-size="22" font-weight="900" fill="#1e293b" font-family="Montserrat,sans-serif">'+pctAbove+'%</text>'
+    +'<text x="70" y="82" text-anchor="middle" font-size="9.5" fill="#64748b" font-family="Montserrat,sans-serif" letter-spacing="0.5">ABOVE</text>'
+    +'</svg>';
+
+  // ── Legend ──
+  var legendDefs=[
+    {k:'above',ar:'أعلى من المعيار',en:'Above',c:'#22c55e'},
+    {k:'met',ar:'متوافق مع المعيار',en:'In Line',c:'#f59e0b'},
+    {k:'below',ar:'أقل من المعيار',en:'Below',c:'#ef4444'}
+  ];
+  var legendHtml=legendDefs.map(function(b){
+    var cnt=counts[b.k],pct=Math.round(cnt/n*100);
+    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">'
+      +'<div style="width:12px;height:12px;border-radius:3px;background:'+b.c+';flex-shrink:0"></div>'
+      +'<div style="flex:1">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:12px;font-weight:700;color:#374151" dir="rtl">'+b.ar+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;color:#94a3b8">'+b.en+'</div>'
+      +'</div>'
+      +'<div style="text-align:right">'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:15px;font-weight:900;color:'+b.c+'">'+cnt+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:'+b.c+'">'+pct+'%</div>'
+      +'</div>'
+    +'</div>';
+  }).join('');
+
+  // ── SVG Bar Chart (bilingual) ──
+  var barW=60,barGap=30,chartH=160,chartW=360,maxVal=n||1;
+  var barDefs=[
+    {k:'above',ar:'أعلى',en:'Above',c:'#22c55e'},
+    {k:'met',ar:'متوافق',en:'In Line',c:'#f59e0b'},
+    {k:'below',ar:'أقل',en:'Below',c:'#ef4444'}
+  ];
+  var barX=30;
+  var bars=barDefs.map(function(b){
+    var cnt=counts[b.k];
+    var h=Math.round((cnt/maxVal)*(chartH-40));
+    var y=chartH-30-h;
+    var x=barX;
+    barX+=barW+barGap;
+    return '<rect x="'+x+'" y="'+y+'" width="'+barW+'" height="'+h+'" rx="6" fill="'+b.c+'" opacity="0.85"/>'
+      +'<text x="'+(x+barW/2)+'" y="'+(y-7)+'" text-anchor="middle" font-size="12" font-weight="900" fill="'+b.c+'" font-family="Montserrat,sans-serif">'+cnt+'</text>'
+      +'<text x="'+(x+barW/2)+'" y="'+(chartH-14)+'" text-anchor="middle" font-size="11" fill="#374151" font-family="Tajawal,sans-serif">'+b.ar+'</text>'
+      +'<text x="'+(x+barW/2)+'" y="'+(chartH-3)+'" text-anchor="middle" font-size="9.5" fill="#94a3b8" font-family="Montserrat,sans-serif">'+b.en+'</text>';
+  }).join('');
+  // Y-axis gridlines
+  var gridLines='';
+  for(var g=0;g<=n;g+=Math.max(1,Math.floor(n/4))){
+    var gy=Math.round(chartH-30-(g/maxVal*(chartH-40)));
+    gridLines+='<line x1="10" y1="'+gy+'" x2="'+(chartW-10)+'" y2="'+gy+'" stroke="#e2e8f0" stroke-width="1"/>'
+      +'<text x="8" y="'+(gy+4)+'" text-anchor="end" font-size="9" fill="#94a3b8" font-family="Montserrat,sans-serif">'+g+'</text>';
+  }
+  var barChartSvg='<svg width="100%" viewBox="0 0 '+chartW+' '+chartH+'" style="overflow:visible">'
+    +gridLines+bars
+    +'<line x1="10" y1="'+(chartH-30)+'" x2="'+(chartW-10)+'" y2="'+(chartH-30)+'" stroke="#94a3b8" stroke-width="1.5"/>'
+    +'</svg>';
+
+  // ── Ratings Table ──
+  var tableRows=legendDefs.map(function(b){
+    var cnt=counts[b.k],pct=Math.round(cnt/n*100);
     return '<tr>'
-      +'<td style="padding:9px 12px;border:1px solid #e2e8f0;text-align:center"><span style="background:'+lv.color+';color:white;border-radius:6px;padding:3px 12px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif">'+lv.en+'</span></td>'
-      +'<td style="padding:9px 12px;border:1px solid #e2e8f0;font-size:11.5px;direction:ltr;text-align:left;font-family:Montserrat,sans-serif;color:#334155">'+lv.statementEn+'</td>'
-      +'<td style="padding:9px 12px;border:1px solid #e2e8f0;font-size:12px;color:#334155" dir="rtl">'+lv.statementAr+'</td>'
-      +'<td style="padding:9px 12px;border:1px solid #e2e8f0;text-align:center;font-weight:800;color:#1e293b;font-family:Montserrat,sans-serif">'+cnt+'</td>'
-      +'<td style="padding:9px 12px;border:1px solid #e2e8f0;text-align:center;font-weight:900;color:'+lv.color+';font-family:Montserrat,sans-serif">'+pct+'%</td>'
+      +'<td style="padding:12px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:14px;font-weight:900;color:'+b.c+'" dir="rtl">'+b.ar+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;color:'+b.c+';font-weight:700;margin-top:2px">'+b.en+'</div>'
+      +'</td>'
+      +'<td style="padding:12px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle;font-size:20px;font-weight:900;font-family:Montserrat,sans-serif;color:#1e293b">'+cnt+'</td>'
+      +'<td style="padding:12px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle">'
+        +'<div style="font-size:18px;font-weight:900;font-family:Montserrat,sans-serif;color:'+b.c+'">'+pct+'%</div>'
+        +'<div style="height:8px;background:#f1f5f9;border-radius:20px;margin-top:6px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+b.c+';border-radius:20px;min-width:'+(cnt?6:0)+'px"></div></div>'
+      +'</td>'
+    +'</tr>';
+  }).join('');
+
+  return '<div style="max-width:760px;margin:0 auto;page-break-inside:avoid;margin-bottom:28px">'
+    // Header
+    +'<div style="background:linear-gradient(135deg,#F8F5F0,#FDF9F3);border:2px solid #D9B872;border-radius:18px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px">'
+      +'<div style="text-align:center;flex:1">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:19px;font-weight:900;color:#141F44" dir="rtl">'+groupLabelAr+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#AD8628">'+groupLabelEn+' ('+n+' students)</div>'
+      +'</div>'
+      +'<div style="background:'+judgement.color+';color:white;border-radius:14px;padding:10px 22px;text-align:center;min-width:130px;box-shadow:0 4px 12px '+judgement.color+'44">'
+        +'<div style="font-size:15px;font-weight:900;font-family:Montserrat,sans-serif">'+judgement.en+'</div>'
+        +'<div style="font-size:13px;font-weight:800;font-family:Tajawal,sans-serif">'+judgement.ar+'</div>'
+      +'</div>'
+    +'</div>'
+    // Charts row
+    +'<div style="display:grid;grid-template-columns:auto 1fr;gap:18px;margin-bottom:18px;align-items:center">'
+      +'<div style="text-align:center">'
+        +donutSvg
+        +'<div style="font-size:11px;color:#94a3b8;font-family:Montserrat,sans-serif;margin-top:4px">% Above</div>'
+      +'</div>'
+      +'<div>'+legendHtml+'</div>'
+    +'</div>'
+    // Bar chart
+    +'<div style="background:white;border-radius:14px;padding:16px;border:1.5px solid #e2e8f0;margin-bottom:18px">'
+      +'<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:12px">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:14px;font-weight:900;color:#141F44" dir="rtl">عدد الطلاب</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;color:#94a3b8">No. of Students</div>'
+      +'</div>'
+      +barChartSvg
+    +'</div>'
+    // Ratings table
+    +'<div style="background:white;border-radius:14px;overflow:hidden;border:1.5px solid #e2e8f0">'
+      +'<table style="width:100%;border-collapse:collapse">'
+        +'<thead><tr style="background:#141F44">'
+          +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center;font-family:Tajawal,sans-serif"><div>المستوى</div><div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;opacity:.8">Level</div></th>'
+          +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center;font-family:Tajawal,sans-serif"><div>عدد الطلاب</div><div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;opacity:.8">No. of Students</div></th>'
+          +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center;font-family:Tajawal,sans-serif"><div>النسبة المئوية</div><div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;opacity:.8">Percentage</div></th>'
+        +'</tr></thead>'
+        +'<tbody>'+tableRows+'</tbody>'
+      +'</table>'
+    +'</div>'
+    +'<div style="page-break-after:always"></div>'
+  +'</div>';
+}
+  var metaHtml=rows.map(function(r){return '<tr><td style="background:#f0f4ff;font-weight:800;color:#1e3a8a;padding:8px 12px;border:1px solid #dbeafe;font-size:12px;width:35%">'+r[0]+'</td><td style="padding:8px 12px;border:1px solid #dbeafe;font-size:12px;color:#1a1a2e">'+r[1]+'</td></tr>';}).join('');
+
+function buildAttainmentDataCountsHtml(allStudents,graded){
+  var boys=graded.filter(function(x){return x.st.gender==='Male';}).length;
+  var girls=graded.filter(function(x){return x.st.gender==='Female';}).length;
+  var gifted=graded.filter(function(x){return x.st.gifted==='Yes';}).length;
+  var sod=graded.filter(function(x){return x.st.sod==='Yes';}).length;
+  var national=graded.filter(function(x){return x.st.national==='Yes';}).length;
+  var rows=[
+    {labelAr:'إجمالي عدد الطلاب الذين أكملوا الاختبار',labelEn:'Total Students Who Completed the Assessment',val:graded.length,highlight:true,color:'#1e3a8a'},
+    {labelAr:'عدد البنين الذين أكملوا الاختبار',labelEn:'Boys Who Completed the Assessment',val:boys,color:'#2563eb'},
+    {labelAr:'عدد البنات اللواتي أكملن الاختبار',labelEn:'Girls Who Completed the Assessment',val:girls,color:'#db2777'},
+    {labelAr:'عدد الموهوبين',labelEn:'Gifted Students',val:gifted,color:'#a855f7'},
+    {labelAr:'عدد ذوي الهمم',labelEn:'Students of Determination (SOD)',val:sod,color:'#ec4899'},
+    {labelAr:'عدد الطلاب المواطنين',labelEn:'National Students',val:national,color:'#16a34a'}
+  ];
+  var tableRows=rows.map(function(r){
+    return '<tr style="background:'+(r.highlight?'#EFF6FF':'white')+'">'
+      +'<td style="padding:11px 16px;border:1px solid #dbeafe;font-size:13px;font-weight:'+(r.highlight?'900':'700')+';color:'+r.color+'" dir="rtl">'+r.labelAr+'</td>'
+      +'<td style="padding:11px 16px;border:1px solid #dbeafe;font-size:12px;color:#475569;font-family:Montserrat,sans-serif;direction:ltr;text-align:left">'+r.labelEn+'</td>'
+      +'<td style="padding:11px 16px;border:1px solid #dbeafe;text-align:center;font-size:17px;font-weight:900;color:'+r.color+';font-family:Montserrat,sans-serif">'+r.val+'</td>'
       +'</tr>';
   }).join('');
-
-  var chartHtml=ATT_LEVELS.map(function(lv){
-    var cnt=counts[lv.key];
-    var pct=Math.round(cnt/n*100);
-    return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:9px">'
-      +'<div style="width:110px;font-size:11px;color:#475569;text-align:right;flex-shrink:0;font-family:Montserrat,sans-serif">'+lv.en+'</div>'
-      +'<div style="flex:1;height:20px;background:#f1f5f9;border-radius:6px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+lv.color+';border-radius:6px"></div></div>'
-      +'<div style="width:40px;font-size:12px;font-weight:800;color:'+lv.color+';font-family:Montserrat,sans-serif">'+pct+'%</div>'
-      +'</div>';
-  }).join('');
-
-  return '<div style="background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #e2e8f0;page-break-inside:avoid">'
-    +'<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #f1f5f9">'
-    +'<div><div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:#141F44">'+groupLabelAr+' <span style="font-size:11px;color:#94a3b8;font-weight:700">('+n+' طالب)</span></div>'
-    +'<div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:#AD8628">'+groupLabelEn+'</div></div>'
-    +'<div style="background:'+judgement.color+';color:white;border-radius:10px;padding:8px 18px;text-align:center">'
-    +'<div style="font-size:13px;font-weight:900;font-family:Montserrat,sans-serif">'+judgement.en+'</div>'
-    +'<div style="font-size:11px;font-weight:700" dir="rtl">'+judgement.ar+'</div>'
-    +'</div></div>'
-    +'<div style="font-size:12px;font-weight:800;color:#1e293b;margin-bottom:8px" dir="rtl">جدول التقديرات <span style="font-weight:600;color:#94a3b8;font-family:Montserrat,sans-serif;font-size:10.5px">| Ratings Table</span></div>'
-    +'<table style="width:100%;border-collapse:collapse;margin-bottom:18px"><thead><tr>'
-    +'<th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-size:11px">Level</th>'
-    +'<th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-size:11px">English Statement</th>'
-    +'<th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-size:11px">العبارة بالعربي</th>'
-    +'<th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-size:11px">العدد</th>'
-    +'<th style="padding:8px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-size:11px">النسبة</th>'
-    +'</tr></thead><tbody>'+tableRows+'</tbody></table>'
-    +'<div style="font-size:12px;font-weight:800;color:#1e293b;margin-bottom:10px" dir="rtl">الرسم البياني <span style="font-weight:600;color:#94a3b8;font-family:Montserrat,sans-serif;font-size:10.5px">| Chart</span></div>'
-    +'<div>'+chartHtml+'</div>'
-    +'</div>';
+  return '<div style="background:white;border-radius:18px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 16px rgba(30,58,138,.1);border:2px solid #BFDBFE">'
+    +'<div style="background:linear-gradient(135deg,#141F44,#1e3a8a);padding:14px 20px;display:flex;align-items:center;justify-content:space-between">'
+    +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:white" dir="rtl">البيانات</div>'
+    +'<div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:#AD8628;letter-spacing:.5px">Data</div>'
+    +'</div>'
+    +'<table style="width:100%;border-collapse:collapse"><thead><tr style="background:#1e3a8a">'
+    +'<th style="padding:10px 16px;border:1px solid #dbeafe;color:#D9B872;font-size:11px;font-weight:800;text-align:right" dir="rtl">البيان</th>'
+    +'<th style="padding:10px 16px;border:1px solid #dbeafe;color:#D9B872;font-size:11px;font-weight:800;text-align:left;font-family:Montserrat,sans-serif">Statement</th>'
+    +'<th style="padding:10px 16px;border:1px solid #dbeafe;color:#D9B872;font-size:11px;font-weight:800;text-align:center;font-family:Montserrat,sans-serif">العدد / Count</th>'
+    +'</tr></thead><tbody>'+tableRows+'</tbody></table></div>';
 }
 
 function buildAttainmentVariableHtml(tests,filters){
@@ -2706,7 +3008,7 @@ function buildAttainmentVariableHtml(tests,filters){
     return header+'<div style="text-align:center;padding:50px 20px;color:rgba(255,255,255,.35);background:rgba(255,255,255,.03);border-radius:16px">لا توجد اختبارات مطابقة للمرشحات المحددة<br><span style="font-family:Montserrat,sans-serif;font-size:12px">No tests match the selected filters</span></div>';
   }
 
-  var graded=allStudents.filter(function(x){return x.pct!==null;});
+  var graded=allStudents.filter(function(x){return _studentIsCompleted(x.st);});
   var dataCountsHtml=buildAttainmentDataCountsHtml(allStudents,graded);
 
   if(!graded.length){
@@ -2736,7 +3038,7 @@ function printAttainmentReport(){
   var el=document.getElementById('attReportPrintArea');
   if(!el){window.print();return;}
   var win=window.open('','_blank');
-  win.document.write('<html><head><meta charset="UTF-8"><title>Attainment Report</title><style>body{font-family:Tajawal,Arial,sans-serif;margin:24px;background:white}@media print{body{margin:0}}</style></head><body>'+el.innerHTML+'</body></html>');
+  win.document.write('<html><head><meta charset="UTF-8"><title>Attainment Report</title><style>@page{size:A4 portrait;margin:18mm}body{font-family:Tajawal,Arial,sans-serif;margin:0;background:white}table{border-collapse:collapse;width:100%}@media print{body{margin:0}.page-break{page-break-after:always}}</style></head><body>'+el.innerHTML+'</body></html>');
   win.document.close();
   setTimeout(function(){win.print();},400);
 }
@@ -2860,36 +3162,40 @@ function loadLiveMonitor(){
   document.getElementById('liveTestDuration').textContent=(t.durationMin||t.duration||'—')+' دقيقة';
   document.getElementById('liveTestInfo').classList.remove('hidden');
 
-  // Build domain headers
+  // Build bilingual domain headers
   var domains=t.domains||[];
-  var domHeaders=domains.map(function(d,i){return '<th style="white-space:nowrap">المجال '+(i+1)+'<br><span style="font-size:10px;opacity:.6;font-weight:400">'+(d.name||'')+'</span></th>';}).join('');
+  var domHeaders=domains.map(function(d,i){return '<th style="white-space:nowrap;font-size:11px"><span style="display:block">المجال '+(i+1)+'</span><span style="display:block;font-family:Montserrat,sans-serif;opacity:.7;font-size:10px">Domain '+(i+1)+'</span><span style="display:block;font-size:10px;opacity:.5">'+(d.nameAr||d.name||'')+'</span></th>';}).join('');
 
-  document.getElementById('liveTableHead').innerHTML='<tr style="font-size:12px">'
-    +'<th style="font-family:Montserrat,sans-serif">Student ID</th>'
-    +'<th>الاسم الأول</th>'
-    +'<th>الاسم الثاني</th>'
-    +'<th>المادة</th>'
-    +'<th>اسم الاختبار</th>'
-    +'<th>الحالة</th>'
+  document.getElementById('liveTableHead').innerHTML='<tr style="font-size:12px;background:rgba(30,58,138,.4)">'
+    +'<th><span style="display:block">رقم الطالب</span><span style="display:block;font-family:Montserrat,sans-serif;font-size:10px;opacity:.7">Student ID</span></th>'
+    +'<th><span style="display:block">الاسم الأول</span><span style="display:block;font-family:Montserrat,sans-serif;font-size:10px;opacity:.7">First Name</span></th>'
+    +'<th><span style="display:block">الاسم الثاني</span><span style="display:block;font-family:Montserrat,sans-serif;font-size:10px;opacity:.7">Last Name</span></th>'
+    +'<th><span style="display:block">المادة</span><span style="display:block;font-family:Montserrat,sans-serif;font-size:10px;opacity:.7">Subject</span></th>'
+    +'<th><span style="display:block">اسم الاختبار</span><span style="display:block;font-family:Montserrat,sans-serif;font-size:10px;opacity:.7">Test Name</span></th>'
+    +'<th><span style="display:block">الحالة</span><span style="display:block;font-family:Montserrat,sans-serif;font-size:10px;opacity:.7">Status</span></th>'
     +domHeaders
     +'</tr>';
 
   var students=t.students||[];
   if(!students.length){
-    document.getElementById('liveTableBody').innerHTML='<tr><td colspan="'+(6+domains.length)+'" style="color:rgba(255,255,255,.3);padding:32px;text-align:center">لا يوجد طلاب</td></tr>';
+    document.getElementById('liveTableBody').innerHTML='<tr><td colspan="'+(6+domains.length)+'" style="color:rgba(255,255,255,.3);padding:32px;text-align:center">لا يوجد طلاب / No Students</td></tr>';
     return;
   }
 
   var rows=students.map(function(st){
-    var statusCell=st.started
-      ?'<span style="background:rgba(74,222,128,.2);color:#4ade80;border:1px solid rgba(74,222,128,.4);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700">تم البدء ✅</span>'
-      :'<span style="background:rgba(250,204,21,.15);color:#FACC15;border:1px solid rgba(250,204,21,.3);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700">لم يبدأ بعد ⏳</span>';
+    var hasStarted=st.started||(st.domainsCompleted&&Object.keys(st.domainsCompleted).length>0);
+    var hasCompleted=st.completed||_studentIsCompleted(st);
+    var statusCell=hasCompleted
+      ?'<span style="background:rgba(34,197,94,.2);color:#4ade80;border:1px solid rgba(34,197,94,.4);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;white-space:nowrap">أكمل ✅<br><span style="font-family:Montserrat,sans-serif;font-size:9px">Completed</span></span>'
+      :hasStarted
+        ?'<span style="background:rgba(250,204,21,.15);color:#FACC15;border:1px solid rgba(250,204,21,.3);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;white-space:nowrap">جارٍ ⏱<br><span style="font-family:Montserrat,sans-serif;font-size:9px">In Progress</span></span>'
+        :'<span style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap">لم يبدأ ⏳<br><span style="font-family:Montserrat,sans-serif;font-size:9px">Not Started</span></span>';
 
     var domCells=domains.map(function(d,i){
       var done=st.domainsCompleted&&st.domainsCompleted[i];
       return '<td style="text-align:center">'+(done
-        ?'<span style="color:#4ade80;font-size:13px;font-weight:700">أكمل ✅</span>'
-        :'<span style="color:rgba(255,255,255,.3);font-size:12px">لم يكمل</span>')+'</td>';
+        ?'<span style="color:#4ade80;font-size:12px;font-weight:700">✅<br><span style="font-size:9px;font-family:Montserrat,sans-serif">Done</span></span>'
+        :'<span style="color:rgba(255,255,255,.25);font-size:11px">—</span>')+'</td>';
     }).join('');
 
     return '<tr style="font-size:13px">'
@@ -2973,7 +3279,7 @@ function startStudentTest(){
 // ============================================================
 function startTestWizard(){
   // تصفير كامل — لا بيانات سابقة
-  testData={domains:[],selectedSchools:[],logoSrc:'',displayMode:1,instructionsAr:'',instructionsEn:''};
+  testData={domains:[],selectedSchools:[],logoSrc:'',displayMode:1,instructionsAr:_DEFAULT_INS_AR,instructionsEn:_DEFAULT_INS_EN};
   selectedSchools=[];editingTestId=null;
   // تصفير حقول الخطوة الأولى
   setTimeout(function(){
@@ -3010,6 +3316,70 @@ function syncStep1BasicInfoToTestData(){
   var curriculumEl=document.getElementById('curriculum');
   testData.curriculum=curriculumEl?curriculumEl.value||'':'';
 }
+var _DEFAULT_INS_AR='<ol style="padding-right:22px;margin:0;font-family:Tajawal,sans-serif"><li style="margin-bottom:10px">يتضمن الاختبار عدة مجالات رئيسية، ويتعين على الطالب إكمال جميع المجالات.</li><li style="margin-bottom:10px">يتمتع الطالب بحرية اختيار المجال الذي يرغب في البدء به، ويمكنه الانتقال إلى المجالات الأخرى بعد الانتهاء من المجال الحالي.</li><li style="margin-bottom:10px">يجب التأكد من الإجابة عن جميع الأسئلة المطلوبة في كل مجال.</li><li style="margin-bottom:10px">يُرجى قراءة جميع النصوص والتعليمات والأسئلة بعناية قبل البدء في الإجابة.</li><li style="margin-bottom:10px">سيتم إجراء اختبار للميكروفون قبل بدء الاختبار للتأكد من جاهزيته، وذلك في حال تضمّن الاختبار مهام أو أسئلة تتطلب التحدث أو التسجيل الصوتي.</li><li style="margin-bottom:10px">يخضع الاختبار للمراقبة وفق إجراءات احترافية تضمن نزاهة الاختبار وسلامته.</li><li style="margin-bottom:0">بمجرد بدء الاختبار، يجب على الطالب الاستمرار في إكماله، ولن يتمكن من الخروج من الاختبار إلا بعد الانتهاء من جميع الأسئلة وإتمام عملية التسليم.</li></ol>';
+var _DEFAULT_INS_EN='<ol style="padding-left:22px;margin:0;font-family:Montserrat,sans-serif"><li style="margin-bottom:10px">The test consists of several domains, and all domains must be completed.</li><li style="margin-bottom:10px">You may choose which domain you would like to start with. Once you have completed a domain, you may proceed to the next one.</li><li style="margin-bottom:10px">All questions within each domain must be answered.</li><li style="margin-bottom:10px">Please read the text, instructions, and questions carefully before answering.</li><li style="margin-bottom:10px">Before the test begins, a microphone check will be conducted to ensure that your microphone is working properly, if there are any speaking or audio-recording questions.</li><li style="margin-bottom:10px">The test will be monitored professionally to ensure that all test procedures and regulations are followed.</li><li style="margin-bottom:0">Once you have entered and started the test, you will not be able to exit until you have completed all the questions and submitted the test.</li></ol>';
+
+function toggleInsEdit(){
+  var panel=document.getElementById('insEditPanel');
+  var preview=document.getElementById('insPreviewCard');
+  var btn=document.getElementById('insEditToggleBtn');
+  if(!panel||!preview) return;
+  var isEditing=panel.style.display!=='none';
+  if(isEditing){
+    applyInsEdit();
+  } else {
+    panel.style.display='block';
+    btn.textContent='❌ إلغاء / Cancel';
+    btn.style.background='rgba(239,68,68,.18)';btn.style.borderColor='rgba(239,68,68,.5)';btn.style.color='#f87171';
+    preview.style.opacity='.45';
+  }
+}
+function applyInsEdit(){
+  var panel=document.getElementById('insEditPanel');
+  var preview=document.getElementById('insPreviewCard');
+  var btn=document.getElementById('insEditToggleBtn');
+  var arEl=document.getElementById('insAr');
+  var enEl=document.getElementById('insEn');
+  if(arEl){
+    testData.instructionsAr=arEl.innerHTML.trim();
+    var prev=document.getElementById('insPreviewAr');
+    if(prev) prev.innerHTML=testData.instructionsAr;
+  }
+  if(enEl){
+    testData.instructionsEn=enEl.innerHTML.trim();
+    var prev2=document.getElementById('insPreviewEn');
+    if(prev2) prev2.innerHTML=testData.instructionsEn;
+  }
+  if(panel) panel.style.display='none';
+  if(preview){preview.style.opacity='1';}
+  if(btn){btn.textContent='✏️ تعديل / Edit';btn.style.background='rgba(250,204,21,.18)';btn.style.borderColor='#FACC15';btn.style.color='#FACC15';}
+}
+function _initInstructionsStep(){
+  var arEl=document.getElementById('insAr');
+  var enEl=document.getElementById('insEn');
+  var prevAr=document.getElementById('insPreviewAr');
+  var prevEn=document.getElementById('insPreviewEn');
+  if(!arEl||!enEl||!prevAr||!prevEn){
+    // Elements not ready yet — will retry via second setTimeout
+    return;
+  }
+  var arSaved=testData.instructionsAr&&testData.instructionsAr.trim()&&testData.instructionsAr!==_DEFAULT_INS_AR;
+  var enSaved=testData.instructionsEn&&testData.instructionsEn.trim()&&testData.instructionsEn!==_DEFAULT_INS_EN;
+  var arContent=arSaved?testData.instructionsAr:_DEFAULT_INS_AR;
+  var enContent=enSaved?testData.instructionsEn:_DEFAULT_INS_EN;
+  arEl.innerHTML=arContent;
+  enEl.innerHTML=enContent;
+  prevAr.innerHTML=arContent;
+  prevEn.innerHTML=enContent;
+  testData.instructionsAr=arContent;
+  testData.instructionsEn=enContent;
+  var panel=document.getElementById('insEditPanel');
+  var preview=document.getElementById('insPreviewCard');
+  var btn=document.getElementById('insEditToggleBtn');
+  if(panel) panel.style.display='none';
+  if(preview) preview.style.opacity='1';
+  if(btn){btn.textContent='✏️ تعديل / Edit';btn.style.background='rgba(250,204,21,.18)';btn.style.borderColor='#FACC15';btn.style.color='#FACC15';}
+}
 function goToStep(s){
   try{
     if(s===2){
@@ -3025,6 +3395,11 @@ function goToStep(s){
     var stepEl=document.getElementById('wizardStep'+s);
     if(stepEl) stepEl.classList.remove('hidden');
     for(var i=1;i<=3;i++){var d=document.getElementById('dot'+i);if(d) d.className='step-dot'+(i<s?' done':i===s?' active':'');}
+    if(s===2){
+      setTimeout(_initInstructionsStep, 80);
+      // fallback in case 80ms is not enough
+      setTimeout(_initInstructionsStep, 300);
+    }
     if(s===3){
       try{ syncStep1BasicInfoToTestData(); }catch(e){}
       try{
@@ -4249,7 +4624,11 @@ function renderQuestionBody(){
     else setTimeout(function(){var el=document.getElementById('oralTextEditor');if(el)el.style.minHeight='140px';},50);
 
   } else if(type==='listening'){
-    area.innerHTML=stemSection+'<div><label class="wizard-label">③ نوع الإجابة / Answer Type</label><select id="listeningAnswerType" class="wizard-input text-sm" style="margin-top:6px" onchange="renderSubAnswer(\'listeningAnswerBody\',this.value)"><option value="">-- اختر --</option><option value="text" '+(currentEditingQ&&currentEditingQ.ansType==='text'?'selected':'')+'>كتابة / Write</option><option value="mcq" '+(currentEditingQ&&currentEditingQ.ansType==='mcq'?'selected':'')+'>MCQ</option><option value="matching" '+(currentEditingQ&&currentEditingQ.ansType==='matching'?'selected':'')+'>توصيل / Match</option></select><div id="listeningAnswerBody" style="margin-top:12px"></div></div>';
+    var lisQText=currentEditingQ&&currentEditingQ.listeningQText?currentEditingQ.listeningQText:'';
+    area.innerHTML=stemSection
+      +'<div style="margin-bottom:14px"><label class="wizard-label">③ نص السؤال / Question Text <span style="font-size:10px;color:rgba(255,255,255,.4)">(اختياري — يظهر للطالب فوق منطقة الإجابة)</span></label>'
+      +'<textarea id="listeningQText" class="wizard-input" style="height:60px;resize:none;margin-top:6px;direction:auto" placeholder="اكتب سؤالاً توجيهياً للطالب...">'+lisQText+'</textarea></div>'
+      +'<div><label class="wizard-label">④ نوع الإجابة / Answer Type</label><select id="listeningAnswerType" class="wizard-input text-sm" style="margin-top:6px" onchange="renderSubAnswer(\'listeningAnswerBody\',this.value)"><option value="">-- اختر --</option><option value="text" '+(currentEditingQ&&currentEditingQ.ansType==='text'?'selected':'')+'>كتابة / Write</option><option value="mcq" '+(currentEditingQ&&currentEditingQ.ansType==='mcq'?'selected':'')+'>MCQ</option><option value="matching" '+(currentEditingQ&&currentEditingQ.ansType==='matching'?'selected':'')+'>توصيل / Match</option></select><div id="listeningAnswerBody" style="margin-top:12px"></div></div>';
     if(currentEditingQ&&currentEditingQ.stemHtml) setTimeout(function(){var el=document.getElementById('qStemEditor');if(el)el.innerHTML=currentEditingQ.stemHtml;},50);
     if(currentEditingQ&&currentEditingQ.ansType){
       setTimeout(function(){
@@ -4583,6 +4962,9 @@ function addMatchPair(){
 // SAVE QUESTION
 // ============================================================
 function saveQuestion(){
+  try { _saveQuestionImpl(); } catch(err){ console.error('saveQuestion error:',err); alert('خطأ في حفظ السؤال:\n'+err.message); }
+}
+function _saveQuestionImpl(){
   var type=document.getElementById('qType').value;if(!type){alert('اختر نمط السؤال أولاً');return;}
   // ── رأس السؤال الموحد ──
   var hBox=document.getElementById('qhBox');
@@ -4728,6 +5110,8 @@ function saveQuestion(){
   }
   else if(type==='listening'){
     q.ansType=document.getElementById('listeningAnswerType')?document.getElementById('listeningAnswerType').value:'';
+    var lisQTextEl=document.getElementById('listeningQText');
+    if(lisQTextEl) q.listeningQText=lisQTextEl.value.trim();
     var lisAud=document.getElementById('listen-audio-preview');
     if(lisAud&&lisAud.src) q.audioSrc=lisAud.src;if(q.ansType==='mcq'){var opts2=[];document.querySelectorAll('[id^="mcqOptEditor"]').forEach(function(el){opts2.push(el.innerHTML||'');});var c2=document.querySelector('input[name="correctMcq"]:checked');q.options=opts2;q.correct=c2?parseInt(c2.value):null;}else if(q.ansType==='matching'){q.pairs=_collectMatchPairsFromDOM();q.connections=matchConnections.slice();}}
   else if(type==='reading'||type==='writingskill'){q.passageHtml=document.getElementById('passageEditor')?document.getElementById('passageEditor').innerHTML:'';q.answerStemHtml=document.getElementById('answerStemEditor')?document.getElementById('answerStemEditor').innerHTML:'';q.ansType=document.getElementById('readingAnswerType')?document.getElementById('readingAnswerType').value:'';if(q.ansType==='mcq'){var opts3=[];document.querySelectorAll('[id^="mcqOptEditor"]').forEach(function(el){opts3.push(el.innerHTML||'');});var c3=document.querySelector('input[name="correctMcq"]:checked');q.options=opts3;q.correct=c3?parseInt(c3.value):null;
@@ -4743,9 +5127,16 @@ function saveQuestion(){
   if(!scoreVal||scoreVal<=0){alert('⚠️ يجب تحديد نسبة السؤال\nPlease enter question weight %');return;}
   // Validate total weight
   var d2=testData.domains[currentDomainIndex];
+  if(!d2){
+    // If domain not found, still allow save (shouldn't happen but prevents crash)
+    var qs2x=_getCurrentQuestions();
+    q.score=scoreVal;
+    if(currentQuestionIndex>=0) qs2x[currentQuestionIndex]=q; else qs2x.push(q);
+    _saveDraft();closeQuestionModal();renderQuestionsList();return;
+  }
   var parentWeight2=currentBranchIndex>=0&&d2.branches&&d2.branches[currentBranchIndex]?d2.branches[currentBranchIndex].weight:d2.weight;
   var qs2=_getCurrentQuestions();
-  var usedSum2=qs2.reduce(function(s,q,i){return i===currentQuestionIndex?s:s+(Number(q.score)||0);},0);
+  var usedSum2=qs2.reduce(function(s,qt,i){return i===currentQuestionIndex?s:s+(Number(qt&&qt.score)||0);},0);
   var newTotal=usedSum2+scoreVal;
   if(Math.round(newTotal*100)>Math.round(parentWeight2*100)){
     alert('⚠️ نسبة السؤال ('+scoreVal+'%) ستتجاوز المجموع المسموح به!\nالمتبقي: '+(parentWeight2-usedSum2).toFixed(2)+'%\n\nQuestion weight exceeds available: '+(parentWeight2-usedSum2).toFixed(2)+'% remaining');
@@ -4777,6 +5168,7 @@ function injectLogoSVG(){
 
 function openStudentWindow(domainIdx,isRealTest){
   sw_domainIdx=domainIdx||0;sw_branchIdx=-1;sw_qIdx=0;sw_answers={};
+  sw_completedDomains=[];sw_completedBranches={};
   applyDisplayMode();
   document.getElementById('studentWindow').style.display='flex';
   var d=testData.domains[sw_domainIdx];
@@ -5206,7 +5598,9 @@ function buildQuestionBodyHtml(q,qi,labels,score){
     +'<button onclick="swConfirmRecording()" style="display:flex;align-items:center;gap:6px;background:#22c55e;color:white;border:none;border-radius:12px;padding:10px 20px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px;font-weight:800;box-shadow:0 2px 8px rgba(34,197,94,.4)">✅ تأكيد / Confirm</button>'
     +'</div></div>';
   } else if(q.type==='listening'){
-    bodyHtml='';if(q.mediaHtml) bodyHtml+='<div class="sw-audio-player">'+q.mediaHtml+'</div>';
+    bodyHtml='';
+    if(q.mediaHtml) bodyHtml+='<div class="sw-audio-player">'+q.mediaHtml+'</div>';
+    if(q.listeningQText) bodyHtml+='<div style="font-size:15px;font-weight:700;margin:12px 0 10px;color:#1a1a2e;line-height:1.7" dir="auto">'+q.listeningQText+'</div>';
     if(q.ansType==='text') bodyHtml+='<textarea class="sw-textarea" style="margin-top:12px" placeholder="اكتب إجابتك / Write..." onchange="sw_answers['+qi+']=this.value;updateProgressDots()">'+(sw_answers[qi]||'')+'</textarea>';
     else if(q.ansType==='mcq') bodyHtml+='<div class="sw-mcq-options">'+(q.options||[]).map(function(o,i){return '<div class="sw-mcq-opt '+(sw_answers[qi]===i?'selected':'')+'" onclick="swSelectMcq('+i+')"><div class="sw-opt-label">'+(labels[i]||i+1)+'</div><div dir="auto" style="color:#1a1a2e;flex:1">'+(o||'—')+'</div></div>';}).join('')+'</div>';
     else if(q.ansType==='matching') bodyHtml+=buildStudentMatching(q);
@@ -6012,11 +6406,13 @@ function _swAutoFinalSubmit(){
     if(sw_branchIdx>=0){
       if(!sw_branchAnswers[sw_domainIdx]) sw_branchAnswers[sw_domainIdx]={};
       sw_branchAnswers[sw_domainIdx][sw_branchIdx]=Object.assign({},sw_answers);
+      _persistCurrentAnswers(sw_domainIdx, sw_branchIdx);
       if(!sw_completedBranches[sw_domainIdx]) sw_completedBranches[sw_domainIdx]=[];
       if(sw_completedBranches[sw_domainIdx].indexOf(sw_branchIdx)<0) sw_completedBranches[sw_domainIdx].push(sw_branchIdx);
       sw_branchIdx=-1; sw_answers={};
       sw_currentPage='branches'; renderStudentWindowPage();
     } else {
+      _persistCurrentAnswers(sw_domainIdx, -1);
       if(sw_completedDomains.indexOf(sw_domainIdx)<0) sw_completedDomains.push(sw_domainIdx);
       if(currentStudentData){
         if(!currentStudentData.student.domainsCompleted) currentStudentData.student.domainsCompleted={};
@@ -6026,6 +6422,17 @@ function _swAutoFinalSubmit(){
       sw_answers={};
       sw_currentPage='domains'; renderStudentWindowPage();
     }
+  });
+}
+// ══ حفظ إجابات المجال/الفرع الحالي في سجل الطالب لتمكين التصحيح الإلكتروني ══
+function _persistCurrentAnswers(domainIdx, branchIdx){
+  if(!currentStudentData||!currentStudentData.student) return;
+  var st=currentStudentData.student;
+  if(!st.answers) st.answers={};
+  if(!st.answers[domainIdx]) st.answers[domainIdx]={};
+  Object.keys(sw_answers).forEach(function(qi){
+    var key = branchIdx>=0 ? 'br'+branchIdx+'_'+qi : String(qi);
+    st.answers[domainIdx][key]=sw_answers[qi];
   });
 }
 function swSubmitDomain(total){
@@ -6041,6 +6448,7 @@ function swSubmitDomain(total){
       clearInterval(sw_timerInterval);
       if(!sw_branchAnswers[sw_domainIdx]) sw_branchAnswers[sw_domainIdx]={};
       sw_branchAnswers[sw_domainIdx][sw_branchIdx]=Object.assign({},sw_answers);
+      _persistCurrentAnswers(sw_domainIdx, sw_branchIdx);
       if(!sw_completedBranches[sw_domainIdx]) sw_completedBranches[sw_domainIdx]=[];
       if(sw_completedBranches[sw_domainIdx].indexOf(sw_branchIdx)<0) sw_completedBranches[sw_domainIdx].push(sw_branchIdx);
       if(currentStudentData){
@@ -6075,11 +6483,16 @@ function swSubmitDomain(total){
   ).then(function(ok){
     if(!ok)return;
     clearInterval(sw_timerInterval);
+    _persistCurrentAnswers(sw_domainIdx, -1);
     if(sw_completedDomains.indexOf(sw_domainIdx)<0) sw_completedDomains.push(sw_domainIdx);
     if(currentStudentData){
       currentStudentData.student.started=true;
       if(!currentStudentData.student.domainsCompleted) currentStudentData.student.domainsCompleted={};
       currentStudentData.student.domainsCompleted[sw_domainIdx]=true;
+      // إجمالي المجالات — يُعدّ الاختبار منتهياً إذا أجاب الطالب عن جميع المجالات بأي ترتيب
+      var totalDomains=testData.domains?testData.domains.length:0;
+      var doneDomains=Object.keys(currentStudentData.student.domainsCompleted).length;
+      isLast=(doneDomains>=totalDomains);
       if(isLast) currentStudentData.student.completed=true;
       saveMyTests();
     }
@@ -6299,18 +6712,22 @@ function approveFinalTest(){
 // ============================================================
 // STUDENT CODES
 // ============================================================
-function generateStudentCode(firstName,lastName){
-  var fn=(firstName||'Student').trim().replace(/\s+/g,'').replace(/[^a-zA-Z\u0600-\u06FF]/g,'');
-  var digits=String(Math.floor(1000+Math.random()*9000));
-  var username=fn+'@'+digits;
-  var password=digits+'@ist';
+function generateStudentCode(firstName,lastName,schoolCode){
+  var fn=(firstName||'Student').trim().replace(/\s+/g,'').toLowerCase().replace(/[^a-zA-Z0-9]/g,'');
+  var year=new Date().getFullYear().toString();
+  var seq=String(Math.floor(1000+Math.random()*9000));
+  var sc=(schoolCode||'ist').toLowerCase().replace(/[^a-z0-9]/g,'');
+  var username=fn+year+seq+'@'+sc;
+  var password=String(Math.floor(100000+Math.random()*900000));
   return{username:username,password:password};
 }
 function openStudentCodesPanel(testId){activeCodesTestId=testId;var t=myTests.find(function(x){return x.id===testId;});if(!t)return;if(!t.students)t.students=[];document.getElementById('codesTestId').value=testId;pendingStudentCodes=t.students.slice();document.getElementById('studentCodesPanel').classList.remove('hidden');document.getElementById('uploadCodesResult').textContent='';renderStudentCodesTable();}
 function addStudentManually(){
   var firstName=document.getElementById('manFirstName').value.trim(),lastName=document.getElementById('manLastName').value.trim();
   if(!firstName&&!lastName){alert('يرجى إدخال الاسم');return;}
-  var creds=generateStudentCode(firstName,lastName);
+  var t=myTests.find(function(x){return x.id===activeCodesTestId;});
+  var sc=t&&t.schoolCode?t.schoolCode:(t&&t.school?t.school.replace(/\s+/g,''):'ist');
+  var creds=generateStudentCode(firstName,lastName,sc);
   pendingStudentCodes.push({schoolID:document.getElementById('manSchoolID').value.trim(),firstName:firstName,lastName:lastName,gender:document.getElementById('manGender').value,schoolName:document.getElementById('manSchoolName').value.trim(),nationality:document.getElementById('manNationality').value.trim()||'—',national:document.getElementById('manNational').value,gifted:document.getElementById('manGifted').value,sod:document.getElementById('manSOD').value,username:creds.username,password:creds.password,active:true});
   ['manSchoolID','manFirstName','manLastName','manSchoolName','manNationality'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
   saveStudentCodes();renderStudentCodesTable();
@@ -6376,7 +6793,9 @@ function uploadStudentsExcelCodes(event){
       var isSen=(sen&&sen!=='-'&&sen.toLowerCase()!=='no'&&sen.toLowerCase()!=='false')?'Yes':'No';
       var isGifted=(gifted&&gifted!=='-'&&gifted.toLowerCase()!=='no'&&gifted.toLowerCase()!=='false'&&gifted.toLowerCase().indexOf('g')===0)?'Yes':'No';
       var isLocal=(local&&local.toLowerCase()==='yes'||local==='Y')?'Yes':'No';
-      var cr=generateStudentCode(fn,ln);
+      var tExl=myTests.find(function(x){return x.id===activeCodesTestId;});
+      var scExl=tExl&&tExl.schoolCode?tExl.schoolCode:(tExl&&tExl.school?tExl.school.replace(/\s+/g,''):'ist');
+      var cr=generateStudentCode(fn,ln,scExl);
       pendingStudentCodes.push({
         schoolID:String(row[0]||'').trim(),
         firstName:fn,lastName:ln,
@@ -6776,10 +7195,11 @@ function openGradingPanel(role, preloadTestId){
     _gradingTestId = preloadTestId;
   }
 
-  // Build test+student dropdown
+  // Build test+student dropdown — if called from a specific test, show only that test's students
   var sel = document.getElementById('gradingStudentSelect');
-  sel.innerHTML = '<option value="">-- اختر طالباً --</option>';
-  tests.forEach(function(t){
+  sel.innerHTML = '<option value="">-- اختر طالباً / Select Student --</option>';
+  var testsToShow = preloadTestId ? tests.filter(function(t){ return t.id===preloadTestId; }) : tests;
+  testsToShow.forEach(function(t){
     if(!t.students || !t.students.length) return;
     var grp = document.createElement('optgroup');
     grp.label = t.name + ' | ' + (t.subject||'') + ' | ' + (t.grade||'');
@@ -6890,19 +7310,29 @@ function loadStudentGrading(){
         : '<span style="background:rgba(251,146,60,.1);border-radius:8px;padding:2px 10px;font-size:10px;color:#fb923c">✍️ يدوي — إجباري</span>';
       html += '</div></div></div>';
 
-      // Student answer
+      // Student answer — shows full rendered view
       html += '<div style="background:rgba(0,0,0,.25);border-radius:10px;padding:10px 14px;margin-bottom:10px">';
-      html += '<div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:6px;font-family:Montserrat,sans-serif">إجابة الطالب / Student Answer</div>';
-      html += _renderStudentAnswer(q, st, di, q._br, q._qi);
+      html += '<div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:8px;font-family:Montserrat,sans-serif;display:flex;align-items:center;justify-content:space-between">';
+      html += '<span>إجابة الطالب / Student Answer</span>';
+      html += '<button onclick="toggleStudentAnswerView(\''+gradeKey+'_preview\')" style="background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);color:#93c5fd;border-radius:6px;padding:2px 10px;font-size:10px;cursor:pointer;font-family:Montserrat,sans-serif">👁 عرض كصفحة طالب</button>';
+      html += '</div>';
+      html += '<div id="'+gradeKey+'_anstext">'+_renderStudentAnswer(q, st, di, q._br, q._qi)+'</div>';
+      // Student-page preview (hidden by default)
+      html += '<div id="'+gradeKey+'_preview" style="display:none;margin-top:12px;background:white;border-radius:10px;padding:16px">';
+      html += _renderStudentAnswerPreview(q, st, di, q._br, q._qi);
+      html += '</div>';
       html += '</div>';
 
-      // Auto suggestion
+      // Auto suggestion — auto-fill and show confirm button
       if(isAuto && autoResult !== null){
-        html += '<div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:8px 14px;margin-bottom:10px;display:flex;align-items:center;gap:10px">';
-        html += '<span style="font-size:11px;color:#4ade80;font-family:Montserrat,sans-serif">⚡ الدرجة المقترحة تلقائياً:</span>';
-        html += '<strong style="color:#4ade80;font-family:Montserrat,sans-serif">'+(autoResult ? q.score : 0)+'%</strong>';
-        html += '<span style="font-size:10px;color:rgba(74,222,128,.6)">'+(autoResult ? '✅ إجابة صحيحة' : '❌ إجابة خاطئة')+'</span>';
-        html += '<button onclick="applyAutoGrade(\''+gradeKey+'\','+di+',\''+brKey+q._qi+'\','+q.score+','+autoResult+')" style="margin-right:auto;background:rgba(34,197,94,.2);border:1px solid rgba(34,197,94,.4);color:#4ade80;border-radius:8px;padding:4px 12px;font-size:11px;cursor:pointer;font-family:Tajawal,sans-serif">اعتماد / Accept</button>';
+        var autoScore = autoResult ? q.score : 0;
+        // Auto-fill grade input if not already set
+        if(existingGrade==='') existingGrade = autoScore;
+        html += '<div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:8px 14px;margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">';
+        html += '<span style="font-size:11px;color:#4ade80;font-family:Montserrat,sans-serif">⚡ تصحيح تلقائي:</span>';
+        html += '<strong style="color:'+(autoResult?'#4ade80':'#f87171')+';font-family:Montserrat,sans-serif">'+autoScore+'%</strong>';
+        html += '<span style="font-size:10px;color:rgba('+(autoResult?'74,222,128':'248,113,113')+',.7)">'+(autoResult ? '✅ صحيحة' : '❌ خاطئة')+'</span>';
+        html += '<button onclick="applyAutoGrade(\''+gradeKey+'\','+di+',\''+brKey+q._qi+'\','+q.score+','+autoResult+')" style="margin-right:auto;background:rgba(34,197,94,.2);border:1px solid rgba(34,197,94,.4);color:#4ade80;border-radius:8px;padding:4px 12px;font-size:11px;cursor:pointer;font-family:Tajawal,sans-serif">✅ اعتماد / Accept</button>';
         html += '</div>';
       }
 
@@ -6938,7 +7368,6 @@ function loadStudentGrading(){
 }
 
 function _getAutoGrade(q, st, di, brIdx, qi){
-  if(!st.domainsCompleted) return null;
   var ans = null;
   if(st.answers && st.answers[di]){
     ans = brIdx !== undefined ? (st.answers[di]['br'+brIdx+'_'+qi]) : st.answers[di][qi];
@@ -6968,6 +7397,49 @@ function _getAutoGrade(q, st, di, brIdx, qi){
   return null;
 }
 
+function toggleStudentAnswerView(id){
+  var el=document.getElementById(id);
+  if(!el) return;
+  el.style.display=el.style.display==='none'?'block':'none';
+}
+function _renderStudentAnswerPreview(q, st, di, brIdx, qi){
+  var labels=['A','B','C','D','E','F'];
+  var key = brIdx !== undefined && brIdx >= 0 ? 'br'+brIdx+'_'+qi : String(qi);
+  var ans = st.answers && st.answers[di] ? st.answers[di][key] : undefined;
+
+  var stemHtml='<div style="font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;line-height:1.7;font-family:Tajawal,sans-serif" dir="auto">'+(q.stemHtml||q.stemText||'')+'</div>';
+
+  if(q.type==='mcq'||q.type==='classify-mcq'){
+    var opts=(q.options||[]).map(function(o,i){
+      var sel=ans===i;
+      var correct=q.correct===i;
+      var bg=sel?(correct?'#dcfce7':'#fee2e2'):'#f8fafc';
+      var border=sel?(correct?'#22c55e':'#ef4444'):'#e2e8f0';
+      return '<div style="background:'+bg+';border:2px solid '+border+';border-radius:10px;padding:10px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px">'
+        +'<div style="width:28px;height:28px;border-radius:8px;background:'+(sel?(correct?'#22c55e':'#ef4444'):'#e2e8f0')+';display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;color:'+(sel?'white':'#64748b')+';font-family:Montserrat,sans-serif">'+(labels[i]||i+1)+'</div>'
+        +'<div style="flex:1;font-size:14px;color:#1a1a2e;font-family:Tajawal,sans-serif" dir="auto">'+o+'</div>'
+        +(sel&&correct?'<span style="color:#16a34a;font-size:18px">✅</span>':'')
+        +(sel&&!correct?'<span style="color:#dc2626;font-size:18px">❌</span>':'')
+        +(!sel&&correct?'<span style="color:#22c55e;font-size:12px;font-family:Montserrat,sans-serif">← الإجابة الصحيحة</span>':'')
+        +'</div>';
+    }).join('');
+    return stemHtml+opts;
+  }
+  if(q.type==='truefalse'){
+    var stmts=q.statements||[];
+    return stemHtml+stmts.map(function(s,si){
+      var stAns=ans&&ans[si];
+      var correct=stAns===s.answer;
+      var bg=stAns?(correct?'#dcfce7':'#fee2e2'):'#f8fafc';
+      return '<div style="background:'+bg+';border:1.5px solid '+(stAns?(correct?'#22c55e':'#ef4444'):'#e2e8f0')+';border-radius:10px;padding:10px 14px;margin-bottom:8px;font-family:Tajawal,sans-serif;font-size:13px;color:#1a1a2e" dir="rtl">'
+        +s.text+'<span style="margin-right:10px;font-weight:800;color:'+(correct?'#16a34a':'#dc2626')+'">'+(stAns||'—')+'</span>'+(stAns?correct?'✅':'❌':'')+'</div>';
+    }).join('');
+  }
+  if(!ans||ans===null){
+    return stemHtml+'<div style="color:#94a3b8;font-style:italic;font-family:Montserrat,sans-serif;font-size:13px">لم يُجب الطالب / No answer submitted</div>';
+  }
+  return stemHtml+'<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 16px;font-family:Tajawal,sans-serif;font-size:14px;color:#1a1a2e;line-height:1.8;white-space:pre-wrap" dir="auto">'+ans+'</div>';
+}
 function _renderStudentAnswer(q, st, di, brIdx, qi){
   var ans = null;
   if(st.answers && st.answers[di]){
@@ -7021,6 +7493,32 @@ function _renderStudentAnswer(q, st, di, brIdx, qi){
   return '<span style="color:rgba(255,255,255,.4);font-size:12px">'+JSON.stringify(ans)+'</span>';
 }
 
+function applyAllAutoGrades(){
+  var t=_gradingTestId?myTests.find(function(x){return x.id===_gradingTestId;}):null;
+  var st=t&&_gradingStudentIdx>=0?t.students[_gradingStudentIdx]:null;
+  if(!t||!st){scWarn('اختر اختباراً وطالباً أولاً','Select a test and student first');return;}
+  var count=0;
+  t.domains.forEach(function(d,di){
+    var qlist=[];
+    if(d.hasBranches){(d.branches||[]).forEach(function(br,bi){(br.questions||[]).forEach(function(q,qi){qlist.push(Object.assign({},q,{_qi:qi,_br:bi,_brKey:'br'+bi+'_'}));});});}
+    else{(d.questions||[]).forEach(function(q,qi){qlist.push(Object.assign({},q,{_qi:qi,_br:undefined,_brKey:''}));});}
+    qlist.forEach(function(q){
+      var isAuto=q.type==='mcq'||q.type==='truefalse'||q.type==='ordering';
+      if(!isAuto) return;
+      var ar=_getAutoGrade(q,st,di,q._br,q._qi);
+      if(ar===null) return;
+      var score=ar?q.score:0;
+      var key='g_'+di+'_'+q._brKey+q._qi;
+      var el=document.getElementById(key);
+      if(el){el.value=score;count++;}
+      if(!st.grades) st.grades={};
+      if(!st.grades[di]) st.grades[di]={};
+      st.grades[di][q._brKey+q._qi]=score;
+    });
+  });
+  updateGradeTotal();
+  scOk('تم ⚡','Applied','تم اعتماد '+count+' درجة تلقائية','Applied '+count+' auto-grade(s)','⚡');
+}
 function applyAutoGrade(gradeKey, di, qKey, maxScore, isCorrect){
   var el = document.getElementById(gradeKey);
   if(el){ el.value = isCorrect ? maxScore : 0; updateGradeTotal(di); }
@@ -7128,10 +7626,9 @@ function approveGrading(){
   _collectGradesFromUI();
   var t = _gradingTestId ? myTests.find(function(x){ return x.id === _gradingTestId; }) : null;
   if(!t){ scWarn('اختر اختباراً','Select a test'); return; }
-  // Validate all manual questions graded
-  var ungraded = [];
   var st = _gradingStudentIdx >= 0 ? t.students[_gradingStudentIdx] : null;
   if(!st){ scWarn('اختر طالباً أولاً','Select a student'); return; }
+  var ungraded = [];
   t.domains.forEach(function(d,di){
     var questions = d.hasBranches
       ? (d.branches||[]).reduce(function(acc,br,bi){ return acc.concat((br.questions||[]).map(function(q,qi){ return {q:q,brKey:'br'+bi+'_',qi:qi,di:di}; })); },[])
@@ -7140,27 +7637,82 @@ function approveGrading(){
       var isManual = item.q.type==='writingskill'||item.q.type==='speaking'||item.q.type==='oral'||item.q.type==='reading';
       if(isManual){
         var el = document.getElementById('g_'+di+'_'+item.brKey+item.qi);
-        if(!el || el.value === '') ungraded.push('Q.'+(item.qi+1)+' في '+d.nameAr);
+        if(!el || el.value === '') ungraded.push('Q.'+(item.qi+1)+' — '+d.nameAr);
       }
     });
   });
   if(ungraded.length){
-    scWarn('يوجد أسئلة يدوية لم تُصحح بعد:<br>'+ungraded.join('<br>'),'Manual questions not graded:<br>'+ungraded.join('<br>'));
+    scWarn('يوجد أسئلة يدوية لم تُصحح بعد:<br>'+ungraded.join('<br>'),'Manual questions not yet graded:<br>'+ungraded.join('<br>'));
     return;
   }
-  scDanger('اعتماد التصحيح','Approve Grading',
-    'هل تريد اعتماد تصحيح الطالب <strong style="color:#fb923c">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong>؟<br>سيُرسل تلقائياً للإدارة للاعتمادية النهائية.',
-    'Approve grading for <strong>'+(st.firstName||'')+' '+(st.lastName||'')+'</strong>? Will be sent for final admin approval.'
+  scDanger('اعتماد وإرسال النتائج','Approve & Broadcast Results',
+    '<div dir="rtl" style="line-height:1.8;font-family:Tajawal,sans-serif">'
+    +'هل تريد اعتماد نتيجة الطالب <strong style="color:#fb923c">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإرسالها نهائياً؟<br>'
+    +'<span style="font-size:12px;color:rgba(255,255,255,.6)">🔔 ستظهر هذه النتيجة تلقائياً في:</span><br>'
+    +'<ul style="margin:6px 0;padding-right:20px;font-size:12px;color:#4ade80"><li>لوحة المشرف / Supervisor Portal</li><li>بوابة المدرسة / School Portal</li><li>تقارير التحصيل / Attainment Reports</li></ul>'
+    +'<span style="color:#fbbf24;font-size:12px;font-weight:700">⚠️ هذه النتيجة نهائية وتُبنى عليها التقارير. يمكن تحديثها لاحقاً بزر "تحديث بعد الاعتماد".</span>'
+    +'</div>',
+    'Finalise and broadcast result for '+(st.firstName||'')+' '+(st.lastName||'')+'?'
   ).then(function(ok){
     if(!ok) return;
     st.gradingApproved = true;
-    st.gradingApprovedBy = currentSupName;
+    st.gradingApprovedBy = currentSupName||'Admin';
     st.gradingApprovedAt = new Date().toISOString();
+    st.resultBroadcast = true;
     t.gradingStatus = 'approved';
+    t.gradingApproved = true;
     t.gradingSavedAt = new Date().toISOString();
     saveMyTests().then(function(){
-      document.getElementById('gradingStatus').textContent = '✅ معتمد من المحرر';
-      scOk('تم الاعتماد ✅','Approved','تم اعتماد التصحيح وإرساله للإدارة.','Grading approved and sent to admin.','✅');
+      document.getElementById('gradingStatus').textContent = '✅ نتائج نهائية / Final Results Approved';
+      // Trigger refresh in other portals if they are open
+      if(typeof renderLiveStudentList === 'function') try{ renderLiveStudentList(); }catch(e){}
+      scOk(
+        '✅ تم الاعتماد والإرسال',
+        'Approved & Broadcast',
+        '<div dir="rtl" style="font-family:Tajawal,sans-serif;line-height:1.85">'
+        +'تم اعتماد نتيجة الطالب <strong style="color:#4ade80">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإرسالها نهائياً.<br>'
+        +'<span style="font-size:12px;color:rgba(255,255,255,.6)">النتيجة الآن متاحة في جميع البوابات وتقارير التحصيل.</span>'
+        +'</div>',
+        'Result finalised and visible across all portals.',
+        '🎉'
+      );
+    });
+  });
+}
+
+function updateAfterApproval(){
+  _collectGradesFromUI();
+  var t = _gradingTestId ? myTests.find(function(x){ return x.id === _gradingTestId; }) : null;
+  if(!t){ scWarn('اختر اختباراً','Select a test'); return; }
+  var st = _gradingStudentIdx >= 0 ? t.students[_gradingStudentIdx] : null;
+  if(!st){ scWarn('اختر طالباً أولاً','Select a student'); return; }
+  scDanger(
+    'تحديث النتيجة بعد الاعتماد','Update After Approval',
+    '<div dir="rtl" style="font-family:Tajawal,sans-serif;line-height:1.8">'
+    +'سيتم تحديث نتيجة الطالب <strong style="color:#38bdf8">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإعادة الاعتماد حتى وإن كانت قد أُرسلت سابقاً.<br>'
+    +'<span style="font-size:12px;color:#fbbf24">⚠️ النتيجة المحدّثة ستحل محل السابقة في كل البوابات والتقارير.</span>'
+    +'</div>',
+    'Re-approve and update result for '+(st.firstName||'')+' '+(st.lastName||'')+'? Updated result will overwrite the previous one across all portals.'
+  ).then(function(ok){
+    if(!ok) return;
+    st.gradingApproved = true;
+    st.gradingApprovedBy = currentSupName||'Admin';
+    st.gradingApprovedAt = new Date().toISOString();
+    st.resultBroadcast = true;
+    st.lastUpdatedAt = new Date().toISOString();
+    t.gradingStatus = 'approved';
+    t.gradingApproved = true;
+    t.gradingSavedAt = new Date().toISOString();
+    saveMyTests().then(function(){
+      document.getElementById('gradingStatus').textContent = '🔄 محدَّث ومعتمد / Updated & Approved';
+      if(typeof renderLiveStudentList === 'function') try{ renderLiveStudentList(); }catch(e){}
+      scOk(
+        '🔄 تم التحديث والإعادة',
+        'Updated & Re-Approved',
+        '<div dir="rtl" style="font-family:Tajawal,sans-serif">تم تحديث نتيجة <strong style="color:#38bdf8">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإعادة اعتمادها. النتيجة الجديدة متاحة الآن في كل البوابات والتقارير.</div>',
+        'Result updated and visible across all portals.',
+        '🔄'
+      );
     });
   });
 }
