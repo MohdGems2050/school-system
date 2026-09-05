@@ -376,21 +376,21 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
 
   <!-- أيقونات صغيرة: الإدارة + المشرف + المدارس -->
   <div style="width:100%;max-width:560px;padding:16px 20px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-    <button onclick="initRoute('الإدارة')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
+    <button type="button" onclick="initRoute('الإدارة')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
       onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 16px rgba(37,99,235,.15)'"
       onmouseout="this.style.borderColor='#bfdbfe';this.style.boxShadow='0 2px 8px rgba(37,99,235,.06)'">
       <div style="font-size:26px;margin-bottom:6px">⚙️</div>
       <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#2563EB;letter-spacing:.8px;text-transform:uppercase">ADMIN</div>
       <div style="font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;color:#1e3a8a">الإدارة</div>
     </button>
-    <button onclick="initRoute('المشرف')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
+    <button type="button" onclick="initRoute('المشرف')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
       onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 16px rgba(37,99,235,.15)'"
       onmouseout="this.style.borderColor='#bfdbfe';this.style.boxShadow='0 2px 8px rgba(37,99,235,.06)'">
       <div style="font-size:26px;margin-bottom:6px">🛡️</div>
       <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#2563EB;letter-spacing:.8px;text-transform:uppercase">SUPERVISOR</div>
       <div style="font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;color:#1e3a8a">المشرف</div>
     </button>
-    <button onclick="initRoute('المدارس')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
+    <button type="button" onclick="initRoute('المدارس')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
       onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 16px rgba(37,99,235,.15)'"
       onmouseout="this.style.borderColor='#bfdbfe';this.style.boxShadow='0 2px 8px rgba(37,99,235,.06)'">
       <div style="font-size:26px;margin-bottom:6px">🏫</div>
@@ -1480,6 +1480,66 @@ var supervisors = [];
 var schools     = [];
 var myTests     = [];
 var sbGLOs      = {};
+var archivedTests = [];
+
+function safeEl(id){return document.getElementById(id);}
+function ensureDefaultAccessData(){
+  if(!schools.length){
+    schools.push({
+      id:1001,
+      name:'GEMS World Academy',
+      country:'الإمارات / UAE',
+      curriculum:'IB',
+      logoSrc:'',
+      username:'GWA@ist',
+      password:'123456',
+      code:'GWA-IB',
+      added:new Date().toLocaleDateString('ar')
+    });
+  }
+  var hasStudentPortal=myTests.some(function(t){return t.status==='approved'&&t.students&&t.students.length;});
+  if(!hasStudentPortal){
+    myTests.push({
+      id:10001,
+      name:'Demo Assessment',
+      subject:'Demo',
+      grade:'Grade 1',
+      term:'1',
+      year:'2025-2026',
+      school:'GEMS World Academy',
+      status:'approved',
+      generalStatus:'approved',
+      activeFrom:'2020-01-01T00:00',
+      activeTo:'2199-12-31T23:59',
+      domains:[{
+        nameAr:'المجال التجريبي',
+        nameEn:'Demo Domain',
+        weight:100,
+        questions:[{
+          type:'mcq',
+          stemAr:'سؤال تجريبي',
+          stemEn:'Demo question',
+          options:['A','B','C','D'],
+          correct:0,
+          score:1
+        }]
+      }],
+      students:[{
+        id:5001,
+        firstName:'Demo',
+        lastName:'Student',
+        schoolName:'GEMS World Academy',
+        username:'Student001',
+        password:'123456',
+        active:true
+      }]
+    });
+  }
+}
+function getCounterValue(id,defaultValue){
+  var stored=parseInt(localStorage.getItem('scholastic_'+id),10);
+  return isNaN(stored)?defaultValue:stored;
+}
 
 // Load all data from GitHub on startup
 async function initDataFromGitHub(){
@@ -1499,6 +1559,8 @@ async function initDataFromGitHub(){
     if(results[3]) sbGLOs=results[3];
     if(results[4]) archivedTests=results[4]; else archivedTests=[];
   }catch(e){ console.warn('GH load error:',e); }
+  ensureDefaultAccessData();
+  try{ updateCountersFromData(false); }catch(e){}
   showGHLoader(false);
   try{ if(typeof filterSchoolsByCountryAndCurriculum==='function') filterSchoolsByCountryAndCurriculum(); }catch(e){}
   try{ if(typeof renderSchools==='function') renderSchools(); }catch(e){}
@@ -2378,12 +2440,17 @@ function initRoute(role){
     role==='المشرف'?'Sign in to Supervisor Portal':
     role==='الطالب'?'Student Sign In':
     role==='المدارس'?'Sign in to Schools Portal':'Sign In';
-  // إدارة: كلمة مرور فقط، بقية الأدوار: اسم مستخدم + كلمة مرور
   var userRow=document.getElementById('userInputRow');
   if(userRow) userRow.style.display=role==='الإدارة'?'none':'block';
   document.getElementById('userInput').value='';
   document.getElementById('passInput').value='';
-  document.getElementById('loginModal').style.display='flex';
+  // Use requestAnimationFrame to ensure modal opens AFTER the click event
+  // propagation fully completes (prevents backdrop click from immediately closing it)
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      document.getElementById('loginModal').style.display='flex';
+    });
+  });
 }
 function closeModal(e){document.getElementById('loginModal').style.display='none';}
 function toggleForgot(show){document.getElementById('loginFields').classList.toggle('hidden',show);document.getElementById('forgotFields').classList.toggle('hidden',!show);}
@@ -2603,7 +2670,7 @@ function downloadTestAttainmentReport(testId){
   if(!t){scWarn('لم يُوجد الاختبار','Test not found');return;}
   var filters={grade:t.grade||'',subject:t.subject||'',term:String(t.term||'')};
   var html='<html><head><meta charset="UTF-8"><title>'+t.name+'</title>'
-    +'<style>@page{size:A4 portrait;margin:18mm}body{font-family:Tajawal,Arial,sans-serif;margin:0;background:white;direction:rtl}'
+    +'<style>body{font-family:Tajawal,Arial,sans-serif;margin:24px;background:white;direction:rtl}'
     +'table{border-collapse:collapse;width:100%}th,td{border:1px solid #e2e8f0;padding:8px 12px}'
     +'@media print{body{margin:0}}</style></head><body>'
     +buildAttainmentPreambleHtml()
@@ -2668,295 +2735,77 @@ function runAttainmentReport(){
 
 function buildAttainmentPreambleHtml(){
   var GUIDE=[
-    {
-      ar:'الغرض من التقرير',en:'Purpose of the Report',
-      arT:'يوضح تقرير التحصيل مستوى أداء الطلاب في الاختبار المختار، ويعرض توزيعهم حسب نطاقات الأداء المتوقعة. يساعد التقرير المدرسة على فهم الوضع الحالي قبل اتخاذ قرارات الدعم والتحسين.',
-      enT:'The attainment report presents student performance in the selected assessment and shows distribution across expected performance bands. It helps the school understand current attainment before planning support and improvement actions.',
-      icon:'📋',color:'#1e3a8a'
-    },
-    {
-      ar:'قراءة الجداول',en:'Reading the Tables',
-      arT:'تعرض الجداول عدد الطلاب ونسبتهم المئوية في كل نطاق أداء. وقد تظهر النتائج على مستوى المدرسة، الصف، الشعبة، المادة، المهارة، أو الفئة الطلابية.',
-      enT:'Tables show the number and percentage of students in each performance band. Results may be displayed by school, grade, class, subject, skill, or student category.',
-      icon:'📊',color:'#0891b2'
-    },
-    {
-      ar:'قراءة الرسوم البيانية',en:'Reading the Charts',
-      arT:'تساعد الرسوم البيانية على مقارنة نسب الطلاب بين نطاقات الأداء، أو بين اختبارين، أو بين فئات مختلفة مثل النوع، الجنسية، المواطنين، أو ذوي الهمم.',
-      enT:'Charts help compare student percentages across performance bands, between assessments, or across groups such as gender, nationality, national students, or students of determination.',
-      icon:'📈',color:'#7c3aed'
-    },
-    {
-      ar:'الحكم العام',en:'Overall Judgement',
-      arT:'يصدر الحكم العام بناء على توزيع الطلاب داخل نطاقات الأداء. يُستخدم كمؤشر موجز لجودة التحصيل، ولا يُغني عن قراءة تفاصيل المهارات والفئات.',
-      enT:'The overall judgement is generated from the distribution of students across performance bands. It provides a concise attainment quality indicator alongside skill and group-level details.',
-      icon:'🏅',color:'#AD8628'
-    },
-    {
-      ar:'ملاحظات القراءة',en:'Reading Notes',
-      arT:'تعتمد النتائج على البيانات المتاحة وقت إصدار التقرير. قد تختلف الأحكام إذا تغير المعيار المختار أو نطاق الدرجات أو عينة الطلاب.',
-      enT:'Results are based on available data at the time of report generation. Judgements may change if the selected benchmark, score ranges, or student sample changes.',
-      icon:'📝',color:'#475569'
-    }
+    {ar:'الغرض من التقرير',en:'Purpose of the Report',icon:'📋',color:'#1e3a8a',
+     arT:'يوضح تقرير التحصيل مستوى أداء الطلاب في الاختبار المختار، ويعرض توزيعهم حسب نطاقات الأداء المتوقعة. يساعد التقرير المدرسة على فهم الوضع الحالي قبل اتخاذ قرارات الدعم والتحسين.',
+     enT:"The attainment report presents students' performance in the selected assessment and shows their distribution across expected performance bands. It helps the school understand current attainment before planning support and improvement actions."},
+    {ar:'قراءة الجداول',en:'Reading the Tables',icon:'📊',color:'#0891b2',
+     arT:'تعرض الجداول عدد الطلاب ونسبتهم المئوية في كل نطاق أداء. وقد تظهر النتائج على مستوى المدرسة، الصف، الشعبة، المادة، المهارة، أو الفئة الطلابية.',
+     enT:'Tables show the number and percentage of students in each performance band. Results may be displayed by school, grade, class, subject, skill, or student category.'},
+    {ar:'قراءة الرسوم البيانية',en:'Reading the Charts',icon:'📈',color:'#7c3aed',
+     arT:'تساعد الرسوم البيانية على مقارنة نسب الطلاب بين نطاقات الأداء، أو بين اختبارين، أو بين فئات مختلفة مثل النوع، الجنسية، المواطنين، أو ذوي الهمم.',
+     enT:'Charts help compare student percentages across performance bands, between assessments, or across groups such as gender, nationality, national students, or students of determination.'},
+    {ar:'الحكم العام',en:'Overall Judgement',icon:'🏅',color:'#AD8628',
+     arT:'يصدر الحكم العام بناء على توزيع الطلاب داخل نطاقات الأداء. يستخدم هذا الحكم كمؤشر موجز لجودة التحصيل، ولا يغني عن قراءة تفاصيل المهارات والفئات.',
+     enT:'The overall judgement is generated from the distribution of students across performance bands. It provides a concise indicator of attainment quality, but should be read alongside skill and group-level details.'},
+    {ar:'ملاحظات القراءة',en:'Reading Notes',icon:'📝',color:'#475569',
+     arT:'تعتمد النتائج على البيانات المتاحة وقت إصدار التقرير. وقد تختلف الأحكام إذا تغير المعيار المختار أو نطاق الدرجات أو عينة الطلاب.',
+     enT:'Results are based on the available data at the time of report generation. Judgements may change if the selected benchmark, score ranges, or student sample changes.'}
   ];
-
-  // ── نطاقات الأداء الثلاثة كبطاقات هندسية مستوحاة من نمط الدوائر المتشابكة ──
   var BANDS=[
-    {
-      ar:'أعلى من التوقعات',en:'Above Expectations',
-      arDesc:'أداء يتجاوز المستوى المستهدف للمنهاج أو المعيار المستخدم.',
-      enDesc:'Performance exceeding the target curriculum or benchmark level.',
-      icon:'⭐',color:'#15803d',bg:'#f0fdf4',border:'#22c55e',range:'70 – 100%'
-    },
-    {
-      ar:'متوافق مع التوقعات',en:'In Line with Expectations',
-      arDesc:'أداء داخل المستوى المتوقع، متوافق مع معايير المنهاج.',
-      enDesc:'Performance within the expected level, meeting curriculum standards.',
-      icon:'✅',color:'#b45309',bg:'#fffbeb',border:'#f59e0b',range:'50 – 69%'
-    },
-    {
-      ar:'أقل من التوقعات',en:'Below Expectations',
-      arDesc:'أداء أقل من المستوى المستهدف للمنهاج أو المعيار المستخدم.',
-      enDesc:'Performance below the target curriculum or benchmark level.',
-      icon:'📌',color:'#b91c1c',bg:'#fef2f2',border:'#ef4444',range:'0 – 49%'
-    }
+    {num:'1',ar:'أعلى من التوقعات',en:'Above Expectations',
+     arD:'أداء يتجاوز المستوى المستهدف للمنهاج أو المعيار المستخدم.',
+     enD:'Performance exceeding the target curriculum or benchmark level.',
+     color:'#15803d',bg:'#f0fdf4',border:'#22c55e',range:'70 – 100%'},
+    {num:'2',ar:'متوافق مع التوقعات',en:'In Line with Expectations',
+     arD:'أداء داخل المستوى المتوقع، متوافق مع معايير المنهاج.',
+     enD:'Performance within the expected level, meeting curriculum standards.',
+     color:'#b45309',bg:'#fffbeb',border:'#f59e0b',range:'50 – 69%'},
+    {num:'3',ar:'أقل من التوقعات',en:'Below Expectations',
+     arD:'أداء أقل من المستوى المستهدف للمنهاج أو المعيار المستخدم.',
+     enD:'Performance below the target curriculum or benchmark level.',
+     color:'#b91c1c',bg:'#fef2f2',border:'#ef4444',range:'0 – 49%'}
   ];
-
-  var bandsHtml=BANDS.map(function(b,idx){
-    var num=idx+1;
-    return '<div style="flex:1;min-width:200px;background:'+b.bg+';border:2.5px solid '+b.border+';border-radius:18px;padding:22px 20px;position:relative;overflow:hidden">'
-      // geometric accent circle
-      +'<div style="position:absolute;top:-18px;right:-18px;width:70px;height:70px;border-radius:50%;background:'+b.border+';opacity:.12"></div>'
-      +'<div style="position:absolute;bottom:-22px;left:-10px;width:50px;height:50px;border-radius:50%;background:'+b.border+';opacity:.08"></div>'
-      // number badge
-      +'<div style="width:38px;height:38px;border-radius:10px;background:'+b.color+';display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:white;font-family:Montserrat,sans-serif;margin-bottom:12px;box-shadow:0 4px 10px '+b.border+'44">'+num+'</div>'
-      +'<div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:'+b.color+';margin-bottom:4px" dir="rtl">'+b.ar+'</div>'
-      +'<div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:'+b.color+';margin-bottom:10px;opacity:.8">'+b.en+'</div>'
-      +'<div style="display:inline-block;background:'+b.color+';color:white;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif;margin-bottom:12px">'+b.range+'</div>'
-      +'<div style="font-size:13px;color:#374151;line-height:1.75;margin-bottom:6px;font-family:Tajawal,sans-serif" dir="rtl">'+b.arDesc+'</div>'
-      +'<div style="font-size:11.5px;color:#6b7280;line-height:1.65;font-family:Montserrat,sans-serif;direction:ltr">'+b.enDesc+'</div>'
+  var bandsHtml=BANDS.map(function(b){
+    return '<div style="flex:1;min-width:200px;background:'+b.bg+';border:2.5px solid '+b.border+';border-radius:18px;padding:22px 18px;position:relative;overflow:hidden">'
+      +'<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:'+b.border+';opacity:.13"></div>'
+      +'<div style="position:absolute;bottom:-25px;left:-12px;width:60px;height:60px;border-radius:50%;background:'+b.border+';opacity:.08"></div>'
+      +'<div style="width:38px;height:38px;border-radius:10px;background:'+b.color+';display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:white;font-family:Montserrat,sans-serif;margin-bottom:12px;box-shadow:0 4px 10px '+b.border+'55">'+b.num+'</div>'
+      +'<div style="font-family:Tajawal,sans-serif;font-size:18px;font-weight:900;color:'+b.color+';margin-bottom:3px" dir="rtl">'+b.ar+'</div>'
+      +'<div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:'+b.color+';margin-bottom:8px;opacity:.85">'+b.en+'</div>'
+      +'<div style="display:inline-block;background:'+b.color+';color:white;border-radius:20px;padding:3px 14px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif;margin-bottom:12px">'+b.range+'</div>'
+      +'<div style="font-size:14px;color:#374151;line-height:1.8;margin-bottom:5px;font-family:Tajawal,sans-serif" dir="rtl">'+b.arD+'</div>'
+      +'<div style="font-size:12px;color:#6b7280;line-height:1.7;font-family:Montserrat,sans-serif;direction:ltr">'+b.enD+'</div>'
       +'</div>';
   }).join('');
-
   var guideHtml=GUIDE.map(function(g){
-    return '<div style="background:white;border-radius:14px;padding:16px 18px;border:1.5px solid #e2e8f0;display:flex;gap:14px;align-items:flex-start">'
-      +'<div style="width:40px;height:40px;border-radius:10px;background:'+g.color+'18;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">'+g.icon+'</div>'
+    return '<div style="background:white;border-radius:14px;padding:18px 20px;border:1.5px solid #e2e8f0;display:flex;gap:16px;align-items:flex-start">'
+      +'<div style="width:44px;height:44px;border-radius:12px;background:'+g.color+'18;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">'+g.icon+'</div>'
       +'<div style="flex:1">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:'+g.color+';margin-bottom:2px" dir="rtl">'+g.ar+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:'+g.color+';opacity:.7;margin-bottom:8px">'+g.en+'</div>'
-        +'<div style="font-size:13px;color:#374151;line-height:1.8;font-family:Tajawal,sans-serif;margin-bottom:5px" dir="rtl">'+g.arT+'</div>'
-        +'<div style="font-size:11.5px;color:#6b7280;line-height:1.65;font-family:Montserrat,sans-serif;direction:ltr">'+g.enT+'</div>'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:17px;font-weight:900;color:'+g.color+';margin-bottom:2px" dir="rtl">'+g.ar+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:'+g.color+';opacity:.75;margin-bottom:10px">'+g.en+'</div>'
+        +'<div style="font-size:14px;color:#374151;line-height:1.85;font-family:Tajawal,sans-serif;margin-bottom:6px" dir="rtl">'+g.arT+'</div>'
+        +'<div style="font-size:12.5px;color:#6b7280;line-height:1.7;font-family:Montserrat,sans-serif;direction:ltr">'+g.enT+'</div>'
       +'</div></div>';
   }).join('');
-
-  return ''
-    // ── Page: Portrait layout, print break between preamble and data ──
-    +'<div style="max-width:760px;margin:0 auto;font-family:Tajawal,Arial,sans-serif">'
-    // Title
-    +'<div style="text-align:center;padding:32px 0 24px;border-bottom:3px double #141F44;margin-bottom:28px">'
-      +'<div style="font-family:Tajawal,sans-serif;font-size:26px;font-weight:900;color:#141F44;margin-bottom:4px">دليل قراءة تقرير التحصيل</div>'
-      +'<div style="font-family:Montserrat,sans-serif;font-size:16px;font-weight:700;color:#AD8628;letter-spacing:.5px">Attainment Report — Reading Guide</div>'
+  return '<div style="background:white;border-radius:18px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin-bottom:24px;border:1.5px solid #e2e8f0" dir="rtl">'
+    +'<div style="text-align:center;margin-bottom:26px;padding-bottom:18px;border-bottom:3px double #141F44">'
+      +'<div style="font-family:Tajawal,sans-serif;font-size:26px;font-weight:900;color:#141F44;margin-bottom:6px">دليل قراءة تقرير التحصيل</div>'
+      +'<div style="font-family:Montserrat,sans-serif;font-size:15px;font-weight:700;color:#AD8628;letter-spacing:.5px">Attainment Report — Reading Guide</div>'
       +'<div style="width:60px;height:4px;background:linear-gradient(90deg,#141F44,#AD8628);border-radius:4px;margin:12px auto 0"></div>'
     +'</div>'
-    // Bands
-    +'<div style="margin-bottom:28px">'
-      +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
-        +'<div style="width:5px;height:28px;background:linear-gradient(180deg,#141F44,#AD8628);border-radius:4px"></div>'
-        +'<div><div style="font-family:Tajawal,sans-serif;font-size:18px;font-weight:900;color:#141F44" dir="rtl">نطاقات الأداء</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#AD8628">Performance Bands</div></div>'
-      +'</div>'
-      +'<div style="display:flex;gap:14px;flex-wrap:wrap">'+bandsHtml+'</div>'
+    +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
+      +'<div style="width:5px;height:30px;background:linear-gradient(180deg,#141F44,#AD8628);border-radius:4px"></div>'
+      +'<div><div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:900;color:#141F44">نطاقات الأداء</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#AD8628">Performance Bands</div></div>'
     +'</div>'
-    // Guide sections
-    +'<div style="margin-bottom:8px">'
-      +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
-        +'<div style="width:5px;height:28px;background:linear-gradient(180deg,#1e3a8a,#7c3aed);border-radius:4px"></div>'
-        +'<div><div style="font-family:Tajawal,sans-serif;font-size:18px;font-weight:900;color:#141F44" dir="rtl">إرشادات القراءة</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#1e3a8a">Reading Guide</div></div>'
-      +'</div>'
-      +'<div style="display:flex;flex-direction:column;gap:10px">'+guideHtml+'</div>'
+    +'<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px">'+bandsHtml+'</div>'
+    +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
+      +'<div style="width:5px;height:30px;background:linear-gradient(180deg,#1e3a8a,#7c3aed);border-radius:4px"></div>'
+      +'<div><div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:900;color:#141F44">إرشادات القراءة</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#1e3a8a">Reading Guide</div></div>'
     +'</div>'
-    +'<div style="text-align:center;padding-top:16px;font-size:10px;color:#94a3b8;font-family:Montserrat,sans-serif;border-top:1px solid #e2e8f0;margin-top:24px">Scholastic International Standardized Tests Platform — Attainment Report</div>'
-    +'</div>'
-    +'<div style="page-break-after:always"></div>';
-}
-
-function buildAttainmentScalesReferenceHtml(){
-  var descRows=[
-    {level:'Outstanding',ar:'متميز',color:'#7c3aed',bg:'#f5f3ff',text:'Most students attain levels that are above curriculum standards.',textAr:'يحقق معظم الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Very Good',ar:'جيد جداً',color:'#2563eb',bg:'#eff6ff',text:'The large majority of students attain levels that are above curriculum standards.',textAr:'تحقق الأغلبية الكبيرة من الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Good',ar:'جيد',color:'#0891b2',bg:'#ecfeff',text:'The majority of students attain levels that are above curriculum standards.',textAr:'تحقق أغلبية الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Acceptable',ar:'مقبول',color:'#d97706',bg:'#fffbeb',text:'Most students attain levels that are in line with curriculum standards and a few are above.',textAr:'يحقق معظم الطلاب مستويات متوافقة مع معايير المنهاج، ويحقق قلة منهم مستوى أعلى.'},
-    {level:'Weak',ar:'ضعيف',color:'#ea580c',bg:'#fff7ed',text:'Less than three-quarters of students attain levels that are at least in line with curriculum standards.',textAr:'يحقق أقل من ثلاثة أرباع الطلاب مستوى متوافقاً على الأقل مع معايير المنهاج.'},
-    {level:'Very Weak',ar:'ضعيف جداً',color:'#dc2626',bg:'#fef2f2',text:'Few students attain levels that are in line with curriculum standards.',textAr:'يحقق قلة من الطلاب مستوى متوافقاً مع معايير المنهاج.'}
-  ];
-  var termsHtml=ATT_QUANT_TERMS.map(function(t){
-    return '<tr><td style="padding:9px 14px;border:1px solid #e2e8f0;font-weight:800;color:#7c2d4a;font-size:13px;background:#fdf2f8;font-family:Montserrat,sans-serif">'+t.en+'</td><td style="padding:9px 14px;border:1px solid #e2e8f0;text-align:center;font-size:13px;color:#374151;font-family:Montserrat,sans-serif;font-weight:700">'+t.label+'</td></tr>';
-  }).join('');
-  var judgeRows=descRows.map(function(r){
-    return '<div style="background:'+r.bg+';border-radius:12px;padding:14px 16px;border:1.5px solid '+r.color+'33;display:flex;gap:14px;align-items:flex-start">'
-      +'<div style="background:'+r.color+';color:white;border-radius:8px;padding:4px 14px;font-size:12px;font-weight:800;font-family:Montserrat,sans-serif;white-space:nowrap;height:fit-content;margin-top:2px">'+r.level+' | '+r.ar+'</div>'
-      +'<div>'
-        +'<div style="font-size:13px;color:#374151;line-height:1.7;font-family:Montserrat,sans-serif;direction:ltr">'+r.text+'</div>'
-        +'<div style="font-size:13px;color:#374151;line-height:1.7;font-family:Tajawal,sans-serif;margin-top:3px" dir="rtl">'+r.textAr+'</div>'
-      +'</div></div>';
-  }).join('');
-  return '<div style="max-width:760px;margin:0 auto">'
-    +'<div style="text-align:center;padding:24px 0 18px;border-bottom:3px double #141F44;margin-bottom:22px">'
-      +'<div style="font-family:Tajawal,sans-serif;font-size:22px;font-weight:900;color:#141F44">معايير الحكم المعتمدة — ١.١.١</div>'
-      +'<div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;color:#AD8628;letter-spacing:.5px">Approved Attainment Scales — 1.1.1</div>'
-    +'</div>'
-    +'<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px">'+judgeRows+'</div>'
-    +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">'
-      +'<div style="width:5px;height:24px;background:#7c2d4a;border-radius:4px"></div>'
-      +'<div><div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:#141F44">المقادير الكمية المعتمدة</div><div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:#7c2d4a">Approved Quantitative Terms</div></div>'
-    +'</div>'
-    +'<table style="width:100%;border-collapse:collapse"><thead><tr>'
-      +'<th style="padding:10px 14px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:12px;font-family:Montserrat,sans-serif;text-align:left">Quantitative Term</th>'
-      +'<th style="padding:10px 14px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:12px;font-family:Montserrat,sans-serif;text-align:center">Percentage Range</th>'
-    +'</tr></thead><tbody>'+termsHtml+'</tbody></table>'
-    +'<div style="page-break-after:always"></div>'
+    +'<div style="display:flex;flex-direction:column;gap:10px">'+guideHtml+'</div>'
+    +'<div style="text-align:center;padding-top:16px;font-size:10px;color:#94a3b8;font-family:Montserrat,sans-serif;border-top:1px solid #e2e8f0;margin-top:24px">Scholastic International Standardized Tests — Attainment Report</div>'
     +'</div>';
 }
-
-function buildGroupAttainmentReportHtml(groupStudents,groupLabelAr,groupLabelEn){
-  var n=groupStudents.length;
-  if(!n) return '';
-  var counts={above:0,met:0,below:0};
-  groupStudents.forEach(function(x){ counts[_attBandOf(x.pct!==null?x.pct:0)]++; });
-  var pctAbove=Math.round(counts.above/n*100);
-  var pctMet=Math.round(counts.met/n*100);
-  var pctBelow=Math.round(counts.below/n*100);
-  var pctAtLeastInLine=pctAbove+pctMet;
-  var judgement=computeAttainmentJudgement(pctAbove,pctAtLeastInLine);
-
-  // ── SVG Donut Chart ──
-  var r=52,cx=70,cy=70,sw=28;
-  var circ=2*Math.PI*r;
-  var segs=[{v:pctAbove,c:'#22c55e'},{v:pctMet,c:'#f59e0b'},{v:pctBelow,c:'#ef4444'}];
-  var off=0;
-  var donutPaths=segs.map(function(s){
-    var d=(s.v/100*circ).toFixed(2)+' '+circ.toFixed(2);
-    var p='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+s.c+'" stroke-width="'+sw+'" stroke-dasharray="'+d+'" stroke-dashoffset="'+(-(off/100*circ)).toFixed(2)+'" transform="rotate(-90 '+cx+' '+cy+')" stroke-linecap="butt"/>';
-    off+=s.v; return p;
-  }).join('');
-  var donutSvg='<svg width="140" height="140" viewBox="0 0 140 140">'
-    +'<circle cx="70" cy="70" r="52" fill="none" stroke="#e2e8f0" stroke-width="28"/>'
-    +donutPaths
-    +'<text x="70" y="66" text-anchor="middle" font-size="22" font-weight="900" fill="#1e293b" font-family="Montserrat,sans-serif">'+pctAbove+'%</text>'
-    +'<text x="70" y="82" text-anchor="middle" font-size="9.5" fill="#64748b" font-family="Montserrat,sans-serif" letter-spacing="0.5">ABOVE</text>'
-    +'</svg>';
-
-  // ── Legend ──
-  var legendDefs=[
-    {k:'above',ar:'أعلى من المعيار',en:'Above',c:'#22c55e'},
-    {k:'met',ar:'متوافق مع المعيار',en:'In Line',c:'#f59e0b'},
-    {k:'below',ar:'أقل من المعيار',en:'Below',c:'#ef4444'}
-  ];
-  var legendHtml=legendDefs.map(function(b){
-    var cnt=counts[b.k],pct=Math.round(cnt/n*100);
-    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">'
-      +'<div style="width:12px;height:12px;border-radius:3px;background:'+b.c+';flex-shrink:0"></div>'
-      +'<div style="flex:1">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:12px;font-weight:700;color:#374151" dir="rtl">'+b.ar+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;color:#94a3b8">'+b.en+'</div>'
-      +'</div>'
-      +'<div style="text-align:right">'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:15px;font-weight:900;color:'+b.c+'">'+cnt+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:'+b.c+'">'+pct+'%</div>'
-      +'</div>'
-    +'</div>';
-  }).join('');
-
-  // ── SVG Bar Chart (bilingual) ──
-  var barW=60,barGap=30,chartH=160,chartW=360,maxVal=n||1;
-  var barDefs=[
-    {k:'above',ar:'أعلى',en:'Above',c:'#22c55e'},
-    {k:'met',ar:'متوافق',en:'In Line',c:'#f59e0b'},
-    {k:'below',ar:'أقل',en:'Below',c:'#ef4444'}
-  ];
-  var barX=30;
-  var bars=barDefs.map(function(b){
-    var cnt=counts[b.k];
-    var h=Math.round((cnt/maxVal)*(chartH-40));
-    var y=chartH-30-h;
-    var x=barX;
-    barX+=barW+barGap;
-    return '<rect x="'+x+'" y="'+y+'" width="'+barW+'" height="'+h+'" rx="6" fill="'+b.c+'" opacity="0.85"/>'
-      +'<text x="'+(x+barW/2)+'" y="'+(y-7)+'" text-anchor="middle" font-size="12" font-weight="900" fill="'+b.c+'" font-family="Montserrat,sans-serif">'+cnt+'</text>'
-      +'<text x="'+(x+barW/2)+'" y="'+(chartH-14)+'" text-anchor="middle" font-size="11" fill="#374151" font-family="Tajawal,sans-serif">'+b.ar+'</text>'
-      +'<text x="'+(x+barW/2)+'" y="'+(chartH-3)+'" text-anchor="middle" font-size="9.5" fill="#94a3b8" font-family="Montserrat,sans-serif">'+b.en+'</text>';
-  }).join('');
-  // Y-axis gridlines
-  var gridLines='';
-  for(var g=0;g<=n;g+=Math.max(1,Math.floor(n/4))){
-    var gy=Math.round(chartH-30-(g/maxVal*(chartH-40)));
-    gridLines+='<line x1="10" y1="'+gy+'" x2="'+(chartW-10)+'" y2="'+gy+'" stroke="#e2e8f0" stroke-width="1"/>'
-      +'<text x="8" y="'+(gy+4)+'" text-anchor="end" font-size="9" fill="#94a3b8" font-family="Montserrat,sans-serif">'+g+'</text>';
-  }
-  var barChartSvg='<svg width="100%" viewBox="0 0 '+chartW+' '+chartH+'" style="overflow:visible">'
-    +gridLines+bars
-    +'<line x1="10" y1="'+(chartH-30)+'" x2="'+(chartW-10)+'" y2="'+(chartH-30)+'" stroke="#94a3b8" stroke-width="1.5"/>'
-    +'</svg>';
-
-  // ── Ratings Table ──
-  var tableRows=legendDefs.map(function(b){
-    var cnt=counts[b.k],pct=Math.round(cnt/n*100);
-    return '<tr>'
-      +'<td style="padding:12px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:14px;font-weight:900;color:'+b.c+'" dir="rtl">'+b.ar+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;color:'+b.c+';font-weight:700;margin-top:2px">'+b.en+'</div>'
-      +'</td>'
-      +'<td style="padding:12px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle;font-size:20px;font-weight:900;font-family:Montserrat,sans-serif;color:#1e293b">'+cnt+'</td>'
-      +'<td style="padding:12px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle">'
-        +'<div style="font-size:18px;font-weight:900;font-family:Montserrat,sans-serif;color:'+b.c+'">'+pct+'%</div>'
-        +'<div style="height:8px;background:#f1f5f9;border-radius:20px;margin-top:6px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+b.c+';border-radius:20px;min-width:'+(cnt?6:0)+'px"></div></div>'
-      +'</td>'
-    +'</tr>';
-  }).join('');
-
-  return '<div style="max-width:760px;margin:0 auto;page-break-inside:avoid;margin-bottom:28px">'
-    // Header
-    +'<div style="background:linear-gradient(135deg,#F8F5F0,#FDF9F3);border:2px solid #D9B872;border-radius:18px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px">'
-      +'<div style="text-align:center;flex:1">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:19px;font-weight:900;color:#141F44" dir="rtl">'+groupLabelAr+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#AD8628">'+groupLabelEn+' ('+n+' students)</div>'
-      +'</div>'
-      +'<div style="background:'+judgement.color+';color:white;border-radius:14px;padding:10px 22px;text-align:center;min-width:130px;box-shadow:0 4px 12px '+judgement.color+'44">'
-        +'<div style="font-size:15px;font-weight:900;font-family:Montserrat,sans-serif">'+judgement.en+'</div>'
-        +'<div style="font-size:13px;font-weight:800;font-family:Tajawal,sans-serif">'+judgement.ar+'</div>'
-      +'</div>'
-    +'</div>'
-    // Charts row
-    +'<div style="display:grid;grid-template-columns:auto 1fr;gap:18px;margin-bottom:18px;align-items:center">'
-      +'<div style="text-align:center">'
-        +donutSvg
-        +'<div style="font-size:11px;color:#94a3b8;font-family:Montserrat,sans-serif;margin-top:4px">% Above</div>'
-      +'</div>'
-      +'<div>'+legendHtml+'</div>'
-    +'</div>'
-    // Bar chart
-    +'<div style="background:white;border-radius:14px;padding:16px;border:1.5px solid #e2e8f0;margin-bottom:18px">'
-      +'<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:12px">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:14px;font-weight:900;color:#141F44" dir="rtl">عدد الطلاب</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;color:#94a3b8">No. of Students</div>'
-      +'</div>'
-      +barChartSvg
-    +'</div>'
-    // Ratings table
-    +'<div style="background:white;border-radius:14px;overflow:hidden;border:1.5px solid #e2e8f0">'
-      +'<table style="width:100%;border-collapse:collapse">'
-        +'<thead><tr style="background:#141F44">'
-          +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center;font-family:Tajawal,sans-serif"><div>المستوى</div><div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;opacity:.8">Level</div></th>'
-          +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center;font-family:Tajawal,sans-serif"><div>عدد الطلاب</div><div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;opacity:.8">No. of Students</div></th>'
-          +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center;font-family:Tajawal,sans-serif"><div>النسبة المئوية</div><div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;opacity:.8">Percentage</div></th>'
-        +'</tr></thead>'
-        +'<tbody>'+tableRows+'</tbody>'
-      +'</table>'
-    +'</div>'
-    +'<div style="page-break-after:always"></div>'
-  +'</div>';
-}
-  var metaHtml=rows.map(function(r){return '<tr><td style="background:#f0f4ff;font-weight:800;color:#1e3a8a;padding:8px 12px;border:1px solid #dbeafe;font-size:12px;width:35%">'+r[0]+'</td><td style="padding:8px 12px;border:1px solid #dbeafe;font-size:12px;color:#1a1a2e">'+r[1]+'</td></tr>';}).join('');
-
 function buildAttainmentDataCountsHtml(allStudents,graded){
   var boys=graded.filter(function(x){return x.st.gender==='Male';}).length;
   var girls=graded.filter(function(x){return x.st.gender==='Female';}).length;
@@ -2990,6 +2839,165 @@ function buildAttainmentDataCountsHtml(allStudents,graded){
     +'</tr></thead><tbody>'+tableRows+'</tbody></table></div>';
 }
 
+function buildAttainmentScalesReferenceHtml(){
+  var descRows=[
+    {level:'Outstanding',color:'#7c3aed',text:'Most students attain levels that are above curriculum standards.',textAr:'يحقق معظم الطلاب مستويات أعلى من معايير المنهاج.'},
+    {level:'Very Good',color:'#2563eb',text:'The large majority of students attain levels that are above curriculum standards.',textAr:'تحقق الأغلبية الكبيرة من الطلاب مستويات أعلى من معايير المنهاج.'},
+    {level:'Good',color:'#0891b2',text:'The majority of students attain levels that are above curriculum standards.',textAr:'تحقق أغلبية الطلاب مستويات أعلى من معايير المنهاج.'},
+    {level:'Acceptable',color:'#f59e0b',text:'Most students attain levels that are in line with curriculum standards and a few are above.',textAr:'يحقق معظم الطلاب مستويات متوافقة مع معايير المنهاج، ويحقق قلة منهم مستوى أعلى.'},
+    {level:'Weak',color:'#f97316',text:'Less than three-quarters of students attain levels that are at least in line with curriculum standards.',textAr:'يحقق أقل من ثلاثة أرباع الطلاب مستوى متوافقاً على الأقل مع معايير المنهاج.'},
+    {level:'Very Weak',color:'#ef4444',text:'Few students attain levels that are in line with curriculum standards.',textAr:'يحقق قلة من الطلاب مستوى متوافقاً مع معايير المنهاج.'}
+  ];
+  var descHtml=descRows.map(function(r){
+    return '<div style="display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border-bottom:1px solid #f1f5f9">'
+      +'<span style="background:'+r.color+';color:white;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif;white-space:nowrap;min-width:88px;text-align:center">'+r.level+'</span>'
+      +'<div style="flex:1"><div style="font-size:11.5px;color:#334155;line-height:1.6;direction:ltr;text-align:left;font-family:Montserrat,sans-serif">'+r.text+'</div>'
+      +'<div style="font-size:11.5px;color:#64748b;line-height:1.7;margin-top:2px" dir="rtl">'+r.textAr+'</div></div>'
+      +'</div>';
+  }).join('');
+  var termsHtml=ATT_QUANT_TERMS.map(function(t){
+    return '<tr><td style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a10;font-weight:800;color:#7c2d4a;font-size:12px">'+t.en+'</td><td style="padding:7px 12px;border:1px solid #e2e8f0;text-align:center;font-size:12px;color:#334155;font-family:Montserrat,sans-serif">'+t.label+'</td></tr>';
+  }).join('');
+  return '<div style="background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #e2e8f0;page-break-inside:avoid">'
+    +'<div style="text-align:center;margin-bottom:14px">'
+    +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:#141F44">معايير الحكم المعتمدة</div>'
+    +'<div style="font-family:Montserrat,sans-serif;font-size:11.5px;font-weight:700;color:#AD8628">Approved Attainment Scales — 1.1.1</div>'
+    +'</div>'
+    +'<div style="border:1px solid #f1f5f9;border-radius:10px;overflow:hidden;margin-bottom:16px">'+descHtml+'</div>'
+    +'<table style="width:100%;border-collapse:collapse"><thead><tr><th style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:11px">Term</th><th style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:11px">Percentage Range</th></tr></thead><tbody>'+termsHtml+'</tbody></table>'
+    +'</div>';
+}
+
+function buildGroupAttainmentReportHtml(groupStudents,groupLabelAr,groupLabelEn){
+  var n=groupStudents.length;
+  if(!n) return '';
+  var counts={above:0,met:0,below:0};
+  groupStudents.forEach(function(x){ counts[_attBandOf(x.pct!==null?x.pct:0)]++; });
+  var pctAbove=Math.round(counts.above/n*100);
+  var pctMet=Math.round(counts.met/n*100);
+  var pctBelow=100-pctAbove-pctMet;
+  var pctAtLeastInLine=pctAbove+pctMet;
+  var judgement=computeAttainmentJudgement(pctAbove,pctAtLeastInLine);
+
+  var bandDefs=[
+    {key:'above',ar:'أعلى من المعيار',arShort:'أعلى',en:'Above Curriculum Standards',enShort:'Above',color:'#16a34a',bg:'#f0fdf4',border:'#22c55e'},
+    {key:'met',  ar:'متوافق مع المعيار',arShort:'متوافق',en:'Met Curriculum Standard',enShort:'In Line',color:'#b45309',bg:'#fffbeb',border:'#f59e0b'},
+    {key:'below',ar:'أقل من المعيار',arShort:'أقل',en:'Below Curriculum Standards',enShort:'Below',color:'#b91c1c',bg:'#fef2f2',border:'#ef4444'}
+  ];
+
+  // ── Donut SVG ──
+  var r=52,cx=70,cy=70,sw=26,circ=2*Math.PI*r,off=0;
+  var donutPaths=bandDefs.map(function(b){
+    var v=counts[b.key]/n*100;
+    var da=(v/100*circ).toFixed(2)+' '+circ.toFixed(2);
+    var p='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+b.color+'" stroke-width="'+sw+'" stroke-dasharray="'+da+'" stroke-dashoffset="'+(-(off/100*circ)).toFixed(2)+'" transform="rotate(-90 '+cx+' '+cy+')" stroke-linecap="butt"/>';
+    off+=v; return p;
+  }).join('');
+  var donutSvg='<svg width="140" height="140" viewBox="0 0 140 140">'
+    +'<circle cx="70" cy="70" r="52" fill="none" stroke="#e2e8f0" stroke-width="26"/>'
+    +donutPaths
+    +'<text x="70" y="65" text-anchor="middle" font-size="22" font-weight="900" fill="#1e293b" font-family="Montserrat,sans-serif">'+pctAbove+'%</text>'
+    +'<text x="70" y="81" text-anchor="middle" font-size="9" fill="#64748b" font-family="Montserrat,sans-serif" letter-spacing="0.5">ABOVE</text>'
+    +'</svg>';
+
+  // ── Legend next to donut ──
+  var legendHtml=bandDefs.map(function(b){
+    var cnt=counts[b.key],pct=Math.round(cnt/n*100);
+    return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:11px">'
+      +'<div style="width:13px;height:13px;border-radius:4px;background:'+b.color+';flex-shrink:0"></div>'
+      +'<div style="flex:1">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:13px;font-weight:800;color:#374151" dir="rtl">'+b.arShort+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;color:#94a3b8">'+b.enShort+'</div>'
+      +'</div>'
+      +'<div style="text-align:right">'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:16px;font-weight:900;color:'+b.color+'">'+cnt+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:'+b.color+'">'+pct+'%</div>'
+      +'</div>'
+    +'</div>';
+  }).join('');
+
+  // ── SVG Bar Chart (bilingual, styled like ref image) ──
+  var chartW=340,chartH=170,barW=64,barGap=24,padL=28,padB=44,plotH=chartH-padB-10;
+  var barColors=['#22c55e','#f59e0b','#ef4444'];
+  var barLabelsAr=['أعلى','متوافق','أقل'];
+  var barLabelsEn=['Above','In Line','Below'];
+  var barVals=[counts.above,counts.met,counts.below];
+  var maxVal=Math.max.apply(null,barVals)||1;
+  var gridLines='';
+  var steps=4;
+  for(var gi=0;gi<=steps;gi++){
+    var gv=Math.round(maxVal*gi/steps);
+    var gy=chartH-padB-Math.round(gv/maxVal*plotH);
+    gridLines+='<line x1="'+padL+'" y1="'+gy+'" x2="'+(chartW-8)+'" y2="'+gy+'" stroke="#e2e8f0" stroke-width="1"/>'
+      +'<text x="'+(padL-4)+'" y="'+(gy+4)+'" text-anchor="end" font-size="9" fill="#94a3b8" font-family="Montserrat,sans-serif">'+gv+'</text>';
+  }
+  var barsHtml='';
+  barVals.forEach(function(v,bi){
+    var bx=padL+bi*(barW+barGap);
+    var bh=Math.round(v/maxVal*plotH);
+    var by=chartH-padB-bh;
+    barsHtml+='<rect x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="7" fill="'+barColors[bi]+'" opacity="0.88"/>'
+      +'<text x="'+(bx+barW/2)+'" y="'+(by-7)+'" text-anchor="middle" font-size="12" font-weight="900" fill="'+barColors[bi]+'" font-family="Montserrat,sans-serif">'+v+'</text>'
+      +'<text x="'+(bx+barW/2)+'" y="'+(chartH-padB+16)+'" text-anchor="middle" font-size="12" font-weight="800" fill="#374151" font-family="Tajawal,sans-serif">'+barLabelsAr[bi]+'</text>'
+      +'<text x="'+(bx+barW/2)+'" y="'+(chartH-padB+30)+'" text-anchor="middle" font-size="9.5" fill="#94a3b8" font-family="Montserrat,sans-serif">'+barLabelsEn[bi]+'</text>';
+  });
+  var barChartSvg='<svg width="100%" viewBox="0 0 '+chartW+' '+chartH+'" style="overflow:visible">'
+    +gridLines
+    +'<line x1="'+padL+'" y1="'+(chartH-padB)+'" x2="'+(chartW-8)+'" y2="'+(chartH-padB)+'" stroke="#94a3b8" stroke-width="1.5"/>'
+    +barsHtml
+    +'</svg>';
+
+  // ── Ratings Table: LTR — Level | No. of Students | Percentage ──
+  var tableRows=bandDefs.map(function(b){
+    var cnt=counts[b.key],pct=Math.round(cnt/n*100);
+    return '<tr>'
+      +'<td style="padding:13px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle;background:'+b.bg+'">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:'+b.color+'" dir="rtl">'+b.ar+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;color:'+b.color+';font-weight:700;margin-top:3px">'+b.en+'</div>'
+      +'</td>'
+      +'<td style="padding:13px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle;font-size:24px;font-weight:900;font-family:Montserrat,sans-serif;color:#1e293b">'+cnt+'</td>'
+      +'<td style="padding:13px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle">'
+        +'<div style="font-size:22px;font-weight:900;font-family:Montserrat,sans-serif;color:'+b.color+'">'+pct+'%</div>'
+        +'<div style="height:10px;background:#f1f5f9;border-radius:20px;margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+b.color+';border-radius:20px;min-width:'+(cnt?6:0)+'px"></div></div>'
+      +'</td>'
+    +'</tr>';
+  }).join('');
+
+  return '<div style="background:white;border-radius:20px;margin-bottom:26px;overflow:hidden;box-shadow:0 4px 20px rgba(30,58,138,.09);border:1.5px solid #e2e8f0;page-break-inside:avoid">'
+    // ── Header: centered label + judgement badge side by side ──
+    +'<div style="background:linear-gradient(135deg,#F8F4ED,#FDF9F2);border-bottom:2px solid #D9B872;padding:18px 24px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;position:relative;overflow:hidden">'
+      +'<div style="position:absolute;top:-22px;left:-22px;width:90px;height:90px;border-radius:50%;background:#D9B87218"></div>'
+      +'<div style="position:absolute;bottom:-28px;right:-14px;width:70px;height:70px;border-radius:50%;background:#AD862812"></div>'
+      +'<div style="text-align:center">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:900;color:#141F44" dir="rtl">'+groupLabelAr+'</div>'
+        +'<div style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#AD8628">'+groupLabelEn+' ('+n+' students / طالب)</div>'
+      +'</div>'
+      +'<div style="background:'+judgement.color+';color:white;border-radius:14px;padding:10px 24px;text-align:center;box-shadow:0 4px 14px '+judgement.color+'44;min-width:130px">'
+        +'<div style="font-size:15px;font-weight:900;font-family:Montserrat,sans-serif">'+judgement.en+'</div>'
+        +'<div style="font-size:13px;font-weight:800;font-family:Tajawal,sans-serif">'+judgement.ar+'</div>'
+      +'</div>'
+    +'</div>'
+    // ── Body ──
+    +'<div style="padding:22px 24px">'
+      // Donut + legend
+      +'<div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin-bottom:20px">'
+        +'<div style="text-align:center">'+donutSvg+'<div style="font-size:10px;color:#94a3b8;font-family:Montserrat,sans-serif;margin-top:2px">% Above</div></div>'
+        +'<div>'+legendHtml+'</div>'
+      +'</div>'
+      // Bar chart
+      +'<div style="background:#fafafa;border-radius:14px;padding:16px 12px;border:1.5px solid #e2e8f0;margin-bottom:20px">'
+        +'<div style="font-family:Tajawal,sans-serif;font-size:13px;font-weight:900;color:#141F44;margin-bottom:10px" dir="rtl">عدد الطلاب <span style="font-family:Montserrat,sans-serif;font-size:11px;color:#94a3b8;font-weight:600">/ No. of Students</span></div>'
+        +barChartSvg
+      +'</div>'
+      // Ratings table
+      +'<table style="width:100%;border-collapse:collapse"><thead><tr style="background:#141F44">'
+        +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center"><div style="font-family:Tajawal,sans-serif">المستوى</div><div style="font-family:Montserrat,sans-serif;font-size:10px;opacity:.8">Level</div></th>'
+        +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center"><div style="font-family:Tajawal,sans-serif">عدد الطلاب</div><div style="font-family:Montserrat,sans-serif;font-size:10px;opacity:.8">No. of Students</div></th>'
+        +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center"><div style="font-family:Tajawal,sans-serif">النسبة المئوية</div><div style="font-family:Montserrat,sans-serif;font-size:10px;opacity:.8">Percentage</div></th>'
+      +'</tr></thead><tbody>'+tableRows+'</tbody></table>'
+    +'</div>'
+  +'</div>';
+}
 function buildAttainmentVariableHtml(tests,filters){
   var allStudents=[];
   tests.forEach(function(t){
@@ -3038,7 +3046,7 @@ function printAttainmentReport(){
   var el=document.getElementById('attReportPrintArea');
   if(!el){window.print();return;}
   var win=window.open('','_blank');
-  win.document.write('<html><head><meta charset="UTF-8"><title>Attainment Report</title><style>@page{size:A4 portrait;margin:18mm}body{font-family:Tajawal,Arial,sans-serif;margin:0;background:white}table{border-collapse:collapse;width:100%}@media print{body{margin:0}.page-break{page-break-after:always}}</style></head><body>'+el.innerHTML+'</body></html>');
+  win.document.write('<html><head><meta charset="UTF-8"><title>Attainment Report</title><style>body{font-family:Tajawal,Arial,sans-serif;margin:24px;background:white}@media print{body{margin:0}}</style></head><body>'+el.innerHTML+'</body></html>');
   win.document.close();
   setTimeout(function(){win.print();},400);
 }
@@ -3279,7 +3287,7 @@ function startStudentTest(){
 // ============================================================
 function startTestWizard(){
   // تصفير كامل — لا بيانات سابقة
-  testData={domains:[],selectedSchools:[],logoSrc:'',displayMode:1,instructionsAr:_DEFAULT_INS_AR,instructionsEn:_DEFAULT_INS_EN};
+  testData={domains:[],selectedSchools:[],logoSrc:'',displayMode:1,instructionsAr:'',instructionsEn:''};
   selectedSchools=[];editingTestId=null;
   // تصفير حقول الخطوة الأولى
   setTimeout(function(){
@@ -3359,20 +3367,17 @@ function _initInstructionsStep(){
   var enEl=document.getElementById('insEn');
   var prevAr=document.getElementById('insPreviewAr');
   var prevEn=document.getElementById('insPreviewEn');
-  if(!arEl||!enEl||!prevAr||!prevEn){
-    // Elements not ready yet — will retry via second setTimeout
-    return;
-  }
-  var arSaved=testData.instructionsAr&&testData.instructionsAr.trim()&&testData.instructionsAr!==_DEFAULT_INS_AR;
-  var enSaved=testData.instructionsEn&&testData.instructionsEn.trim()&&testData.instructionsEn!==_DEFAULT_INS_EN;
-  var arContent=arSaved?testData.instructionsAr:_DEFAULT_INS_AR;
-  var enContent=enSaved?testData.instructionsEn:_DEFAULT_INS_EN;
-  arEl.innerHTML=arContent;
-  enEl.innerHTML=enContent;
-  prevAr.innerHTML=arContent;
-  prevEn.innerHTML=enContent;
-  testData.instructionsAr=arContent;
-  testData.instructionsEn=enContent;
+  var hasAr=testData.instructionsAr&&testData.instructionsAr.trim();
+  var hasEn=testData.instructionsEn&&testData.instructionsEn.trim();
+  var arContent=hasAr?testData.instructionsAr:_DEFAULT_INS_AR;
+  var enContent=hasEn?testData.instructionsEn:_DEFAULT_INS_EN;
+  if(arEl) arEl.innerHTML=arContent;
+  if(enEl) enEl.innerHTML=enContent;
+  if(prevAr) prevAr.innerHTML=arContent;
+  if(prevEn) prevEn.innerHTML=enContent;
+  if(!hasAr) testData.instructionsAr=_DEFAULT_INS_AR;
+  if(!hasEn) testData.instructionsEn=_DEFAULT_INS_EN;
+  // Make sure edit panel is closed
   var panel=document.getElementById('insEditPanel');
   var preview=document.getElementById('insPreviewCard');
   var btn=document.getElementById('insEditToggleBtn');
@@ -3395,11 +3400,7 @@ function goToStep(s){
     var stepEl=document.getElementById('wizardStep'+s);
     if(stepEl) stepEl.classList.remove('hidden');
     for(var i=1;i<=3;i++){var d=document.getElementById('dot'+i);if(d) d.className='step-dot'+(i<s?' done':i===s?' active':'');}
-    if(s===2){
-      setTimeout(_initInstructionsStep, 80);
-      // fallback in case 80ms is not enough
-      setTimeout(_initInstructionsStep, 300);
-    }
+    if(s===2){ setTimeout(_initInstructionsStep, 60); }
     if(s===3){
       try{ syncStep1BasicInfoToTestData(); }catch(e){}
       try{
@@ -4962,9 +4963,6 @@ function addMatchPair(){
 // SAVE QUESTION
 // ============================================================
 function saveQuestion(){
-  try { _saveQuestionImpl(); } catch(err){ console.error('saveQuestion error:',err); alert('خطأ في حفظ السؤال:\n'+err.message); }
-}
-function _saveQuestionImpl(){
   var type=document.getElementById('qType').value;if(!type){alert('اختر نمط السؤال أولاً');return;}
   // ── رأس السؤال الموحد ──
   var hBox=document.getElementById('qhBox');
@@ -5127,16 +5125,9 @@ function _saveQuestionImpl(){
   if(!scoreVal||scoreVal<=0){alert('⚠️ يجب تحديد نسبة السؤال\nPlease enter question weight %');return;}
   // Validate total weight
   var d2=testData.domains[currentDomainIndex];
-  if(!d2){
-    // If domain not found, still allow save (shouldn't happen but prevents crash)
-    var qs2x=_getCurrentQuestions();
-    q.score=scoreVal;
-    if(currentQuestionIndex>=0) qs2x[currentQuestionIndex]=q; else qs2x.push(q);
-    _saveDraft();closeQuestionModal();renderQuestionsList();return;
-  }
   var parentWeight2=currentBranchIndex>=0&&d2.branches&&d2.branches[currentBranchIndex]?d2.branches[currentBranchIndex].weight:d2.weight;
   var qs2=_getCurrentQuestions();
-  var usedSum2=qs2.reduce(function(s,qt,i){return i===currentQuestionIndex?s:s+(Number(qt&&qt.score)||0);},0);
+  var usedSum2=qs2.reduce(function(s,q,i){return i===currentQuestionIndex?s:s+(Number(q.score)||0);},0);
   var newTotal=usedSum2+scoreVal;
   if(Math.round(newTotal*100)>Math.round(parentWeight2*100)){
     alert('⚠️ نسبة السؤال ('+scoreVal+'%) ستتجاوز المجموع المسموح به!\nالمتبقي: '+(parentWeight2-usedSum2).toFixed(2)+'%\n\nQuestion weight exceeds available: '+(parentWeight2-usedSum2).toFixed(2)+'% remaining');
@@ -7934,8 +7925,42 @@ function _saveAdminPass(){
   scOk('تم تغيير كلمة المرور ✅','Password Changed','تم حفظ كلمة المرور الجديدة بنجاح','New password saved successfully','✅');
 }
 var _updateTargetId='';
-function showUpdateModal(id){_updateTargetId=id;document.getElementById('upPass').value='';document.getElementById('upValue').value='';document.getElementById('upDuration').value='2';document.getElementById('upError').style.display='none';document.getElementById('updateModal').style.display='flex';setTimeout(function(){document.getElementById('upPass').focus();},100);}
-function applyUpdateCounter(){var pass=document.getElementById('upPass').value,val=parseInt(document.getElementById('upValue').value),dur=parseFloat(document.getElementById('upDuration').value)||2;if(pass!=='Gems@2050'){document.getElementById('upError').style.display='block';return;}if(!val||val<0){alert('أدخل قيمة صحيحة');return;}document.getElementById('updateModal').style.display='none';animateValue(_updateTargetId,0,val,dur);}
+function showUpdateModal(id){
+  _updateTargetId=id;
+  var current=parseInt((safeEl(id)?safeEl(id).textContent:'0').replace(/[^\d]/g,''),10);
+  safeEl('upPass').value='';
+  safeEl('upValue').value=isNaN(current)?'':current;
+  safeEl('upDuration').value='2';
+  safeEl('upError').style.display='none';
+  safeEl('updateModal').style.display='flex';
+  setTimeout(function(){var p=safeEl('upPass');if(p)p.focus();},100);
+}
+function applyUpdateCounter(){
+  var pass=safeEl('upPass').value;
+  var val=parseInt(safeEl('upValue').value,10);
+  var dur=parseFloat(safeEl('upDuration').value)||2;
+  var adminPass=localStorage.getItem('scholastic_admin_pass')||'Gems@2050';
+  if(pass!==adminPass){safeEl('upError').style.display='block';return;}
+  if(isNaN(val)||val<0){alert('أدخل قيمة صحيحة');return;}
+  localStorage.setItem('scholastic_'+_updateTargetId,String(val));
+  safeEl('updateModal').style.display='none';
+  animateValue(_updateTargetId,0,val,dur);
+}
+function updateCountersFromData(animated){
+  var completed=0;
+  myTests.forEach(function(t){
+    (t.students||[]).forEach(function(st){if(st.completed) completed++;});
+  });
+  var schoolCount=getCounterValue('schoolsCount',schools.length||520);
+  var examCount=getCounterValue('examsCount',completed||20000);
+  if(animated!==false){
+    animateValue('schoolsCount',0,schoolCount,2);
+    animateValue('examsCount',0,examCount,2);
+  }else{
+    if(safeEl('schoolsCount')) safeEl('schoolsCount').textContent=schoolCount.toLocaleString();
+    if(safeEl('examsCount')) safeEl('examsCount').textContent=examCount.toLocaleString();
+  }
+}
 function animateValue(id,start,end,duration){var obj=document.getElementById(id);if(!obj)return;var t0=null;var step=function(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/(duration*1000),1);obj.innerHTML=Math.floor(p*(end-start)+start).toLocaleString();if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);}
 
 // ============================================================
@@ -9084,9 +9109,9 @@ window.onload=function(){
     ['adminPanel','supervisorPanel','supManager','schoolManager','generalReviewerPanel','schoolCoordPanel'].forEach(function(id){
       var el=document.getElementById(id); if(el) el.classList.add('hidden');
     });
+    ensureDefaultAccessData();
     populateCountrySelects();
-    animateValue('schoolsCount',0,520,2);
-    animateValue('examsCount',0,20000,2);
+    updateCountersFromData(true);
   }catch(e){ console.warn('onload error:',e); }
   // GitHub في الخلفية بعد 200ms
   setTimeout(function(){
