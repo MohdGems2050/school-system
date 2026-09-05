@@ -1471,27 +1471,6 @@ async function ghWrite(filename,data){
   }catch(e){return false;}
 }
 
-function localDataKey(filename){return 'scholastic_data_'+filename;}
-function localRead(filename,fallback){
-  try{
-    var raw=localStorage.getItem(localDataKey(filename));
-    if(raw) return JSON.parse(raw);
-  }catch(e){}
-  return fallback;
-}
-function localWrite(filename,data){
-  try{localStorage.setItem(localDataKey(filename),JSON.stringify(data));}catch(e){}
-}
-function preferLocalData(filename,remoteData,fallback){
-  var localData=localRead(filename,null);
-  if(localData!==null&&localData!==undefined) return localData;
-  return remoteData||fallback;
-}
-async function saveDataFile(filename,data){
-  localWrite(filename,data);
-  return await ghWrite(filename,data);
-}
-
 // ============================================================
 // DATA
 // ============================================================
@@ -1565,11 +1544,6 @@ function getCounterValue(id,defaultValue){
 // Load all data from GitHub on startup
 async function initDataFromGitHub(){
   showGHLoader(true);
-  supervisors=localRead('supervisors.json',supervisors)||[];
-  schools=localRead('schools.json',schools)||[];
-  myTests=localRead('tests.json',myTests)||[];
-  sbGLOs=localRead('glos.json',sbGLOs)||{};
-  archivedTests=localRead('archive.json',archivedTests)||[];
   try{
     // تشغيل كل الطلبات بالتوازي — أسرع بكثير
     var results = await Promise.all([
@@ -1579,11 +1553,11 @@ async function initDataFromGitHub(){
       ghRead('glos.json'),
       ghRead('archive.json')
     ]);
-    supervisors=preferLocalData('supervisors.json',results[0],[]);
-    schools=preferLocalData('schools.json',results[1],[]);
-    myTests=preferLocalData('tests.json',results[2],[]);
-    sbGLOs=preferLocalData('glos.json',results[3],{});
-    archivedTests=preferLocalData('archive.json',results[4],[]);
+    if(results[0]) supervisors=results[0];
+    if(results[1]) schools=results[1];
+    if(results[2]) myTests=results[2];
+    if(results[3]) sbGLOs=results[3];
+    if(results[4]) archivedTests=results[4]; else archivedTests=[];
   }catch(e){ console.warn('GH load error:',e); }
   ensureDefaultAccessData();
   try{ updateCountersFromData(false); }catch(e){}
@@ -1609,12 +1583,11 @@ function _saveDraft(){try{localStorage.setItem('sc_draft',JSON.stringify(testDat
 function _loadDraft(){try{var s=localStorage.getItem('sc_draft');if(s)return JSON.parse(s);}catch(e){}return{domains:[],selectedSchools:[],logoSrc:'',displayMode:1};}
 
 // Async save wrappers
-async function saveSupervisors(){return await saveDataFile('supervisors.json',supervisors);}
-async function saveSchoolsGH(){return await saveDataFile('schools.json',schools);}
-async function saveMyTests(){return await saveDataFile('tests.json',myTests);}
-async function saveGLOs(){return await saveDataFile('glos.json',sbGLOs);}
-async function saveArchive(){return await saveDataFile('archive.json',archivedTests);}
-async function saveStudentProgress(){return await saveDataFile('tests.json',myTests);}
+async function saveSupervisors(){await ghWrite('supervisors.json',supervisors);}
+async function saveSchoolsGH(){await ghWrite('schools.json',schools);}
+async function saveMyTests(){await ghWrite('tests.json',myTests);}
+async function saveGLOs(){await ghWrite('glos.json',sbGLOs);}
+async function saveStudentProgress(){await ghWrite('tests.json',myTests);}
 var testData = _loadDraft();
 if(!testData.displayMode) testData.displayMode=1;
 var sw_navDir=1; // 1=forward, -1=back (for animation)
@@ -2412,7 +2385,7 @@ function grSendToArchive(id){
     var exists=archivedTests.some(function(a){return a.id==='arch-'+id;});
     if(!exists){
       archivedTests.unshift(Object.assign({},t,{id:'arch-'+id,archivedAt:Date.now()}));
-      saveArchive();
+      ghWrite('archive.json',archivedTests).catch(function(){});
     }
     myTests=myTests.filter(function(x){return x.id!==id;});
     saveMyTests();renderGeneralReviewerContent();
@@ -3250,7 +3223,7 @@ function loadLiveMonitor(){
 async function refreshLiveMonitor(){
   showGHLoader(true);
   var fresh=await ghRead('tests.json');
-  if(fresh&&!localRead('tests.json',null)) myTests=fresh;
+  if(fresh) myTests=fresh;
   showGHLoader(false);
   loadLiveMonitor();
 }
@@ -6615,7 +6588,7 @@ function srReturnTest(id){
 // ============================================================
 // MY TESTS
 // ============================================================
-function saveMyTests(){return saveDataFile('tests.json',myTests);}
+function saveMyTests(){return ghWrite('tests.json',myTests);}
 function openMyTests(){renderMyTestsTabs('underReview');document.getElementById('myTestsModal').classList.remove('hidden');}
 function closeMyTests(){document.getElementById('myTestsModal').classList.add('hidden');}
 function renderMyTestsTabs(tab){
@@ -6720,7 +6693,7 @@ function approveFinalTest(){
     // أضف للأرشيف
     if(!archivedTests) archivedTests=[];
     archivedTests.unshift(Object.assign({},newTest,{archivedAt:Date.now(),id:'arch-'+newTest.id}));
-    saveArchive();
+    ghWrite('archive.json',archivedTests).catch(function(){});
     scOk('تم الإرسال ✅','Submitted','تم إرسال الاختبار للمراجعة بنجاح<br><b>'+testName+'</b>','Test submitted successfully','✅');
   }
   testData={domains:[],selectedSchools:[],logoSrc:'',displayMode:1};selectedSchools=[];_saveDraft();
@@ -7000,7 +6973,7 @@ function deactivateTest(){var t=myTests.find(function(x){return x.id===activeCod
 // ============================================================
 var SB_GRADES=[{id:'FS1',label:'KS1/FS1',icon:'🌱'},{id:'FS2',label:'KS1/FS2',icon:'🌿'},{id:'G1',label:'Grade 1/Y2',icon:'📗'},{id:'G2',label:'Grade 2/Y3',icon:'📘'},{id:'G3',label:'Grade 3/Y4',icon:'📙'},{id:'G4',label:'Grade 4/Y5',icon:'📒'},{id:'G5',label:'Grade 5/Y6',icon:'📕'},{id:'G6',label:'Grade 6/Y7',icon:'📓'},{id:'G7',label:'Grade 7/Y8',icon:'📔'},{id:'G8',label:'Grade 8/Y9',icon:'📃'},{id:'G9',label:'Grade 9/Y10',icon:'📑'},{id:'G10',label:'Grade 10/Y11',icon:'🎓'},{id:'G11',label:'Grade 11/Y12',icon:'🏅'},{id:'G12',label:'Grade 12/Y13',icon:'🎖️'}];
 var SB_SUBJECTS=[{id:'arabic_arabs',label:'العربية للناطقين',labelEn:'Arabic Native',icon:'📖'},{id:'arabic_non',label:'العربية لغير الناطقين',labelEn:'Arabic Non-Native',icon:'📚'},{id:'islamic_arabs',label:'الإسلامية للناطقين',labelEn:'Islamic (Arabic)',icon:'🕌'},{id:'islamic_non',label:'الإسلامية لغير الناطقين',labelEn:'Islamic (English)',icon:'🕋'},{id:'social_arabs',label:'الاجتماعيات للناطقين',labelEn:'Social (Arabic)',icon:'🌍'},{id:'social_non',label:'الاجتماعيات لغير الناطقين',labelEn:'Social (English)',icon:'🗺️'},{id:'english_1st',label:'الإنجليزية لغة أولى',labelEn:'English 1st Lang',icon:'🇬🇧'},{id:'english_2nd',label:'الإنجليزية لغة ثانية',labelEn:'English 2nd Lang',icon:'🔤'},{id:'french_2nd',label:'الفرنسية لغة ثانية',labelEn:'French 2nd Lang',icon:'🇫🇷'},{id:'math_arabs',label:'الرياضيات للناطقين',labelEn:'Math (Arabic)',icon:'🔢'},{id:'math_non',label:'الرياضيات لغير الناطقين',labelEn:'Math (English)',icon:'➗'},{id:'science_arabs',label:'العلوم للناطقين',labelEn:'Science (Arabic)',icon:'🔬'},{id:'science_non',label:'العلوم لغير الناطقين',labelEn:'Science (English)',icon:'⚗️'},{id:'history_national',label:'التاريخ الوطني',labelEn:'History National',icon:'🏛️'},{id:'history_international',label:'التاريخ الدولي',labelEn:'History International',icon:'🌐'},{id:'other',label:'أخرى',labelEn:'Other',icon:'📋'}];
-function saveGLOs(){return saveDataFile('glos.json',sbGLOs);}
+function saveGLOs(){return ghWrite('glos.json',sbGLOs);}
 function openStandardsBank(){sb_currentGrade=null;sb_currentSubject=null;renderSBGrades();showSBLevel('grades');updateSBBreadcrumb();document.getElementById('standardsBankModal').classList.remove('hidden');}
 function closeStandardsBank(){document.getElementById('standardsBankModal').classList.add('hidden');}
 function showSBLevel(level){['grades','subjects','glos'].forEach(function(l){var el=document.getElementById('sb'+l.charAt(0).toUpperCase()+l.slice(1)+'Level');if(el)el.classList.toggle('hidden',l!==level);});}
@@ -9153,3 +9126,4 @@ window.onload=function(){
 </script>
 </body>
 </html>
+  
