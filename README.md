@@ -66,7 +66,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
 .rtoolbar input[type=color]{width:28px;height:28px;border-radius:6px;cursor:pointer;border:1px solid rgba(255,255,255,.2);background:transparent;padding:1px}
 .rtoolbar .sep{width:1px;height:20px;background:rgba(255,255,255,.15);margin:0 3px}
 .qh-box{background:#ffffff;border:1.5px solid #e2e8f0;border-radius:12px;padding:12px 16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-/* داخل شريط السؤال في نافذة الطالب: بدون خلفية بيضاء، يندمج مع الشريط */
+‎/* داخل شريط السؤال في نافذة الطالب: بدون خلفية بيضاء، يندمج مع الشريط */
 .sw-q-stem .qh-box,.wp-q-stem .qh-box,.stream-q-card .qh-box{background:transparent;border:none;box-shadow:none;padding:0;margin-bottom:0}
 .qh-ar{font-family:'Tajawal',sans-serif;font-size:18px;font-weight:700;color:rgb(19,36,224);direction:rtl;text-align:right;line-height:1.7}
 .qh-en{font-family:'Tajawal',sans-serif;font-size:16px;font-weight:700;color:rgb(245,20,20);direction:ltr;text-align:left;line-height:1.7;margin-top:4px}
@@ -230,7 +230,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
 </div>
 
 <!-- LOGIN MODAL -->
-<div id="loginModal" onclick="closeModal(event)">
+<div id="loginModal" onclick="if(event.target===this)closeModal(event)">
   <div class="auth-form" onclick="event.stopPropagation()">
     <div id="loginFields">
       <h3 style="font-size:22px;font-weight:800;margin-bottom:6px;text-align:center;color:#1a1a2e" id="modalTitle">تسجيل دخول</h3>
@@ -260,20 +260,20 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
 <!-- TOP NAV: الإدارة + المشرف + المدارس — يمين الشريط العلوي -->
 <div id="topLeftNav" style="position:fixed;top:0;right:0;left:0;z-index:200;height:60px;background:#1e3a8a;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 16px rgba(30,58,138,.25)">
 
-  <!-- يمين: الإدارة + المشرف + المدارس -->
+‎  <!-- يمين: الإدارة + المشرف + المدارس -->
   <div style="display:flex;gap:8px;align-items:center">
-    <button onclick="initRoute('الإدارة')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 16px;color:white;font-family:'Tajawal',sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800;transition:.2s" onmouseover="this.style.background='rgba(250,204,21,.25)';this.style.borderColor='#FACC15'" onmouseout="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'">
+    <button onclick="initRoute('الإدارة',event)\" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 16px;color:white;font-family:'Tajawal',sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800;transition:.2s" onmouseover="this.style.background='rgba(250,204,21,.25)';this.style.borderColor='#FACC15'" onmouseout="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'">
       <span>⚙️</span><span>الإدارة</span><span style="font-family:'Montserrat',sans-serif;font-size:9px;opacity:.7;font-weight:600">Admin</span>
     </button>
-    <button onclick="initRoute('المشرف')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 16px;color:white;font-family:'Tajawal',sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800;transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.18)';this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'">
+    <button onclick="initRoute('المشرف',event)\" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 16px;color:white;font-family:'Tajawal',sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800;transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.18)';this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'">
       <span>🛡️</span><span>المشرف</span><span style="font-family:'Montserrat',sans-serif;font-size:9px;opacity:.7;font-weight:600">Supervisor</span>
     </button>
-    <button onclick="initRoute('المدارس')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 16px;color:white;font-family:'Tajawal',sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800;transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.18)';this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'">
+    <button onclick="initRoute('المدارس',event)\" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 16px;color:white;font-family:'Tajawal',sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800;transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.18)';this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'">
       <span>🏫</span><span>المدارس</span><span style="font-family:'Montserrat',sans-serif;font-size:9px;opacity:.7;font-weight:600">Schools</span>
     </button>
   </div>
 
-  <!-- يسار: لوجو الشركة مصغّر في الشريط -->
+‎  <!-- يسار: لوجو الشركة مصغّر في الشريط -->
   <div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="toggleSection('mainDashboard')">
     <div style="text-align:left">
       <div style="font-family:'EB Garamond',Georgia,serif;font-size:20px;font-weight:700;color:#fff;letter-spacing:3px;line-height:1">SCHOLASTIC</div>
@@ -301,7 +301,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
 <!-- MAIN DASHBOARD -->
 <div id="mainDashboard" style="width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;background:#eff6ff;padding-top:60px;">
 
-  <!-- اللوجو الرئيسي -->
+‎  <!-- اللوجو الرئيسي -->
   <div style="width:100%;max-width:700px;padding:40px 20px 0;text-align:center">
     <svg width="100%" viewBox="0 0 560 115" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:520px;margin:0 auto">
       <line x1="80"  y1="88" x2="160" y2="60" stroke="#3B5BA5" stroke-width="2.2"/>
@@ -335,9 +335,9 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
     <div style="font-family:'Tajawal',sans-serif;font-size:16px;font-weight:800;color:#1E2D6B;margin-bottom:0">منصة الاختبارات المعيارية الدولية للمواد المدرسية</div>
   </div>
 
-  <!-- بطاقة دخول الطالب الكبيرة -->
+‎  <!-- بطاقة دخول الطالب الكبيرة -->
   <div style="width:100%;max-width:560px;padding:32px 20px 0;">
-    <button type="button" onclick="initRoute('الطالب')"
+    <button type="button" onclick="initRoute('الطالب',event)\"
       style="width:100%;background:linear-gradient(160deg,#1e3a8a,#2563EB);border:none;border-radius:24px;padding:40px 28px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;box-shadow:0 8px 32px rgba(37,99,235,.35);transition:.25s;position:relative;overflow:hidden;"
       onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 14px 40px rgba(37,99,235,.45)'"
       onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px rgba(37,99,235,.35)'">
@@ -350,7 +350,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
     </button>
   </div>
 
-  <!-- العدادات تحت بوابة الطالب مباشرة -->
+‎  <!-- العدادات تحت بوابة الطالب مباشرة -->
   <div style="width:100%;max-width:560px;padding:20px 20px 0;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
     <div class="stat-container" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:16px;padding:18px 20px;box-shadow:0 2px 8px rgba(37,99,235,.08)">
       <div style="display:flex;justify-content:space-between;align-items:center;width:100%">
@@ -374,23 +374,23 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
     </div>
   </div>
 
-  <!-- أيقونات صغيرة: الإدارة + المشرف + المدارس -->
+‎  <!-- أيقونات صغيرة: الإدارة + المشرف + المدارس -->
   <div style="width:100%;max-width:560px;padding:16px 20px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-    <button type="button" onclick="initRoute('الإدارة')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
+    <button type="button" onclick="initRoute('الإدارة',event)\" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
       onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 16px rgba(37,99,235,.15)'"
       onmouseout="this.style.borderColor='#bfdbfe';this.style.boxShadow='0 2px 8px rgba(37,99,235,.06)'">
       <div style="font-size:26px;margin-bottom:6px">⚙️</div>
       <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#2563EB;letter-spacing:.8px;text-transform:uppercase">ADMIN</div>
       <div style="font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;color:#1e3a8a">الإدارة</div>
     </button>
-    <button type="button" onclick="initRoute('المشرف')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
+    <button type="button" onclick="initRoute('المشرف',event)\" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
       onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 16px rgba(37,99,235,.15)'"
       onmouseout="this.style.borderColor='#bfdbfe';this.style.boxShadow='0 2px 8px rgba(37,99,235,.06)'">
       <div style="font-size:26px;margin-bottom:6px">🛡️</div>
       <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#2563EB;letter-spacing:.8px;text-transform:uppercase">SUPERVISOR</div>
       <div style="font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;color:#1e3a8a">المشرف</div>
     </button>
-    <button type="button" onclick="initRoute('المدارس')" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
+    <button type="button" onclick="initRoute('المدارس',event)\" style="background:#fff;border:1.5px solid #bfdbfe;border-radius:14px;padding:16px 10px;cursor:pointer;text-align:center;transition:.2s;box-shadow:0 2px 8px rgba(37,99,235,.06)"
       onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 16px rgba(37,99,235,.15)'"
       onmouseout="this.style.borderColor='#bfdbfe';this.style.boxShadow='0 2px 8px rgba(37,99,235,.06)'">
       <div style="font-size:26px;margin-bottom:6px">🏫</div>
@@ -399,7 +399,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
     </button>
   </div>
 
-  <!-- أعلام الدول -->
+‎  <!-- أعلام الدول -->
   <div style="width:100%;max-width:560px;padding:18px 20px;text-align:center;background:#fff;border-radius:16px;margin:16px 20px;border:1px solid #dbeafe">
     <div class="marquee-wrapper">
       <div class="marquee-content" id="marqueeContent">
@@ -568,7 +568,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
         <div class="md:col-span-2"><label class="wizard-label">٩- اسم الاختبار</label><input type="text" id="testName" class="wizard-input" placeholder="مثال: اختبار نهاية الفصل الأول" oninput="generateTestLink()"><div id="testLinkBox" class="link-badge hidden mt-2"><span style="color:rgba(255,255,255,.5);font-size:11px;display:block;margin-bottom:4px">🔗 رابط الاختبار:</span><span id="testLinkText" class="font-en"></span></div></div>
         <div class="md:col-span-2"><label class="wizard-label">١٠- عدد المجالات <span class="wizard-label-en">Domains</span></label><input type="number" id="domQty" min="1" max="10" class="wizard-input" placeholder="أدخل عدد المجالات" oninput="generateDomains()"></div>
       </div>
-      <!-- ١١. اختيار نمط عرض الاختبار -->
+‎      <!-- ١١. اختيار نمط عرض الاختبار -->
       <div style="margin-top:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px">
         <label class="wizard-label" style="color:#FACC15;display:block;margin-bottom:12px">١١- نمط عرض الاختبار للطالب <span style="font-family:Montserrat,sans-serif;font-size:10px;color:rgba(255,255,255,.4)">Student Display Mode</span></label>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
@@ -683,7 +683,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
       <div><h3 style="font-size:22px;font-weight:800;color:#FACC15">🗄️ أرشيف الاختبارات</h3><p style="font-size:11px;color:rgba(255,255,255,.4);font-family:'Montserrat',sans-serif">Test Archive</p></div>
       <button onclick="hideSubPanel('archivePanel')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;border-radius:10px;padding:8px 14px;cursor:pointer;font-size:13px">✕ إغلاق</button>
     </div>
-    <!-- محرك البحث -->
+‎    <!-- محرك البحث -->
     <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px;margin-bottom:20px">
       <div style="font-size:13px;font-weight:800;color:#FACC15;margin-bottom:12px">🔍 محرك البحث / Search</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
@@ -702,7 +702,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
         <button onclick="clearArchiveSearch()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);border-radius:12px;padding:9px 18px;font-size:13px;cursor:pointer;font-family:Tajawal,sans-serif">🗑 مسح / Clear</button>
       </div>
     </div>
-    <!-- النتائج -->
+‎    <!-- النتائج -->
     <div id="archiveResults" style="min-height:120px">
       <div style="text-align:center;color:rgba(255,255,255,.3);padding:40px;font-family:Tajawal,sans-serif">ابحث للعرض / Search to view results</div>
     </div>
@@ -854,7 +854,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
             <div><label class="wizard-label">⏱ الوقت (دقيقة) / Time</label><input type="number" id="modalDomainTime" class="wizard-input" placeholder="30" min="1"></div>
             <div><label class="wizard-label">📊 وزن المجال / Weight</label><input type="text" id="modalDomainWeight" class="wizard-input" readonly style="opacity:.65"></div>
           </div>
-          <!-- عدد الأسئلة هنا مع التوليد التلقائي للأوزان -->
+‎          <!-- عدد الأسئلة هنا مع التوليد التلقائي للأوزان -->
           <div style="margin-top:14px;background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.2);border-radius:12px;padding:12px">
             <label class="wizard-label" style="color:#FACC15;margin-bottom:8px;display:block">🔢 عدد الأسئلة / Questions</label>
             <div style="display:flex;align-items:center;gap:10px">
@@ -872,7 +872,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
         <div style="display:flex;gap:10px;align-items:center">
           <!-- Save Branch btn: hidden permanently -->
           <button id="saveBranchQBtn" onclick="saveBranchQuestions()" style="display:none!important;visibility:hidden;position:absolute">
-          <!-- زر معاينة كلاسيكي -->
+‎          <!-- زر معاينة كلاسيكي -->
           <button id="previewDomainBtn" onclick="previewDomainClassic()" style="background:rgba(59,130,246,.2);border:1.5px solid rgba(59,130,246,.4);color:#93c5fd;padding:10px 22px;border-radius:20px;font-weight:700;font-size:13px;cursor:pointer;font-family:'Tajawal',sans-serif;display:none">👁 معاينة كلاسيكي</button>
           <!-- Save Domain btn -->
           <button id="saveDomainBtn" onclick="saveDomain()" style="background:linear-gradient(135deg,#22c55e,#15803d);color:white;padding:12px 40px;border:3px solid #86efac;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;font-family:'Tajawal',sans-serif;box-shadow:0 4px 14px rgba(34,197,94,.4)">💾 حفظ المجال / Save</button>
@@ -1165,11 +1165,11 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
     <div id="coordRep1" class="hidden">
       <h2 style="font-size:22px;font-weight:900;margin-bottom:20px">📊 تقارير التحصيل <span style="font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,.4);font-weight:400">Attainment Reports</span></h2>
 
-      <!-- ── شريط المرشحات ── -->
+‎      <!-- ── شريط المرشحات ── -->
       <div style="background:linear-gradient(135deg,rgba(30,58,138,.25),rgba(30,58,138,.1));border:1.5px solid rgba(96,165,250,.25);border-radius:18px;padding:20px;margin-bottom:22px">
         <div style="font-size:12px;font-weight:800;color:#93c5fd;margin-bottom:14px;font-family:Montserrat,sans-serif;letter-spacing:.8px">🔍 مرشحات البحث / Search Filters</div>
 
-        <!-- صف ١: حقول ثابتة -->
+‎        <!-- صف ١: حقول ثابتة -->
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:14px">
           <div>
             <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">الدولة / Country</div>
@@ -1189,7 +1189,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
           </div>
         </div>
 
-        <!-- صف ٢: مرشحات متغيرة + زر بحث -->
+‎        <!-- صف ٢: مرشحات متغيرة + زر بحث -->
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;align-items:flex-end">
           <div>
             <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:5px">الصف / Grade</div>
@@ -1218,7 +1218,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
         </div>
       </div>
 
-      <!-- منطقة نتائج الاختبار ثم التقرير -->
+‎      <!-- منطقة نتائج الاختبار ثم التقرير -->
       <div id="attMatchedTestsArea"></div>
       <div id="attainmentReportOutput"></div>
     </div>
@@ -1236,7 +1236,7 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
   <div class="sw-header" style="background:linear-gradient(135deg,#1e1245 0%,#2a1860 45%,#1e1245 100%);display:flex;align-items:stretch;min-height:64px;border-bottom:1px solid rgba(250,204,21,.12);position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(124,58,237,.12) 0%,transparent 70%);pointer-events:none"></div>
 
-    <!-- ١. يمين: لوجو Scholastic -->
+‎    <!-- ١. يمين: لوجو Scholastic -->
     <div style="display:flex;align-items:center;gap:8px;padding:0 14px;border-right:1px solid rgba(255,255,255,.07);flex-shrink:0;position:relative;z-index:1">
       <div style="width:40px;height:40px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 10px rgba(245,158,11,.45)">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -1257,13 +1257,13 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
       </div>
     </div>
 
-    <!-- ٢. اسم الاختبار والمادة -->
+‎    <!-- ٢. اسم الاختبار والمادة -->
     <div style="display:flex;flex-direction:column;justify-content:center;padding:0 16px;border-right:1px solid rgba(255,255,255,.07);flex:1.2;min-width:0;text-align:center;position:relative;z-index:1">
       <div id="sw-test-name-header" style="font-size:13px;font-weight:800;color:white;font-family:'Montserrat',sans-serif;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Test Name</div>
       <div id="sw-test-meta-header" style="font-size:11px;font-weight:700;color:#FACC15;font-family:'Montserrat',sans-serif;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
     </div>
 
-    <!-- ٣. وسط: عداد -->
+‎    <!-- ٣. وسط: عداد -->
     <div style="display:flex;align-items:center;justify-content:center;padding:0 18px;border-right:1px solid rgba(255,255,255,.07);flex-shrink:0;position:relative;z-index:1">
       <div style="background:linear-gradient(135deg,#1e1c3a,#252344);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:5px 14px;box-shadow:inset 0 2px 8px rgba(0,0,0,.6),0 2px 12px rgba(0,0,0,.4);text-align:center;min-width:95px">
         <div class="sw-timer" id="sw-timer-display" style="font-size:30px;font-weight:900;color:white;font-family:'Montserrat',sans-serif;letter-spacing:3px;line-height:1;text-shadow:0 0 12px rgba(255,255,255,.15)">30:00</div>
@@ -1271,19 +1271,19 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
       </div>
     </div>
 
-    <!-- ٤. المجال والفرع -->
+‎    <!-- ٤. المجال والفرع -->
     <div style="display:flex;flex-direction:column;justify-content:center;padding:0 16px;border-right:1px solid rgba(255,255,255,.07);flex:1;min-width:0;position:relative;z-index:1">
       <div id="sw-domain-label-header" style="font-size:13px;font-weight:900;color:#FACC15;font-family:'Montserrat',sans-serif;letter-spacing:.3px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Domain : Reading</div>
       <div id="sw-branch-label-header" style="font-size:12px;font-weight:700;color:#c4b5fd;font-family:'Montserrat',sans-serif;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
     </div>
 
-    <!-- ٥. يسار: دوائر الأسئلة -->
+‎    <!-- ٥. يسار: دوائر الأسئلة -->
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 12px;border-right:1px solid rgba(255,255,255,.07);flex-shrink:0;min-width:100px;position:relative;z-index:1">
       <div id="sw-progress-dots" class="sw-progress-dots" style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;max-width:170px"></div>
       <div id="sw-q-counter-top" style="font-size:9px;color:rgba(255,255,255,.45);font-family:'Montserrat',sans-serif;margin-top:3px;letter-spacing:.3px;white-space:nowrap">Domain 1 Q1/5</div>
     </div>
 
-    <!-- زر الخروج -->
+‎    <!-- زر الخروج -->
     <div style="display:flex;align-items:center;padding:0 10px;flex-shrink:0;position:relative;z-index:1">
       <div id="sw-watch-eye" style="display:none"></div>
       <button onclick="swRequestClose()" id="sw-close-btn" style="background:rgba(239,68,68,.18);border:1px solid rgba(239,68,68,.35);color:#fca5a5;border-radius:6px;padding:4px 9px;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;white-space:nowrap;letter-spacing:.2px">✕ EXIT</button>
@@ -1406,17 +1406,17 @@ select.wizard-input{appearance:none;-webkit-appearance:none}
 <div id="studentPortal" class="hidden w-full flex flex-col min-h-screen" style="padding:0">
   <!-- Header Bar -->
   <div style="background:linear-gradient(135deg,#1e3a8a,#7e22ce);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid rgba(250,204,21,.5);box-shadow:0 4px 20px rgba(0,0,0,.3)">
-    <!-- لوجو يسار -->
+‎    <!-- لوجو يسار -->
     <div style="display:flex;align-items:center;gap:10px">
       <div style="width:44px;height:44px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#1e3a8a;font-family:Montserrat,sans-serif">S</div>
       <div><div style="font-size:16px;font-weight:900;color:white;font-family:Montserrat,sans-serif;font-style:italic">Scholastic</div><div style="font-size:9px;color:rgba(255,255,255,.5);font-family:Montserrat,sans-serif;letter-spacing:1px">TESTING PLATFORM</div></div>
     </div>
-    <!-- اسم الطالب وسط -->
+‎    <!-- اسم الطالب وسط -->
     <div style="text-align:center">
       <div style="font-size:18px;font-weight:900;color:#FACC15" id="studentPortalName">Student Name</div>
       <div style="font-size:11px;color:rgba(255,255,255,.6);font-family:Montserrat,sans-serif" id="studentPortalSchool">School</div>
     </div>
-    <!-- شهاداتي يمين -->
+‎    <!-- شهاداتي يمين -->
     <button onclick="showStudentCertificates()" style="background:rgba(250,204,21,.15);border:2px solid rgba(250,204,21,.4);border-radius:14px;padding:10px 16px;color:#FACC15;font-family:Tajawal,sans-serif;font-size:13px;font-weight:800;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:.2s" onmouseover="this.style.background='rgba(250,204,21,.25)'" onmouseout="this.style.background='rgba(250,204,21,.15)'">
       <span style="font-size:20px">🏅</span>
       <span>شهاداتي</span>
@@ -1469,6 +1469,27 @@ async function ghWrite(filename,data){
     if(j.content) _ghSHAs[filename]=j.content.sha;
     return r.ok;
   }catch(e){return false;}
+}
+
+function localDataKey(filename){return 'scholastic_data_'+filename;}
+function localRead(filename,fallback){
+  try{
+    var raw=localStorage.getItem(localDataKey(filename));
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return fallback;
+}
+function localWrite(filename,data){
+  try{localStorage.setItem(localDataKey(filename),JSON.stringify(data));}catch(e){}
+}
+function preferLocalData(filename,remoteData,fallback){
+  var localData=localRead(filename,null);
+  if(localData!==null&&localData!==undefined) return localData;
+  return remoteData||fallback;
+}
+async function saveDataFile(filename,data){
+  localWrite(filename,data);
+  return await ghWrite(filename,data);
 }
 
 // ============================================================
@@ -1544,8 +1565,13 @@ function getCounterValue(id,defaultValue){
 // Load all data from GitHub on startup
 async function initDataFromGitHub(){
   showGHLoader(true);
+  supervisors=localRead('supervisors.json',supervisors)||[];
+  schools=localRead('schools.json',schools)||[];
+  myTests=localRead('tests.json',myTests)||[];
+  sbGLOs=localRead('glos.json',sbGLOs)||{};
+  archivedTests=localRead('archive.json',archivedTests)||[];
   try{
-    // تشغيل كل الطلبات بالتوازي — أسرع بكثير
+‎    // تشغيل كل الطلبات بالتوازي — أسرع بكثير
     var results = await Promise.all([
       ghRead('supervisors.json'),
       ghRead('schools.json'),
@@ -1553,11 +1579,11 @@ async function initDataFromGitHub(){
       ghRead('glos.json'),
       ghRead('archive.json')
     ]);
-    if(results[0]) supervisors=results[0];
-    if(results[1]) schools=results[1];
-    if(results[2]) myTests=results[2];
-    if(results[3]) sbGLOs=results[3];
-    if(results[4]) archivedTests=results[4]; else archivedTests=[];
+    supervisors=preferLocalData('supervisors.json',results[0],[]);
+    schools=preferLocalData('schools.json',results[1],[]);
+    myTests=preferLocalData('tests.json',results[2],[]);
+    sbGLOs=preferLocalData('glos.json',results[3],{});
+    archivedTests=preferLocalData('archive.json',results[4],[]);
   }catch(e){ console.warn('GH load error:',e); }
   ensureDefaultAccessData();
   try{ updateCountersFromData(false); }catch(e){}
@@ -1583,11 +1609,12 @@ function _saveDraft(){try{localStorage.setItem('sc_draft',JSON.stringify(testDat
 function _loadDraft(){try{var s=localStorage.getItem('sc_draft');if(s)return JSON.parse(s);}catch(e){}return{domains:[],selectedSchools:[],logoSrc:'',displayMode:1};}
 
 // Async save wrappers
-async function saveSupervisors(){await ghWrite('supervisors.json',supervisors);}
-async function saveSchoolsGH(){await ghWrite('schools.json',schools);}
-async function saveMyTests(){await ghWrite('tests.json',myTests);}
-async function saveGLOs(){await ghWrite('glos.json',sbGLOs);}
-async function saveStudentProgress(){await ghWrite('tests.json',myTests);}
+async function saveSupervisors(){return await saveDataFile('supervisors.json',supervisors);}
+async function saveSchoolsGH(){return await saveDataFile('schools.json',schools);}
+async function saveMyTests(){return await saveDataFile('tests.json',myTests);}
+async function saveGLOs(){return await saveDataFile('glos.json',sbGLOs);}
+async function saveArchive(){return await saveDataFile('archive.json',archivedTests);}
+async function saveStudentProgress(){return await saveDataFile('tests.json',myTests);}
 var testData = _loadDraft();
 if(!testData.displayMode) testData.displayMode=1;
 var sw_navDir=1; // 1=forward, -1=back (for animation)
@@ -1618,9 +1645,9 @@ function openWhitePaperPreview(domIdx){
   if(!d) return;
   var hasQ=d.questions&&d.questions.length||(d.hasBranches&&d.branches&&d.branches.some(function(b){return b.questions&&b.questions.length;}));
   if(!hasQ){scWarn('لا توجد أسئلة — أضف أسئلة أولاً','Add questions first');return;}
-  // بناء HTML الورقة البيضاء
+‎  // بناء HTML الورقة البيضاء
   var html=buildWhitePaperHTML(d,domIdx);
-  // عرض في overlay
+‎  // عرض في overlay
   var overlay=document.getElementById('wpPreviewOverlay');
   if(!overlay){
     overlay=document.createElement('div');
@@ -1629,7 +1656,7 @@ function openWhitePaperPreview(domIdx){
     document.body.appendChild(overlay);
   }
   overlay.innerHTML=
-    // شريط تحكم علوي ثابت
+‎    // شريط تحكم علوي ثابت
     '<div style="position:sticky;top:0;z-index:10;background:linear-gradient(135deg,#1e0d42,#2a1860);border-bottom:2px solid rgba(250,204,21,.3);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">'
     +'<div style="display:flex;align-items:center;gap:10px">'
     +'<div style="width:36px;height:36px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">📄</div>'
@@ -1639,7 +1666,7 @@ function openWhitePaperPreview(domIdx){
     +'<button onclick="printWhitePaper()" style="background:rgba(59,130,246,.25);border:1px solid rgba(59,130,246,.5);color:#93c5fd;border-radius:10px;padding:8px 16px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px;font-weight:700">🖨️ طباعة / Print</button>'
     +'<button onclick="document.getElementById(\'wpPreviewOverlay\').style.display=\'none\';_previewReturnStep=3;" style="background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.4);color:#fca5a5;border-radius:10px;padding:8px 16px;cursor:pointer;font-family:Montserrat,sans-serif;font-size:12px;font-weight:700">✕ إغلاق</button>'
     +'</div></div>'
-    // الورقة
+‎    // الورقة
     +'<div style="padding:24px 16px;display:flex;flex-direction:column;align-items:center">'+html+'</div>';
   overlay.style.display='block';
 }
@@ -1651,7 +1678,7 @@ function buildWhitePaperHTML(d,domIdx){
     ?'<img src="'+testData.logoSrc+'" style="max-height:60px;max-width:80px;object-fit:contain;background:white">'
     :'<div style="width:60px;height:60px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:28px">🎓</div>';
   var html='<div class="wp-page" style="max-width:760px;width:100%;background:white;padding:32px 36px;box-shadow:0 4px 24px rgba(0,0,0,.18);border:1px solid #e8e8e8;border-radius:2px;margin-bottom:0">';
-  // هيدر الورقة
+‎  // هيدر الورقة
   html+='<div style="display:flex;align-items:center;justify-content:space-between;border-bottom:3px double #111;padding-bottom:12px;margin-bottom:16px;gap:12px">'
     +logoHtml
     +'<div style="flex:1;text-align:center">'
@@ -1660,26 +1687,26 @@ function buildWhitePaperHTML(d,domIdx){
     +'</div>'
     +logoHtml
     +'</div>';
-  // التعليمات
+‎  // التعليمات
   if(instrAr||instrEn){
     html+='<table style="width:100%;border-collapse:collapse;margin-bottom:16px;font-size:12px"><tr>'
       +(instrAr?'<td style="border:1px solid #ccc;padding:10px;vertical-align:top;width:50%" dir="rtl">'+instrAr+'</td>':'')
       +(instrEn?'<td style="border:1px solid #ccc;padding:10px;vertical-align:top;width:50%" dir="ltr">'+instrEn+'</td>':'')
       +'</tr></table>';
   }
-  // عنوان المجال
+‎  // عنوان المجال
   html+='<div style="background:#1e3a8a;color:white;padding:8px 16px;border-radius:3px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center">'
     +'<span style="font-size:14px;font-weight:900">'+(d.nameAr||'المجال')+'</span>'
     +'<span style="font-size:12px;font-family:Montserrat,sans-serif;opacity:.8">'+(d.nameEn||'Domain')+'</span>'
     +'<span style="font-size:11px;font-family:Montserrat,sans-serif;opacity:.7">'+d.weight+'%</span>'
     +'</div>';
-  // الأسئلة: مباشرة أو بفروع
+‎  // الأسئلة: مباشرة أو بفروع
   if(d.hasBranches&&d.branches&&d.branches.length){
     var brLabels=['أولاً','ثانياً','ثالثاً','رابعاً','خامساً','سادساً','سابعاً','ثامناً'];
     var brLabelsEn=['First','Second','Third','Fourth','Fifth','Sixth','Seventh','Eighth'];
     d.branches.forEach(function(br,bi){
       if(bi>0){
-        // فاصل أزرق بين الفروع
+‎        // فاصل أزرق بين الفروع
         html+='<div style="border-top:3px solid #1e3a8a;margin:20px 0;position:relative">'
           +'<div style="position:absolute;top:-12px;right:16px;background:white;padding:0 8px;font-size:12px;font-weight:800;color:#1e3a8a">'+(brLabels[bi]||'فرع '+(bi+1))+' / '+(brLabelsEn[bi]||'Branch '+(bi+1))+'</div>'
           +'</div>';
@@ -1695,7 +1722,7 @@ function buildWhitePaperHTML(d,domIdx){
   } else {
     html+=renderWPQuestions(d.questions||[],d.weight||0);
   }
-  // تذييل الورقة
+‎  // تذييل الورقة
   html+='<div style="border-top:1px solid #bbb;margin-top:20px;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;color:#777;font-family:Montserrat,sans-serif">'
     +'<span>Scholastic Testing Platform</span>'
     +'<span>Page 1 of 1</span>'
@@ -1712,12 +1739,12 @@ function renderWPQuestions(questions,totalWeight){
     var qWeight=parseFloat(q.score||0);
     usedWeight+=qWeight;
     var remaining=parseFloat((totalWeight-usedWeight).toFixed(2));
-    // فاصل ذهبي بين الأسئلة
+‎    // فاصل ذهبي بين الأسئلة
     if(qi>0){
       html+='<div style="height:2px;background:linear-gradient(90deg,transparent,#FACC15 20%,#F59E0B 50%,#FACC15 80%,transparent);margin:14px 0;box-shadow:0 1px 4px rgba(245,158,11,.3)"></div>';
     }
     html+='<div style="margin-bottom:4px">';
-    // رأس السؤال + الدرجة
+‎    // رأس السؤال + الدرجة
     html+='<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px">'
       +'<div style="display:flex;gap:8px;flex:1">'
       +'<span style="font-weight:900;color:#1e3a8a;font-size:14px;flex-shrink:0;min-width:22px">'+(qi+1)+'.</span>'
@@ -1728,18 +1755,18 @@ function renderWPQuestions(questions,totalWeight){
       +'<div style="font-size:9px;color:#94a3b8;margin-top:2px;font-family:Montserrat,sans-serif">متبقي: '+remaining+'%</div>'
       +'</div>'
       +'</div>';
-    // صورة/ميديا
+‎    // صورة/ميديا
     if(q.mediaHtml&&!(q.mediaVisible&&q.mediaVisible.img===false)){
       html+='<div style="margin:8px 0 8px 22px">'+q.mediaHtml+'</div>';
     }
-    // جسم السؤال (النص المكتوب من المحرر)
+‎    // جسم السؤال (النص المكتوب من المحرر)
     if(q.bodyHtml){
       html+='<div style="margin-right:22px;margin-bottom:8px;font-size:13px;line-height:1.7;color:#1a1a2e" dir="auto">'+q.bodyHtml+'</div>';
     }
     if(q.questionText){
       html+='<div style="margin-right:22px;margin-bottom:8px;font-size:13px;font-weight:700;color:#1e3a8a" dir="auto">'+q.questionText+'</div>';
     }
-    // جسم الإجابة
+‎    // جسم الإجابة
     html+='<div style="margin-right:22px">';
     if(q.type==='mcq'){
       html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px">';
@@ -1837,7 +1864,7 @@ var _previewBoxMode=0;
 var _previewBoxData=null;
 function previewInBox(m){
   if(!testData.domains||!testData.domains.length){scWarn('أضف مجالات وأسئلة أولاً','Add domains first');return;}
-  // حدد البطاقة المضغوطة
+‎  // حدد البطاقة المضغوطة
   [1,2,3,4].forEach(function(i){
     var c=document.getElementById('modeCard'+i);
     if(c){c.classList.remove('mode-active');c.style.borderColor='rgba(255,255,255,.12)';}
@@ -1848,7 +1875,7 @@ function previewInBox(m){
   var mNames={1:'📋 الكلاسيكي',2:'🎯 التركيز الكامل',3:'🌊 الانسيابي',4:'📄 الورقة البيضاء'};
   var el=document.getElementById('previewBoxModeName');
   if(el) el.textContent='النمط: '+(mNames[m]||m);
-  // ابنِ محتوى المعاينة داخل الصندوق
+‎  // ابنِ محتوى المعاينة داخل الصندوق
   buildPreviewBoxContent(m);
 }
 function buildPreviewBoxContent(m){
@@ -1861,7 +1888,7 @@ function buildPreviewBoxContent(m){
   var qs=d.questions||[];
   if(d.hasBranches&&d.branches&&d.branches[0]) qs=d.branches[0].questions||[];
   if(!qs.length){cont.innerHTML='<div style="color:#94a3b8;padding:40px;text-align:center;font-family:Tajawal,sans-serif">لا توجد أسئلة</div>';return;}
-  // عرض التعليمات أولاً كطالب حقيقي
+‎  // عرض التعليمات أولاً كطالب حقيقي
   var instrAr=testData.instructionsAr||'';
   var instrEn=testData.instructionsEn||'';
   var instrHtml='<div style="font-family:Tajawal,sans-serif;padding:20px;color:#1a1a2e;height:420px;overflow:auto;background:linear-gradient(135deg,#f8fafc,#eff6ff)">'
@@ -1963,7 +1990,7 @@ function selectDisplayModeStep1(m){
   });
 }
 
-// ══ كود المدرسة التخليقي ══
+‎// ══ كود المدرسة التخليقي ══
 var _curriculumCodeMap={IGCSE:'IG',American:'AM',IB:'IB',Canadian:'CA',CBSE:'CB',Local:'LO'};
 function _extractCountryCode(countryStr){
   if(!countryStr) return 'XX';
@@ -2102,7 +2129,7 @@ function saveBranchQuestions(){
   _saveDraft();
   closeBranchQuestions();
   scOk('تم حفظ الفرع ✅','Branch Saved',
-    'تم حفظ أسئلة الفرع بنجاح / Branch questions saved successfully','✅');
+‎    'تم حفظ أسئلة الفرع بنجاح / Branch questions saved successfully','✅');
 }
 var selectedSchools=[], currentSupName='', currentStudentData=null;
 var sw_domainIdx=0, sw_qIdx=0, sw_currentPage='instructions', sw_answers={}, sw_timerInterval=null, sw_timeLeft=0, sw_instructionsConfirmed=false;
@@ -2385,7 +2412,7 @@ function grSendToArchive(id){
     var exists=archivedTests.some(function(a){return a.id==='arch-'+id;});
     if(!exists){
       archivedTests.unshift(Object.assign({},t,{id:'arch-'+id,archivedAt:Date.now()}));
-      ghWrite('archive.json',archivedTests).catch(function(){});
+      saveArchive();
     }
     myTests=myTests.filter(function(x){return x.id!==id;});
     saveMyTests();renderGeneralReviewerContent();
@@ -2428,27 +2455,27 @@ function deleteSup(id){scConfirm('حذف المشرف','Delete Supervisor','هل
 // AUTH
 // ============================================================
 var currentRole='';
-function initRoute(role){
+function initRoute(role,evt){
+  if(evt) evt.stopPropagation();
   currentRole=role;
-  document.getElementById('modalTitle').innerText=
-    role==='الإدارة'?'الإدارة':
-    role==='المشرف'?'دخول بوابة المشرف':
-    role==='الطالب'?'دخول الطالب':
-    role==='المدارس'?'دخول بوابة المدارس':'دخول';
-  document.getElementById('modalTitleEn').innerText=
-    role==='الإدارة'?'Administration Access':
-    role==='المشرف'?'Sign in to Supervisor Portal':
-    role==='الطالب'?'Student Sign In':
-    role==='المدارس'?'Sign in to Schools Portal':'Sign In';
+  var titleMap={
+    'الإدارة':['الإدارة','Administration Access'],
+    'المشرف':['دخول بوابة المشرف','Sign in to Supervisor Portal'],
+    'الطالب':['دخول الطالب','Student Sign In'],
+    'المدارس':['دخول بوابة المدارس','Sign in to Schools Portal']
+  };
+  var titles=titleMap[role]||['دخول','Sign In'];
+  document.getElementById('modalTitle').innerText=titles[0];
+  document.getElementById('modalTitleEn').innerText=titles[1];
   var userRow=document.getElementById('userInputRow');
   if(userRow) userRow.style.display=role==='الإدارة'?'none':'block';
   document.getElementById('userInput').value='';
   document.getElementById('passInput').value='';
-  // Use requestAnimationFrame to ensure modal opens AFTER the click event
-  // propagation fully completes (prevents backdrop click from immediately closing it)
+  var modal=document.getElementById('loginModal');
+  modal.style.display='none'; // reset first
   requestAnimationFrame(function(){
     requestAnimationFrame(function(){
-      document.getElementById('loginModal').style.display='flex';
+      modal.style.display='flex';
     });
   });
 }
@@ -2464,8 +2491,8 @@ function sendForgotPassword(){
     found?'تم إرسال البيانات 📧':'طلب الاسترداد 📧',
     found?'Recovery Email Sent':'Recovery Request Received',
     found
-      ?'تم إرسال بيانات الدخول إلى بريدك الإلكتروني\nيرجى مراجعة صندوق الوارد أو البريد المزعج'
-      :'إذا كان البريد الإلكتروني مسجلاً في النظام سيتم إرسال بيانات الدخول إليه\nتواصل مع مسؤول المنصة إذا لم تصلك الرسالة',
+‎      ?'تم إرسال بيانات الدخول إلى بريدك الإلكتروني\nيرجى مراجعة صندوق الوارد أو البريد المزعج'
+‎      :'إذا كان البريد الإلكتروني مسجلاً في النظام سيتم إرسال بيانات الدخول إليه\nتواصل مع مسؤول المنصة إذا لم تصلك الرسالة',
     found
       ?'Login credentials have been sent to your email\nPlease check your inbox or spam folder'
       :'If this email is registered, login credentials will be sent\nContact platform admin if you do not receive it',
@@ -2476,7 +2503,7 @@ function sendForgotPassword(){
 function checkAuth(){
   var user=document.getElementById('userInput').value.trim();
   var pass=document.getElementById('passInput').value.trim();
-  // قراءة كلمة مرور الإدارة المخزنة (يمكن تغييرها من صفحة معلوماتي)
+‎  // قراءة كلمة مرور الإدارة المخزنة (يمكن تغييرها من صفحة معلوماتي)
   var adminPass=localStorage.getItem('scholastic_admin_pass')||'Gems@2050';
   if(currentRole==='الإدارة'){
     if(pass===adminPass){toggleSection('adminPanel');closeModal();}
@@ -2557,7 +2584,7 @@ function populateCoordFilters(){
   testSel.innerHTML='<option value="">كل الاختبارات</option>'+tests.map(function(t){return '<option value="'+t.id+'">'+t.name+'</option>';}).join('');
 }
 
-// ══ تقارير التحصيل — Attainment Reports ══
+‎// ══ تقارير التحصيل — Attainment Reports ══
 function populateAttainmentFilters(){
   var sch=currentCoordSchool||{};
   var set=function(id,val){var el=document.getElementById(id);if(el)el.value=val||'—';};
@@ -2566,7 +2593,7 @@ function populateAttainmentFilters(){
   set('attSchoolCodeFilter',sch.code||'—');
   set('attCurriculumFixed',sch.curriculum||'—');
 
-  // قوائم صف ومادة من القوائم المعتمدة في المنصة
+‎  // قوائم صف ومادة من القوائم المعتمدة في المنصة
   var gradeSel=document.getElementById('attGradeFilter');
   if(gradeSel){
     gradeSel.innerHTML='<option value="">الكل / All</option>'
@@ -2594,11 +2621,11 @@ function computeStudentAttainmentPct(st){
       });
     }
   });
-  // طالب أجاب على مجال واحد على الأقل = أكمل الاختبار للأغراض التقريرية
+‎  // طالب أجاب على مجال واحد على الأقل = أكمل الاختبار للأغراض التقريرية
   if(!hasAny && st.domainsCompleted && Object.keys(st.domainsCompleted).length>0) return 0;
   return hasAny?total:null;
 }
-// يحدد ما إذا كان الطالب "أكمل" الاختبار بمعنى التقارير = حضر ولو مجالاً واحداً
+‎// يحدد ما إذا كان الطالب "أكمل" الاختبار بمعنى التقارير = حضر ولو مجالاً واحداً
 function _studentIsCompleted(st){
   if(!st) return false;
   if(st.completed) return true;
@@ -2607,7 +2634,7 @@ function _studentIsCompleted(st){
   return false;
 }
 
-// ══ نظام تصنيف مستويات التحصيل الثلاثة (Above / Met Expectation / Below) ══
+‎// ══ نظام تصنيف مستويات التحصيل الثلاثة (Above / Met Expectation / Below) ══
 var ATT_LEVELS=[
   {key:'above',en:'Above',statementAr:'الطلاب الذين يحققون مستوى أعلى من معايير المنهاج',statementEn:'Students Attaining Above Curriculum Standards',color:'#22c55e'},
   {key:'met',en:'Met Expectation',statementAr:'الطلاب الذين يحققون مستوى متوافقاً مع توقعات المنهاج',statementEn:'Students Meeting Curriculum Expectations',color:'#f59e0b'},
@@ -2619,7 +2646,7 @@ function _attBandOf(pct){
   return 'above';
 }
 
-// ══ مقياس المقادير الكمية المعتمد ══
+‎// ══ مقياس المقادير الكمية المعتمد ══
 var ATT_QUANT_TERMS=[
   {en:'Almost all',label:'Greater than 90%'},
   {en:'Most',label:'75% - 90%'},
@@ -2630,7 +2657,7 @@ var ATT_QUANT_TERMS=[
   {en:'Few',label:'Up to 15%'}
 ];
 
-// ══ مقياس الأحكام المعتمد (وفق 1.1.1) — ستة مستويات ══
+‎// ══ مقياس الأحكام المعتمد (وفق 1.1.1) — ستة مستويات ══
 var ATT_JUDGEMENTS=[
   {en:'Outstanding',ar:'متميز',color:'#7c3aed'},
   {en:'Very Good',ar:'جيد جداً',color:'#2563eb'},
@@ -2703,7 +2730,7 @@ function runAttainmentReport(){
     outEl.innerHTML='';return;
   }
 
-  // أظهر الاختبارات المعتمد تصحيحها
+‎  // أظهر الاختبارات المعتمد تصحيحها
   var approvedTests=tests.filter(function(t){return t.gradingApproved;});
   var cardsHtml=tests.map(function(t){
     var approved=t.gradingApproved;
@@ -2733,139 +2760,94 @@ function runAttainmentReport(){
   window._lastAttainmentFilters={grade:gradeF,subject:subF,term:termF};
 }
 
-function buildAttainmentPreambleHtml(){
-  var GUIDE=[
-    {ar:'الغرض من التقرير',en:'Purpose of the Report',icon:'📋',color:'#1e3a8a',
-     arT:'يوضح تقرير التحصيل مستوى أداء الطلاب في الاختبار المختار، ويعرض توزيعهم حسب نطاقات الأداء المتوقعة. يساعد التقرير المدرسة على فهم الوضع الحالي قبل اتخاذ قرارات الدعم والتحسين.',
-     enT:"The attainment report presents students' performance in the selected assessment and shows their distribution across expected performance bands. It helps the school understand current attainment before planning support and improvement actions."},
-    {ar:'قراءة الجداول',en:'Reading the Tables',icon:'📊',color:'#0891b2',
-     arT:'تعرض الجداول عدد الطلاب ونسبتهم المئوية في كل نطاق أداء. وقد تظهر النتائج على مستوى المدرسة، الصف، الشعبة، المادة، المهارة، أو الفئة الطلابية.',
-     enT:'Tables show the number and percentage of students in each performance band. Results may be displayed by school, grade, class, subject, skill, or student category.'},
-    {ar:'قراءة الرسوم البيانية',en:'Reading the Charts',icon:'📈',color:'#7c3aed',
-     arT:'تساعد الرسوم البيانية على مقارنة نسب الطلاب بين نطاقات الأداء، أو بين اختبارين، أو بين فئات مختلفة مثل النوع، الجنسية، المواطنين، أو ذوي الهمم.',
-     enT:'Charts help compare student percentages across performance bands, between assessments, or across groups such as gender, nationality, national students, or students of determination.'},
-    {ar:'الحكم العام',en:'Overall Judgement',icon:'🏅',color:'#AD8628',
-     arT:'يصدر الحكم العام بناء على توزيع الطلاب داخل نطاقات الأداء. يستخدم هذا الحكم كمؤشر موجز لجودة التحصيل، ولا يغني عن قراءة تفاصيل المهارات والفئات.',
-     enT:'The overall judgement is generated from the distribution of students across performance bands. It provides a concise indicator of attainment quality, but should be read alongside skill and group-level details.'},
-    {ar:'ملاحظات القراءة',en:'Reading Notes',icon:'📝',color:'#475569',
-     arT:'تعتمد النتائج على البيانات المتاحة وقت إصدار التقرير. وقد تختلف الأحكام إذا تغير المعيار المختار أو نطاق الدرجات أو عينة الطلاب.',
-     enT:'Results are based on the available data at the time of report generation. Judgements may change if the selected benchmark, score ranges, or student sample changes.'}
-  ];
-  var BANDS=[
-    {num:'1',ar:'أعلى من التوقعات',en:'Above Expectations',
-     arD:'أداء يتجاوز المستوى المستهدف للمنهاج أو المعيار المستخدم.',
-     enD:'Performance exceeding the target curriculum or benchmark level.',
-     color:'#15803d',bg:'#f0fdf4',border:'#22c55e',range:'70 – 100%'},
-    {num:'2',ar:'متوافق مع التوقعات',en:'In Line with Expectations',
-     arD:'أداء داخل المستوى المتوقع، متوافق مع معايير المنهاج.',
-     enD:'Performance within the expected level, meeting curriculum standards.',
-     color:'#b45309',bg:'#fffbeb',border:'#f59e0b',range:'50 – 69%'},
-    {num:'3',ar:'أقل من التوقعات',en:'Below Expectations',
-     arD:'أداء أقل من المستوى المستهدف للمنهاج أو المعيار المستخدم.',
-     enD:'Performance below the target curriculum or benchmark level.',
-     color:'#b91c1c',bg:'#fef2f2',border:'#ef4444',range:'0 – 49%'}
-  ];
-  var bandsHtml=BANDS.map(function(b){
-    return '<div style="flex:1;min-width:200px;background:'+b.bg+';border:2.5px solid '+b.border+';border-radius:18px;padding:22px 18px;position:relative;overflow:hidden">'
-      +'<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:'+b.border+';opacity:.13"></div>'
-      +'<div style="position:absolute;bottom:-25px;left:-12px;width:60px;height:60px;border-radius:50%;background:'+b.border+';opacity:.08"></div>'
-      +'<div style="width:38px;height:38px;border-radius:10px;background:'+b.color+';display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:white;font-family:Montserrat,sans-serif;margin-bottom:12px;box-shadow:0 4px 10px '+b.border+'55">'+b.num+'</div>'
-      +'<div style="font-family:Tajawal,sans-serif;font-size:18px;font-weight:900;color:'+b.color+';margin-bottom:3px" dir="rtl">'+b.ar+'</div>'
-      +'<div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:'+b.color+';margin-bottom:8px;opacity:.85">'+b.en+'</div>'
-      +'<div style="display:inline-block;background:'+b.color+';color:white;border-radius:20px;padding:3px 14px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif;margin-bottom:12px">'+b.range+'</div>'
-      +'<div style="font-size:14px;color:#374151;line-height:1.8;margin-bottom:5px;font-family:Tajawal,sans-serif" dir="rtl">'+b.arD+'</div>'
-      +'<div style="font-size:12px;color:#6b7280;line-height:1.7;font-family:Montserrat,sans-serif;direction:ltr">'+b.enD+'</div>'
-      +'</div>';
-  }).join('');
-  var guideHtml=GUIDE.map(function(g){
-    return '<div style="background:white;border-radius:14px;padding:18px 20px;border:1.5px solid #e2e8f0;display:flex;gap:16px;align-items:flex-start">'
-      +'<div style="width:44px;height:44px;border-radius:12px;background:'+g.color+'18;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">'+g.icon+'</div>'
-      +'<div style="flex:1">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:17px;font-weight:900;color:'+g.color+';margin-bottom:2px" dir="rtl">'+g.ar+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:'+g.color+';opacity:.75;margin-bottom:10px">'+g.en+'</div>'
-        +'<div style="font-size:14px;color:#374151;line-height:1.85;font-family:Tajawal,sans-serif;margin-bottom:6px" dir="rtl">'+g.arT+'</div>'
-        +'<div style="font-size:12.5px;color:#6b7280;line-height:1.7;font-family:Montserrat,sans-serif;direction:ltr">'+g.enT+'</div>'
-      +'</div></div>';
-  }).join('');
-  return '<div style="background:white;border-radius:18px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin-bottom:24px;border:1.5px solid #e2e8f0" dir="rtl">'
-    +'<div style="text-align:center;margin-bottom:26px;padding-bottom:18px;border-bottom:3px double #141F44">'
-      +'<div style="font-family:Tajawal,sans-serif;font-size:26px;font-weight:900;color:#141F44;margin-bottom:6px">دليل قراءة تقرير التحصيل</div>'
-      +'<div style="font-family:Montserrat,sans-serif;font-size:15px;font-weight:700;color:#AD8628;letter-spacing:.5px">Attainment Report — Reading Guide</div>'
-      +'<div style="width:60px;height:4px;background:linear-gradient(90deg,#141F44,#AD8628);border-radius:4px;margin:12px auto 0"></div>'
-    +'</div>'
-    +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
-      +'<div style="width:5px;height:30px;background:linear-gradient(180deg,#141F44,#AD8628);border-radius:4px"></div>'
-      +'<div><div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:900;color:#141F44">نطاقات الأداء</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#AD8628">Performance Bands</div></div>'
-    +'</div>'
-    +'<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px">'+bandsHtml+'</div>'
-    +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
-      +'<div style="width:5px;height:30px;background:linear-gradient(180deg,#1e3a8a,#7c3aed);border-radius:4px"></div>'
-      +'<div><div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:900;color:#141F44">إرشادات القراءة</div><div style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#1e3a8a">Reading Guide</div></div>'
-    +'</div>'
-    +'<div style="display:flex;flex-direction:column;gap:10px">'+guideHtml+'</div>'
-    +'<div style="text-align:center;padding-top:16px;font-size:10px;color:#94a3b8;font-family:Montserrat,sans-serif;border-top:1px solid #e2e8f0;margin-top:24px">Scholastic International Standardized Tests — Attainment Report</div>'
-    +'</div>';
+
+// ── SBT Logo SVG ──
+var _SBT_LOGO='<svg width="155" height="62" viewBox="0 0 310 124" xmlns="http://www.w3.org/2000/svg"><text x="2" y="64" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" fill="#1B2F6E">S</text><text x="58" y="64" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" fill="#1B2F6E">B</text><text x="116" y="64" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" fill="#1B2F6E">T</text><polyline points="16,74 50,46 86,60 120,36 148,44" fill="none" stroke="#1A9E8F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="74" r="5" fill="white" stroke="#1A9E8F" stroke-width="2.5"/><circle cx="50" cy="46" r="5" fill="white" stroke="#1A9E8F" stroke-width="2.5"/><circle cx="86" cy="60" r="5" fill="white" stroke="#1A9E8F" stroke-width="2.5"/><circle cx="120" cy="36" r="5" fill="white" stroke="#1A9E8F" stroke-width="2.5"/><circle cx="148" cy="44" r="7" fill="#E8A020"/><rect x="174" y="4" width="72" height="72" rx="12" fill="none" stroke="#1B2F6E" stroke-width="4"/><text x="178" y="56" font-family="Arial Black,sans-serif" font-size="34" font-weight="900" fill="#1B2F6E">S</text><text x="200" y="56" font-family="Arial Black,sans-serif" font-size="34" font-weight="900" fill="#1A9E8F">B</text><text x="222" y="56" font-family="Arial Black,sans-serif" font-size="34" font-weight="900" fill="#1B2F6E">T</text><polyline points="180,63 193,53 207,58 221,46 233,50" fill="none" stroke="#1A9E8F" stroke-width="2.2" stroke-linecap="round"/><circle cx="233" cy="50" r="4" fill="#E8A020"/><polygon points="211,5 224,13 211,21 198,13" fill="#1B2F6E"/><rect x="220" y="13" width="3" height="9" fill="#1B2F6E"/><circle cx="221.5" cy="23" r="2.8" fill="#E8A020"/><rect x="180" y="64" width="5" height="8" rx="1" fill="#1A9E8F"/><rect x="188" y="60" width="5" height="12" rx="1" fill="#1A9E8F"/><rect x="196" y="62" width="5" height="10" rx="1" fill="#1A9E8F"/><rect x="204" y="58" width="5" height="14" rx="1" fill="#1A9E8F"/><rect x="212" y="61" width="5" height="11" rx="1" fill="#1A9E8F"/><rect x="220" y="63" width="5" height="9" rx="1" fill="#1A9E8F"/><text x="2" y="82" font-family="Arial Black,sans-serif" font-size="9" font-weight="900" fill="#1B2F6E" letter-spacing="0.6">SUBJECT BENCHMARK TESTING</text><line x1="2" y1="86" x2="158" y2="86" stroke="#E8A020" stroke-width="1.5"/><text x="158" y="99" font-family="Tajawal,Arial,sans-serif" font-size="10" fill="#1A9E8F" text-anchor="end">الاختبارات المعيارية للمواد الدراسية</text></svg>';
+
+function _sbtHeader(varsHtml,titleAr,titleEn){
+  return '<div style="background:white;padding:16px 24px 10px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:2px solid #e8e8e8">'+_SBT_LOGO+'<div style="flex:1;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:8px"><div style="flex:1;height:1.5px;background:#E8A020"></div><div style="font-family:Montserrat,Arial,sans-serif;font-size:12.5px;font-weight:700;color:#1B2F6E;white-space:nowrap">'+varsHtml+'</div><div style="flex:1;height:1.5px;background:#E8A020"></div></div></div><div style="text-align:right;min-width:150px"><div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:900;color:#1B2F6E" dir="rtl">'+titleAr+'</div><div style="font-family:Montserrat,Arial,sans-serif;font-size:12px;font-weight:700;color:#1A9E8F">'+titleEn+'</div></div></div>';
 }
-function buildAttainmentDataCountsHtml(allStudents,graded){
-  var boys=graded.filter(function(x){return x.st.gender==='Male';}).length;
-  var girls=graded.filter(function(x){return x.st.gender==='Female';}).length;
-  var gifted=graded.filter(function(x){return x.st.gifted==='Yes';}).length;
-  var sod=graded.filter(function(x){return x.st.sod==='Yes';}).length;
-  var national=graded.filter(function(x){return x.st.national==='Yes';}).length;
-  var rows=[
-    {labelAr:'إجمالي عدد الطلاب الذين أكملوا الاختبار',labelEn:'Total Students Who Completed the Assessment',val:graded.length,highlight:true,color:'#1e3a8a'},
-    {labelAr:'عدد البنين الذين أكملوا الاختبار',labelEn:'Boys Who Completed the Assessment',val:boys,color:'#2563eb'},
-    {labelAr:'عدد البنات اللواتي أكملن الاختبار',labelEn:'Girls Who Completed the Assessment',val:girls,color:'#db2777'},
-    {labelAr:'عدد الموهوبين',labelEn:'Gifted Students',val:gifted,color:'#a855f7'},
-    {labelAr:'عدد ذوي الهمم',labelEn:'Students of Determination (SOD)',val:sod,color:'#ec4899'},
-    {labelAr:'عدد الطلاب المواطنين',labelEn:'National Students',val:national,color:'#16a34a'}
+function _sbtFooter(n){
+  return '<div style="background:white;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;border-top:2px solid #e8e8e8;margin-top:auto"><div style="font-family:Montserrat,Arial,sans-serif;font-size:10.5px;color:#888">Page '+n+' | SBT - Subject Benchmark Testing _ Attainment</div><div style="font-family:Tajawal,sans-serif;font-size:10.5px;color:#888">صفحة '+n+'</div></div>';
+}
+var _PAGE_OPEN='<div style="background:white;min-height:1058px;width:750px;max-width:100%;margin:12px auto;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.1);page-break-after:always">';
+var _PAGE_CLOSE='</div>';
+
+function _sbtPage1(vars){
+  var h=_sbtHeader(vars,'دليل قراءة تقرير التحصيل','Attainment Report – Reading Guide');
+  var purpose='<div style="background:#F5F7FA;border-radius:12px;overflow:hidden;margin:16px 20px 0;display:grid;grid-template-columns:1fr 1fr"><div style="padding:16px 18px;border-right:1px solid #e2e8f0"><div style="font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:800;color:#1A9E8F;margin-bottom:8px">Purpose of the Report</div><div style="font-family:Montserrat,Arial,sans-serif;font-size:12px;color:#374151;line-height:1.8">Presents students performance and helps the school plan targeted support and improvement actions.</div></div><div style="padding:16px 18px;border-right:4px solid #1A9E8F;text-align:right" dir="rtl"><div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:#1A9E8F;margin-bottom:8px">الغرض من التقرير</div><div style="font-family:Tajawal,sans-serif;font-size:13px;color:#374151;line-height:1.9">يوضح تقرير التحصيل مستوى الطالب في الاختبار الممتاز ويعرض تيّاتهم حسب النطاقات. يساعد التقرير المدرسة على فهم الوضع الحالي بدقة قبل اتخاذ قرارات الدعم والتحسين.</div></div></div>';
+  var bHdr='<div style="padding:14px 20px 6px;text-align:right" dir="rtl"><span style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:#1B2F6E;border-bottom:3px solid #E8A020;padding-bottom:4px">نطاقات الأداء الدراسي <span style="font-family:Montserrat,sans-serif;font-size:12px;color:#1A9E8F">(Performance Bands)</span></span></div>';
+  var bands=[
+    {n:'1',c:'#1A6B4A',bg:'#f0fdf4',en:'Above Expectations',end:'Performance exceeding the target curriculum or benchmark level.',ar:'أعلى من التوقعات (100%-70%)',ard:'أداء يتجاوز المستوى المستهدف للمنهاج أو المعيار المستخدم بشكل متميز.',icon:'📈'},
+    {n:'2',c:'#E8A020',bg:'#fffbeb',en:'In Line with Expectations',end:'Performance within the expected level, meeting standards.',ar:'متوافق مع التوقعات (69%-59%)',ard:'أداء داخل المستوى المتوقع ومتوافق تماماً مع معايير المنهاج.',icon:'🎯'},
+    {n:'3',c:'#dc2626',bg:'#fef2f2',en:'Below Expectations',end:'Performance below the target curriculum or benchmark level.',ar:'أقل من التوقعات (49%-0%)',ard:'أداء أقل من المستوى المستهدف للمنهاج أو المعيار ويحتاج للتدخل.',icon:'📉'}
   ];
-  var tableRows=rows.map(function(r){
-    return '<tr style="background:'+(r.highlight?'#EFF6FF':'white')+'">'
-      +'<td style="padding:11px 16px;border:1px solid #dbeafe;font-size:13px;font-weight:'+(r.highlight?'900':'700')+';color:'+r.color+'" dir="rtl">'+r.labelAr+'</td>'
-      +'<td style="padding:11px 16px;border:1px solid #dbeafe;font-size:12px;color:#475569;font-family:Montserrat,sans-serif;direction:ltr;text-align:left">'+r.labelEn+'</td>'
-      +'<td style="padding:11px 16px;border:1px solid #dbeafe;text-align:center;font-size:17px;font-weight:900;color:'+r.color+';font-family:Montserrat,sans-serif">'+r.val+'</td>'
-      +'</tr>';
-  }).join('');
-  return '<div style="background:white;border-radius:18px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 16px rgba(30,58,138,.1);border:2px solid #BFDBFE">'
-    +'<div style="background:linear-gradient(135deg,#141F44,#1e3a8a);padding:14px 20px;display:flex;align-items:center;justify-content:space-between">'
-    +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:white" dir="rtl">البيانات</div>'
-    +'<div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;color:#AD8628;letter-spacing:.5px">Data</div>'
-    +'</div>'
-    +'<table style="width:100%;border-collapse:collapse"><thead><tr style="background:#1e3a8a">'
-    +'<th style="padding:10px 16px;border:1px solid #dbeafe;color:#D9B872;font-size:11px;font-weight:800;text-align:right" dir="rtl">البيان</th>'
-    +'<th style="padding:10px 16px;border:1px solid #dbeafe;color:#D9B872;font-size:11px;font-weight:800;text-align:left;font-family:Montserrat,sans-serif">Statement</th>'
-    +'<th style="padding:10px 16px;border:1px solid #dbeafe;color:#D9B872;font-size:11px;font-weight:800;text-align:center;font-family:Montserrat,sans-serif">العدد / Count</th>'
-    +'</tr></thead><tbody>'+tableRows+'</tbody></table></div>';
+  var bHtml='';
+  bands.forEach(function(b){
+    bHtml+='<div style="display:grid;grid-template-columns:48px 1fr 1fr 50px;align-items:stretch;margin:0 20px 8px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0"><div style="background:'+b.c+';display:flex;align-items:center;justify-content:center"><span style="font-family:Montserrat,sans-serif;font-size:20px;font-weight:900;color:white">'+b.n+'</span></div><div style="padding:12px 14px;border-right:1px solid #e2e8f0"><div style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:800;color:'+b.c+';margin-bottom:4px">'+b.en+'</div><div style="font-family:Montserrat,sans-serif;font-size:11.5px;color:#374151;line-height:1.7">'+b.end+'</div></div><div style="padding:12px 14px;background:'+b.bg+';text-align:right;border-right:4px solid '+b.c+'" dir="rtl"><div style="font-family:Tajawal,sans-serif;font-size:14px;font-weight:900;color:'+b.c+';margin-bottom:4px">'+b.ar+'</div><div style="font-family:Tajawal,sans-serif;font-size:12.5px;color:#374151;line-height:1.8">'+b.ard+'</div></div><div style="display:flex;align-items:center;justify-content:center;background:'+b.bg+';font-size:24px">'+b.icon+'</div></div>';
+  });
+  var guide='<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin:8px 20px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0"><div style="padding:14px 16px;background:#F5F7FA"><div style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:800;color:#1A9E8F;margin-bottom:8px">Reading Guidelines &amp; Charts</div><ul style="margin:0;padding-left:16px;font-family:Montserrat,sans-serif;font-size:11.5px;color:#374151;line-height:2"><li>Tables show student counts and percentages in each band.</li><li>Charts compare student distributions across demographic groups.</li><li>Overall judgement is a concise quality indicator of cohort achievement.</li></ul></div><div style="padding:14px 16px;background:#F0F9F8;text-align:right;border-right:4px solid #1A9E8F" dir="rtl"><div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:#1A9E8F;margin-bottom:8px">إرشادات قراءة الجداول والرسوم</div><ul style="margin:0;padding-right:16px;font-family:Tajawal,sans-serif;font-size:12.5px;color:#374151;line-height:2"><li>تعرض الجداول أعداد ونسب الطلاب الفعليين في كل نطاق أداء.</li><li>تقارن الرسوم البيانية النسب المئوية بين فئات الطلاب المختلفة.</li><li>يصدر الحكم العام بناءً على توزيع الطلاب ولا يغني عن تفاصيل المهارات.</li></ul></div></div>';
+  return _PAGE_OPEN+h+'<div style="flex:1">'+purpose+bHdr+bHtml+guide+'</div>'+_sbtFooter(1)+_PAGE_CLOSE;
+}
+
+function _sbtPage2(vars){
+  var h=_sbtHeader(vars,'معايير الأحكام المعتمدة','Approved Attainment Scales');
+  var judges=[
+    {n:'1',c:'#1A6B4A',en:'Outstanding',ar:'متميز',end:'Most students attain levels that are above curriculum standards.',ard:'يحقق معظم الطلاب مستويات أعلى من معايير المنهاج.'},
+    {n:'2',c:'#1A9E8F',en:'Very Good',ar:'جيد جداً',end:'The large majority of students attain levels that are above curriculum standards.',ard:'تحقق الغالبية الكبيرة من الطلاب مستويات أعلى من معايير المنهاج.'},
+    {n:'3',c:'#5BAD8F',en:'Good',ar:'جيد',end:'The majority of students attain levels that are above curriculum standards.',ard:'تحقق أغلبية الطلاب مستويات أعلى من معايير المنهاج.'},
+    {n:'4',c:'#E8A020',en:'Acceptable',ar:'مقبول',end:'Most students attain levels that are in line with curriculum standards and a few are above.',ard:'يحقق معظم الطلاب مستويات متوافقة مع معايير المنهاج، ويحقق فئة منهم مستوى أعلى.'},
+    {n:'5',c:'#E07020',en:'Weak',ar:'ضعيف',end:'Less than three-quarters of students attain levels that are at least in line with curriculum standards.',ard:'يحقق أقل من ثلاثة أرباع الطلاب مستوى متوافقاً على الأقل مع معايير المنهاج.'},
+    {n:'6',c:'#dc2626',en:'Very Weak',ar:'ضعيف جداً',end:'Few students attain levels that are in line with curriculum standards.',ard:'يحقق فئة قليلة من الطلاب مستوى متوافقاً مع معايير المنهاج.'}
+  ];
+  var rows='';
+  judges.forEach(function(j){
+    rows+='<div style="display:grid;grid-template-columns:48px 1fr 1px 1fr;align-items:stretch;border-bottom:1px solid #e2e8f0"><div style="background:'+j.c+';display:flex;align-items:center;justify-content:center;padding:12px 0"><span style="font-family:Montserrat,sans-serif;font-size:18px;font-weight:900;color:white">'+j.n+'</span></div><div style="padding:12px 16px"><div style="font-family:Montserrat,sans-serif;font-size:13.5px;font-weight:800;color:'+j.c+';margin-bottom:4px">'+j.en+'</div><div style="font-family:Montserrat,sans-serif;font-size:11.5px;color:#374151;line-height:1.75">'+j.end+'</div></div><div style="background:#e2e8f0"></div><div style="padding:12px 16px;text-align:right" dir="rtl"><div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:'+j.c+';margin-bottom:4px">'+j.ar+'</div><div style="font-family:Tajawal,sans-serif;font-size:12.5px;color:#374151;line-height:1.8">'+j.ard+'</div></div></div>';
+  });
+  var note='<div style="display:grid;grid-template-columns:1fr 1fr;background:#F5F7FA;border-top:2px solid #1B2F6E"><div style="padding:10px 16px;font-family:Montserrat,sans-serif;font-size:11.5px;font-weight:700;color:#1B2F6E">Apply the approved scale consistently when reporting attainment.</div><div style="padding:10px 16px;font-family:Tajawal,sans-serif;font-size:12.5px;font-weight:700;color:#1B2F6E;text-align:right" dir="rtl">طبق مقياس الأحكام المعتمد بصورة متسقة عند عرض نتائج التحصيل.</div></div>';
+  return _PAGE_OPEN+h+'<div style="flex:1"><div style="margin:14px 20px;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0">'+rows+note+'</div></div>'+_sbtFooter(2)+_PAGE_CLOSE;
+}
+
+function _sbtPage3(vars){
+  var h=_sbtHeader(vars,'نطاقات النسب المئوية','Percentage Interpretation Ranges');
+  var intro='<div style="margin:14px 20px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;display:grid;grid-template-columns:1fr 1fr"><div style="padding:16px 18px;background:#F5F7FA"><div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:800;color:#1A9E8F;margin-bottom:8px">Percentage Interpretation Ranges</div><div style="font-family:Montserrat,sans-serif;font-size:12px;color:#374151;line-height:1.8">These ranges support consistent interpretation of cohort attainment.</div></div><div style="padding:16px 18px;background:#F0F9F8;text-align:right;border-right:4px solid #1A9E8F" dir="rtl"><div style="font-family:Tajawal,sans-serif;font-size:16px;font-weight:900;color:#1A9E8F;margin-bottom:8px">نطاقات النسب المئوية</div><div style="font-family:Tajawal,sans-serif;font-size:13px;color:#374151;line-height:1.85">تدعم هذه النطاقات تفسير نتائج تحصيل الفئات بصورة متسقة.</div></div></div>';
+  var ranges=[
+    {n:'1',pe:'>90%',te:'Almost all',pa:'أكثر من 90%',ta:'تقريباً الجميع',c:'#1A6B4A',bg:'#f0fdf4'},
+    {n:'2',pe:'75%–90%',te:'Most',pa:'75%–90%',ta:'معظم',c:'#1A9E8F',bg:'#f0fdfa'},
+    {n:'3',pe:'61%–74%',te:'Large majority',pa:'61%–74%',ta:'أغلبية كبيرة',c:'#5BAD8F',bg:'#f5fdf8'},
+    {n:'4',pe:'50%–60%',te:'Majority',pa:'50%–60%',ta:'أغلبية',c:'#E8A020',bg:'#fffbeb'},
+    {n:'5',pe:'31%–49%',te:'Large minority',pa:'31%–49%',ta:'أقلية كبيرة',c:'#E07020',bg:'#fff7ed'},
+    {n:'6',pe:'16%–30%',te:'Minority',pa:'16%–30%',ta:'أقلية',c:'#dc2626',bg:'#fef2f2'},
+    {n:'7',pe:'Up to 15%',te:'Few',pa:'حتى 15%',ta:'فلة',c:'#94a3b8',bg:'#f8fafc'}
+  ];
+  var tHdr='<div style="margin:0 20px;border-radius:10px 10px 0 0;overflow:hidden;border:1px solid #e2e8f0"><div style="display:grid;grid-template-columns:1fr 1fr 44px 1fr 1fr;background:#1B2F6E;padding:9px 0"><div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;color:#E8A020;text-align:center">Percentage Range</div><div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;color:#E8A020;text-align:center">Interpretation</div><div></div><div style="font-family:Tajawal,sans-serif;font-size:12px;font-weight:800;color:#E8A020;text-align:center">النطاق المئوي</div><div style="font-family:Tajawal,sans-serif;font-size:12px;font-weight:800;color:#E8A020;text-align:center">التفسير</div></div>';
+  var tRows='';
+  ranges.forEach(function(r){
+    tRows+='<div style="display:grid;grid-template-columns:1fr 1fr 44px 1fr 1fr;align-items:center;background:'+r.bg+';border-bottom:1px solid #e2e8f0;border-left:4px solid '+r.c+'"><div style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:700;color:#374151;text-align:center;padding:10px 6px">'+r.pe+'</div><div style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:700;color:'+r.c+';text-align:center">'+r.te+'</div><div style="display:flex;align-items:center;justify-content:center"><div style="width:28px;height:28px;border-radius:50%;background:'+r.c+';display:flex;align-items:center;justify-content:center;font-family:Montserrat,sans-serif;font-size:12px;font-weight:900;color:white">'+r.n+'</div></div><div style="font-family:Tajawal,sans-serif;font-size:12.5px;font-weight:700;color:#374151;text-align:center">'+r.pa+'</div><div style="font-family:Tajawal,sans-serif;font-size:12.5px;font-weight:700;color:'+r.c+';text-align:center">'+r.ta+'</div></div>';
+  });
+  var tFoot='<div style="display:grid;grid-template-columns:1fr 1fr;background:#F5F7FA;border-top:2px solid #1B2F6E"><div style="padding:10px 16px;font-family:Montserrat,sans-serif;font-size:11.5px;font-weight:700;color:#1B2F6E">Use the percentage range together with the approved judgement scale.</div><div style="padding:10px 16px;font-family:Tajawal,sans-serif;font-size:12.5px;font-weight:700;color:#1B2F6E;text-align:right" dir="rtl">استخدم نطاق النسبة المئوية مع معيار الحكم المعتمد.</div></div></div></div>';
+  return _PAGE_OPEN+h+'<div style="flex:1">'+intro+tHdr+tRows+tFoot+'</div>'+_sbtFooter(3)+_PAGE_CLOSE;
+}
+
+function buildAttainmentPreambleHtml(){
+  var t=window._lastAttainmentTests&&window._lastAttainmentTests[0]?window._lastAttainmentTests[0]:{};
+  var f=window._lastAttainmentFilters||{};
+  var school=(t.school||'');
+  var subj=(t.subject||f.subject||'');
+  var term=(t.term||f.term?'Term '+(t.term||f.term):'');
+  var yr=(t.year||f.year?'Academic Year '+(t.year||f.year):'');
+  var vars=[school,subj,term,yr].filter(function(x){return x;}).join(' _ ');
+  return _sbtPage1(vars)+_sbtPage2(vars)+_sbtPage3(vars);
+}
+
+function buildAttainmentDataCountsHtml(allStudents,graded){
+  // kept for compatibility — data counts now inside buildGroupAttainmentReportHtml
+  return '';
 }
 
 function buildAttainmentScalesReferenceHtml(){
-  var descRows=[
-    {level:'Outstanding',color:'#7c3aed',text:'Most students attain levels that are above curriculum standards.',textAr:'يحقق معظم الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Very Good',color:'#2563eb',text:'The large majority of students attain levels that are above curriculum standards.',textAr:'تحقق الأغلبية الكبيرة من الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Good',color:'#0891b2',text:'The majority of students attain levels that are above curriculum standards.',textAr:'تحقق أغلبية الطلاب مستويات أعلى من معايير المنهاج.'},
-    {level:'Acceptable',color:'#f59e0b',text:'Most students attain levels that are in line with curriculum standards and a few are above.',textAr:'يحقق معظم الطلاب مستويات متوافقة مع معايير المنهاج، ويحقق قلة منهم مستوى أعلى.'},
-    {level:'Weak',color:'#f97316',text:'Less than three-quarters of students attain levels that are at least in line with curriculum standards.',textAr:'يحقق أقل من ثلاثة أرباع الطلاب مستوى متوافقاً على الأقل مع معايير المنهاج.'},
-    {level:'Very Weak',color:'#ef4444',text:'Few students attain levels that are in line with curriculum standards.',textAr:'يحقق قلة من الطلاب مستوى متوافقاً مع معايير المنهاج.'}
-  ];
-  var descHtml=descRows.map(function(r){
-    return '<div style="display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border-bottom:1px solid #f1f5f9">'
-      +'<span style="background:'+r.color+';color:white;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif;white-space:nowrap;min-width:88px;text-align:center">'+r.level+'</span>'
-      +'<div style="flex:1"><div style="font-size:11.5px;color:#334155;line-height:1.6;direction:ltr;text-align:left;font-family:Montserrat,sans-serif">'+r.text+'</div>'
-      +'<div style="font-size:11.5px;color:#64748b;line-height:1.7;margin-top:2px" dir="rtl">'+r.textAr+'</div></div>'
-      +'</div>';
-  }).join('');
-  var termsHtml=ATT_QUANT_TERMS.map(function(t){
-    return '<tr><td style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a10;font-weight:800;color:#7c2d4a;font-size:12px">'+t.en+'</td><td style="padding:7px 12px;border:1px solid #e2e8f0;text-align:center;font-size:12px;color:#334155;font-family:Montserrat,sans-serif">'+t.label+'</td></tr>';
-  }).join('');
-  return '<div style="background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #e2e8f0;page-break-inside:avoid">'
-    +'<div style="text-align:center;margin-bottom:14px">'
-    +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:#141F44">معايير الحكم المعتمدة</div>'
-    +'<div style="font-family:Montserrat,sans-serif;font-size:11.5px;font-weight:700;color:#AD8628">Approved Attainment Scales — 1.1.1</div>'
-    +'</div>'
-    +'<div style="border:1px solid #f1f5f9;border-radius:10px;overflow:hidden;margin-bottom:16px">'+descHtml+'</div>'
-    +'<table style="width:100%;border-collapse:collapse"><thead><tr><th style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:11px">Term</th><th style="padding:7px 12px;border:1px solid #e2e8f0;background:#7c2d4a;color:white;font-size:11px">Percentage Range</th></tr></thead><tbody>'+termsHtml+'</tbody></table>'
-    +'</div>';
+  // now embedded in buildAttainmentPreambleHtml pages 2&3
+  return '';
 }
 
 function buildGroupAttainmentReportHtml(groupStudents,groupLabelAr,groupLabelEn){
@@ -2873,131 +2855,64 @@ function buildGroupAttainmentReportHtml(groupStudents,groupLabelAr,groupLabelEn)
   if(!n) return '';
   var counts={above:0,met:0,below:0};
   groupStudents.forEach(function(x){ counts[_attBandOf(x.pct!==null?x.pct:0)]++; });
-  var pctAbove=Math.round(counts.above/n*100);
-  var pctMet=Math.round(counts.met/n*100);
-  var pctBelow=100-pctAbove-pctMet;
-  var pctAtLeastInLine=pctAbove+pctMet;
-  var judgement=computeAttainmentJudgement(pctAbove,pctAtLeastInLine);
-
-  var bandDefs=[
-    {key:'above',ar:'أعلى من المعيار',arShort:'أعلى',en:'Above Curriculum Standards',enShort:'Above',color:'#16a34a',bg:'#f0fdf4',border:'#22c55e'},
-    {key:'met',  ar:'متوافق مع المعيار',arShort:'متوافق',en:'Met Curriculum Standard',enShort:'In Line',color:'#b45309',bg:'#fffbeb',border:'#f59e0b'},
-    {key:'below',ar:'أقل من المعيار',arShort:'أقل',en:'Below Curriculum Standards',enShort:'Below',color:'#b91c1c',bg:'#fef2f2',border:'#ef4444'}
+  var pA=Math.round(counts.above/n*100),pM=Math.round(counts.met/n*100),pB=Math.round(counts.below/n*100);
+  var judgement=computeAttainmentJudgement(pA,pA+pM);
+  var t=window._lastAttainmentTests&&window._lastAttainmentTests[0]?window._lastAttainmentTests[0]:{};
+  var f=window._lastAttainmentFilters||{};
+  var school=(t.school||'');
+  var subj=(t.subject||f.subject||'');
+  var term=(t.term||f.term?'Term '+(t.term||f.term):'');
+  var yr=(t.year||f.year?'Academic Year '+(t.year||f.year):'');
+  var vars=[school,subj,term,yr].filter(function(x){return x;}).join(' _ ');
+  var h=_sbtHeader(vars,'نتائج التحصيل','Attainment Results');
+  var medal=judgement.en==='Outstanding'?'🥇':judgement.en==='Very Good'?'🥈':'🎖️';
+  var jCard='<div style="text-align:center;padding:10px 20px 6px"><div style="font-family:Tajawal,sans-serif;font-size:24px;font-weight:900;color:#1B2F6E" dir="rtl">نتائج التحصيل - '+groupLabelAr+'</div><div style="font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:700;color:#1A9E8F">Attainment Results - '+groupLabelEn+' ('+n+' Students)</div><div style="display:inline-flex;align-items:center;gap:14px;margin:10px auto;background:'+judgement.color+';border-radius:14px;padding:12px 30px;box-shadow:0 4px 16px '+judgement.color+'44"><div><div style="font-family:Montserrat,Arial,sans-serif;font-size:22px;font-weight:900;color:white">'+judgement.en+'</div><div style="font-family:Tajawal,sans-serif;font-size:18px;font-weight:800;color:rgba(255,255,255,.9)">'+judgement.ar+'</div></div><div style="font-size:34px">'+medal+'</div></div></div>';
+  var COLS=[
+    {ar:'عدد الطلاب',en:'Number of Students',color:'#1B2F6E',val:n,pct:'100%'},
+    {ar:'أعلى من التوقعات',en:'Above Expectations',color:'#E8A020',val:counts.above,pct:pA+'%'},
+    {ar:'متوافق مع التوقعات',en:'Meeting Expectations',color:'#1A9E8F',val:counts.met,pct:pM+'%'},
+    {ar:'أقل من التوقعات',en:'Below Expectations',color:'#94a3b8',val:counts.below,pct:pB+'%'}
   ];
-
-  // ── Donut SVG ──
-  var r=52,cx=70,cy=70,sw=26,circ=2*Math.PI*r,off=0;
-  var donutPaths=bandDefs.map(function(b){
-    var v=counts[b.key]/n*100;
-    var da=(v/100*circ).toFixed(2)+' '+circ.toFixed(2);
-    var p='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+b.color+'" stroke-width="'+sw+'" stroke-dasharray="'+da+'" stroke-dashoffset="'+(-(off/100*circ)).toFixed(2)+'" transform="rotate(-90 '+cx+' '+cy+')" stroke-linecap="butt"/>';
-    off+=v; return p;
-  }).join('');
-  var donutSvg='<svg width="140" height="140" viewBox="0 0 140 140">'
-    +'<circle cx="70" cy="70" r="52" fill="none" stroke="#e2e8f0" stroke-width="26"/>'
-    +donutPaths
-    +'<text x="70" y="65" text-anchor="middle" font-size="22" font-weight="900" fill="#1e293b" font-family="Montserrat,sans-serif">'+pctAbove+'%</text>'
-    +'<text x="70" y="81" text-anchor="middle" font-size="9" fill="#64748b" font-family="Montserrat,sans-serif" letter-spacing="0.5">ABOVE</text>'
-    +'</svg>';
-
-  // ── Legend next to donut ──
-  var legendHtml=bandDefs.map(function(b){
-    var cnt=counts[b.key],pct=Math.round(cnt/n*100);
-    return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:11px">'
-      +'<div style="width:13px;height:13px;border-radius:4px;background:'+b.color+';flex-shrink:0"></div>'
-      +'<div style="flex:1">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:13px;font-weight:800;color:#374151" dir="rtl">'+b.arShort+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;color:#94a3b8">'+b.enShort+'</div>'
-      +'</div>'
-      +'<div style="text-align:right">'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:16px;font-weight:900;color:'+b.color+'">'+cnt+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;color:'+b.color+'">'+pct+'%</div>'
-      +'</div>'
-    +'</div>';
-  }).join('');
-
-  // ── SVG Bar Chart (bilingual, styled like ref image) ──
-  var chartW=340,chartH=170,barW=64,barGap=24,padL=28,padB=44,plotH=chartH-padB-10;
-  var barColors=['#22c55e','#f59e0b','#ef4444'];
-  var barLabelsAr=['أعلى','متوافق','أقل'];
-  var barLabelsEn=['Above','In Line','Below'];
-  var barVals=[counts.above,counts.met,counts.below];
-  var maxVal=Math.max.apply(null,barVals)||1;
-  var gridLines='';
-  var steps=4;
-  for(var gi=0;gi<=steps;gi++){
-    var gv=Math.round(maxVal*gi/steps);
-    var gy=chartH-padB-Math.round(gv/maxVal*plotH);
-    gridLines+='<line x1="'+padL+'" y1="'+gy+'" x2="'+(chartW-8)+'" y2="'+gy+'" stroke="#e2e8f0" stroke-width="1"/>'
-      +'<text x="'+(padL-4)+'" y="'+(gy+4)+'" text-anchor="end" font-size="9" fill="#94a3b8" font-family="Montserrat,sans-serif">'+gv+'</text>';
-  }
-  var barsHtml='';
-  barVals.forEach(function(v,bi){
-    var bx=padL+bi*(barW+barGap);
-    var bh=Math.round(v/maxVal*plotH);
-    var by=chartH-padB-bh;
-    barsHtml+='<rect x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="7" fill="'+barColors[bi]+'" opacity="0.88"/>'
-      +'<text x="'+(bx+barW/2)+'" y="'+(by-7)+'" text-anchor="middle" font-size="12" font-weight="900" fill="'+barColors[bi]+'" font-family="Montserrat,sans-serif">'+v+'</text>'
-      +'<text x="'+(bx+barW/2)+'" y="'+(chartH-padB+16)+'" text-anchor="middle" font-size="12" font-weight="800" fill="#374151" font-family="Tajawal,sans-serif">'+barLabelsAr[bi]+'</text>'
-      +'<text x="'+(bx+barW/2)+'" y="'+(chartH-padB+30)+'" text-anchor="middle" font-size="9.5" fill="#94a3b8" font-family="Montserrat,sans-serif">'+barLabelsEn[bi]+'</text>';
+  var hdrRow='<div style="display:grid;grid-template-columns:repeat(4,1fr);border-radius:10px 10px 0 0;overflow:hidden">';
+  COLS.forEach(function(c){hdrRow+='<div style="background:'+c.color+';padding:10px 6px;text-align:center;border-right:1px solid rgba(255,255,255,.2)"><div style="font-family:Tajawal,sans-serif;font-size:13px;font-weight:900;color:white">'+c.ar+'</div><div style="font-family:Montserrat,Arial,sans-serif;font-size:10px;font-weight:700;color:rgba(255,255,255,.85)">'+c.en+'</div></div>';});
+  hdrRow+='</div>';
+  var cntRow='<div style="display:grid;grid-template-columns:repeat(4,1fr);background:white;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0">';
+  COLS.forEach(function(c){cntRow+='<div style="text-align:center;padding:14px 6px;border-right:1px solid #e2e8f0"><div style="font-family:Montserrat,Arial,sans-serif;font-size:32px;font-weight:900;color:'+c.color+'">'+c.val+'</div></div>';});
+  cntRow+='</div>';
+  var pctRow='<div style="display:grid;grid-template-columns:repeat(4,1fr);background:#F5F7FA;border:1px solid #e2e8f0;border-radius:0 0 10px 10px">';
+  COLS.forEach(function(c){pctRow+='<div style="text-align:center;padding:10px 6px;border-right:1px solid #e2e8f0"><div style="font-family:Montserrat,Arial,sans-serif;font-size:18px;font-weight:800;color:'+c.color+'">'+c.pct+'</div></div>';});
+  pctRow+='</div>';
+  var table='<div style="margin:6px 20px">'+hdrRow+cntRow+pctRow+'</div>';
+  // SVG Bar Chart
+  var cW=700,cH=210,bW=150,bGap=40,pL=44,pB=54,pH=150;
+  var bDefs=[
+    {key:'above',color:'#1B2F6E',ar:'أعلى من التوقعات',en:'Above Expectations',pct:pA,cnt:counts.above},
+    {key:'met',color:'#E8A020',ar:'متوافق مع التوقعات',en:'Meeting Expectations',pct:pM,cnt:counts.met},
+    {key:'below',color:'#94a3b8',ar:'أقل من التوقعات',en:'Below Expectations',pct:pB,cnt:counts.below}
+  ];
+  var grid='';
+  [0,25,50,75,100].forEach(function(g){
+    var gy=cH-pB-Math.round(g/100*pH);
+    grid+='<line x1="'+pL+'" y1="'+gy+'" x2="'+(cW-10)+'" y2="'+gy+'" stroke="#e2e8f0" stroke-width="1"/>';
+    grid+='<text x="'+(pL-6)+'" y="'+(gy+4)+'" text-anchor="end" font-size="11" fill="#94a3b8" font-family="Montserrat,sans-serif">'+g+'%</text>';
   });
-  var barChartSvg='<svg width="100%" viewBox="0 0 '+chartW+' '+chartH+'" style="overflow:visible">'
-    +gridLines
-    +'<line x1="'+padL+'" y1="'+(chartH-padB)+'" x2="'+(chartW-8)+'" y2="'+(chartH-padB)+'" stroke="#94a3b8" stroke-width="1.5"/>'
-    +barsHtml
-    +'</svg>';
-
-  // ── Ratings Table: LTR — Level | No. of Students | Percentage ──
-  var tableRows=bandDefs.map(function(b){
-    var cnt=counts[b.key],pct=Math.round(cnt/n*100);
-    return '<tr>'
-      +'<td style="padding:13px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle;background:'+b.bg+'">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:15px;font-weight:900;color:'+b.color+'" dir="rtl">'+b.ar+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:11px;color:'+b.color+';font-weight:700;margin-top:3px">'+b.en+'</div>'
-      +'</td>'
-      +'<td style="padding:13px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle;font-size:24px;font-weight:900;font-family:Montserrat,sans-serif;color:#1e293b">'+cnt+'</td>'
-      +'<td style="padding:13px 16px;border:1px solid #e2e8f0;text-align:center;vertical-align:middle">'
-        +'<div style="font-size:22px;font-weight:900;font-family:Montserrat,sans-serif;color:'+b.color+'">'+pct+'%</div>'
-        +'<div style="height:10px;background:#f1f5f9;border-radius:20px;margin-top:8px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+b.color+';border-radius:20px;min-width:'+(cnt?6:0)+'px"></div></div>'
-      +'</td>'
-    +'</tr>';
-  }).join('');
-
-  return '<div style="background:white;border-radius:20px;margin-bottom:26px;overflow:hidden;box-shadow:0 4px 20px rgba(30,58,138,.09);border:1.5px solid #e2e8f0;page-break-inside:avoid">'
-    // ── Header: centered label + judgement badge side by side ──
-    +'<div style="background:linear-gradient(135deg,#F8F4ED,#FDF9F2);border-bottom:2px solid #D9B872;padding:18px 24px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;position:relative;overflow:hidden">'
-      +'<div style="position:absolute;top:-22px;left:-22px;width:90px;height:90px;border-radius:50%;background:#D9B87218"></div>'
-      +'<div style="position:absolute;bottom:-28px;right:-14px;width:70px;height:70px;border-radius:50%;background:#AD862812"></div>'
-      +'<div style="text-align:center">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:900;color:#141F44" dir="rtl">'+groupLabelAr+'</div>'
-        +'<div style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#AD8628">'+groupLabelEn+' ('+n+' students / طالب)</div>'
-      +'</div>'
-      +'<div style="background:'+judgement.color+';color:white;border-radius:14px;padding:10px 24px;text-align:center;box-shadow:0 4px 14px '+judgement.color+'44;min-width:130px">'
-        +'<div style="font-size:15px;font-weight:900;font-family:Montserrat,sans-serif">'+judgement.en+'</div>'
-        +'<div style="font-size:13px;font-weight:800;font-family:Tajawal,sans-serif">'+judgement.ar+'</div>'
-      +'</div>'
-    +'</div>'
-    // ── Body ──
-    +'<div style="padding:22px 24px">'
-      // Donut + legend
-      +'<div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin-bottom:20px">'
-        +'<div style="text-align:center">'+donutSvg+'<div style="font-size:10px;color:#94a3b8;font-family:Montserrat,sans-serif;margin-top:2px">% Above</div></div>'
-        +'<div>'+legendHtml+'</div>'
-      +'</div>'
-      // Bar chart
-      +'<div style="background:#fafafa;border-radius:14px;padding:16px 12px;border:1.5px solid #e2e8f0;margin-bottom:20px">'
-        +'<div style="font-family:Tajawal,sans-serif;font-size:13px;font-weight:900;color:#141F44;margin-bottom:10px" dir="rtl">عدد الطلاب <span style="font-family:Montserrat,sans-serif;font-size:11px;color:#94a3b8;font-weight:600">/ No. of Students</span></div>'
-        +barChartSvg
-      +'</div>'
-      // Ratings table
-      +'<table style="width:100%;border-collapse:collapse"><thead><tr style="background:#141F44">'
-        +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center"><div style="font-family:Tajawal,sans-serif">المستوى</div><div style="font-family:Montserrat,sans-serif;font-size:10px;opacity:.8">Level</div></th>'
-        +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center"><div style="font-family:Tajawal,sans-serif">عدد الطلاب</div><div style="font-family:Montserrat,sans-serif;font-size:10px;opacity:.8">No. of Students</div></th>'
-        +'<th style="padding:11px 16px;border:1px solid #253355;color:#D9B872;font-size:12px;text-align:center"><div style="font-family:Tajawal,sans-serif">النسبة المئوية</div><div style="font-family:Montserrat,sans-serif;font-size:10px;opacity:.8">Percentage</div></th>'
-      +'</tr></thead><tbody>'+tableRows+'</tbody></table>'
-    +'</div>'
-  +'</div>';
+  var svgBars='';
+  bDefs.forEach(function(b,i){
+    var bx=pL+i*(bW+bGap);
+    var bh=b.pct>0?Math.round(b.pct/100*pH):2;
+    var by=cH-pB-bh;
+    svgBars+='<rect x="'+bx+'" y="'+by+'" width="'+bW+'" height="'+bh+'" rx="8" fill="'+b.color+'" opacity="0.9"/>';
+    svgBars+='<text x="'+(bx+bW/2)+'" y="'+(by-8)+'" text-anchor="middle" font-size="14" font-weight="900" fill="'+b.color+'" font-family="Montserrat,sans-serif">'+b.pct+'%</text>';
+    svgBars+='<text x="'+(bx+bW/2)+'" y="'+(cH-pB+20)+'" text-anchor="middle" font-size="13" font-weight="800" fill="#374151" font-family="Tajawal,sans-serif">'+b.ar+'</text>';
+    svgBars+='<text x="'+(bx+bW/2)+'" y="'+(cH-pB+36)+'" text-anchor="middle" font-size="10.5" fill="#94a3b8" font-family="Montserrat,sans-serif">'+b.en+'</text>';
+  });
+  var baseLine='<line x1="'+pL+'" y1="'+(cH-pB)+'" x2="'+(cW-10)+'" y2="'+(cH-pB)+'" stroke="#94a3b8" stroke-width="1.5"/>';
+  var chart='<div style="margin:8px 20px;background:white;border-radius:10px;border:1px solid #e2e8f0;padding:14px 10px"><svg width="100%" viewBox="0 0 '+cW+' '+cH+'" style="overflow:visible">'+grid+baseLine+svgBars+'</svg></div>';
+  var footer=_sbtFooter('');
+  return _PAGE_OPEN+h+'<div style="flex:1">'+jCard+table+chart+'</div>'+footer+_PAGE_CLOSE;
 }
+
+
 function buildAttainmentVariableHtml(tests,filters){
   var allStudents=[];
   tests.forEach(function(t){
@@ -3223,7 +3138,7 @@ function loadLiveMonitor(){
 async function refreshLiveMonitor(){
   showGHLoader(true);
   var fresh=await ghRead('tests.json');
-  if(fresh) myTests=fresh;
+  if(fresh&&!localRead('tests.json',null)) myTests=fresh;
   showGHLoader(false);
   loadLiveMonitor();
 }
@@ -3286,10 +3201,10 @@ function startStudentTest(){
 // WIZARD
 // ============================================================
 function startTestWizard(){
-  // تصفير كامل — لا بيانات سابقة
+‎  // تصفير كامل — لا بيانات سابقة
   testData={domains:[],selectedSchools:[],logoSrc:'',displayMode:1,instructionsAr:'',instructionsEn:''};
   selectedSchools=[];editingTestId=null;
-  // تصفير حقول الخطوة الأولى
+‎  // تصفير حقول الخطوة الأولى
   setTimeout(function(){
     var fields=['testCountry','testCurriculum','testGrade','testYear','testSubject','testTerm','testName','domainCount','testLocalCountry','testNationalCountry','testSubjectOther'];
     fields.forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
@@ -3780,8 +3695,8 @@ function closeDomainModal(){
   if(d&&!d.complete){
     var missing=getDomainMissing(d);
     scConfirm(
-      'المجال غير مكتمل','Incomplete Domain',
-      'المجال غير مكتمل. النواقص:<br>'+( missing.length?missing.map(function(m){return '• '+m;}).join('<br>'):'معلومات ناقصة')+'<br><br>هل تريد الخروج بدون حفظ؟',
+‎      'المجال غير مكتمل','Incomplete Domain',
+‎      'المجال غير مكتمل. النواقص:<br>'+( missing.length?missing.map(function(m){return '• '+m;}).join('<br>'):'معلومات ناقصة')+'<br><br>هل تريد الخروج بدون حفظ؟',
       'Domain incomplete. Exit without saving?','⚠️'
     ).then(function(ok){
       if(ok) document.getElementById('domainModal').classList.add('hidden');
@@ -3886,7 +3801,7 @@ function autoGenQuestions(){
   var countEl=document.getElementById('modalQCount');
   var count=parseInt(countEl?countEl.value:0)||0;
   if(count<1) return;
-  // احسب الوزن: وزن المجال أو الفرع
+‎  // احسب الوزن: وزن المجال أو الفرع
   var domainWeight=0;
   var d=testData.domains[currentDomainIndex];
   if(currentBranchIndex>=0&&d&&d.branches&&d.branches[currentBranchIndex]){
@@ -3895,14 +3810,14 @@ function autoGenQuestions(){
     domainWeight=parseFloat(d.weight)||0;
   }
   var perQ=domainWeight>0?parseFloat((domainWeight/count).toFixed(2)):0;
-  // أنشئ أو حافظ على الأسئلة الموجودة
+‎  // أنشئ أو حافظ على الأسئلة الموجودة
   var targetList=currentBranchIndex>=0&&d&&d.branches&&d.branches[currentBranchIndex]
     ?d.branches[currentBranchIndex].questions:d?d.questions:[];
-  // أضف أسئلة جديدة إذا العدد أكبر
+‎  // أضف أسئلة جديدة إذا العدد أكبر
   while(targetList.length<count){
     targetList.push({type:'',stemHtml:'',score:perQ,bloom:'',marking:'auto',lo:'',standard:'',mediaHtml:'',mediaVisible:{}});
   }
-  // احذف الزائدة إذا العدد أصغر (مع تأكيد)
+‎  // احذف الزائدة إذا العدد أصغر (مع تأكيد)
   if(targetList.length>count){
     scConfirm('حذف أسئلة','Delete Questions','سيتم حذف '+(targetList.length-count)+' أسئلة إضافية. متأكد؟','This will delete '+(targetList.length-count)+' extra questions. Are you sure?','⚠️').then(function(ok){
       if(!ok)return;
@@ -3914,9 +3829,9 @@ function autoGenQuestions(){
   _finishAutoGenQuestions(targetList,count,perQ,domainWeight,d);
 }
 function _finishAutoGenQuestions(targetList,count,perQ,domainWeight,d){
-  // وزّع الأوزان تلقائياً
+‎  // وزّع الأوزان تلقائياً
   targetList.forEach(function(q,i){
-    // آخر سؤال يأخذ الباقي لضمان المجموع الصحيح
+‎    // آخر سؤال يأخذ الباقي لضمان المجموع الصحيح
     if(i===count-1){
       var used=targetList.slice(0,count-1).reduce(function(s,qq){return s+parseFloat(qq.score||0);},0);
       q.score=parseFloat((domainWeight-used).toFixed(2));
@@ -3924,14 +3839,14 @@ function _finishAutoGenQuestions(targetList,count,perQ,domainWeight,d){
       q.score=perQ;
     }
   });
-  // حدّث عدد الأسئلة في المجال
+‎  // حدّث عدد الأسئلة في المجال
   if(currentBranchIndex>=0&&d&&d.branches&&d.branches[currentBranchIndex]){
     d.branches[currentBranchIndex].qCount=count;
   } else if(d){
     d.qCount=count;
   }
   renderQuestionsList();
-  // أظهر زر المعاينة
+‎  // أظهر زر المعاينة
   var pvBtn=document.getElementById('previewDomainBtn');
   if(pvBtn&&count>0) pvBtn.style.display='inline-flex';
 }
@@ -3955,8 +3870,8 @@ function previewDomainByIndex(domIdx){
   if(!allQuestions.length){scWarn('لا توجد أسئلة في هذا المجال — أضف أسئلة أولاً','No questions yet — add questions first');return;}
   var modeForPreview=testData.displayMode===4?4:1;
   _savedTestDataForPreview=JSON.parse(JSON.stringify(testData));
-  // حافظ على بنية الفروع كما هي بدل دمج كل الأسئلة في قائمة واحدة —
-  // بذلك تظهر أيقونة المجال وبداخلها أيقونات الفروع، وكل فرع صفحة منفصلة، وتكتمل الفروع فيكتمل المجال
+‎  // حافظ على بنية الفروع كما هي بدل دمج كل الأسئلة في قائمة واحدة —
+‎  // بذلك تظهر أيقونة المجال وبداخلها أيقونات الفروع، وكل فرع صفحة منفصلة، وتكتمل الفروع فيكتمل المجال
   var domainForPreview=hasBr
     ?{nameAr:d.nameAr||'المجال',nameEn:d.nameEn||'Domain',weight:d.weight||100,time:parseInt(d.time||30),iconSrc:d.iconSrc||'',hasBranches:true,branches:JSON.parse(JSON.stringify(d.branches)),questions:[]}
     :{nameAr:d.nameAr||'المجال',nameEn:d.nameEn||'Domain',weight:d.weight||100,time:parseInt(d.time||30),iconSrc:d.iconSrc||'',hasBranches:false,questions:JSON.parse(JSON.stringify(allQuestions))};
@@ -4084,7 +3999,7 @@ function renderQuestionsList(){
       +'</div>';
   }).join('');
   if(currentBranchIndex>=0) updateBranchQStatus(currentBranchIndex);
-  // أظهر زر المعاينة إذا فيه أسئلة
+‎  // أظهر زر المعاينة إذا فيه أسئلة
   var pvBtn=document.getElementById('previewDomainBtn');
   if(pvBtn) pvBtn.style.display=qs.length>0?'inline-flex':'none';
 }
@@ -4092,7 +4007,7 @@ function addQuestion(){currentQuestionIndex=-1;currentEditingQ={};openQuestionMo
 function editQuestion(idx){currentQuestionIndex=idx;currentEditingQ=Object.assign({},_getCurrentQuestions()[idx]);openQuestionModal();}
 function deleteQuestion(idx){
   scDanger('حذف السؤال','Delete Question',
-    'هل تريد حذف هذا السؤال نهائياً؟',
+‎    'هل تريد حذف هذا السؤال نهائياً؟',
     'Are you sure you want to permanently delete this question?'
   ).then(function(ok){
     if(!ok) return;
@@ -4160,10 +4075,10 @@ function populateGLODropdown(selectedVal){
 // RICH TEXT & TOOLBAR
 // ============================================================
 function execRich(id,cmd,val){document.getElementById(id)?document.getElementById(id).focus():null;document.execCommand(cmd,false,val||null);}
-// ١٣. تنظيف HTML من الرموز الغريبة ومشاكل الترميز
+‎// ١٣. تنظيف HTML من الرموز الغريبة ومشاكل الترميز
 function cleanHTML(html){
   if(!html)return'';
-  // إزالة أحرف Unicode الغير مرئية والمشكلة
+‎  // إزالة أحرف Unicode الغير مرئية والمشكلة
   return html
     .replace(/\u200B/g,'') // zero-width space
     .replace(/\u200C/g,'') // zero-width non-joiner
@@ -4178,7 +4093,7 @@ function makeToolbar(targetId,dir){
   if(!dir)dir='rtl';
   return '<div class="rtoolbar"><button onclick="execRich(\''+targetId+'\',\'bold\')"><b>B</b></button><button onclick="execRich(\''+targetId+'\',\'italic\')"><i>I</i></button><button onclick="execRich(\''+targetId+'\',\'underline\')"><u>U</u></button><div class="sep"></div><select onchange="execRich(\''+targetId+'\',\'fontSize\',this.value);this.value=\'\'"><option value="">حجم</option><option value="1">10</option><option value="2">12</option><option value="3">14</option><option value="4">16</option><option value="5">18</option><option value="6">22</option><option value="7">26</option></select><select onchange="execRich(\''+targetId+'\',\'fontName\',this.value);this.value=\'\'"><option value="">خط</option><option value="Tajawal">Tajawal</option><option value="Amiri">Amiri</option><option value="Montserrat">Montserrat</option></select><div class="sep"></div><input type="color" onchange="execRich(\''+targetId+'\',\'foreColor\',this.value)"><div class="sep"></div><button onclick="execRich(\''+targetId+'\',\'justifyRight\')">⇥</button><button onclick="execRich(\''+targetId+'\',\'justifyCenter\')">⊟</button><button onclick="execRich(\''+targetId+'\',\'justifyLeft\')">⇤</button><button onclick="execRich(\''+targetId+'\',\'insertUnorderedList\')">•</button></div><div id="'+targetId+'" contenteditable="true" dir="'+dir+'" class="rich-editor" style="min-height:80px" placeholder="اكتب هنا..."></div>';
 }
-// ══ أدوات تنسيق جماعية — لتوفير الوقت بتطبيق نفس التنسيق على كل الاختيارات/الجمل دفعة واحدة ══
+‎// ══ أدوات تنسيق جماعية — لتوفير الوقت بتطبيق نفس التنسيق على كل الاختيارات/الجمل دفعة واحدة ══
 function _groupSelector(prefixes){
   return prefixes.split(',').map(function(p){return '[id^="'+p+'"]';}).join(',');
 }
@@ -4219,21 +4134,21 @@ function buildGroupToolbar(prefixes,dir){
 function showMediaMenu(){var area=document.getElementById('mediaPreviewArea');if(!area)return;if(area.querySelector('._mmenu')){area.querySelector('._mmenu').remove();return;}var menu=document.createElement('div');menu.className='_mmenu';menu.style.cssText='display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;padding:10px;background:rgba(0,0,0,.4);border-radius:12px;border:1px solid rgba(255,255,255,.15)';menu.innerHTML='<span style="font-size:11px;color:rgba(255,255,255,.5);width:100%;margin-bottom:4px">اختر مصدر الصورة:</span><label style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:7px 14px;cursor:pointer;font-size:13px;color:white;font-family:Tajawal,sans-serif">📁 من الجهاز<input type="file" accept="image/*" style="display:none" onchange="handleMediaFile(event);this.closest(\'._mmenu\').remove()"></label><button onclick="handleMediaURL();this.closest(\'._mmenu\').remove()" style="background:rgba(96,165,250,.2);border:1px solid rgba(96,165,250,.4);border-radius:10px;padding:7px 14px;font-size:13px;color:white;cursor:pointer;font-family:Tajawal,sans-serif">🌐 URL</button><button onclick="this.closest(\'._mmenu\').remove()" style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:10px;padding:7px 12px;font-size:13px;color:#f87171;cursor:pointer">✕</button>';area.insertBefore(menu,area.firstChild);}
 function handleMediaFile(event){var file=event.target.files?event.target.files[0]:null;if(!file)return;var reader=new FileReader();reader.onload=function(ev){insertMediaImg(ev.target.result);};reader.readAsDataURL(file);}
 function handleMediaURL(){scPromptText('رابط الصورة','Image URL','https://example.com/image.png','🌐').then(function(url){if(!url||!url.trim())return;insertMediaImg(url.trim());});}
-// يستخرج عنصر الميديا النظيف فقط (audio/video/iframe/img) من منطقة المعاينة، بدون أزرار وأدوات المحرر
+‎// يستخرج عنصر الميديا النظيف فقط (audio/video/iframe/img) من منطقة المعاينة، بدون أزرار وأدوات المحرر
 function extractCleanMediaHtml(){
   var mp=document.getElementById('mediaPreviewArea');
   if(!mp) return '';
-  // فيديو (ملف مباشر محفوظ — بدون يوتيوب/iframe لتفادي أخطاء التضمين ومنع رابط خروج من الاختبار)
+‎  // فيديو (ملف مباشر محفوظ — بدون يوتيوب/iframe لتفادي أخطاء التضمين ومنع رابط خروج من الاختبار)
   var video=mp.querySelector('video');
   if(video){
     return '<video controls src="'+video.getAttribute('src')+'" style="width:100%;border-radius:10px;max-height:280px"></video>';
   }
-  // صوت
+‎  // صوت
   var audio=mp.querySelector('audio');
   if(audio){
     return '<audio controls src="'+audio.getAttribute('src')+'" style="width:100%;border-radius:10px;direction:ltr" preload="metadata"></audio>';
   }
-  // صورة (مع التحويل/التكبير المُثبَّت)
+‎  // صورة (مع التحويل/التكبير المُثبَّت)
   var img=mp.querySelector('#mediaImg,img');
   if(img){
     var transform=img.style.transform||'';
@@ -4350,7 +4265,7 @@ function qhGetActive(q){
   if(q&&q.headerCustom&&(q.headerAr||q.headerEn)) return {ar:q.headerAr||'',en:q.headerEn||''};
   return qhGetStandard(q?q.type:'');
 }
-// بناء صندوق رأس السؤال — أبيض، عربي يمين بـ "- " وإنجليزي يسار بـ "- "
+‎// بناء صندوق رأس السؤال — أبيض، عربي يمين بـ "- " وإنجليزي يسار بـ "- "
 function buildQHBoxHtml(q){
   var h=qhGetActive(q);
   if(!h.ar&&!h.en) return '';
@@ -4360,7 +4275,7 @@ function buildQHBoxHtml(q){
   html+='</div>';
   return html;
 }
-// محرر رأس السؤال (صندوق أبيض + أزرار تعديل/حفظ/استعادة)
+‎// محرر رأس السؤال (صندوق أبيض + أزرار تعديل/حفظ/استعادة)
 function buildQHEditorHtml(){
   return '<div style="margin-bottom:14px"><div id="qhBox" class="qh-box" data-custom="0">'
     +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">'
@@ -4462,7 +4377,7 @@ function renderQuestionBody(){
     var qTextDir=currentEditingQ&&currentEditingQ.qTextDir?currentEditingQ.qTextDir:'rtl';
     // Build the section using DOM to avoid quote issues
     area.innerHTML=stemSection;
-    // ③ جسم السؤال / Body
+‎    // ③ جسم السؤال / Body
     var bodySection=document.createElement('div');
     bodySection.style.cssText='margin-bottom:14px';
     bodySection.innerHTML='<label class="wizard-label" style="margin-bottom:8px;display:block">③ جسم السؤال / Question Body</label>'+makeToolbar('qBodyEditorMcq','auto');
@@ -4541,7 +4456,7 @@ function renderQuestionBody(){
     var orFont=currentEditingQ&&currentEditingQ.orFont?currentEditingQ.orFont:'Tajawal';
     var orDir=currentEditingQ&&currentEditingQ.orDir?currentEditingQ.orDir:'rtl';
     var orFontSize=currentEditingQ&&currentEditingQ.orFontSize?currentEditingQ.orFontSize:15;
-    // تهيئة مجموعات الترتيب — تدعم تكرار السؤال لأكثر من جملة تحت نفس السؤال
+‎    // تهيئة مجموعات الترتيب — تدعم تكرار السؤال لأكثر من جملة تحت نفس السؤال
     if(currentEditingQ&&currentEditingQ.orderGroups&&currentEditingQ.orderGroups.length){
       _orderGroups=JSON.parse(JSON.stringify(currentEditingQ.orderGroups));
     } else if(currentEditingQ&&currentEditingQ.words&&currentEditingQ.words.length){
@@ -4592,7 +4507,7 @@ function renderQuestionBody(){
     var spBg=currentEditingQ&&currentEditingQ.speakingBg?currentEditingQ.speakingBg:'#f8fafc';
     var spFont=currentEditingQ&&currentEditingQ.speakingFont?currentEditingQ.speakingFont:'Tajawal';
     area.innerHTML=stemSection
-      // ② نص التعليمات مع تحكم كامل
+‎      // ② نص التعليمات مع تحكم كامل
       +'<div style="margin-bottom:14px"><label class="wizard-label">② تعليمات التسجيل / Instructions</label>'
       +'<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;margin-top:8px;background:rgba(255,255,255,.05);border-radius:12px;padding:10px;border:1px solid rgba(255,255,255,.1)">'
       +'<div><label class="wizard-label" style="font-size:9px">الخط / Font</label>'
@@ -4607,7 +4522,7 @@ function renderQuestionBody(){
       +'<select id="sp-dir" class="wizard-input" style="font-size:12px"><option value="rtl" '+(spDir==="rtl"?"selected":"")+'>RTL ←</option><option value="ltr" '+(spDir==="ltr"?"selected":"")+'>LTR →</option></select></div>'
       +'</div>'
       +'<textarea id="speakingInst" class="wizard-input" style="height:80px;resize:none;margin-top:4px" dir="'+spDir+'" placeholder="اكتب التعليمات هنا...">'+spInst+'</textarea></div>'
-      // ③ أدوات التسجيل
+‎      // ③ أدوات التسجيل
       +'<div style="background:rgba(255,255,255,.05);border-radius:12px;padding:12px;font-size:12px;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);font-family:Montserrat,sans-serif">🎙 Record → ⏹ Stop → 🔊 Listen → ✅ Confirm</div>';
     if(currentEditingQ&&currentEditingQ.stemHtml) setTimeout(function(){var el=document.getElementById('qStemEditor');if(el)el.innerHTML=currentEditingQ.stemHtml;},50);
 
@@ -4662,7 +4577,7 @@ function renderQuestionBody(){
     var tfTrueColor=currentEditingQ&&currentEditingQ.tfTrueColor?currentEditingQ.tfTrueColor:'#15803d';
     var tfFalseColor=currentEditingQ&&currentEditingQ.tfFalseColor?currentEditingQ.tfFalseColor:'#b91c1c';
     area.innerHTML=stemSection
-      // أدوات التصميم
+‎      // أدوات التصميم
       +'<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px;margin-bottom:14px">'
       +'<div style="font-size:11px;color:#FACC15;font-weight:700;margin-bottom:10px;font-family:Montserrat,sans-serif">🎨 تصميم الأسئلة / Design</div>'
       +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">'
@@ -4673,7 +4588,7 @@ function renderQuestionBody(){
       +'<div><label class="wizard-label" style="font-size:9px">لون صواب / True</label><input type="color" id="tf-true-color" value="'+tfTrueColor+'" style="width:100%;height:36px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,.2);padding:2px"></div>'
       +'<div><label class="wizard-label" style="font-size:9px">لون خطأ / False</label><input type="color" id="tf-false-color" value="'+tfFalseColor+'" style="width:100%;height:36px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,.2);padding:2px"></div>'
       +'</div></div>'
-      // الجمل
+‎      // الجمل
       +'<div><label class="wizard-label" style="margin-bottom:10px">③ الجمل / Statements</label>'
       +'<p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:12px;font-family:Montserrat,sans-serif">أضف جملة واحدة أو أكثر — الطالب يختار صواب أو خطأ لكل منها</p>'
       +'<div id="tf-statements"></div>'
@@ -4691,7 +4606,7 @@ function renderQuestionBody(){
     var clFontSize=currentEditingQ&&currentEditingQ.clFontSize?currentEditingQ.clFontSize:14;
     var clTextColor=currentEditingQ&&currentEditingQ.clTextColor?currentEditingQ.clTextColor:'#ffffff';
     area.innerHTML=stemSection
-      // أدوات التصميم
+‎      // أدوات التصميم
       +'<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px;margin-bottom:14px">'
       +'<div style="font-size:11px;color:#FACC15;font-weight:700;margin-bottom:10px;font-family:Montserrat,sans-serif">🎨 تصميم / Design</div>'
       +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">'
@@ -4700,7 +4615,7 @@ function renderQuestionBody(){
       +'<div><label class="wizard-label" style="font-size:9px">صندوق البنك / Bank</label><input type="color" id="cl-tile-bg" value="'+clBankBg+'" style="width:100%;height:36px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,.2);padding:2px"></div>'
       +'<div><label class="wizard-label" style="font-size:9px">صندوق الجدول / Table</label><input type="color" id="cl-table-bg" value="'+clTableBg+'" style="width:100%;height:36px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,.2);padding:2px"></div>'
       +'</div></div>'
-      // الأعمدة
+‎      // الأعمدة
       +'<div><label class="wizard-label" style="margin-bottom:10px">③ الأعمدة / Columns</label>'
       +'<div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">'
       +'<input type="number" id="classify-cols" min="2" max="5" value="'+(currentEditingQ&&currentEditingQ.columns?currentEditingQ.columns.length:2)+'" class="wizard-input" style="width:80px" oninput="buildClassifyCols()">'
@@ -4722,22 +4637,22 @@ function renderQuestionBody(){
     var wMax=currentEditingQ&&currentEditingQ.writingMax?currentEditingQ.writingMax:'';
     // Writing = مثل Reading تماماً مع passage + answer stem + type
     area.innerHTML=
-      // ① رأس السؤال
+‎      // ① رأس السؤال
       stemSection
-      // ② المصادر
+‎      // ② المصادر
       +'<div style="margin-bottom:14px"><label class="wizard-label">② المصادر / Media</label>'
       +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">'
       +'<button onclick="showMediaMenu()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;border-radius:10px;padding:8px 14px;font-size:13px;cursor:pointer;font-family:Tajawal,sans-serif">🖼️ صورة</button>'
       +'<button onclick="attachAudio()" style="background:rgba(59,130,246,.25);border:1px solid rgba(59,130,246,.5);color:white;border-radius:10px;padding:8px 14px;font-size:13px;cursor:pointer;font-family:Tajawal,sans-serif">🎙 صوت</button>'
       +'<label style="display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.25);border:1px solid rgba(124,58,237,.5);color:white;border-radius:10px;padding:8px 14px;font-size:13px;cursor:pointer;font-family:Tajawal,sans-serif">🎬 فيديو<input type="file" accept="video/*" style="display:none" onchange="attachVideoFile(event)"></label>'
       +'</div><div id="mediaPreviewArea" style="margin-top:8px">'+(currentEditingQ&&currentEditingQ.mediaHtml?currentEditingQ.mediaHtml:'')+'</div></div>'
-      // ③ النص / Passage
+‎      // ③ النص / Passage
       +'<div style="margin-bottom:14px"><label class="wizard-label" style="margin-bottom:8px">③ النص / Passage</label>'
       +makeToolbar('writingPassage','auto')
       +'<div id="writingPassage" contenteditable="true" dir="auto" class="rich-editor" style="min-height:120px" placeholder="النص / Passage...">'+(currentEditingQ&&currentEditingQ.passageHtml?currentEditingQ.passageHtml:'')+'</div></div>'
-      // ④ رأس سؤال الإجابة
+‎      // ④ رأس سؤال الإجابة
       +'<div style="margin-bottom:14px"><label class="wizard-label" style="margin-bottom:8px">④ رأس سؤال الإجابة / Answer Stem</label>'+makeToolbar('writingAnswerStem','auto')+'</div>'
-      // ⑤ نوع الكتابة
+‎      // ⑤ نوع الكتابة
       +'<div><label class="wizard-label" style="margin-bottom:10px">⑤ نوع الكتابة / Writing Type</label>'
       +'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">'
       +'<label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px"><input type="radio" name="writingMode" value="free" '+(wMode==='free'?'checked':'')+' style="accent-color:#FACC15"> حر / Free</label>'
@@ -4758,17 +4673,17 @@ function renderQuestionBody(){
     if(currentEditingQ&&currentEditingQ.ansType){
       setTimeout(function(){
         renderSubAnswer('readingAnswerBody',currentEditingQ.ansType);
-        // استرجاع MCQ options
+‎        // استرجاع MCQ options
         if(currentEditingQ.ansType==='mcq'){
           setTimeout(function(){
-            // نص السؤال وخصائصه
+‎            // نص السؤال وخصائصه
             var rt=document.getElementById('rdmcq-text');if(rt&&currentEditingQ.questionText)rt.value=currentEditingQ.questionText;
             var rf=document.getElementById('rdmcq-font');if(rf&&currentEditingQ.qTextFont)rf.value=currentEditingQ.qTextFont;
             var rs=document.getElementById('rdmcq-size');if(rs&&currentEditingQ.qTextSize)rs.value=currentEditingQ.qTextSize;
             var rc=document.getElementById('rdmcq-color');if(rc&&currentEditingQ.qTextColor)rc.value=currentEditingQ.qTextColor;
             var rb=document.getElementById('rdmcq-bg');if(rb&&currentEditingQ.qTextBg)rb.value=currentEditingQ.qTextBg;
             var rd=document.querySelector('input[name="rdmcqDir"][value="'+(currentEditingQ.qTextDir||'rtl')+'"]');if(rd)rd.checked=true;
-            // الخيارات
+‎            // الخيارات
             if(currentEditingQ.options&&currentEditingQ.options.length){
               var optEls=document.querySelectorAll('[id^="mcqOptEditor"]');
               optEls.forEach(function(el,i){if(currentEditingQ.options[i]!==undefined)el.innerHTML=currentEditingQ.options[i];});
@@ -4789,7 +4704,7 @@ function renderSubAnswer(containerId,type){
   if(type==='text'){body.innerHTML='<div style="background:rgba(255,255,255,.05);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,.1)"><p style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:8px">الطالب يستطيع:</p><div style="display:flex;gap:16px;flex-wrap:wrap"><label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px"><input type="checkbox" checked style="accent-color:#FACC15"> ⌨️ كتابة</label><label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px"><input type="checkbox" checked style="accent-color:#FACC15"> 🎨 رسم</label><label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px"><input type="checkbox" checked style="accent-color:#FACC15"> 📷 صورة</label></div></div>';}
   else if(type==='mcq'){
     body.innerHTML=
-      // الاختيارات فقط — بدون صياغة سؤال مكررة
+‎      // الاختيارات فقط — بدون صياغة سؤال مكررة
       '<div><label class="wizard-label" style="margin-bottom:6px">① الاختيارات (✓ للصحيح) / Options</label>'
       +'<div id="mcqOptions" style="margin-top:8px">'+buildMcqOptions(['','','',''],null)+'</div>'
       +'<button onclick="addMcqOption()" style="margin-top:8px;color:#FACC15;background:none;border:none;cursor:pointer;font-size:13px;font-family:Tajawal,sans-serif">+ إضافة اختيار</button></div>';
@@ -4817,7 +4732,7 @@ function updateWordInputs(){
   cont.innerHTML=buildWordTiles(words);
   setTimeout(function(){buildOrderAnswerKeyBoxes();},50);
 }
-// كل صندوق = موضع في الترتيب، يختار المحرر أي كلمة من القائمة تقع هنا
+‎// كل صندوق = موضع في الترتيب، يختار المحرر أي كلمة من القائمة تقع هنا
 function buildOrderAnswerKeyBoxes(savedOrder){
   var boxesCont=document.getElementById('orderAnswerKeyBoxes');
   if(!boxesCont) return;
@@ -4835,7 +4750,7 @@ function buildOrderAnswerKeyBoxes(savedOrder){
   }).join('');
 }
 
-// ══ سؤال الترتيب — دعم تكرار الجملة داخل نفس السؤال (مجموعات متعددة) ══
+‎// ══ سؤال الترتيب — دعم تكرار الجملة داخل نفس السؤال (مجموعات متعددة) ══
 var _orderGroups=[{words:['','','','',''],answerOrder:null}];
 function renderOrderGroups(){
   var cont=document.getElementById('orderGroupsContainer');if(!cont)return;
@@ -4964,7 +4879,7 @@ function addMatchPair(){
 // ============================================================
 function saveQuestion(){
   var type=document.getElementById('qType').value;if(!type){alert('اختر نمط السؤال أولاً');return;}
-  // ── رأس السؤال الموحد ──
+‎  // ── رأس السؤال الموحد ──
   var hBox=document.getElementById('qhBox');
   var hAr=document.getElementById('qhArLine'),hEn=document.getElementById('qhEnLine');
   var headerCustom=hBox?hBox.dataset.custom==='1':!!(currentEditingQ&&currentEditingQ.headerCustom);
@@ -5013,7 +4928,7 @@ function saveQuestion(){
       pairs=_collectMatchPairsFromDOM();
     }
     q.pairs=pairs;q.connections=matchConnections.slice();
-    // حفظ نموذج الإجابة
+‎    // حفظ نموذج الإجابة
     var matchKeyEl=document.getElementById('matchAnswerKey');
     if(matchKeyEl) q.matchAnswerKey=matchKeyEl.value.trim();
   }
@@ -5034,7 +4949,7 @@ function saveQuestion(){
       scWarn('أضف كلمات جملة واحدة على الأقل واضغط "تأكيد الكلمات"','Add words for at least one sentence and press "Confirm Words"');return;
     }
     q.orderGroups=groups;
-    // للتوافق مع أي كود قديم يقرأ q.words مباشرة (الجملة الأولى فقط)
+‎    // للتوافق مع أي كود قديم يقرأ q.words مباشرة (الجملة الأولى فقط)
     q.words=groups[0].words;
     q.answerOrder=groups[0].answerOrder;
     q.correctAnswer=groups[0].answerOrder.map(function(idx){return groups[0].words[idx]||'';}).join(' ');
@@ -5113,7 +5028,7 @@ function saveQuestion(){
     var lisAud=document.getElementById('listen-audio-preview');
     if(lisAud&&lisAud.src) q.audioSrc=lisAud.src;if(q.ansType==='mcq'){var opts2=[];document.querySelectorAll('[id^="mcqOptEditor"]').forEach(function(el){opts2.push(el.innerHTML||'');});var c2=document.querySelector('input[name="correctMcq"]:checked');q.options=opts2;q.correct=c2?parseInt(c2.value):null;}else if(q.ansType==='matching'){q.pairs=_collectMatchPairsFromDOM();q.connections=matchConnections.slice();}}
   else if(type==='reading'||type==='writingskill'){q.passageHtml=document.getElementById('passageEditor')?document.getElementById('passageEditor').innerHTML:'';q.answerStemHtml=document.getElementById('answerStemEditor')?document.getElementById('answerStemEditor').innerHTML:'';q.ansType=document.getElementById('readingAnswerType')?document.getElementById('readingAnswerType').value:'';if(q.ansType==='mcq'){var opts3=[];document.querySelectorAll('[id^="mcqOptEditor"]').forEach(function(el){opts3.push(el.innerHTML||'');});var c3=document.querySelector('input[name="correctMcq"]:checked');q.options=opts3;q.correct=c3?parseInt(c3.value):null;
-    // خصائص خط نص السؤال
+‎    // خصائص خط نص السؤال
     var rdmqText=document.getElementById('rdmcq-text');if(rdmqText)q.questionText=rdmqText.value.trim();
     var rdmqFont=document.getElementById('rdmcq-font');if(rdmqFont)q.qTextFont=rdmqFont.value;
     var rdmqSize=document.getElementById('rdmcq-size');if(rdmqSize)q.qTextSize=parseInt(rdmqSize.value)||15;
@@ -5164,7 +5079,7 @@ function openStudentWindow(domainIdx,isRealTest){
   document.getElementById('studentWindow').style.display='flex';
   var d=testData.domains[sw_domainIdx];
   if(!d) return;
-  // اسم الاختبار والمعلومات
+‎  // اسم الاختبار والمعلومات
   var testNameEl=document.getElementById('sw-test-name-header');
   if(testNameEl) testNameEl.textContent=testData.testName||'اختبار';
   var metaEl=document.getElementById('sw-test-meta-header');
@@ -5175,12 +5090,12 @@ function openStudentWindow(domainIdx,isRealTest){
     if(testData.term) meta.push('Term '+testData.term);
     metaEl.textContent=meta.join(' — ');
   }
-  // اسم المجال
+‎  // اسم المجال
   var domEl=document.getElementById('sw-domain-label-header');
   if(domEl) domEl.textContent='Domain: '+(d.nameEn||d.nameAr||'Domain')+(d.nameAr&&d.nameEn?' | المجال: '+d.nameAr:'');
   var brEl=document.getElementById('sw-branch-label-header');
   if(brEl) brEl.textContent=d?(d.nameEn||d.nameAr||''):'';
-  // في المعاينة: تخطى التعليمات مباشرة للأسئلة
+‎  // في المعاينة: تخطى التعليمات مباشرة للأسئلة
   if(_tryModeActive||!isRealTest){
     sw_instructionsConfirmed=true;
     startStudentTimer(parseInt(d.time||30)*60);
@@ -5193,7 +5108,7 @@ function openStudentWindow(domainIdx,isRealTest){
 function previewCurrentInstructions(){
   testData.instructionsAr=document.getElementById('insAr')?document.getElementById('insAr').innerHTML.trim():'',
   testData.instructionsEn=document.getElementById('insEn')?document.getElementById('insEn').innerHTML.trim():'';
-  // معاينة صفحة التعليمات فقط — بنفس الشكل في كل الأنماط (كلاسيكي/ورقة بيضاء)
+‎  // معاينة صفحة التعليمات فقط — بنفس الشكل في كل الأنماط (كلاسيكي/ورقة بيضاء)
   sw_domainIdx=0;sw_branchIdx=-1;sw_qIdx=0;sw_answers={};
   _tryModeActive=true;_previewReturnStep=2;
   applyDisplayMode();
@@ -5284,7 +5199,7 @@ function renderStudentWindowPage(){
     nextBtn.className='sw-nav-btn submit';
     var ar=testData.instructionsAr||'';
     var en=testData.instructionsEn||'';
-    // هل يوجد سؤال تحدث في الاختبار؟
+‎    // هل يوجد سؤال تحدث في الاختبار؟
     var hasSpeaking=testData.domains.some(function(d){
       var qs=d.questions||[];
       var brQs=d.branches?d.branches.reduce(function(a,b){return a.concat(b.questions||[]);},[]):[];
@@ -5310,7 +5225,7 @@ function renderStudentWindowPage(){
     var startButton = micBtn+'<div style="text-align:center;margin-top:16px">'
       +'<button id="sw-start-btn" onclick="swConfirmInstructions()" disabled style="background:linear-gradient(135deg,#94a3b8,#64748b);color:white;border:3px solid #cbd5e1;border-radius:18px;padding:14px 32px;font-size:16px;font-weight:800;cursor:not-allowed;opacity:.6;font-family:Tajawal,sans-serif;transition:all .3s">✅ أبدأ الاختبار / Start Test</button>'
       +'<div id="sw-start-hint" style="font-size:12px;color:#94a3b8;margin-top:8px;font-family:Montserrat,sans-serif">'
-      +'✅ أكد القراءة باللغتين'
+‎      +'✅ أكد القراءة باللغتين'
       +(hasSpeaking?' + 🎙 تأكد من الميكروفون':'')
       +' / Confirm both checkboxes'+(hasSpeaking?' + mic':'')+'</div>'
       +'</div>';
@@ -5492,7 +5407,7 @@ function updateProgressDots(){
     var subS2=testData.subject||testData.testName||'';
     domEl.textContent=(termS2&&subS2)?termS2+' — '+subS2:(termS2||subS2||domLabel);
   }
-  // اسم الفرع
+‎  // اسم الفرع
   var brEl=document.getElementById('sw-branch-label-header');
   if(brEl){
     if(sw_branchIdx>=0&&d.branches&&d.branches[sw_branchIdx]){
@@ -5513,7 +5428,7 @@ function renderStudentQuestion(){
   var score=((sw_branchIdx>=0?(d.branches[sw_branchIdx].weight||0):d.weight)/Math.max(questions.length,1)).toFixed(2);
   var total=questions.length;
   var labels=['A','B','C','D','E','F'];
-  // بناء دوائر الإرشاد
+‎  // بناء دوائر الإرشاد
   renderProgressDots(total);
   document.getElementById('sw-q-counter').textContent='السؤال '+(sw_qIdx+1)+' من '+total+' / Q '+(sw_qIdx+1)+' of '+total;
   document.getElementById('sw-prev-btn').disabled=sw_qIdx===0;
@@ -5529,23 +5444,23 @@ function renderStudentQuestion(){
   var animClass=mode===2?(sw_navDir>=0?'fc-enter':'fc-enter-back'):'';
   document.getElementById('sw-questions-content').innerHTML=
     '<div class="sw-frame '+animClass+'">'
-    // رأس السؤال — Deep Sky Blue
+‎    // رأس السؤال — Deep Sky Blue
     +'<div class="sw-q-header">'
       +'<div class="sw-q-badge">Q.'+(sw_qIdx+1)+'</div>'
       +'<div class="sw-q-stem" dir="auto">'+(q.stemHtml||'Question')+'</div>'
       +'<div class="sw-q-score">'+score+'%</div>'
     +'</div>'
-    // المصادر والجسم — إطار ذهبي علوي
+‎    // المصادر والجسم — إطار ذهبي علوي
     +'<div class="sw-q-body-wrap">'
       +(q.mediaHtml&&q.type!=='listening'&&q.type!=='reading'&&q.type!=='speaking'&&q.type!=='oral'&&(!(q.mediaVisible&&q.mediaVisible.img===false))?'<div style="margin-bottom:14px;border-radius:10px;overflow:hidden">'+q.mediaHtml+'</div>':'')
       +(q.bodyHtml?'<div style="font-size:15px;line-height:1.8;color:#1a1a2e;margin-bottom:12px" dir="auto">'+q.bodyHtml+'</div>':'')
       +(q.questionText?'<div style="font-size:16px;font-weight:700;color:#1e3a8a;margin-bottom:12px;padding:10px 14px;background:#eff6ff;border-radius:10px;border-right:4px solid #3b82f6" dir="auto">'+q.questionText+'</div>':'')
     +'</div>'
-    // الإجابات — إطار أخضر غامق سفلي
+‎    // الإجابات — إطار أخضر غامق سفلي
     +'<div class="sw-q-ans-wrap">'
       +bodyHtml
     +'</div>'
-    // زر تأكيد موحّد لكل الأسئلة
+‎    // زر تأكيد موحّد لكل الأسئلة
     +'<div style="padding:14px 20px;text-align:center;border-top:1px solid rgba(0,0,0,.06)">'
       +'<button onclick="swConfirmAndNext()" style="background:linear-gradient(135deg,#22c55e,#15803d);color:white;border:none;border-radius:16px;padding:12px 32px;font-size:14px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif;box-shadow:0 4px 14px rgba(34,197,94,.4)">✅ تأكيد الإجابة والانتقال للسؤال التالي / Confirm &amp; Next</button>'
     +'</div>'
@@ -5602,7 +5517,7 @@ function buildQuestionBodyHtml(q,qi,labels,score){
     if(q.ansType==='text'){
       bodyHtml+='<div><div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap"><button onclick="swToggleWriteMode(\'write\')" style="border:2px solid #1e3a8a;background:#1e3a8a;color:white;border-radius:10px;padding:8px 16px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px;font-weight:700">⌨️ كتابة / Write</button><button onclick="swToggleWriteMode(\'draw\')" style="border:2px solid #e2e8f0;background:white;color:#475569;border-radius:10px;padding:8px 16px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px;font-weight:700">🎨 رسم / Draw</button><label style="border:2px solid #e2e8f0;background:white;color:#475569;border-radius:10px;padding:8px 16px;cursor:pointer;font-family:Tajawal,sans-serif;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:6px">📷 صورة<input type="file" accept="image/*" style="display:none" onchange="swUploadImage(event)"></label></div><div id="sw-write-area"><textarea class="sw-textarea" placeholder="اكتب إجابتك..." onchange="sw_answers['+qi+']=this.value;updateProgressDots()">'+(sw_answers[qi]||'')+'</textarea></div><div id="sw-draw-area" style="display:none"><div class="sw-canvas-wrap"><div class="sw-canvas-tools"><button id="sw-pen" class="active" onclick="setDrawTool(\'pen\')">✏️ قلم / Pen</button><button id="sw-eraser" onclick="setDrawTool(\'eraser\')">🧹 ممحاة / Eraser</button><select id="sw-brush-size" onchange="setBrushSize(this.value)" style="border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;font-size:12px"><option value="2">رفيع / Thin</option><option value="5" selected>عادي</option><option value="10">سميك / Thick</option></select><input type="color" id="sw-pen-color" value="#1a1a2e" onchange="setPenColor(this.value)"><button onclick="clearCanvas()" style="color:#ef4444;font-size:12px;border:1px solid #fca5a5;border-radius:6px;padding:4px 10px">🗑 مسح</button></div><canvas id="drawingCanvas" height="240" style="width:100%;display:block;cursor:crosshair;touch-action:none"></canvas></div></div><div id="sw-upload-area" style="display:none"><div id="sw-uploaded-img-wrap" style="border:2px dashed #e2e8f0;border-radius:14px;padding:24px;text-align:center;color:#94a3b8;font-size:13px">اضغط زر الصورة أعلاه</div></div></div>';
     } else if(q.ansType==='mcq'){
-      // نص السؤال بخصائص الخط المحددة
+‎      // نص السؤال بخصائص الخط المحددة
       if(q.questionText){
         var qtFont=q.qTextFont||'Tajawal';
         var qtSize=q.qTextSize||15;
@@ -5651,16 +5566,16 @@ function buildQuestionBodyHtml(q,qi,labels,score){
     var clFs=(q.clFontSize||14)+'px';
     var clTxt=q.clTextColor||'#ffffff';
 
-    // بناء الجدول: أعمدة × صفوف
+‎    // بناء الجدول: أعمدة × صفوف
     var tableHtml='<table style="width:100%;border-collapse:collapse;margin-bottom:14px;background:'+tableBg+';table-layout:fixed">';
-    // رأس الجدول — أسماء الأعمدة
+‎    // رأس الجدول — أسماء الأعمدة
     tableHtml+='<thead><tr>';
     cols.forEach(function(col){
       tableHtml+='<th style="background:'+chipBg+';color:'+clTxt+';font-weight:900;font-size:'+clFs+';font-family:Tajawal,sans-serif;padding:10px 8px;text-align:center;border:2px solid rgba(255,255,255,.3)">'+(col||'—')+'</th>';
     });
     tableHtml+='</tr></thead><tbody>';
 
-    // صفوف الجدول
+‎    // صفوف الجدول
     for(var ri=0;ri<numRows;ri++){
       tableHtml+='<tr>';
       for(var ci=0;ci<numCols;ci++){
@@ -5681,7 +5596,7 @@ function buildQuestionBodyHtml(q,qi,labels,score){
     tableHtml+='</tbody></table>';
 
     bodyHtml=
-      // رأس البنك
+‎      // رأس البنك
       '<div style="background:linear-gradient(135deg,'+chipBg+','+chipBg+'cc);border-radius:16px;padding:14px;margin-bottom:14px;box-shadow:0 4px 16px '+chipBg+'44">'
       +'<div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.8);font-family:Montserrat,sans-serif;letter-spacing:1px;margin-bottom:10px;text-align:center">WORD BANK / مصدر المفردات</div>'
       +'<div id="cl-sw-bank-'+qi+'" ondragover="clBankDragOver(event)" ondrop="clBankDrop(event,'+qi+')" ondragleave="clBankDragLeave(event)" style="display:flex;flex-wrap:wrap;gap:8px;min-height:44px;justify-content:center;border-radius:10px;padding:6px;border:2px dashed rgba(255,255,255,.3);transition:.2s">'
@@ -5692,9 +5607,9 @@ function buildQuestionBodyHtml(q,qi,labels,score){
       }).join('')
       +(bankItems.length===0?'<span style="color:rgba(255,255,255,.6);font-size:13px;font-family:Montserrat,sans-serif">✅ All words placed</span>':'')
       +'</div></div>'
-      // الجدول
+‎      // الجدول
       +tableHtml
-      // أزرار
+‎      // أزرار
       +'<div style="display:flex;gap:10px;justify-content:center">'
       +'<button onclick="clSwClear('+qi+')" style="background:rgba(239,68,68,.1);color:#ef4444;border:2px solid rgba(239,68,68,.3);border-radius:14px;padding:10px 22px;font-size:13px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif">🗑 مسح الكل / Clear</button>'
       +'</div>'
@@ -5741,10 +5656,10 @@ function renderStreamMode(){
   questions.forEach(function(q,qi){
     var score=Number(q.score||(d.weight/Math.max(total,1))).toFixed(2);
     var isAnswered=sw_answers[qi]!==undefined&&sw_answers[qi]!==null;
-    // فاصل ذهبي بين الأسئلة
+‎    // فاصل ذهبي بين الأسئلة
     if(qi>0) html+='<div class="stream-q-separator"></div>';
     html+='<div class="stream-q-card'+(isAnswered?' stream-q-answered':'')+'" id="stream-q-'+qi+'">';
-    // شارة الإجابة
+‎    // شارة الإجابة
     html+='<div class="stream-q-answered-badge" style="display:none;position:absolute;top:12px;left:12px;background:#22c55e;color:white;border-radius:8px;padding:3px 10px;font-size:11px;font-weight:800;font-family:Montserrat,sans-serif">✓ تمت الإجابة</div>';
     html+='<div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #f1f5f9">';
     html+='<div style="min-width:42px;height:42px;border-radius:14px;background:'+(isAnswered?'linear-gradient(135deg,#22c55e,#15803d)':'linear-gradient(135deg,#1e3a8a,#7e22ce)')+';display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:14px;font-family:Montserrat,sans-serif;flex-shrink:0;transition:.3s" id="stream-badge-'+qi+'">'+(isAnswered?'✓':('Q.'+(qi+1)))+'</div>';
@@ -5857,7 +5772,7 @@ function renderStreamMode(){
       html+='<div class="sw-passage" dir="auto" style="margin-bottom:14px">'+(q.passageHtml||'')+'</div>';
       if(q.answerStemHtml) html+='<div style="font-size:15px;font-weight:700;margin-bottom:12px;color:#1a1a2e" dir="auto">'+q.answerStemHtml+'</div>';
       if(q.ansType==='mcq'){
-        // نص السؤال بخصائص الخط
+‎        // نص السؤال بخصائص الخط
         if(q.questionText){
           var rqtFont=q.qTextFont||'Tajawal';var rqtSize=q.qTextSize||15;var rqtColor=q.qTextColor||'#1e3a8a';var rqtBg=q.qTextBg||'#eff6ff';var rqtDir=q.qTextDir||'rtl';
           html+='<div style="font-size:'+rqtSize+'px;font-weight:700;color:'+rqtColor+';margin-bottom:12px;padding:12px 16px;background:'+rqtBg+';border-radius:12px;border-right:4px solid '+rqtColor+';font-family:'+rqtFont+',sans-serif" dir="'+rqtDir+'">'+q.questionText+'</div>';
@@ -5925,9 +5840,9 @@ function smStreamDraw(qi){
   var svg=document.getElementById('smSvg-'+qi);if(!svg)return;svg.innerHTML='';
   var wrap=document.getElementById('smWrap-'+qi);if(!wrap)return;
   var wr=wrap.getBoundingClientRect();
-  // في نمط الورقة البيضاء يُطبَّق transform:scale() على #wp-page، ما يجعل getBoundingClientRect
-  // يُرجع إحداثيات مُكبَّرة بالفعل بصريًا. نُعيد القسمة على معامل الزووم لتحويلها لوحدات SVG الداخلية
-  // الحقيقية (ما قبل التكبير)، وإلا يحدث تكبير مضاعف يُسبب طفو الخط في مكان خاطئ عند أي زووم غير 100%.
+‎  // في نمط الورقة البيضاء يُطبَّق transform:scale() على #wp-page، ما يجعل getBoundingClientRect
+‎  // يُرجع إحداثيات مُكبَّرة بالفعل بصريًا. نُعيد القسمة على معامل الزووم لتحويلها لوحدات SVG الداخلية
+‎  // الحقيقية (ما قبل التكبير)، وإلا يحدث تكبير مضاعف يُسبب طفو الخط في مكان خاطئ عند أي زووم غير 100%.
   var zf=(testData.displayMode===4&&_wpZoomLevel)?_wpZoomLevel:1;
   Object.keys(smStreamConn[qi]||{}).forEach(function(ai){
     var bi=smStreamConn[qi][ai];
@@ -6081,7 +5996,7 @@ function smDotClick(col,idx){
     sw_answers[sw_qIdx]={connections:Object.assign({},smConnections)};
     updateProgressDots();
     drawSmLines();
-    // تأثير بصري تأكيدي قصير عند نجاح التوصيل
+‎    // تأثير بصري تأكيدي قصير عند نجاح التوصيل
     setTimeout(function(){
       var itemA=document.getElementById('smItemA'+aIdxConfirm),itemB=document.getElementById('smItemB'+idx);
       [itemA,itemB].forEach(function(el){
@@ -6118,7 +6033,7 @@ function drawSmLines(){
     path.setAttribute('d','M'+x1+','+y1+' L'+x2+','+y2);
     path.setAttribute('stroke',clr);path.setAttribute('stroke-width','3');path.setAttribute('fill','none');
     path.setAttribute('stroke-linecap','round');
-    // إضافة shadow filter
+‎    // إضافة shadow filter
     var defs=document.createElementNS('http://www.w3.org/2000/svg','defs');
     var filter=document.createElementNS('http://www.w3.org/2000/svg','filter');
     filter.setAttribute('id','shadow'+aIdx);
@@ -6141,7 +6056,7 @@ function buildStudentOrdering(q){
     sw_answers[sw_qIdx]={groups:groups.map(function(g){var bank=(g.words||[]).slice().sort(function(){return Math.random()-.5;});return {placed:new Array((g.words||[]).length).fill(null),bank:bank};})};
   }
   var ansGroups=sw_answers[sw_qIdx].groups;
-  // تأكد أن عدد المجموعات المخزنة يطابق السؤال
+‎  // تأكد أن عدد المجموعات المخزنة يطابق السؤال
   groups.forEach(function(g,gi){
     if(!ansGroups[gi]){var bank=(g.words||[]).slice().sort(function(){return Math.random()-.5;});ansGroups[gi]={placed:new Array((g.words||[]).length).fill(null),bank:bank};}
     var total=(g.words||[]).length;
@@ -6162,7 +6077,7 @@ function buildStudentOrdering(q){
     var bankWords=ansGroups[gi].bank||[];
     var placed=ansGroups[gi].placed||[];
     var groupLabel=groups.length>1?('<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:800;color:'+tileBg+';font-family:Tajawal,sans-serif">📝 الجملة '+(gi+1)+' / Sentence '+(gi+1)+'</span>'+(perGroupScore?'<span style="font-size:11px;font-weight:700;color:'+tileBg+';background:'+tileBg+'18;border-radius:20px;padding:3px 12px;font-family:Montserrat,sans-serif">'+perGroupScore+'%</span>':'')+'</div>'):'';
-    // بنك الكلمات
+‎    // بنك الكلمات
     var bankHtml='<div id="or-bank-'+gi+'" style="display:flex;flex-wrap:wrap;gap:10px;padding:16px;background:linear-gradient(135deg,'+tileBg+'22,'+tileBg+'11);border:2px solid '+tileBg+'44;border-radius:16px;min-height:56px;justify-content:center">';
     bankWords.forEach(function(w,wi){
       bankHtml+='<div draggable="true" id="or-bw-'+gi+'-'+wi+'" data-word="'+w+'" data-from="bank" data-idx="'+wi+'"'
@@ -6171,7 +6086,7 @@ function buildStudentOrdering(q){
     });
     if(bankWords.length===0) bankHtml+='<span style="color:'+tileBg+';font-size:13px;font-weight:700;font-family:Montserrat,sans-serif">✅ كل الكلمات وُضعت / All placed</span>';
     bankHtml+='</div>';
-    // الخانات
+‎    // الخانات
     var slotsHtml='<div id="or-slots-'+gi+'" style="display:flex;flex-wrap:wrap;gap:10px;padding:16px;background:'+ansBg+';border:2px dashed '+tileBg+'66;border-radius:16px;min-height:56px;justify-content:center">';
     for(var si=0;si<total;si++){
       var pw=placed[si]||null;
@@ -6350,16 +6265,16 @@ function swNavigate(dir){
   renderStudentQuestion();updateProgressDots();
 }
 function swAutoAdvance(){
-  // ٥ دقائق إضافية
+‎  // ٥ دقائق إضافية
   var extraSec=5*60;
   sw_timeLeft=extraSec;
-  // أظهر Extra Time في العداد
+‎  // أظهر Extra Time في العداد
   var timerEl=document.getElementById('sw-timer-display');
   if(timerEl){
     timerEl.style.color='#f97316';
     timerEl.parentElement&&(timerEl.parentElement.style.borderColor='rgba(249,115,22,.6)');
   }
-  // أظهر badge
+‎  // أظهر badge
   var badge=document.getElementById('sw-extra-time-badge');
   if(!badge){
     badge=document.createElement('div');
@@ -6376,23 +6291,23 @@ function swAutoAdvance(){
       clearInterval(sw_timerInterval);
       var b=document.getElementById('sw-extra-time-badge');
       if(b) b.remove();
-      // تسليم تلقائي
+‎      // تسليم تلقائي
       _swAutoFinalSubmit();
     }
   },1000);
 }
 
 function _swAutoFinalSubmit(){
-  // أكمل أي أسئلة غير مجابة بقيمة فارغة
+‎  // أكمل أي أسئلة غير مجابة بقيمة فارغة
   var d=testData.domains[sw_domainIdx];
   var questions=sw_branchIdx>=0?(d.branches&&d.branches[sw_branchIdx]?d.branches[sw_branchIdx].questions||[]:d.questions||[]):(d.questions||[]);
   questions.forEach(function(_,i){if(sw_answers[i]===undefined) sw_answers[i]=null;});
-  // إظهار رسالة
+‎  // إظهار رسالة
   scOk('انتهى الوقت ⏰','Time Up',
-    'انتهى وقت الاختبار. سيتم تسليم إجاباتك تلقائياً.',
+‎    'انتهى وقت الاختبار. سيتم تسليم إجاباتك تلقائياً.',
     'Time is up. Your answers will be submitted automatically.','⏰'
   ).then(function(){
-    // تسليم بدون شرط 80%
+‎    // تسليم بدون شرط 80%
     clearInterval(sw_timerInterval);
     if(sw_branchIdx>=0){
       if(!sw_branchAnswers[sw_domainIdx]) sw_branchAnswers[sw_domainIdx]={};
@@ -6415,7 +6330,7 @@ function _swAutoFinalSubmit(){
     }
   });
 }
-// ══ حفظ إجابات المجال/الفرع الحالي في سجل الطالب لتمكين التصحيح الإلكتروني ══
+‎// ══ حفظ إجابات المجال/الفرع الحالي في سجل الطالب لتمكين التصحيح الإلكتروني ══
 function _persistCurrentAnswers(domainIdx, branchIdx){
   if(!currentStudentData||!currentStudentData.student) return;
   var st=currentStudentData.student;
@@ -6432,7 +6347,7 @@ function swSubmitDomain(total){
     var br=d.branches[sw_branchIdx];
     if(!swCheck80Percent()) return;
     scDanger('تسليم الفرع','Submit Branch',
-      'هل أنت متأكد من تسليم الفرع: <strong style="color:#FACC15">'+(br.nameAr||'الفرع')+'</strong>؟<br>لن تتمكن من العودة إليه.',
+‎      'هل أنت متأكد من تسليم الفرع: <strong style="color:#FACC15">'+(br.nameAr||'الفرع')+'</strong>؟<br>لن تتمكن من العودة إليه.',
       'Submit branch: <strong>'+(br.nameEn||br.nameAr||'Branch')+'</strong>?<br>You cannot return to it.'
     ).then(function(ok){
       if(!ok)return;
@@ -6451,7 +6366,7 @@ function swSubmitDomain(total){
       var allBrDone=d.branches&&sw_completedBranches[sw_domainIdx]&&sw_completedBranches[sw_domainIdx].length>=d.branches.length;
       if(allBrDone){
         scOk('أحسنت! 🏆','Well Done!',
-          'لقد أكملت جميع فروع مجال <strong style="color:#FACC15">'+d.nameAr+'</strong><br>سيتم نقلك لصفحة المجالات.',
+‎          'لقد أكملت جميع فروع مجال <strong style="color:#FACC15">'+d.nameAr+'</strong><br>سيتم نقلك لصفحة المجالات.',
           'You have completed all branches of <strong>'+(d.nameEn||d.nameAr)+'</strong><br>Redirecting to domains page.','🏆'
         ).then(function(){sw_currentPage='domains';renderStudentWindowPage();});
       } else {
@@ -6466,8 +6381,8 @@ function swSubmitDomain(total){
     isLast?'التسليم النهائي':'تسليم المجال',
     isLast?'Final Submission':'Submit Domain',
     isLast
-      ?'هذا هو <strong style="color:#f87171">المجال الأخير</strong> في الاختبار.<br>بمجرد التسليم سيتم إنهاء الاختبار بالكامل.'
-      :'أنت على وشك تسليم: <strong style="color:#FACC15">'+d.nameAr+'</strong><br>لن تتمكن من العودة إليه بعد التسليم.',
+‎      ?'هذا هو <strong style="color:#f87171">المجال الأخير</strong> في الاختبار.<br>بمجرد التسليم سيتم إنهاء الاختبار بالكامل.'
+‎      :'أنت على وشك تسليم: <strong style="color:#FACC15">'+d.nameAr+'</strong><br>لن تتمكن من العودة إليه بعد التسليم.',
     isLast
       ?'This is the <strong>LAST domain</strong>. The test will be finalized and you cannot return.'
       :'Submitting: <strong>'+(d.nameEn||d.nameAr)+'</strong><br>You cannot return once submitted.'
@@ -6480,7 +6395,7 @@ function swSubmitDomain(total){
       currentStudentData.student.started=true;
       if(!currentStudentData.student.domainsCompleted) currentStudentData.student.domainsCompleted={};
       currentStudentData.student.domainsCompleted[sw_domainIdx]=true;
-      // إجمالي المجالات — يُعدّ الاختبار منتهياً إذا أجاب الطالب عن جميع المجالات بأي ترتيب
+‎      // إجمالي المجالات — يُعدّ الاختبار منتهياً إذا أجاب الطالب عن جميع المجالات بأي ترتيب
       var totalDomains=testData.domains?testData.domains.length:0;
       var doneDomains=Object.keys(currentStudentData.student.domainsCompleted).length;
       isLast=(doneDomains>=totalDomains);
@@ -6499,7 +6414,7 @@ function swSubmitDomain(total){
     } else {
       sw_answers={};
       scOk('تم تسليم المجال ✅','Domain Submitted',
-        'تم تسليم مجال <strong style="color:#FACC15">'+d.nameAr+'</strong> بنجاح.<br>يمكنك الانتقال للمجال التالي.',
+‎        'تم تسليم مجال <strong style="color:#FACC15">'+d.nameAr+'</strong> بنجاح.<br>يمكنك الانتقال للمجال التالي.',
         'Domain <strong>'+(d.nameEn||d.nameAr)+'</strong> submitted.<br>You may proceed to the next domain.','✅'
       ).then(function(){sw_currentPage='domains';renderStudentWindowPage();});
     }
@@ -6588,7 +6503,7 @@ function srReturnTest(id){
 // ============================================================
 // MY TESTS
 // ============================================================
-function saveMyTests(){return ghWrite('tests.json',myTests);}
+function saveMyTests(){return saveDataFile('tests.json',myTests);}
 function openMyTests(){renderMyTestsTabs('underReview');document.getElementById('myTestsModal').classList.remove('hidden');}
 function closeMyTests(){document.getElementById('myTestsModal').classList.add('hidden');}
 function renderMyTestsTabs(tab){
@@ -6690,10 +6605,10 @@ function approveFinalTest(){
     var schoolObj=selectedSchools.map(function(id){return schools.find(function(x){return x.id===id;});}).filter(Boolean)[0]||null;
     var newTest={id:Date.now(),name:testName,grade:grade,subject:subjectVal,term:term,year:year,author:author,reviewer1:rev1,status:'underReview',r1done:false,generalStatus:'pending',returnNotes:[],school:selectedSchoolNames,schoolCode:schoolObj?schoolObj.code||'':'',country:schoolObj?schoolObj.country||'':'',curriculum:testData.curriculum||'',logoSrc:testData.logoSrc,domains:JSON.parse(JSON.stringify(testData.domains)),instructionsAr:instructionsAr,instructionsEn:instructionsEn,displayMode:testData.displayMode||1,students:[],createdAt:new Date().toLocaleDateString('ar'),testName:testName};
     myTests.push(newTest);saveMyTests();
-    // أضف للأرشيف
+‎    // أضف للأرشيف
     if(!archivedTests) archivedTests=[];
     archivedTests.unshift(Object.assign({},newTest,{archivedAt:Date.now(),id:'arch-'+newTest.id}));
-    ghWrite('archive.json',archivedTests).catch(function(){});
+    saveArchive();
     scOk('تم الإرسال ✅','Submitted','تم إرسال الاختبار للمراجعة بنجاح<br><b>'+testName+'</b>','Test submitted successfully','✅');
   }
   testData={domains:[],selectedSchools:[],logoSrc:'',displayMode:1};selectedSchools=[];_saveDraft();
@@ -6728,21 +6643,21 @@ function uploadStudentsExcelCodes(event){
   var file=event.target.files?event.target.files[0]:null;if(!file)return;
   var status=document.getElementById('uploadCodesResult');status.textContent='⏳ جاري القراءة...';
   var reader=new FileReader();
-  // دالة معالجة الصفوف — تدعم الفورمات القديم والجديد
+‎  // دالة معالجة الصفوف — تدعم الفورمات القديم والجديد
   function processRows(rows){
     var added=0;
     var isNewFormat=false;
-    // كشف الفورمات: إذا الـ header الأول يحتوي "First Name" في col0 → فورمات جديد
+‎    // كشف الفورمات: إذا الـ header الأول يحتوي "First Name" في col0 → فورمات جديد
     if(rows.length>0){
       var h=rows[0];
       var h0=String(h[0]||'').toLowerCase();
       var h1=String(h[1]||'').toLowerCase();
-      // الفورمات الجديد: col0=FirstName, col1=LastName, col2=School...
-      // الفورمات القديم: col0=SchoolID, col1=FirstName, col2=LastName...
+‎      // الفورمات الجديد: col0=FirstName, col1=LastName, col2=School...
+‎      // الفورمات القديم: col0=SchoolID, col1=FirstName, col2=LastName...
       if(h0.indexOf('first')>=0||h0.indexOf('اسم')>=0) isNewFormat=true;
       else if(h1.indexOf('first')>=0||h1.indexOf('اسم')>=0) isNewFormat=false;
       else {
-        // كشف تلقائي: إذا col0 في row1 يبدو رقم مدرسي → قديم, وإلا جديد
+‎        // كشف تلقائي: إذا col0 في row1 يبدو رقم مدرسي → قديم, وإلا جديد
         var testRow=rows[1];
         if(testRow){ var v0=String(testRow[0]||''); isNewFormat=!(v0.match(/^\d+$/)||v0.toLowerCase().startsWith('stu')); }
       }
@@ -6751,7 +6666,7 @@ function uploadStudentsExcelCodes(event){
       if(idx===0)return; // تخطي الهيدر
       var fn,ln,school,grade,section,nationality,gender,sen,gifted,local;
       if(isNewFormat){
-        // الفورمات الجديد من الملف المرفوع
+‎        // الفورمات الجديد من الملف المرفوع
         fn=String(row[0]||'').trim();
         ln=String(row[1]||'').trim();
         school=String(row[2]||'').trim();
@@ -6763,7 +6678,7 @@ function uploadStudentsExcelCodes(event){
         gifted=String(row[8]||'-').trim();
         local=String(row[9]||'No').trim();
       } else {
-        // الفورمات القديم: col0=SchoolID, col1=FirstName, col2=LastName...
+‎        // الفورمات القديم: col0=SchoolID, col1=FirstName, col2=LastName...
         fn=String(row[1]||'').trim();
         ln=String(row[2]||'').trim();
         school=String(row[4]||'').trim();
@@ -6776,7 +6691,7 @@ function uploadStudentsExcelCodes(event){
         local=String(row[8]||'No').trim();
       }
       if(!fn&&!ln)return;
-      // توحيد الجنس
+‎      // توحيد الجنس
       var genderNorm=gender.toLowerCase();
       if(genderNorm==='girl'||genderNorm==='female'||genderNorm==='أنثى'||genderNorm==='f') gender='Female';
       else gender='Male';
@@ -6884,7 +6799,7 @@ function renderStudentCodesTable(){
 }
 function exportStudentCodesExcel(){var t=myTests.find(function(x){return x.id===activeCodesTestId;});var testName=(t?t.name||'Test':'Test').replace(/\s+/g,'_');var data=[['Student School ID','First Name','Last Name','Gender','Local','Gifted','SOD','Username','Password','Status']];pendingStudentCodes.forEach(function(s){data.push([s.schoolID||'',s.firstName,s.lastName,s.gender,s.national,s.gifted,s.sod,s.username,s.password,s.active!==false?'Active':'Disabled']);});var ws=XLSX.utils.aoa_to_sheet(data);var wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Codes');XLSX.writeFile(wb,testName+'_StudentCodes.xlsx');}
 
-// ══ بطاقات دخول الطلاب — قابلة للطباعة PDF والمشاركة ══
+‎// ══ بطاقات دخول الطلاب — قابلة للطباعة PDF والمشاركة ══
 function showStudentIDCards(){
   var t=myTests.find(function(x){return x.id===activeCodesTestId;});
   if(!t||!pendingStudentCodes||!pendingStudentCodes.length){scWarn('لا يوجد طلاب لعرضهم بعد — أضف طلاباً أولاً','No students to display yet — add students first');return;}
@@ -6973,7 +6888,7 @@ function deactivateTest(){var t=myTests.find(function(x){return x.id===activeCod
 // ============================================================
 var SB_GRADES=[{id:'FS1',label:'KS1/FS1',icon:'🌱'},{id:'FS2',label:'KS1/FS2',icon:'🌿'},{id:'G1',label:'Grade 1/Y2',icon:'📗'},{id:'G2',label:'Grade 2/Y3',icon:'📘'},{id:'G3',label:'Grade 3/Y4',icon:'📙'},{id:'G4',label:'Grade 4/Y5',icon:'📒'},{id:'G5',label:'Grade 5/Y6',icon:'📕'},{id:'G6',label:'Grade 6/Y7',icon:'📓'},{id:'G7',label:'Grade 7/Y8',icon:'📔'},{id:'G8',label:'Grade 8/Y9',icon:'📃'},{id:'G9',label:'Grade 9/Y10',icon:'📑'},{id:'G10',label:'Grade 10/Y11',icon:'🎓'},{id:'G11',label:'Grade 11/Y12',icon:'🏅'},{id:'G12',label:'Grade 12/Y13',icon:'🎖️'}];
 var SB_SUBJECTS=[{id:'arabic_arabs',label:'العربية للناطقين',labelEn:'Arabic Native',icon:'📖'},{id:'arabic_non',label:'العربية لغير الناطقين',labelEn:'Arabic Non-Native',icon:'📚'},{id:'islamic_arabs',label:'الإسلامية للناطقين',labelEn:'Islamic (Arabic)',icon:'🕌'},{id:'islamic_non',label:'الإسلامية لغير الناطقين',labelEn:'Islamic (English)',icon:'🕋'},{id:'social_arabs',label:'الاجتماعيات للناطقين',labelEn:'Social (Arabic)',icon:'🌍'},{id:'social_non',label:'الاجتماعيات لغير الناطقين',labelEn:'Social (English)',icon:'🗺️'},{id:'english_1st',label:'الإنجليزية لغة أولى',labelEn:'English 1st Lang',icon:'🇬🇧'},{id:'english_2nd',label:'الإنجليزية لغة ثانية',labelEn:'English 2nd Lang',icon:'🔤'},{id:'french_2nd',label:'الفرنسية لغة ثانية',labelEn:'French 2nd Lang',icon:'🇫🇷'},{id:'math_arabs',label:'الرياضيات للناطقين',labelEn:'Math (Arabic)',icon:'🔢'},{id:'math_non',label:'الرياضيات لغير الناطقين',labelEn:'Math (English)',icon:'➗'},{id:'science_arabs',label:'العلوم للناطقين',labelEn:'Science (Arabic)',icon:'🔬'},{id:'science_non',label:'العلوم لغير الناطقين',labelEn:'Science (English)',icon:'⚗️'},{id:'history_national',label:'التاريخ الوطني',labelEn:'History National',icon:'🏛️'},{id:'history_international',label:'التاريخ الدولي',labelEn:'History International',icon:'🌐'},{id:'other',label:'أخرى',labelEn:'Other',icon:'📋'}];
-function saveGLOs(){return ghWrite('glos.json',sbGLOs);}
+function saveGLOs(){return saveDataFile('glos.json',sbGLOs);}
 function openStandardsBank(){sb_currentGrade=null;sb_currentSubject=null;renderSBGrades();showSBLevel('grades');updateSBBreadcrumb();document.getElementById('standardsBankModal').classList.remove('hidden');}
 function closeStandardsBank(){document.getElementById('standardsBankModal').classList.add('hidden');}
 function showSBLevel(level){['grades','subjects','glos'].forEach(function(l){var el=document.getElementById('sb'+l.charAt(0).toUpperCase()+l.slice(1)+'Level');if(el)el.classList.toggle('hidden',l!==level);});}
@@ -7147,7 +7062,7 @@ function sendToGrading(){
   var t = myTests.find(function(x){ return x.id === _gradingTestId; });
   if(!t){ return; }
   scConfirm('إرسال للتصحيح','Send to Marking',
-    'سيتم إرسال اختبار <strong style="color:#fb923c">'+t.name+'</strong> للتصحيح المباشر.',
+‎    'سيتم إرسال اختبار <strong style="color:#fb923c">'+t.name+'</strong> للتصحيح المباشر.',
     'Send test <strong>'+t.name+'</strong> to live marking?'
   ).then(function(ok){
     if(!ok) return;
@@ -7638,7 +7553,7 @@ function approveGrading(){
   }
   scDanger('اعتماد وإرسال النتائج','Approve & Broadcast Results',
     '<div dir="rtl" style="line-height:1.8;font-family:Tajawal,sans-serif">'
-    +'هل تريد اعتماد نتيجة الطالب <strong style="color:#fb923c">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإرسالها نهائياً؟<br>'
+‎    +'هل تريد اعتماد نتيجة الطالب <strong style="color:#fb923c">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإرسالها نهائياً؟<br>'
     +'<span style="font-size:12px;color:rgba(255,255,255,.6)">🔔 ستظهر هذه النتيجة تلقائياً في:</span><br>'
     +'<ul style="margin:6px 0;padding-right:20px;font-size:12px;color:#4ade80"><li>لوحة المشرف / Supervisor Portal</li><li>بوابة المدرسة / School Portal</li><li>تقارير التحصيل / Attainment Reports</li></ul>'
     +'<span style="color:#fbbf24;font-size:12px;font-weight:700">⚠️ هذه النتيجة نهائية وتُبنى عليها التقارير. يمكن تحديثها لاحقاً بزر "تحديث بعد الاعتماد".</span>'
@@ -7658,10 +7573,10 @@ function approveGrading(){
       // Trigger refresh in other portals if they are open
       if(typeof renderLiveStudentList === 'function') try{ renderLiveStudentList(); }catch(e){}
       scOk(
-        '✅ تم الاعتماد والإرسال',
+‎        '✅ تم الاعتماد والإرسال',
         'Approved & Broadcast',
         '<div dir="rtl" style="font-family:Tajawal,sans-serif;line-height:1.85">'
-        +'تم اعتماد نتيجة الطالب <strong style="color:#4ade80">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإرسالها نهائياً.<br>'
+‎        +'تم اعتماد نتيجة الطالب <strong style="color:#4ade80">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإرسالها نهائياً.<br>'
         +'<span style="font-size:12px;color:rgba(255,255,255,.6)">النتيجة الآن متاحة في جميع البوابات وتقارير التحصيل.</span>'
         +'</div>',
         'Result finalised and visible across all portals.',
@@ -7678,9 +7593,9 @@ function updateAfterApproval(){
   var st = _gradingStudentIdx >= 0 ? t.students[_gradingStudentIdx] : null;
   if(!st){ scWarn('اختر طالباً أولاً','Select a student'); return; }
   scDanger(
-    'تحديث النتيجة بعد الاعتماد','Update After Approval',
+‎    'تحديث النتيجة بعد الاعتماد','Update After Approval',
     '<div dir="rtl" style="font-family:Tajawal,sans-serif;line-height:1.8">'
-    +'سيتم تحديث نتيجة الطالب <strong style="color:#38bdf8">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإعادة الاعتماد حتى وإن كانت قد أُرسلت سابقاً.<br>'
+‎    +'سيتم تحديث نتيجة الطالب <strong style="color:#38bdf8">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإعادة الاعتماد حتى وإن كانت قد أُرسلت سابقاً.<br>'
     +'<span style="font-size:12px;color:#fbbf24">⚠️ النتيجة المحدّثة ستحل محل السابقة في كل البوابات والتقارير.</span>'
     +'</div>',
     'Re-approve and update result for '+(st.firstName||'')+' '+(st.lastName||'')+'? Updated result will overwrite the previous one across all portals.'
@@ -7698,7 +7613,7 @@ function updateAfterApproval(){
       document.getElementById('gradingStatus').textContent = '🔄 محدَّث ومعتمد / Updated & Approved';
       if(typeof renderLiveStudentList === 'function') try{ renderLiveStudentList(); }catch(e){}
       scOk(
-        '🔄 تم التحديث والإعادة',
+‎        '🔄 تم التحديث والإعادة',
         'Updated & Re-Approved',
         '<div dir="rtl" style="font-family:Tajawal,sans-serif">تم تحديث نتيجة <strong style="color:#38bdf8">'+(st.firstName||'')+' '+(st.lastName||'')+'</strong> وإعادة اعتمادها. النتيجة الجديدة متاحة الآن في كل البوابات والتقارير.</div>',
         'Result updated and visible across all portals.',
@@ -7839,7 +7754,7 @@ function adminPrelimApprove(testId){
   var t = myTests.find(function(x){ return x.id === testId; });
   if(!t) return;
   scConfirm('اعتمادية مبدئية','Preliminary Approval',
-    'اعتماد مبدئي لتصحيح اختبار <strong style="color:#7dd3fc">'+t.name+'</strong>؟',
+‎    'اعتماد مبدئي لتصحيح اختبار <strong style="color:#7dd3fc">'+t.name+'</strong>؟',
     'Preliminary approval for <strong>'+t.name+'</strong>?'
   ).then(function(ok){
     if(!ok) return;
@@ -7857,7 +7772,7 @@ function adminFinalApprove(testId){
   var t = myTests.find(function(x){ return x.id === testId; });
   if(!t) return;
   scDanger('🟢 اعتمادية التصحيح النهائي','Final Grading Approval',
-    'اعتماد <strong>نهائي</strong> لتصحيح اختبار <strong style="color:#FACC15">'+t.name+'</strong>.<br>هذا الاعتماد يُبني عليه التقارير ولا يمكن التراجع عنه.',
+‎    'اعتماد <strong>نهائي</strong> لتصحيح اختبار <strong style="color:#FACC15">'+t.name+'</strong>.<br>هذا الاعتماد يُبني عليه التقارير ولا يمكن التراجع عنه.',
     'FINAL approval for <strong>'+t.name+'</strong>. Used for reports, cannot be reversed.'
   ).then(function(ok){
     if(!ok) return;
@@ -8061,7 +7976,7 @@ function swCheckMic(){
   }
   navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
     _swMicStream=stream;
-    // أظهر واجهة تجريب التسجيل
+‎    // أظهر واجهة تجريب التسجيل
     if(mc) mc.innerHTML=
       '<span style="font-size:20px">🎙</span>'
       +'<div style="flex:1">'
@@ -8138,7 +8053,7 @@ function _swShowMicSettings(){
     msgAr:'<strong>Chrome/Edge:</strong> اضغط على 🔒 في شريط العنوان ← الميكروفون ← السماح<br><br>'
          +'<strong>Firefox:</strong> اضغط على 🔒 ← الأذونات ← الميكروفون ← السماح<br><br>'
          +'<strong>Safari:</strong> الإعدادات ← مواقع الويب ← الميكروفون ← السماح<br><br>'
-         +'بعد السماح اضغط <strong>إعادة المحاولة</strong>',
+‎         +'بعد السماح اضغط <strong>إعادة المحاولة</strong>',
     msgEn:'Click the 🔒 lock icon in the address bar → Microphone → Allow, then click Retry.',
     type:'alert',
     confirmAr:'فهمت',
@@ -8159,7 +8074,7 @@ function swEnableFullLock(){
     return e.returnValue;
   };
   window.addEventListener('beforeunload',window._swBeforeUnload);
-  // منع back button
+‎  // منع back button
   history.pushState(null,null,location.href);
   window._swPopState=function(){
     if(!_swLocked) return;
@@ -8282,7 +8197,7 @@ function hexToRgb(hex){
 function swTFSelect(qi,si,val){
   if(!sw_answers[qi]) sw_answers[qi]={};
   sw_answers[qi][si]=val;
-  // تحقق إذا تمت الإجابة على كل الجمل
+‎  // تحقق إذا تمت الإجابة على كل الجمل
   var d=testData.domains[sw_domainIdx];
   var q=sw_branchIdx>=0?(d.branches&&d.branches[sw_branchIdx]?d.branches[sw_branchIdx].questions[qi]:null):(d.questions?d.questions[qi]:null);
   if(q&&q.statements){
@@ -8435,7 +8350,7 @@ function listenUploadAudio(event){
 }
 
 // ══ Matching Pair Editor ══
-// يجمع أزواج التوصيل من الصفحة بشكل موثوق حتى لو حُذف زوج من المنتصف (بدل الاعتماد على تسلسل IDs بدون فجوات)
+‎// يجمع أزواج التوصيل من الصفحة بشكل موثوق حتى لو حُذف زوج من المنتصف (بدل الاعتماد على تسلسل IDs بدون فجوات)
 function _collectMatchPairsFromDOM(){
   var aEls=document.querySelectorAll('[id^="mAEdit"]');
   var pairs=[];
@@ -8456,11 +8371,11 @@ function addMatchPairEditor(p,pi){
   var aBox='<div id="mAEdit'+idx+'" contenteditable="true" dir="auto" class="rich-editor" style="min-height:50px" placeholder="نص A..."></div>';
   var bBox='<div id="mBEdit'+idx+'" contenteditable="true" dir="auto" class="rich-editor" style="min-height:50px" placeholder="نص B..."></div>';
   div.innerHTML=
-    // عمود A
+‎    // عمود A
     '<div>'
     +'<div style="font-size:10px;color:#93c5fd;font-family:Montserrat,sans-serif;font-weight:700;margin-bottom:6px;text-align:center">◀ A '+(idx+1)+'</div>'
     +aBox
-    // صورة A
+‎    // صورة A
     +'<div id="mAImgWrap'+idx+'" style="margin-top:6px">'
     +'<div id="mAImg'+idx+'" style="display:none;margin-bottom:4px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.2);height:80px;display:flex;align-items:center;justify-content:center;background:#0a0a1a"><img src="" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transform:scale(1)"></div>'
     +'<div id="mAImgZoom'+idx+'" style="display:none;align-items:center;gap:4px;margin-bottom:4px"><span style="font-size:9px;color:#93c5fd">🔍</span><input type="range" min="0.3" max="3" step="0.05" value="1" oninput="matchPairImgZoom(\'mAImg'+idx+'\',this.value)" style="flex:1;accent-color:#FACC15;height:14px"><button onclick="matchPairImgConfirm(\'mAImg'+idx+'\')" style="background:rgba(74,222,128,.2);border:1px solid rgba(74,222,128,.4);color:#4ade80;border-radius:6px;padding:2px 7px;font-size:9px;cursor:pointer">✅</button></div>'
@@ -8468,16 +8383,16 @@ function addMatchPairEditor(p,pi){
     +'<label style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:4px;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);border-radius:8px;padding:5px;font-size:10px;cursor:pointer;color:#93c5fd">📁<input type="file" accept="image/*" style="display:none" data-target="mAImg'+idx+'" onchange="matchPairImg(event,\'mAImg'+idx+'\')"></label>'
     +'<button onclick="matchPairImgURL(\'mAImg'+idx+'\')" style="flex:1;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);border-radius:8px;padding:5px;font-size:10px;cursor:pointer;color:#93c5fd">🔗 URL</button>'
     +'</div></div></div>'
-    // الوسط =
+‎    // الوسط =
     +'<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:32px;gap:4px">'
     +'<div style="width:36px;height:36px;background:rgba(250,204,21,.15);border:2px solid rgba(250,204,21,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#FACC15">=</div>'
     +'<button onclick="var d=document.getElementById(\'matchPairRow'+idx+'\');if(d)d.remove();" style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:#f87171;border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:12px">✕</button>'
     +'</div>'
-    // عمود B
+‎    // عمود B
     +'<div>'
     +'<div style="font-size:10px;color:#86efac;font-family:Montserrat,sans-serif;font-weight:700;margin-bottom:6px;text-align:center">B '+(idx+1)+' ▶</div>'
     +bBox
-    // صورة B
+‎    // صورة B
     +'<div id="mBImgWrap'+idx+'" style="margin-top:6px">'
     +'<div id="mBImg'+idx+'" style="display:none;margin-bottom:4px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.2);height:80px;display:flex;align-items:center;justify-content:center;background:#0a0a1a"><img src="" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transform:scale(1)"></div>'
     +'<div id="mBImgZoom'+idx+'" style="display:none;align-items:center;gap:4px;margin-bottom:4px"><span style="font-size:9px;color:#86efac">🔍</span><input type="range" min="0.3" max="3" step="0.05" value="1" oninput="matchPairImgZoom(\'mBImg'+idx+'\',this.value)" style="flex:1;accent-color:#FACC15;height:14px"><button onclick="matchPairImgConfirm(\'mBImg'+idx+'\')" style="background:rgba(74,222,128,.2);border:1px solid rgba(74,222,128,.4);color:#4ade80;border-radius:6px;padding:2px 7px;font-size:9px;cursor:pointer">✅</button></div>'
@@ -8555,7 +8470,7 @@ function _syncMatchAnswerKey(){
   });
   hidden.value=pairs.join(', ');
 }
-// تهيئة صفوف نموذج الإجابة عند الفتح
+‎// تهيئة صفوف نموذج الإجابة عند الفتح
 function initMatchAnswerKeyRows(){
   var cont=document.getElementById('matchAnswerKeyRows');if(!cont)return;
   cont.innerHTML='';
@@ -8567,14 +8482,14 @@ function initMatchAnswerKeyRows(){
       addMatchAnswerKeyRow((parts[0]||'').trim(),(parts[1]||'').trim());
     });
   }
-  // أضف صفوف فارغة حسب عدد الأزواج المدخلة
+‎  // أضف صفوف فارغة حسب عدد الأزواج المدخلة
   if(cont.children.length===0){addMatchAnswerKeyRow();addMatchAnswerKeyRow();addMatchAnswerKeyRow();}
 }
 
 
 function showStudentCertificates(){
   scOk('شهاداتي 🏅','My Certificates',
-    'ستظهر شهاداتك هنا بعد اجتياز الاختبارات.<br>سيتم ربطها برمجياً قريباً.',
+‎    'ستظهر شهاداتك هنا بعد اجتياز الاختبارات.<br>سيتم ربطها برمجياً قريباً.',
     'Your certificates will appear here after completing tests.<br>This feature will be linked programmatically soon.','🏅'
   );
 }
@@ -8587,7 +8502,7 @@ function wpZoomChange(delta){
   if(el){el.style.transform='scale('+_wpZoomLevel+')';el.style.transformOrigin='top center';}
   var lbl=document.getElementById('wp-zoom-label');
   if(lbl) lbl.textContent=Math.round(_wpZoomLevel*100)+'%';
-  // أعد رسم خطوط أسئلة التوصيل الظاهرة حالياً حتى تطابق موضعها الجديد بعد تغيير الزووم
+‎  // أعد رسم خطوط أسئلة التوصيل الظاهرة حالياً حتى تطابق موضعها الجديد بعد تغيير الزووم
   setTimeout(function(){
     document.querySelectorAll('[id^="smWrap-"]').forEach(function(w){
       var qi=w.id.replace('smWrap-','');
@@ -8599,7 +8514,7 @@ function renderWhitePaper(){
   var d=testData.domains[sw_domainIdx];
   if(!d)return;
   var questions=sw_branchIdx>=0&&d.branches&&d.branches[sw_branchIdx]?d.branches[sw_branchIdx].questions||[]:d.questions||[];
-  // أظهر دوائر إكمال الأسئلة بنفس أسلوب النمط الكلاسيكي، وألغِ نص "Domain X QY/Z" المكرر
+‎  // أظهر دوائر إكمال الأسئلة بنفس أسلوب النمط الكلاسيكي، وألغِ نص "Domain X QY/Z" المكرر
   renderProgressDots(questions.length);
   var ctrTop=document.getElementById('sw-q-counter-top');
   if(ctrTop) ctrTop.textContent='';
@@ -8618,7 +8533,7 @@ function renderWhitePaper(){
     +'<div style="position:absolute;top:0;left:0">'+logoHtml+'</div>'
     +'<div style="font-family:\'Playfair Display\',Georgia,serif;font-size:21px;font-weight:800;color:#141F44;letter-spacing:.5px;padding-top:6px">'+(testData.testName||'اختبار')+'</div>'
     +'</div>';
-  // بطاقة معلومات احترافية (الشريط ثنائي اللغة) — جزء أصيل من الصفحة، بخلفية فاتحة تناسب الورقة البيضاء
+‎  // بطاقة معلومات احترافية (الشريط ثنائي اللغة) — جزء أصيل من الصفحة، بخلفية فاتحة تناسب الورقة البيضاء
   html+='<div style="background:linear-gradient(135deg,#FBF8F1,#F5EFDF);border:1.5px solid #AD8628;border-radius:14px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 10px rgba(173,134,40,.14)">'
     // Bilingual academic info row: direction ltr → column1(English)=left, column2(Arabic)=right
     +'<div style="display:grid;grid-template-columns:1fr 1fr;direction:ltr">'
@@ -8714,7 +8629,7 @@ function renderWhitePaper(){
       } else if(q.ansType==='matching'){
         html+='<div class="wp-indent">'+buildWPMatching(q,qi)+'</div>';
       } else {
-        // كتابة / رسم / صورة
+‎        // كتابة / رسم / صورة
         html+='<div class="wp-indent">'+buildWPWriteArea(qi)+'</div>';
       }
 
@@ -8798,14 +8713,14 @@ function renderWhitePaper(){
     html+='</div>'; // wp-q
     if(qi<questions.length-1) html+='<div class="wp-q-sep"></div>';
   });
-  // زر تسليم المجال/الفرع — بنفس منطق وتحذير النمط الكلاسيكي
+‎  // زر تسليم المجال/الفرع — بنفس منطق وتحذير النمط الكلاسيكي
   html+='<div style="margin-top:24px;padding:20px;text-align:center;background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px dashed #ef4444;border-radius:14px">'
     +'<div style="font-size:12px;color:#991b1b;margin-bottom:12px;font-weight:700;line-height:1.6">'
-    +'⚠️ بعد الضغط على زر التسليم لن تتمكن من العودة لهذا '+(sw_branchIdx>=0?'الفرع':'المجال')+' مرة أخرى<br>'
+‎    +'⚠️ بعد الضغط على زر التسليم لن تتمكن من العودة لهذا '+(sw_branchIdx>=0?'الفرع':'المجال')+' مرة أخرى<br>'
     +'<span style="font-family:Montserrat,sans-serif;font-weight:600">After submitting, you will not be able to return to this '+(sw_branchIdx>=0?'branch':'domain')+' again</span>'
     +'</div>'
     +'<button onclick="swSubmitDomain('+questions.length+')" style="background:linear-gradient(135deg,#22c55e,#15803d);color:white;border:none;border-radius:16px;padding:14px 36px;font-size:15px;font-weight:900;cursor:pointer;font-family:Tajawal,sans-serif;box-shadow:0 4px 16px rgba(34,197,94,.4)">'
-    +'✅ تسليم '+(sw_branchIdx>=0?'الفرع':'المجال')+' / Submit '+(sw_branchIdx>=0?'Branch':'Domain')
+‎    +'✅ تسليم '+(sw_branchIdx>=0?'الفرع':'المجال')+' / Submit '+(sw_branchIdx>=0?'Branch':'Domain')
     +'</button>'
     +'</div>';
   // Footer
@@ -8843,12 +8758,12 @@ function buildWPMatching(q,qi){
   html+='<div style="margin-top:8px;display:flex;justify-content:center">'
     +'<button onclick="smStreamClear('+qi+')" style="background:#fee2e2;border:1.5px solid #fca5a5;color:#ef4444;border-radius:8px;padding:6px 16px;font-size:12px;font-weight:800;cursor:pointer;font-family:Tajawal,sans-serif">✕ مسح الكل / Clear All</button>'
     +'</div></div>';
-  // تهيئة الاتصالات بعد الرسم
+‎  // تهيئة الاتصالات بعد الرسم
   setTimeout(function(){ smStreamInit(qi); },60);
   return html;
 }
 
-// ══ كتابة / رسم / صورة — ورقة بيضاء (نفس أدوات الكلاسيكي) ══
+‎// ══ كتابة / رسم / صورة — ورقة بيضاء (نفس أدوات الكلاسيكي) ══
 function buildWPWriteArea(qi,compact){
   var val=typeof sw_answers[qi]==='string'?sw_answers[qi]:'';
   var minH=compact?'90px':'120px';
@@ -8871,7 +8786,7 @@ function buildWPWriteArea(qi,compact){
   return html;
 }
 
-// ══ التصنيف — ورقة بيضاء (يعيد استخدام نفس آلية السحب والإفلات) ══
+‎// ══ التصنيف — ورقة بيضاء (يعيد استخدام نفس آلية السحب والإفلات) ══
 function buildWPClassify(q,qi){
   var cols=q.columns||[];
   var items=q.items||[];
@@ -8950,7 +8865,7 @@ function clPlacedDragStart(e,qi,ci,ri){
   e.dataTransfer.effectAllowed='move';
   e.dataTransfer.setData('text/plain',sw_answers[qi].placed[ci][ri]);
 }
-// ١٢- الضغط على كلمة موضوعة في الجدول يُرجعها لصندوق البنك العلوي
+‎// ١٢- الضغط على كلمة موضوعة في الجدول يُرجعها لصندوق البنك العلوي
 function clPlacedClick(qi,ci,ri){
   var ans=sw_answers[qi];if(!ans||!ans.placed[ci])return;
   var word=ans.placed[ci][ri];if(!word)return;
@@ -8969,7 +8884,7 @@ function clCellDrop(e,qi,ci,ri){
   var incomingWord=d.word;
   var existingWord=ans.placed[ci]&&ans.placed[ci][ri]?ans.placed[ci][ri]:null;
   if(!ans.placed[ci])ans.placed[ci]=[];
-  // إذا كانت الخلية مشغولة — الكلمة الأولى ترجع للبنك
+‎  // إذا كانت الخلية مشغولة — الكلمة الأولى ترجع للبنك
   if(existingWord){
     ans.bank.push(existingWord);
   }
@@ -8977,11 +8892,11 @@ function clCellDrop(e,qi,ci,ri){
     ans.bank=ans.bank.filter(function(w,i){return i!==d.wi;});
     ans.placed[ci][ri]=incomingWord;
   } else if(d.from==='cell'){
-    // أزل من الخلية الأصلية
+‎    // أزل من الخلية الأصلية
     if(ans.placed[d.ci])ans.placed[d.ci][d.ri]=null;
     ans.placed[ci][ri]=incomingWord;
   }
-  // نظف nulls
+‎  // نظف nulls
   Object.keys(ans.placed).forEach(function(k){ans.placed[k]=ans.placed[k].filter(function(x){return x!==null;});});
   if(ans.bank.length===0)ans.confirmed=true;
   updateProgressDots();renderStudentQuestion();
@@ -9008,7 +8923,7 @@ function clSwClear(qi){
   sw_answers[qi]={placed:placed,bank:initBank,confirmed:false};
   updateProgressDots();renderStudentQuestion();
 }
-// إبقاء الدوال القديمة للتوافق
+‎// إبقاء الدوال القديمة للتوافق
 function clSwDragStart(e,from,qi,idx){_clDragData={from:from==='bank'?'bank':'cell',qi:qi,wi:idx};e.dataTransfer.effectAllowed='move';}
 function clSwDragOver(e){e.preventDefault();}
 function clSwDragLeave(e){}
@@ -9064,7 +8979,7 @@ function _insertVideoPreview(src,type){
   removeBtn.onclick=function(){mp.innerHTML='';};
   tb.appendChild(confirmBtn);tb.appendChild(removeBtn);
   wrap.appendChild(tb);
-  // فيديو مباشر فقط — بدون iframe يوتيوب، حتى يُحفظ ويُعرض داخل الاختبار مباشرة دون رابط خروج
+‎  // فيديو مباشر فقط — بدون iframe يوتيوب، حتى يُحفظ ويُعرض داخل الاختبار مباشرة دون رابط خروج
   var mediaEl=document.createElement('video');
   mediaEl.src=src;mediaEl.controls=true;
   mediaEl.style.cssText='width:100%;max-height:240px;display:block;background:#000';
@@ -9102,7 +9017,7 @@ function removeAudioPreview(btn){var mp=document.getElementById("mediaPreviewAre
 function _rmVideoPreview(btn){try{var el=btn;for(var i=0;i<5;i++){el=el.parentElement;if(!el)break;}if(el)el.remove();}catch(e){var mp=document.getElementById("mediaPreviewArea");if(mp)mp.innerHTML="";}}
 
 window.onload=function(){
-  // أخفِ الـ loader فوراً
+‎  // أخفِ الـ loader فوراً
   var ldr=document.getElementById('ghLoader');
   if(ldr) ldr.style.display='none';
   try{
@@ -9125,5 +9040,4 @@ window.onload=function(){
 };
 </script>
 </body>
-</html>
-  
+</html
